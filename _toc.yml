@@ -7,12 +7,15 @@ root: intro
 parts:
   - caption: Fundamentos de teoria Probabilidad
     chapters:
-    - file: part1/chapter1
+    - file: contenido/p1_ch1
       sections:
-        - file: part1/chapter1/section1
-        - file: part1/chapter1/section2
-        - file: part1/chapter1/section3
-    - file: part1/chapter2
+        - file: contenido/p1_ch1_s1
+        - file: contenido/p1_ch1_s2
+        - file: contenido/p1_ch1_s3
+        - file: contenido/p1_ch1_s4
+    - file: contenido/p1_ch2
+      sections:
+        - file: contenido/p1_ch2_s1
 #  - caption: Procesos Aleatorios 
 #    chapters:
 #    - file: path/to/part2/chapter1
