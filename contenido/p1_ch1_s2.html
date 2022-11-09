@@ -260,6 +260,16 @@
      Media
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-truncada">
+     Media Truncada
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-ponderada">
+     Media ponderada
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -324,6 +334,48 @@
 \]</div>
 </div>
 </div>
+<div class="section" id="media-truncada">
+<h3>Media Truncada<a class="headerlink" href="#media-truncada" title="Permalink to this headline">¶</a></h3>
+<p>Es una variación de la media que se calcula ignorando un numero fijo, en cada extremo, de valores ordenados y calculando a continuación, para los valores restantes la media.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Dado un conjunto de observaciones ordenadas <span class="math notranslate nohighlight">\(x_{(1)},x_{(2)},...,x_{(n)}\)</span> de tal manera que <span class="math notranslate nohighlight">\(x_{(1)}\)</span> es la mas pequeña y <span class="math notranslate nohighlight">\(x_{(p)}\)</span> es la mas grande la formula para calcular la <strong>media truncada</strong> descartanto los <span class="math notranslate nohighlight">\(p\)</span> valores mas pequeños y mas grandes esta dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media truncada}=\frac{\sum_{n-p}^{i=p+1}x_i}{n-2p}
+\]</div>
+</div>
+</div>
+<div class="section" id="media-ponderada">
+<h3>Media ponderada<a class="headerlink" href="#media-ponderada" title="Permalink to this headline">¶</a></h3>
+<p>En muchos casos no todos los valores tiene la misma importancia y puede ser útil otorgar pesos o valores a los datos dependiendo de su relevancia para determinado estudio. En ese caso no se suman los valores uno a uno sino se halla una medida conocida como <strong>media ponderada</strong>.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Para calcular la <strong>media ponderada</strong> se suma el producto del cada uno de los valores  (<span class="math notranslate nohighlight">\(x_1,x_2,...,x_n\)</span>) por los respectivos pesos ( <span class="math notranslate nohighlight">\(w_1,w_2,...,w_n\)</span>) asociados a cada valor y se divide el resultado por la suma de cada uno de los pesos.</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media ponderada}=\frac{x_1 w_1 + x_2 w_2 + ... + x_n  w_n}{w_1 +  w_2 + ... + w_n}=\frac{\sum_{n}^{i=1}x_i w_i}{\sum_{n}^{i=1}w_i}
+\]</div>
+</div>
+<p>La media ponderada tambien puede ser calculada <strong>normalizando los pesos</strong>. Los <strong>pesos normalizados</strong> <span class="math notranslate nohighlight">\(w_i'\)</span> se caracterizan por que al sumarsen todos el resultado es 1:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n}^{i=1}w_i'=1
+\]</div>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>El <strong>peso normalizado</strong> <span class="math notranslate nohighlight">\(w_i'\)</span> esta dado por la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+w_i'=\frac{w_i}{\sum_{n}^{i=1}w_i}
+\]</div>
+</div>
+<p>Segun lo anterior, otra forma de expresar la <strong>media ponderada</strong> es por medio de la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media ponderada}=\sum_{n}^{i=1}w_i' x_i
+\]</div>
+</div>
 </div>
 <div class="section" id="markdown-notebooks">
 <h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Permalink to this headline">¶</a></h2>
@@ -364,7 +416,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x1a2d299b348&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x19c9f1fbe08&gt;
 </pre></div>
 </div>
 </div>
