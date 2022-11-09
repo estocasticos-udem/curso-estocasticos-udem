@@ -3,7 +3,22 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: mymarkdownfile
+
+parts:
+  - caption: Fundamentos de teoria Probabilidad
+    chapters:
+    - file: part1/chapter1
+      sections:
+        - file: part1/chapter1/section1
+    - file: part1/chapter2
+#  - caption: Procesos Aleatorios 
+#    chapters:
+#    - file: path/to/part2/chapter1
+#    - file: path/to/part2/chapter2
+#      sections:
+#      - file: path/to/part2/chapter2/section1
+
+#chapters:
+#- file: markdown
+#- file: notebooks
+#- file: mymarkdownfile
