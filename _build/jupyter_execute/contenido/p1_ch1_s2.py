@@ -71,6 +71,30 @@
 # \textbf{media ponderada}=\sum_{n}^{i=1}w_i' x_i
 # $$
 # 
+# ### Media Geometrica
+# 
+# En la media aritmética se suman los valores de la variables lo cual nos indica que hay un carácter aditivo, por ejemplo cuando se suman las diferentes edades para obtener una edad promedio.
+# 
+# Sin embargo, hay variables que presentan variaciones acumulativas, por lo que ni la suma ni la media tienen un sentido real, por ejemplo, una rebaja del 50% sobre otra rebaja del 50% no hacen en total una rebaja del 100%, lo que alude a un caráter multiplicativo.
+# 
+# ```{admonition} Definición
+# La **Media Geometrica** se obviente mediante la siguiente expresión sobre los datos:
+# 
+# $$
+# \textbf{media geometrica}=\sqrt[n]{\prod_{n}^{i=1}x_i}  = \sqrt[n]{x_1 \cdot x_2 \cdot...\cdot x_n} 
+# $$
+# 
+# También tiene una versión ponderada para la media geometrica:
+# 
+# $$
+# \textbf{media geometrica}= \left ( \prod_{i=1}^{n}{x_i}^{\alpha_i}  \right )^{\frac{1}{\sum_{i}\alpha_i}}=\left ( x_1^{\alpha_1} \cdot x_2^{\alpha_2}\cdot...\cdot x_n^{\alpha_n}\right )^{\frac{1}{\alpha_1 + \alpha_2 + \alpha_n}}
+# $$
+# 
+# Donde $\alpha_i$ son los pesos.
+# ```
+# 
+#  
+# 
 # 
 # 
 # ## Markdown + notebooks
