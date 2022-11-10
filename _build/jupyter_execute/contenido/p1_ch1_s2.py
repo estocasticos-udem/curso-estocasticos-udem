@@ -7,7 +7,6 @@
 import numpy as np
 import pandas as pd
 from scipy.stats import trim_mean
-from scipy.stats import mean
 
 
 # # Medidas
@@ -298,4 +297,15 @@ print("Altura promedio (cm): {0:.2f}".format(mean_height))
 #### Solución usando pandas
 
 
-# #### Solución usando numpy
+# #### Solución usando pandas
+
+# In[15]:
+
+
+# Solucion pandas
+data_heights = {'heights':pd.Series([90,102,110,115,85,90,100,110,110])}
+df_heights= pd.DataFrame(data_heights)
+print(df_heights)
+mean_height = df_heights.mean()
+print("Altura promedio: {0:.2f}".format(mean_height[0]))
+
