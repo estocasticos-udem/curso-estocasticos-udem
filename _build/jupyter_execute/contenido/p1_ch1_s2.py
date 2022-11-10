@@ -27,6 +27,14 @@
 # $$
 # ```
 # 
+# Aplicando la definición anterior, si nos piden la media de los numeros: $\mathbf{x} = \left \{ 2, 3, 4, 5 \right \}$ el resultado será:
+# 
+# $$
+# \bar{x}=\frac{\sum_{4}^{i=1}x_i}{4}=\frac{2 + 3 + 4 + 5}{4} = \frac{11}{4}=2.75
+# $$
+# 
+# Uno de los problemas que tiene la media, es su sensibilidad a valores extremos (**outliers**). 
+# 
 # ### Media Truncada
 # 
 # Es una variación de la media que se calcula ignorando un numero fijo, en cada extremo, de valores ordenados y calculando a continuación, para los valores restantes la media.
@@ -39,9 +47,11 @@
 # $$
 # ```
 # 
+# Al descartar los valores extremos, esta metrica es mas insensible a la influencia de los valores extremos lo cual es deseable.
+# 
 # ### Media ponderada
 # 
-# En muchos casos no todos los valores tiene la misma importancia y puede ser útil otorgar pesos o valores a los datos dependiendo de su relevancia para determinado estudio. En ese caso no se suman los valores uno a uno sino se halla una medida conocida como **media ponderada**. 
+# En muchos casos no todos los valores tienen la misma importancia y puede ser útil asocias pesos o valores a los datos dependiendo de su relevancia para determinado estudio. En ese caso no se suman los valores uno a uno sino se halla una medida conocida como **media ponderada** la cual se define a continuación. 
 # 
 # ```{admonition} Definición
 # Para calcular la **media ponderada** se suma el producto del cada uno de los valores  ($x_1,x_2,...,x_n$) por los respectivos pesos ( $w_1,w_2,...,w_n$) asociados a cada valor y se divide el resultado por la suma de cada uno de los pesos.
@@ -71,6 +81,8 @@
 # \textbf{media ponderada}=\sum_{n}^{i=1}w_i' x_i
 # $$
 # 
+# Un ejemplo típico de uso de esta media el para el calculo de notas de un curso cuando el valor de cada una de las evaluciones tiene diferente valor.
+# 
 # ### Media Geometrica
 # 
 # En la media aritmética se suman los valores de la variables lo cual nos indica que hay un carácter aditivo, por ejemplo cuando se suman las diferentes edades para obtener una edad promedio.
@@ -93,9 +105,32 @@
 # Donde $\alpha_i$ son los pesos.
 # ```
 # 
-#  
+# ### Mediana
 # 
+# La palabra **mediana** es sinónimo de **medio** y la **mediana muestral** es en realidad el valor medio una vez que se ordenan las observaciones de la más pequeña a la más grande.
 # 
+# ```{admonition} Definición
+# La **media muestral** se obtiene ordenando primero las $n$ observaciones de la más pequeña a la más grande (con todos los valores, incluidos los  repetidos, de modo que cada observación muestral aparezca en la lista ordenada). De este modo entonces la media será:
+# 
+# $$
+# m=\left\{\begin{matrix}
+# x_{\left (\frac{n+1}{2}\right )} & \mathrm{Si\: n\: es\:impar} \\ 
+# \frac{x_{\left (\frac{n}{2} \right )}+x_{\left (\frac{n}{2}+1\right )}}{2} & \mathrm{Si\: n\: es\:par}
+# \end{matrix}\right.
+# $$
+# ```
+# 
+# ### Percentil
+# 
+# ```{admonition} Definición
+# Valor tal que el $P\%$ de los valores toma este valor o un valor inferior y para el $(100 - P)\%$ el porcentaje toma este valor o un valor superior.
+# ```
+# 
+# ### Moda
+# 
+# ```{admonition} Definición
+# La moda representa el valor (o valores) que mas se repiten en el conjunto de datos.
+# ```
 # 
 # ## Markdown + notebooks
 # 
