@@ -293,18 +293,40 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#markdown-notebooks">
-   Markdown + notebooks
+  <a class="reference internal nav-link" href="#estimacion-de-dispersion">
+   Estimación de dispersión
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rango">
+     Rango
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desviacion-media-absoluta-mean-absolute-deviation">
+     Desviación media absoluta (Mean absolute deviation)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#varianza">
+     Varianza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desviacion-estandar">
+     Desviación estandar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resumen-de-los-cinco-numeros">
+     Resumen de los cinco números
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#myst-markdown">
-   MyST markdown
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#code-blocks-and-outputs">
-   Code blocks and outputs
+  <a class="reference internal nav-link" href="#rango-intercuantilico-irq">
+   Rango Intercuantilico (IRQ)
   </a>
  </li>
 </ul>
@@ -453,35 +475,134 @@ x_{\left (\frac{n+1}{2}\right )} &amp; \mathrm{Si\: n\: es\:impar} \\
 </div>
 </div>
 </div>
-<div class="section" id="markdown-notebooks">
-<h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Permalink to this headline">¶</a></h2>
-<p>As it is markdown, you can embed images, HTML, etc into your posts!</p>
-<p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo.png" /></p>
-<p>You can also <span class="math notranslate nohighlight">\(add_{math}\)</span> and</p>
+<div class="section" id="estimacion-de-dispersion">
+<h2>Estimación de dispersión<a class="headerlink" href="#estimacion-de-dispersion" title="Permalink to this headline">¶</a></h2>
+<p>El reporte de una medida de centro da sólo información parcial sobre un conjunto o distribución de datos. Diferentes muestras o poblaciones pueden tener medidas idénticas de centro y aún diferir una de otra en otras importantes maneras, una de las cuales tiene que ver en la forma como se distribuyen los datos. Las medidas principales de variabilidad (dispersión) implican las <strong>desviaciones de la media</strong>.</p>
+<div class="section" id="rango">
+<h3>Rango<a class="headerlink" href="#rango" title="Permalink to this headline">¶</a></h3>
+<p>Es la diferencia entre los valores mayor y menor de un conjunto de datos.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Supongase que se representan los valores ordenados por <span class="math notranslate nohighlight">\(x_{(1)},x_{(2)},...,x_{(n)}\)</span> donde x_{(1)} es el valor mas pequeño y x_{(n)} es el valor mas grande; la formula para calcular el rango esta dada por</p>
 <div class="math notranslate nohighlight">
 \[
-math^{blocks}
+\mathbf{rango} = x_{(n)} - x_{(1)}
 \]</div>
-<p>or</p>
+</div>
+</div>
+<div class="section" id="desviacion-media-absoluta-mean-absolute-deviation">
+<h3>Desviación media absoluta (Mean absolute deviation)<a class="headerlink" href="#desviacion-media-absoluta-mean-absolute-deviation" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Las <strong>desviaciones de la media</strong> <span class="math notranslate nohighlight">\(d_{i}\)</span> se obtienen restando la media \bar{x} de cada una de la observaciones muestrales <span class="math notranslate nohighlight">\(x_{1},x_{2},...,x_{n}\)</span>. Es decir:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\mbox{mean} la_{tex} \\ \\
-math blocks
-\end{aligned}
-\end{split}\]</div>
-<p>But make sure you $Escape $your $dollar signs $you want to keep!</p>
+\[
+d_{i} = x_{(i)} - \bar{x}
+\]</div>
 </div>
-<div class="section" id="myst-markdown">
-<h2>MyST markdown<a class="headerlink" href="#myst-markdown" title="Permalink to this headline">¶</a></h2>
-<p>MyST markdown works in Jupyter Notebooks as well. For more information about MyST markdown, check
-out <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST guide in Jupyter Book</a>,
-or see <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">the MyST markdown documentation</a>.</p>
+<p>Dependiendo del signo de la desviación, se tienen los siguientes resultados:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d_{i} &gt; 0\)</span>: La observación es mas grande que la media.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_{i} &lt; 0\)</span>:La observación es menor que la media.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_{i} = 0\)</span>:La observación es igual la media.</p></li>
+</ul>
+<p>Si todas las desviaciones son pequeñas en magnitud, entonces todas las <span class="math notranslate nohighlight">\(x_i\)</span> se aproximan a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes en magnitud, entonces algunas <span class="math notranslate nohighlight">\(x_i\)</span> quedan lejos de lo que sugiere una mayor cantidad de variabilidad.</p>
+<p>Una forma simple de combinar las desviaciones en una sola cantidad es promediarlas. Desafortunadamente, esta medida no nos dira mucho pues al combinarsen las desviaciones, las desviaciones positivas compensan a las degativas por lo que la suma de estas se hace cero:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{promedio de desviaciones} = \frac{\sum_{n}^{i=1}d_i}{n} = \frac{\sum_{n}^{i=1}\left (x_i - \bar{x}\right )}{n}=0
+\]</div>
+<p>Para evitar el problema anterior, una posibilidad es trabajar con los <strong>valores absolutos de las desviaciones</strong>.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>desviación absoluta promedio</strong> esta dada por el promedio de los valores absolutos de las desviaciones <span class="math notranslate nohighlight">\(|d_i|\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{desviación absoluta promedio} = \frac{\sum_{n}^{i=1}|d_i|}{n} = \frac{\sum_{n}^{i=1}\left |x_i - \bar{x}\right |}{n}
+\]</div>
 </div>
-<div class="section" id="code-blocks-and-outputs">
-<h2>Code blocks and outputs<a class="headerlink" href="#code-blocks-and-outputs" title="Permalink to this headline">¶</a></h2>
-<p>Jupyter Book will also embed your code blocks and output in your book.
-For example, here’s some sample Matplotlib code:</p>
+<p>Como la operación de valor absoluto conduce a un número de dificultades teóricas se suele definir otras medidas mas apropiadas conocidas como la <strong>varianza</strong> y la <strong>desviación estandar</strong>.</p>
+</div>
+<div class="section" id="varianza">
+<h3>Varianza<a class="headerlink" href="#varianza" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>varianza muestral</strong> (<span class="math notranslate nohighlight">\(s^2\)</span>) es la suma de los cuadrados de las desviaciones de la media al cuadrado dividida por <span class="math notranslate nohighlight">\(n - 1\)</span>, donde <span class="math notranslate nohighlight">\(n\)</span> es el numero de datos:</p>
+<div class="math notranslate nohighlight">
+\[
+s^2 = \frac{\sum_{n}^{i=1}d_i^2}{n-1} = \frac{\sum_{n}^{i=1}\left (x_i - \bar{x}\right )^2}{n-1}=\frac{S_{xx}}{n-1}
+\]</div>
+</div>
+</div>
+<div class="section" id="desviacion-estandar">
+<h3>Desviación estandar<a class="headerlink" href="#desviacion-estandar" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>desviación estandar muestral</strong> (<span class="math notranslate nohighlight">\(s\)</span>) es la raiz cuadrada de la varianza:</p>
+<div class="math notranslate nohighlight">
+\[
+s = \sqrt{s^2}
+\]</div>
+</div>
+</div>
+<div class="section" id="resumen-de-los-cinco-numeros">
+<h3>Resumen de los cinco números<a class="headerlink" href="#resumen-de-los-cinco-numeros" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Para un conjunto dado de números <span class="math notranslate nohighlight">\(x_1,x_2,...,x_n\)</span>, se toman las siguiente <strong>cinco metricas</strong>:</p>
+<ol class="simple">
+<li><p><strong>Valor maximo</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+x_{min}=min(x_1,x_2,...,x_n)
+\]</div>
+<ol class="simple">
+<li><p><strong>Cuartil inferior</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+Q1 = P_{25}
+\]</div>
+<ol class="simple">
+<li><p><strong>Mediana</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+m = Q2 = P_{50}
+\]</div>
+<ol class="simple">
+<li><p><strong>Cuartil superior</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+Q3 = P_{75}
+\]</div>
+<ol class="simple">
+<li><p><strong>Valor maximo</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+x_{max}=max(x_1,x_2,...,x_n)
+\]</div>
+<p>En resumen, los <strong>cinco datos</strong> estan dados por la siguiente lista:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Min Q1 Mediana Q3 Max}
+\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="rango-intercuantilico-irq">
+<h2>Rango Intercuantilico (IRQ)<a class="headerlink" href="#rango-intercuantilico-irq" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>El <strong>rango intercuantilico (IRQ)</strong> esta dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+IRQ = Q3 - Q1
+\]</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
@@ -492,7 +613,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x2512059c6c8&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x1ceab1f3388&gt;
 </pre></div>
 </div>
 </div>

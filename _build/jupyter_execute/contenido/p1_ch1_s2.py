@@ -132,39 +132,127 @@
 # La moda representa el valor (o valores) que mas se repiten en el conjunto de datos.
 # ```
 # 
-# ## Markdown + notebooks
+# ## Estimación de dispersión
 # 
-# As it is markdown, you can embed images, HTML, etc into your posts!
+# El reporte de una medida de centro da sólo información parcial sobre un conjunto o distribución de datos. Diferentes muestras o poblaciones pueden tener medidas idénticas de centro y aún diferir una de otra en otras importantes maneras, una de las cuales tiene que ver en la forma como se distribuyen los datos. Las medidas principales de variabilidad (dispersión) implican las **desviaciones de la media**.
 # 
-# ![](https://myst-parser.readthedocs.io/en/latest/_static/logo.png)
+# ### Rango
 # 
-# You can also $add_{math}$ and
+# Es la diferencia entre los valores mayor y menor de un conjunto de datos.
 # 
-# $$
-# math^{blocks}
-# $$
-# 
-# or
+# ```{admonition} Definición
+# Supongase que se representan los valores ordenados por $x_{(1)},x_{(2)},...,x_{(n)}$ donde x_{(1)} es el valor mas pequeño y x_{(n)} es el valor mas grande; la formula para calcular el rango esta dada por
 # 
 # $$
-# \begin{aligned}
-# \mbox{mean} la_{tex} \\ \\
-# math blocks
-# \end{aligned}
+# \mathbf{rango} = x_{(n)} - x_{(1)}
+# $$
+# ```
+# 
+# ### Desviación media absoluta (Mean absolute deviation)
+# 
+# ```{admonition} Definición
+# Las **desviaciones de la media** $d_{i}$ se obtienen restando la media \bar{x} de cada una de la observaciones muestrales $x_{1},x_{2},...,x_{n}$. Es decir:
+# 
+# $$
+# d_{i} = x_{(i)} - \bar{x}
+# $$
+# ```
+# 
+# Dependiendo del signo de la desviación, se tienen los siguientes resultados:
+# * $d_{i} > 0$: La observación es mas grande que la media.
+# * $d_{i} < 0$:La observación es menor que la media.
+# * $d_{i} = 0$:La observación es igual la media.
+# 
+# Si todas las desviaciones son pequeñas en magnitud, entonces todas las $x_i$ se aproximan a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes en magnitud, entonces algunas $x_i$ quedan lejos de lo que sugiere una mayor cantidad de variabilidad.
+# 
+# Una forma simple de combinar las desviaciones en una sola cantidad es promediarlas. Desafortunadamente, esta medida no nos dira mucho pues al combinarsen las desviaciones, las desviaciones positivas compensan a las degativas por lo que la suma de estas se hace cero:
+# 
+# $$
+# \textbf{promedio de desviaciones} = \frac{\sum_{n}^{i=1}d_i}{n} = \frac{\sum_{n}^{i=1}\left (x_i - \bar{x}\right )}{n}=0
 # $$
 # 
-# But make sure you \$Escape \$your \$dollar signs \$you want to keep!
+# Para evitar el problema anterior, una posibilidad es trabajar con los **valores absolutos de las desviaciones**.
 # 
-# ## MyST markdown
+# ```{admonition} Definición
+# La **desviación absoluta promedio** esta dada por el promedio de los valores absolutos de las desviaciones $|d_i|$
 # 
-# MyST markdown works in Jupyter Notebooks as well. For more information about MyST markdown, check
-# out [the MyST guide in Jupyter Book](https://jupyterbook.org/content/myst.html),
-# or see [the MyST markdown documentation](https://myst-parser.readthedocs.io/en/latest/).
+# $$
+# \textbf{desviación absoluta promedio} = \frac{\sum_{n}^{i=1}|d_i|}{n} = \frac{\sum_{n}^{i=1}\left |x_i - \bar{x}\right |}{n}
+# $$
+# ```
 # 
-# ## Code blocks and outputs
+# Como la operación de valor absoluto conduce a un número de dificultades teóricas se suele definir otras medidas mas apropiadas conocidas como la **varianza** y la **desviación estandar**.
 # 
-# Jupyter Book will also embed your code blocks and output in your book.
-# For example, here's some sample Matplotlib code:
+# ### Varianza 
+# 
+# ```{admonition} Definición
+# La **varianza muestral** ($s^2$) es la suma de los cuadrados de las desviaciones de la media al cuadrado dividida por $n - 1$, donde $n$ es el numero de datos:
+# 
+# $$
+# s^2 = \frac{\sum_{n}^{i=1}d_i^2}{n-1} = \frac{\sum_{n}^{i=1}\left (x_i - \bar{x}\right )^2}{n-1}=\frac{S_{xx}}{n-1}
+# $$
+# ```
+# 
+# ### Desviación estandar
+# 
+# ```{admonition} Definición
+# La **desviación estandar muestral** ($s$) es la raiz cuadrada de la varianza:
+# 
+# $$
+# s = \sqrt{s^2}
+# $$
+# ```
+# 
+# ### Resumen de los cinco números
+# 
+# ```{admonition} Definición
+# Para un conjunto dado de números $x_1,x_2,...,x_n$, se toman las siguiente **cinco metricas**:
+# 1. **Valor maximo**:
+# 
+# $$
+# x_{min}=min(x_1,x_2,...,x_n)
+# $$
+# 
+# 2. **Cuartil inferior**:
+# 
+# $$
+# Q1 = P_{25}
+# $$
+# 
+# 3. **Mediana**:
+# 
+# $$
+# m = Q2 = P_{50}
+# $$
+# 
+# 4. **Cuartil superior**:
+# 
+# $$
+# Q3 = P_{75}
+# $$
+# 
+# 5. **Valor maximo**:
+# 
+# $$
+# x_{max}=max(x_1,x_2,...,x_n)
+# $$
+# 
+# En resumen, los **cinco datos** estan dados por la siguiente lista:
+# 
+# $$
+# \textbf{Min Q1 Mediana Q3 Max}
+# $$
+# ```
+# 
+# ## Rango Intercuantilico (IRQ)
+# 
+# ```{admonition} Definición
+# El **rango intercuantilico (IRQ)** esta dado por:
+# 
+# $$
+# IRQ = Q3 - Q1
+# $$
+# ```
 
 # In[1]:
 
