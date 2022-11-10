@@ -7,6 +7,7 @@
 import numpy as np
 import pandas as pd
 from scipy.stats import trim_mean
+from scipy.stats import mean
 
 
 # # Medidas
@@ -270,7 +271,7 @@ from scipy.stats import trim_mean
 
 # #### Solución usando código Python
 
-# In[2]:
+# In[7]:
 
 
 # Implementacion de la media
@@ -278,49 +279,23 @@ def media(data):
     return sum(data)/len(data)
 
 # Test
-heighs = [90,102,110,115,85,90,100,110,110]
-meanHeighs = media(heighs)
-print("Alturas (mc):", heighs)
-print("Promedio de las alturas (mc):", meanHeighs)
+heights = [90,102,110,115,85,90,100,110,110]
+mean_height = media(heights)
+print("Alturas (cm):", heights)
+print("Promedio de las alturas (cm):", mean_height)
 
 
-# In[ ]:
+# #### Solución usando numpy
+
+# In[8]:
 
 
+# Solucion numpy
+heights =  np.array([90,102,110,115,85,90,100,110,110])
+print("Alturas (cm):",heights)
+mean_height = np.mean(heights)
+print("Altura promedio (cm): {0:.2f}".format(mean_height))
+#### Solución usando pandas
 
 
-
-# In[ ]:
-
-
-from matplotlib import rcParams, cycler
-import matplotlib.pyplot as plt
-import numpy as np
-plt.ion()
-
-
-# In[ ]:
-
-
-# Fixing random state for reproducibility
-np.random.seed(19680801)
-
-N = 10
-data = [np.logspace(0, 1, 100) + np.random.randn(100) + ii for ii in range(N)]
-data = np.array(data).T
-cmap = plt.cm.coolwarm
-rcParams['axes.prop_cycle'] = cycler(color=cmap(np.linspace(0, 1, N)))
-
-
-from matplotlib.lines import Line2D
-custom_lines = [Line2D([0], [0], color=cmap(0.), lw=4),
-                Line2D([0], [0], color=cmap(.5), lw=4),
-                Line2D([0], [0], color=cmap(1.), lw=4)]
-
-fig, ax = plt.subplots(figsize=(10, 5))
-lines = ax.plot(data)
-ax.legend(custom_lines, ['Cold', 'Medium', 'Hot']);
-
-
-# There is a lot more that you can do with outputs (such as including interactive outputs)
-# with your book. For more information about this, see [the Jupyter Book documentation](https://jupyterbook.org)
+# #### Solución usando numpy
