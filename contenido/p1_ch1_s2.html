@@ -275,6 +275,21 @@
      Media Geometrica
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mediana">
+     Mediana
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percentil">
+     Percentil
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moda">
+     Moda
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -338,6 +353,12 @@
 \bar{x}=\frac{x_1 + x_2 + ... + x_n}{n}=\frac{\sum_{n}^{i=1}x_i}{n}
 \]</div>
 </div>
+<p>Aplicando la definición anterior, si nos piden la media de los numeros: <span class="math notranslate nohighlight">\(\mathbf{x} = \left \{ 2, 3, 4, 5 \right \}\)</span> el resultado será:</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{x}=\frac{\sum_{4}^{i=1}x_i}{4}=\frac{2 + 3 + 4 + 5}{4} = \frac{11}{4}=2.75
+\]</div>
+<p>Uno de los problemas que tiene la media, es su sensibilidad a valores extremos (<strong>outliers</strong>).</p>
 </div>
 <div class="section" id="media-truncada">
 <h3>Media Truncada<a class="headerlink" href="#media-truncada" title="Permalink to this headline">¶</a></h3>
@@ -350,10 +371,11 @@
 \textbf{media truncada}=\frac{\sum_{n-p}^{i=p+1}x_i}{n-2p}
 \]</div>
 </div>
+<p>Al descartar los valores extremos, esta metrica es mas insensible a la influencia de los valores extremos lo cual es deseable.</p>
 </div>
 <div class="section" id="media-ponderada">
 <h3>Media ponderada<a class="headerlink" href="#media-ponderada" title="Permalink to this headline">¶</a></h3>
-<p>En muchos casos no todos los valores tiene la misma importancia y puede ser útil otorgar pesos o valores a los datos dependiendo de su relevancia para determinado estudio. En ese caso no se suman los valores uno a uno sino se halla una medida conocida como <strong>media ponderada</strong>.</p>
+<p>En muchos casos no todos los valores tienen la misma importancia y puede ser útil asocias pesos o valores a los datos dependiendo de su relevancia para determinado estudio. En ese caso no se suman los valores uno a uno sino se halla una medida conocida como <strong>media ponderada</strong> la cual se define a continuación.</p>
 <div class="admonition-definicion admonition">
 <p class="admonition-title">Definición</p>
 <p>Para calcular la <strong>media ponderada</strong> se suma el producto del cada uno de los valores  (<span class="math notranslate nohighlight">\(x_1,x_2,...,x_n\)</span>) por los respectivos pesos ( <span class="math notranslate nohighlight">\(w_1,w_2,...,w_n\)</span>) asociados a cada valor y se divide el resultado por la suma de cada uno de los pesos.</p>
@@ -380,6 +402,7 @@ w_i'=\frac{w_i}{\sum_{n}^{i=1}w_i}
 \[
 \textbf{media ponderada}=\sum_{n}^{i=1}w_i' x_i
 \]</div>
+<p>Un ejemplo típico de uso de esta media el para el calculo de notas de un curso cuando el valor de cada una de las evaluciones tiene diferente valor.</p>
 </div>
 <div class="section" id="media-geometrica">
 <h3>Media Geometrica<a class="headerlink" href="#media-geometrica" title="Permalink to this headline">¶</a></h3>
@@ -398,6 +421,35 @@ w_i'=\frac{w_i}{\sum_{n}^{i=1}w_i}
 \textbf{media geometrica}= \left ( \prod_{i=1}^{n}{x_i}^{\alpha_i}  \right )^{\frac{1}{\sum_{i}\alpha_i}}=\left ( x_1^{\alpha_1} \cdot x_2^{\alpha_2}\cdot...\cdot x_n^{\alpha_n}\right )^{\frac{1}{\alpha_1 + \alpha_2 + \alpha_n}}
 \]</div>
 <p>Donde <span class="math notranslate nohighlight">\(\alpha_i\)</span> son los pesos.</p>
+</div>
+</div>
+<div class="section" id="mediana">
+<h3>Mediana<a class="headerlink" href="#mediana" title="Permalink to this headline">¶</a></h3>
+<p>La palabra <strong>mediana</strong> es sinónimo de <strong>medio</strong> y la <strong>mediana muestral</strong> es en realidad el valor medio una vez que se ordenan las observaciones de la más pequeña a la más grande.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>media muestral</strong> se obtiene ordenando primero las <span class="math notranslate nohighlight">\(n\)</span> observaciones de la más pequeña a la más grande (con todos los valores, incluidos los  repetidos, de modo que cada observación muestral aparezca en la lista ordenada). De este modo entonces la media será:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+m=\left\{\begin{matrix}
+x_{\left (\frac{n+1}{2}\right )} &amp; \mathrm{Si\: n\: es\:impar} \\ 
+\frac{x_{\left (\frac{n}{2} \right )}+x_{\left (\frac{n}{2}+1\right )}}{2} &amp; \mathrm{Si\: n\: es\:par}
+\end{matrix}\right.
+\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="percentil">
+<h3>Percentil<a class="headerlink" href="#percentil" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Valor tal que el <span class="math notranslate nohighlight">\(P\%\)</span> de los valores toma este valor o un valor inferior y para el <span class="math notranslate nohighlight">\((100 - P)\%\)</span> el porcentaje toma este valor o un valor superior.</p>
+</div>
+</div>
+<div class="section" id="moda">
+<h3>Moda<a class="headerlink" href="#moda" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La moda representa el valor (o valores) que mas se repiten en el conjunto de datos.</p>
 </div>
 </div>
 </div>
@@ -440,7 +492,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x215214b1d88&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x2512059c6c8&gt;
 </pre></div>
 </div>
 </div>
