@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import numpy as np
+import pandas as pd
+from scipy.stats import trim_mean
+
+
 # # Medidas
 # 
 # ## Estimación de localización
@@ -207,31 +215,31 @@
 # 
 # ```{admonition} Definición
 # Para un conjunto dado de números $x_1,x_2,...,x_n$, se toman las siguiente **cinco metricas**:
-# 1. **Valor maximo**:
+# * **Valor maximo**:
 # 
 # $$
 # x_{min}=min(x_1,x_2,...,x_n)
 # $$
 # 
-# 2. **Cuartil inferior**:
+# * **Cuartil inferior**:
 # 
 # $$
 # Q1 = P_{25}
 # $$
 # 
-# 3. **Mediana**:
+# * **Mediana**:
 # 
 # $$
 # m = Q2 = P_{50}
 # $$
 # 
-# 4. **Cuartil superior**:
+# * **Cuartil superior**:
 # 
 # $$
 # Q3 = P_{75}
 # $$
 # 
-# 5. **Valor maximo**:
+# * **Valor maximo**:
 # 
 # $$
 # x_{max}=max(x_1,x_2,...,x_n)
@@ -254,7 +262,35 @@
 # $$
 # ```
 
-# In[1]:
+# ## Ejemplos
+
+# ### Ejemplo 1
+# 
+# Asuma que la altura (en cm) de los estudiantes de una clase es como sigue: 90,102,110,115,85,90,100,110,110. ¿Cual es el promedio de alturas?
+
+# #### Solución usando código Python
+
+# In[2]:
+
+
+# Implementacion de la media
+def media(data):
+    return sum(data)/len(data)
+
+# Test
+heighs = [90,102,110,115,85,90,100,110,110]
+meanHeighs = media(heighs)
+print("Alturas (mc):", heighs)
+print("Promedio de las alturas (mc):", meanHeighs)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
 
 
 from matplotlib import rcParams, cycler
@@ -263,7 +299,7 @@ import numpy as np
 plt.ion()
 
 
-# In[2]:
+# In[ ]:
 
 
 # Fixing random state for reproducibility
