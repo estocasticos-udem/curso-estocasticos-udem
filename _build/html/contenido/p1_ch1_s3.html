@@ -320,6 +320,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grafica-de-cajas-y-bigotes">
+   Grafica de cajas y bigotes
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -1117,6 +1122,55 @@ Name: long_calles, dtype: int64
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="grafica-de-cajas-y-bigotes">
+<h2>Grafica de cajas y bigotes<a class="headerlink" href="#grafica-de-cajas-y-bigotes" title="Permalink to this headline">¶</a></h2>
+<p>La grafica de cajas y bigotes se usa para describir varias de las características más prominentes de un conjunto de datos. Las cuales incluyen:</p>
+<ol class="simple">
+<li><p>El centro</p></li>
+<li><p>La dispersión</p></li>
+<li><p>El grado y la naturaleza de cualquier alejamiento de la simetría</p></li>
+<li><p>La identificación de las observaciones “atípicas” inusualmente alejadas del cuerpo principal de los datos.</p></li>
+</ol>
+<p>En la grafica de caja muestra de manera grafica un resumen que describe los cinco estadisticos:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Quartile</p></th>
+<th class="head"><p>Statistic</p></th>
+<th class="head"><p>Percentile</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1.</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q_0\)</span></p></td>
+<td><p>minimum</p></td>
+<td><p><span class="math notranslate nohighlight">\(0^{th}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2.</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q_1\)</span></p></td>
+<td><p>N/A</p></td>
+<td><p><span class="math notranslate nohighlight">\(25^{th}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>3.</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q_2\)</span></p></td>
+<td><p>median</p></td>
+<td><p><span class="math notranslate nohighlight">\(50^{th}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>4.</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q_3\)</span></p></td>
+<td><p>N/A</p></td>
+<td><p><span class="math notranslate nohighlight">\(75^{th}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>5.</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q_4\)</span></p></td>
+<td><p>maximum</p></td>
+<td><p><span class="math notranslate nohighlight">\(100^{th}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>La caja tiene el limite inferior en el cuartil <span class="math notranslate nohighlight">\(Q_1\)</span> y el superior en el cuartil <span class="math notranslate nohighlight">\(Q_3\)</span>. La mediana se encuentra en la linea que se encuentra dentro de la caja y los bigotes se extienden desde la caja hasta los extremos (minimo y maximo). Para mejorar la visualizacion, los puntos atipicos se muestran como los puntos que se encuentran por encima cuartil <span class="math notranslate nohighlight">\(Q_3+1.5\times IRQ\)</span> y abajo del cuartil <span class="math notranslate nohighlight">\(Q_1-1.5\times IRQ\)</span> tal y como se muestra en la siguiente figura:</p>
+<p><img alt="cajas_bigotes" src="../_images/diagrama_cajas.png" /></p>
 </div>
 </div>
 

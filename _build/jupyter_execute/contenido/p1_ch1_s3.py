@@ -302,3 +302,27 @@ ax = sns.histplot(data,
              shrink=.8);
 ax.set(xlabel='Longitudes');
 
+
+# ## Grafica de cajas y bigotes
+# 
+# La grafica de cajas y bigotes se usa para describir varias de las características más prominentes de un conjunto de datos. Las cuales incluyen:
+# 1. El centro
+# 2. La dispersión
+# 3. El grado y la naturaleza de cualquier alejamiento de la simetría
+# 4. La identificación de las observaciones "atípicas" inusualmente alejadas del cuerpo principal de los datos.
+# 
+# En la grafica de caja muestra de manera grafica un resumen que describe los cinco estadisticos:
+# 
+# ||Quartile|Statistic|Percentile|
+# |---|---|---|---|
+# |1.|$Q_0$|minimum|$0^{th}$|
+# |2.|$Q_1$|N/A|$25^{th}$|
+# |3.|$Q_2$|median|$50^{th}$|
+# |4.|$Q_3$|N/A|$75^{th}$|
+# |5.|$Q_4$|maximum|$100^{th}$|
+# 
+# La caja tiene el limite inferior en el cuartil $Q_1$ y el superior en el cuartil $Q_3$. La mediana se encuentra en la linea que se encuentra dentro de la caja y los bigotes se extienden desde la caja hasta los extremos (minimo y maximo). Para mejorar la visualizacion, los puntos atipicos se muestran como los puntos que se encuentran por encima cuartil $Q_3+1.5\times IRQ$ y abajo del cuartil $Q_1-1.5\times IRQ$ tal y como se muestra en la siguiente figura:
+# 
+# ![cajas_bigotes](p1_ch1_s3/diagrama_cajas.png)
+# 
+# 
