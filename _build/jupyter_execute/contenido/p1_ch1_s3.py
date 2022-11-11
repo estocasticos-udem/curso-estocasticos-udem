@@ -305,11 +305,13 @@ ax.set(xlabel='Longitudes');
 
 # ## Grafica de cajas y bigotes
 # 
+# ```{admonition} Definición
 # La grafica de cajas y bigotes se usa para describir varias de las características más prominentes de un conjunto de datos. Las cuales incluyen:
 # 1. El centro
 # 2. La dispersión
 # 3. El grado y la naturaleza de cualquier alejamiento de la simetría
 # 4. La identificación de las observaciones "atípicas" inusualmente alejadas del cuerpo principal de los datos.
+# ```
 # 
 # En la grafica de caja muestra de manera grafica un resumen que describe los cinco estadisticos:
 # 
