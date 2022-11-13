@@ -270,7 +270,7 @@ from scipy.stats import trim_mean
 
 # #### Solución usando código Python
 
-# In[31]:
+# In[2]:
 
 
 # Implementacion de la media
@@ -286,7 +286,7 @@ print("Promedio de las alturas (cm):", mean_height)
 
 # #### Solución usando numpy
 
-# In[32]:
+# In[3]:
 
 
 # Solucion numpy
@@ -299,7 +299,7 @@ print("Altura promedio (cm): {0:.2f}".format(mean_height))
 
 # #### Solución usando pandas
 
-# In[33]:
+# In[4]:
 
 
 # Solucion pandas
@@ -314,7 +314,7 @@ print("Altura promedio: {0:.2f}".format(mean_height[0]))
 # 
 # Dado los los siguientes datos: 22, 25, 29, 11, 14, 18, 13, 13, 17, 11, 8, 8, 7, 12, 15, 6, 8, 7, 9, 12. Calcule la media recortando un 10% de los datos.
 
-# In[34]:
+# In[5]:
 
 
 # Se uso la funcion trim_mean de scipy.stats
@@ -331,7 +331,7 @@ print("Media 10% truncada: ",trim_mean(data, 0.1), sep = "")
 
 # #### Solución usando numpy
 
-# In[35]:
+# In[6]:
 
 
 heights =  np.array([90,102,110,115,85,90,100,110,110])
@@ -344,7 +344,7 @@ print("Mediana: {0:.2f}".format(median_height))
 
 # #### Solución usando pandas
 
-# In[36]:
+# In[7]:
 
 
 # Solucion pandas
@@ -360,7 +360,7 @@ print("Altura promedio: {0:.2f}".format(median_height[0]))
 
 # #### Solución usando numpy
 
-# In[37]:
+# In[8]:
 
 
 # Solucion numpy
@@ -374,7 +374,7 @@ print("Rango [{0:d},{1:d}]: {2:d}".format(min_height, max_height, range_height))
 
 # #### Solución usando pandas
 
-# In[38]:
+# In[9]:
 
 
 # Solucion pandas
@@ -414,7 +414,7 @@ print("Rango [{0:d},{1:d}]: {2:d}".format(min_height[0], max_height[0], range_he
 
 # #### Solución usando numpy
 
-# In[39]:
+# In[10]:
 
 
 # Solucion numpy
@@ -446,7 +446,7 @@ print("Desviacion estandar [np.var]: ",epa_std)
 
 # #### Solución usando pandas
 
-# In[40]:
+# In[11]:
 
 
 # Solución pandas
@@ -463,7 +463,7 @@ df_summary = pd.concat([epa_data,epa_desv,epa_ec],axis=1)
 df_summary
 
 
-# In[41]:
+# In[12]:
 
 
 print("EPA Media: ",epa_mean)
@@ -479,7 +479,7 @@ print("Desviacion estandar: ",epa_std)
 
 # #### Solución usando numpy
 
-# In[42]:
+# In[13]:
 
 
 # Usando numpy
@@ -501,7 +501,7 @@ print("- IRQ: ", Q3_prof - Q1_prof, sep="")
 
 # #### Solución usando Pandas
 
-# In[43]:
+# In[14]:
 
 
 # Solucion pandas
