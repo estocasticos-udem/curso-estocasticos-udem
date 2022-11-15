@@ -107,11 +107,58 @@ from scipy.stats import trim_mean
 # 
 # 3. Suponiendo que el evento de interes consiste en todas las salidas cuando un auto electrico es elegido tenemos:
 # 
-# $$electrico = {ME, FE}$$
+# $$electrico = \{ME, FE\}$$
 # 
 # 4. Evento en el que el comprador elegido es mujer:
 # 
-# $$mujer = {FE, FG}$$
+# $$mujer = \{FE, FG\}$$
+# 
+# ### Ejemplo 3
+# 
+# Un experimento consiste en lanzar una moneda no cargada. ¿Cual es el espacio muestral asociado al experimento?
+# 
+# ![s_moneda](./p1_ch2_s1/espacio_muestral_moneda.png_c)
+# 
+# Inicialmente definimos los siguientes eventos:
+# * **H**: el resultado de lanzar la moneda es cara.
+# * **T**: el resultado de lanzar la moneda es sello.
+# 
+# De este modo, el espacio muestral del experimento esta dado por:
+# 
+# $$S = {H, T}$$
+# 
+# ### Ejemplo 4
+# 
+# Suponga que se lleva a cabo un experimento que consiste en lanzar dos veces una moneda imparcial. Si **H**, es el evento en el cual el resultado es cara y **T** es el evento cuyo resultado es sello.
+# 1. ¿Cual es el espacio muestral?
+# 
+#    La siguiente figura muestra las difentes posibilidades a la salida:
+# 
+#    ![s_par_,monedas](p1_ch2_s1/espacio_muestral_par_monedas.png)
+# 
+#    De este modo, segun lo anterior, el espacio muestral para este experimento es:
+# 
+#    $$S = \{HH, HT, TH, TT\}$$
+# 
+# 2. Llenar la siguiente tabla:
+# 
+#    |------|------|------|
+#    |Evento|Descripción|Resultado|
+#    |$E_1$ |Que salga al menos un sello||
+#    |$E_2$ |Que las salidas sean las mismas||
+#    |$E_3$|Que la primera moneda sea cara||
+# 
+#    A continuación se muestra la tabla llena:
+# 
+#    |------|------|------|
+#    |Evento|Descripción|Resultado|
+#    |$E_1$ |Que salga al menos un sello|$E_1 = \{TH, HT, TT\}$|
+#    |$E_2$ |Que las salidas sean las mismas|$E_2 = \{HH, TT\}$|
+#    |$E_3$|Que la primera moneda sea cara|$E_3 = \{HH, HT\}$|
+# 
+# 
+# 
+# 
 # 
 # ## Simulación
 # 
