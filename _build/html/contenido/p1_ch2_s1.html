@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Markdown Files &#8212; My sample book</title>
+    <title>Experimentos y eventos &#8212; My sample book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,8 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Medidas" href="p1_ch2_s2.html" />
     <link rel="prev" title="Otro capitulo mas" href="p1_ch2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -162,7 +165,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Markdown Files
+     Experimentos y eventos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch2_s2.html">
+     Medidas
     </a>
    </li>
   </ul>
@@ -218,6 +226,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/contenido/p1_ch2_s1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -285,7 +322,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/contenido/p1_ch2_s1.md"
+        <a href="../_sources/contenido/p1_ch2_s1.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -296,7 +333,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -345,36 +382,62 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#experimento">
+   Experimento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-are-roles-and-directives">
-   What are roles and directives?
+  <a class="reference internal nav-link" href="#espacio-muestral">
+   Espacio muestral
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-directive">
-     Using a directive
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-role">
-     Using a role
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-a-citation">
-     Adding a citation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
-     Executing code in your markdown files
+    <a class="reference internal nav-link" href="#ejemplo-1">
+     Ejemplo 1
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eventos">
+   Eventos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-2">
+     Ejemplo 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulacion">
+   Simulación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos">
+   Ejemplos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Ejemplo 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-codigo-python">
+       Solución usando código Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
  </li>
 </ul>
 
@@ -385,7 +448,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Markdown Files</h1>
+                <h1>Experimentos y eventos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -396,36 +459,62 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#experimento">
+   Experimento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-are-roles-and-directives">
-   What are roles and directives?
+  <a class="reference internal nav-link" href="#espacio-muestral">
+   Espacio muestral
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-directive">
-     Using a directive
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-role">
-     Using a role
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-a-citation">
-     Adding a citation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
-     Executing code in your markdown files
+    <a class="reference internal nav-link" href="#ejemplo-1">
+     Ejemplo 1
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eventos">
+   Eventos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-2">
+     Ejemplo 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulacion">
+   Simulación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos">
+   Ejemplos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Ejemplo 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-codigo-python">
+       Solución usando código Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
  </li>
 </ul>
 
@@ -437,113 +526,176 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">trim_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="experimentos-y-eventos">
+<h1>Experimentos y eventos<a class="headerlink" href="#experimentos-y-eventos" title="Permalink to this headline">#</a></h1>
+<section id="experimento">
+<h2>Experimento<a class="headerlink" href="#experimento" title="Permalink to this headline">#</a></h2>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Un <strong>experimento</strong> es una operación planificada que se realiza en condiciones controladas. Si el <strong>resultado</strong> (producto del experimento) no está predeterminado, se dice que el experimento es <strong>aleatorio</strong>.</p>
+</div>
+<p>Un experimento consiste en un procedimiento y unas observaciones. Por ejemplo un experimento podria ser lanzar una moneda no cargada (<a class="reference external" href="http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html">simulacion</a>). Esto implica:</p>
+<ul class="simple">
+<li><p><strong>Procedimiento</strong>: Lanzar una moneda varias veces e ir anotando los resultados en una tabla.</p></li>
+<li><p><strong>Observaciones</strong>: Observar el lado de la moneda (cara o sello) despues de que la moneda es lanzada.</p></li>
+</ul>
+<p>La siguiente tabla muestra algunos ejemplos de experimentos:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Experimento</p></th>
+<th class="head"><p>Procedimiento</p></th>
+<th class="head"><p>Observaciones</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><strong>Lanzar una moneda tres veces</strong></p></td>
+<td><p>Lanzar una moneda varias veces e ir apuntando los resultados en una tabla</p></td>
+<td><p>Posibles observaciones: <ol> <li>Secuencia de caras y sellos</li> <li>Numero de caras</li> </ol></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><strong>Lanzar una par de monedas</strong></p></td>
+<td><p>Lanzar un par de monedas varias veces e ir anotando los resultados en una tabla</p></td>
+<td><p>Salida (cara/sello) de cada moneda</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><strong>Contar el numero de estudiantes que asisten a clase</strong></p></td>
+<td><p>Llamar a lista cada clase</p></td>
+<td><p>La cantidad de estudiantes que asisten</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><strong>Determinar la calidad del suerño</strong></p></td>
+<td><p>Medir la hora de acostada y levantada y apuntarlas en una tabla</p></td>
+<td><p>Posibles observaciones: <ol> <li>Tiempo total de dormida</li> <li>Numero veces que se desperto durante la noche</li> <li>Como se sintió con la dormida (Valor categorico en la escala 1 a 5)</li> </ol></p></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="what-are-roles-and-directives">
-<h2>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<section id="using-a-directive">
-<h3>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">#</a></h3>
-<p>At its simplest, you can insert a directive into your book’s content like so:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mydirectivename}
-My directive content
-```
+<section id="espacio-muestral">
+<h2>Espacio muestral<a class="headerlink" href="#espacio-muestral" title="Permalink to this headline">#</a></h2>
+<p>Antes de definir el concepto de espacio muestral, es conveniente definir el concepto de salida:</p>
+<p>Por ejemplo si un experimento consiste en <strong>lanzar un dado no cargado</strong>, la salida consiste en uno de los posibles valores que cae en la cara.</p>
+<div class="admonition-espacio-muestral admonition">
+<p class="admonition-title">Espacio muestral</p>
+<p>El <strong>espacio muestral</strong> (<span class="math notranslate nohighlight">\(S\)</span>) de un <em>experimento</em> es el conjunto de todos los resultados posibles.</p>
+</div>
+<p>Existen 3 formas de representar un espacio muestral:</p>
+<ul class="simple">
+<li><p>Hacer una lista de posibles resultados.</p></li>
+<li><p>Crear un diagrama de árbol.</p></li>
+<li><p>Crear un diagrama de Venn.</p></li>
+</ul>
+<section id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">#</a></h3>
+<p>Considere un <strong>experimento</strong> para investigar si es más probable que los hombres o las mujeres elijan un auto electrico en lugar de uno a gasolina al comprar un Honda Civic en un concesionario de automóviles en particular. El Honda Civic está disponible en ambas variantes. En este experimento, se seleccionará al azar un cliente entre los que compraron un Honda Civic. Se determinará el tipo de vehículo adquirido (electrico o a gasolina) y se registrará el sexo del cliente.</p>
+<p>Antes de el cliente es seleccionado, el resultado de este experimento casual es desconocido para nosotros. Sin embargo, sabemos cuáles son los posibles resultados (<strong>espacio muestral</strong>).</p>
+<p>Por ejemplo, si los resultados se representan como una lista tenemos:</p>
+<ol class="simple">
+<li><p>Mujer compra auto electrico.</p></li>
+<li><p>Mujer compra auto a gasoluna.</p></li>
+<li><p>Hombre compra auto electrico.</p></li>
+<li><p>Hombre compra auto a gasoluna.</p></li>
+</ol>
+<p>Una forma mas resulmida consiste en representar las salidas anteriores usando pares ordenados de modo que:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">{(</span><span class="n">hombre</span><span class="p">,</span> <span class="n">electrico</span><span class="p">),</span> <span class="p">(</span><span class="n">mujer</span><span class="p">,</span> <span class="n">electrico</span><span class="p">),</span>
+     <span class="p">(</span><span class="n">hombre</span><span class="p">,</span> <span class="n">gasolina</span><span class="p">),</span> <span class="p">(</span><span class="n">mujer</span><span class="p">,</span> <span class="n">gasolina</span><span class="p">)}</span>
 </pre></div>
 </div>
-<p>This will only work if a directive with name <code class="docutils literal notranslate"><span class="pre">mydirectivename</span></code> already exists
-(which it doesn’t). There are many pre-defined directives associated with
-Jupyter Book. For example, to insert a note box into your content, you can
-use the following directive:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{note}
-Here is a note
-```
-</pre></div>
-</div>
-<p>This results in:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<p>In your built book.</p>
-<p>For more information on writing directives, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
+<p>En la representación en la que se usa el diagrama de arbol para representar espacio muestral para identificar un resultado especifico (en este ejemplo), se recorre el arbol seleccionando primero la rama correspondiente al sexo (Masculino/Femenino) del comprador y luego la rama correspondinete al tipo de vehiculo (Electrico/Gasolina). La siguiente. En la siguiente figura se resalta el caso en el que la salida corresponde a la adquisición de un auto electrico por parte de un hombre:</p>
+<p><img alt="diagrama_arbol" src="../_images/diagrama_arbol_carros1.png" /></p>
+<p>Como en este caso, en la elección del automovil no importa el orden de la selección, no importa cual rama va primero y cual despues de modo que una representación equivalente se muestra a continuacuón:</p>
+<p><img alt="diagrama_arbol" src="../_images/diagrama_arbol_carros2.png" /></p>
 </section>
-<section id="using-a-role">
-<h3>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">#</a></h3>
-<p>Roles are very similar to directives, but they are less-complex and written
-entirely on one line. You can insert a role into your book’s content with
-this pattern:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Some content {rolename}`and here is my role&#39;s content!`
-</pre></div>
-</div>
-<p>Again, roles will only work if <code class="docutils literal notranslate"><span class="pre">rolename</span></code> is a valid role’s name. For example,
-the <code class="docutils literal notranslate"><span class="pre">doc</span></code> role can be used to refer to another page in your book. You can
-refer directly to another page by its relative path. For example, the
-role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`intro`</span></code> will result in: <span class="xref std std-doc">intro</span>.</p>
-<p>For more information on writing roles, see the
-<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
 </section>
-<section id="adding-a-citation">
-<h3>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">#</a></h3>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="../markdown.html#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreoever, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{bibliography}
-```
+<section id="eventos">
+<h2>Eventos<a class="headerlink" href="#eventos" title="Permalink to this headline">#</a></h2>
+<p>Cuando el resultado consisten en exactamente una sola salida, decimos que el evento es <strong>simple</strong>.</p>
+<p>Usualmente se emplean letras mayusculas (<span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, …) o letras con subindices (<span class="math notranslate nohighlight">\(E_1\)</span>, <span class="math notranslate nohighlight">\(E_2\)</span>, <span class="math notranslate nohighlight">\(E_3\)</span>, …) para representar eventos.</p>
+<section id="ejemplo-2">
+<h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">#</a></h3>
+<p>Teniendo en cuenta el experimento analizado en el ejemplo 1 (adquisión del onda civic). Podemos definir los siguientes eventos:</p>
+<ul class="simple">
+<li><p><strong>M</strong>: El auto fue adquirido por un hombre.</p></li>
+<li><p><strong>F</strong>: El auto fue comprado por una mujer.</p></li>
+<li><p><strong>G</strong>: El tipo de carro es de gasolina.</p></li>
+<li><p><strong>E</strong>: El tipo de carro es electrico.</p></li>
+</ul>
+<p>Se pide:</p>
+<ol>
+<li><p>¿Cual es el espacio muestral teniendo en cuenta esta representación?</p>
+<p><span class="math notranslate nohighlight">\(S = {ME, FE, MG, FG}\)</span></p>
+</li>
+<li><p>Encuentre los eventos simples de cada caso.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_1 = ME\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_2 = FE\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_3 = MG\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_4 = FG\)</span></p></li>
+</ul>
+</li>
+<li><p>Suponiendo que el evento de interes consiste en todas las salidas cuando un auto electrico es elegido tenemos:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[electrico = {ME, FE}\]</div>
+<ol class="simple">
+<li><p>Evento en el que el comprador elegido es mujer:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[mujer = {FE, FG}\]</div>
+</section>
+</section>
+<section id="simulacion">
+<h2>Simulación<a class="headerlink" href="#simulacion" title="Permalink to this headline">#</a></h2>
+<p>Poner un ejemplo</p>
+</section>
+<section id="ejemplos">
+<h2>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Ejemplo 1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Asuma que la altura (en cm) de los estudiantes de una clase es como sigue: 90,102,110,115,85,90,100,110,110. ¿Cual es el promedio de alturas?</p>
+<section id="solucion-usando-codigo-python">
+<h4>Solución usando código Python<a class="headerlink" href="#solucion-usando-codigo-python" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Implementacion de la media</span>
+<span class="k">def</span> <span class="nf">media</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Test</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">]</span>
+<span class="n">mean_height</span> <span class="o">=</span> <span class="n">media</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alturas (cm):&quot;</span><span class="p">,</span> <span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Promedio de las alturas (cm):&quot;</span><span class="p">,</span> <span class="n">mean_height</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Resulting in a rendered bibliography that looks like:</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alturas (cm): [90, 102, 110, 115, 85, 90, 100, 110, 110]
+Promedio de las alturas (cm): 101.33333333333333
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="executing-code-in-your-markdown-files">
-<h3>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">#</a></h3>
-<p>If you’d like to include computational content inside these markdown files,
-you can use MyST Markdown to define cells that will be executed when your
-book is built. Jupyter Book uses <em>jupytext</em> to do this.</p>
-<p>First, add Jupytext metadata to the file. For example, to add Jupytext metadata
-to this markdown page, run this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
-</div>
-<p>Once a markdown file has Jupytext metadata in it, you can add the following
-directive to run the code at build time:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-cell}
-print(&quot;Here is some code to execute&quot;)
-```
-</pre></div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<p>For more information about executing computational content with Jupyter Book,
-see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyST-NB documentation</a>.</p>
 </section>
+</section>
+<section id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Statistics Openstax (<a class="reference external" href="https://openstax.org/details/books/statistics">https://openstax.org/details/books/statistics</a>)</p></li>
+<li><p>Introduction to Statistics and Data Analisys (Roxy Peck, Chris Olsen, Jay L. Devore)</p></li>
+<li><p>The practice of Statistics (Starnes, Yates, Moore)</p></li>
+<li><p>Probability and Stochastic Processes. A friendly introduction for Electrical and Computer Engineers (Yates, Goodman).</p></li>
+<li><p><a class="reference external" href="https://www.randomservices.org/random/index.html">https://www.randomservices.org/random/index.html</a></p></li>
+<li><p><a class="reference external" href="https://bolt.mph.ufl.edu/6050-6052/">https://bolt.mph.ufl.edu/6050-6052/</a></p></li>
+<li><p><a class="reference external" href="https://discovery.cs.illinois.edu/learn/Simulation-and-Distributions/Law-of-Large-Numbers/">https://discovery.cs.illinois.edu/learn/Simulation-and-Distributions/Law-of-Large-Numbers/</a></p></li>
+<li></li>
+</ol>
 </section>
 </section>
 
@@ -580,6 +732,13 @@ see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyS
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Otro capitulo mas</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="p1_ch2_s2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Medidas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

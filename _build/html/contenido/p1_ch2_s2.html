@@ -1,0 +1,1665 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Medidas &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Experimentos y eventos" href="p1_ch2_s1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos de teoria Probabilidad
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="p1_ch1.html">
+   Introducción a la estadistica descriptiva
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s1.html">
+     Introducción al Análisis Exploratorio de Datos (EDA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s2.html">
+     Medidas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s3.html">
+     Diagramas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s4.html">
+     Seccion de prueba
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p1_ch2.html">
+   Otro capitulo mas
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch2_s1.html">
+     Experimentos y eventos
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Medidas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/contenido/p1_ch2_s2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontenido/p1_ch2_s2.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/contenido/p1_ch2_s2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-localizacion">
+   Estimación de localización
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media">
+     Media
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-truncada">
+     Media Truncada
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-ponderada">
+     Media ponderada
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-geometrica">
+     Media Geometrica
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mediana">
+     Mediana
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percentil">
+     Percentil
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moda">
+     Moda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-dispersion">
+   Estimación de dispersión
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rango">
+     Rango
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desviacion-media-absoluta-mean-absolute-deviation">
+     Desviación media absoluta (Mean absolute deviation)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#varianza">
+     Varianza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desviacion-estandar">
+     Desviación estandar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resumen-de-los-cinco-numeros">
+     Resumen de los cinco números
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rango-intercuantilico-irq">
+   Rango Intercuantilico (IRQ)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos">
+   Ejemplos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-1">
+     Ejemplo 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-codigo-python">
+       Solución usando código Python
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-numpy">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-pandas">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-2">
+     Ejemplo 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-3">
+     Ejemplo 3
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-4">
+     Ejemplo 4
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-5">
+     Ejemplo 5
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-6">
+     Ejemplo 6
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Solución usando Pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Medidas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-localizacion">
+   Estimación de localización
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media">
+     Media
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-truncada">
+     Media Truncada
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-ponderada">
+     Media ponderada
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#media-geometrica">
+     Media Geometrica
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mediana">
+     Mediana
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percentil">
+     Percentil
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moda">
+     Moda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-dispersion">
+   Estimación de dispersión
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rango">
+     Rango
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desviacion-media-absoluta-mean-absolute-deviation">
+     Desviación media absoluta (Mean absolute deviation)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#varianza">
+     Varianza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desviacion-estandar">
+     Desviación estandar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resumen-de-los-cinco-numeros">
+     Resumen de los cinco números
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rango-intercuantilico-irq">
+   Rango Intercuantilico (IRQ)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos">
+   Ejemplos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-1">
+     Ejemplo 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-codigo-python">
+       Solución usando código Python
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-numpy">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solucion-usando-pandas">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-2">
+     Ejemplo 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-3">
+     Ejemplo 3
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-4">
+     Ejemplo 4
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-5">
+     Ejemplo 5
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Solución usando pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-6">
+     Ejemplo 6
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Solución usando numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Solución usando Pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">trim_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="medidas">
+<h1>Medidas<a class="headerlink" href="#medidas" title="Permalink to this headline">#</a></h1>
+<section id="estimacion-de-localizacion">
+<h2>Estimación de localización<a class="headerlink" href="#estimacion-de-localizacion" title="Permalink to this headline">#</a></h2>
+<p>En análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas resumidas numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos y comunicar algunas de sus características prominentes.</p>
+<p>Supongase que se tiene un conjunto de datos de la forma: <span class="math notranslate nohighlight">\(x_1,x_2,...,x_n\)</span> donde cada <span class="math notranslate nohighlight">\(x_i\)</span> es un dato numerico. <em>¿Qué características del conjunto de números son de mayor interés y merecen énfasis?</em> Una importante característica de un conjunto de números es su ubicación y en particular su centro. A continuación, se presentan algunos métodos para describir la ubicación de un conjunto de datos.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Libreria</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NumPy</p></td>
+<td><p><a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">https://numpy.org/doc/stable/reference/routines.statistics.html</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pandas</p></td>
+<td><p><a class="reference external" href="https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm">https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm</a></p></td>
+</tr>
+<tr class="row-even"><td><p>scipy.stats</p></td>
+<td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/tutorial/stats.html">https://docs.scipy.org/doc/scipy/tutorial/stats.html</a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="media">
+<h3>Media<a class="headerlink" href="#media" title="Permalink to this headline">#</a></h3>
+<p>La medida más conocida y útil del centro es la media o promedio aritmético del conjunto.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>media</strong> <span class="math notranslate nohighlight">\(\bar{x}\)</span> de un conjunto de observaciones <span class="math notranslate nohighlight">\(x_1,x_2,...,x_n\)</span> se calcula sumando cada una de las observaciones y dividiendolas por el total de observaciones.</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{x}=\frac{x_1 + x_2 + ... + x_n}{n}=\frac{\sum_{n}^{i=1}x_i}{n}
+\]</div>
+</div>
+<p>Aplicando la definición anterior, si nos piden la media de los numeros: <span class="math notranslate nohighlight">\(\mathbf{x} = \left \{ 2, 3, 4, 5 \right \}\)</span> el resultado será:</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{x}=\frac{\sum_{4}^{i=1}x_i}{4}=\frac{2 + 3 + 4 + 5}{4} = \frac{11}{4}=2.75
+\]</div>
+<p>Uno de los problemas que tiene la media, es su sensibilidad a valores extremos (<strong>outliers</strong>).</p>
+</section>
+<section id="media-truncada">
+<h3>Media Truncada<a class="headerlink" href="#media-truncada" title="Permalink to this headline">#</a></h3>
+<p>Es una variación de la media que se calcula ignorando un numero fijo, en cada extremo, de valores ordenados y calculando a continuación, para los valores restantes la media.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Dado un conjunto de observaciones ordenadas <span class="math notranslate nohighlight">\(x_{(1)},x_{(2)},...,x_{(n)}\)</span> de tal manera que <span class="math notranslate nohighlight">\(x_{(1)}\)</span> es la mas pequeña y <span class="math notranslate nohighlight">\(x_{(p)}\)</span> es la mas grande la formula para calcular la <strong>media truncada</strong> descartanto los <span class="math notranslate nohighlight">\(p\)</span> valores mas pequeños y mas grandes esta dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media truncada}=\frac{\sum_{n-p}^{i=p+1}x_i}{n-2p}
+\]</div>
+</div>
+<p>Al descartar los valores extremos, esta metrica es mas insensible a la influencia de los valores extremos lo cual es deseable.</p>
+</section>
+<section id="media-ponderada">
+<h3>Media ponderada<a class="headerlink" href="#media-ponderada" title="Permalink to this headline">#</a></h3>
+<p>En muchos casos no todos los valores tienen la misma importancia y puede ser útil asocias pesos o valores a los datos dependiendo de su relevancia para determinado estudio. En ese caso no se suman los valores uno a uno sino se halla una medida conocida como <strong>media ponderada</strong> la cual se define a continuación.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Para calcular la <strong>media ponderada</strong> se suma el producto del cada uno de los valores  (<span class="math notranslate nohighlight">\(x_1,x_2,...,x_n\)</span>) por los respectivos pesos ( <span class="math notranslate nohighlight">\(w_1,w_2,...,w_n\)</span>) asociados a cada valor y se divide el resultado por la suma de cada uno de los pesos.</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media ponderada}=\frac{x_1 w_1 + x_2 w_2 + ... + x_n  w_n}{w_1 +  w_2 + ... + w_n}=\frac{\sum_{n}^{i=1}x_i w_i}{\sum_{n}^{i=1}w_i}
+\]</div>
+</div>
+<p>La media ponderada tambien puede ser calculada <strong>normalizando los pesos</strong>. Los <strong>pesos normalizados</strong> <span class="math notranslate nohighlight">\(w_i'\)</span> se caracterizan por que al sumarsen todos el resultado es 1:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n}^{i=1}w_i'=1
+\]</div>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>El <strong>peso normalizado</strong> <span class="math notranslate nohighlight">\(w_i'\)</span> esta dado por la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+w_i'=\frac{w_i}{\sum_{n}^{i=1}w_i}
+\]</div>
+</div>
+<p>Segun lo anterior, otra forma de expresar la <strong>media ponderada</strong> es por medio de la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media ponderada}=\sum_{n}^{i=1}w_i' x_i
+\]</div>
+<p>Un ejemplo típico de uso de esta media el para el calculo de notas de un curso cuando el valor de cada una de las evaluciones tiene diferente valor.</p>
+</section>
+<section id="media-geometrica">
+<h3>Media Geometrica<a class="headerlink" href="#media-geometrica" title="Permalink to this headline">#</a></h3>
+<p>En la media aritmética se suman los valores de la variables lo cual nos indica que hay un carácter aditivo, por ejemplo cuando se suman las diferentes edades para obtener una edad promedio.</p>
+<p>Sin embargo, hay variables que presentan variaciones acumulativas, por lo que ni la suma ni la media tienen un sentido real, por ejemplo, una rebaja del 50% sobre otra rebaja del 50% no hacen en total una rebaja del 100%, lo que alude a un caráter multiplicativo.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>Media Geometrica</strong> se obviente mediante la siguiente expresión sobre los datos:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media geometrica}=\sqrt[n]{\prod_{n}^{i=1}x_i}  = \sqrt[n]{x_1 \cdot x_2 \cdot...\cdot x_n} 
+\]</div>
+<p>También tiene una versión ponderada para la media geometrica:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{media geometrica}= \left ( \prod_{i=1}^{n}{x_i}^{\alpha_i}  \right )^{\frac{1}{\sum_{i}\alpha_i}}=\left ( x_1^{\alpha_1} \cdot x_2^{\alpha_2}\cdot...\cdot x_n^{\alpha_n}\right )^{\frac{1}{\alpha_1 + \alpha_2 + \alpha_n}}
+\]</div>
+<p>Donde <span class="math notranslate nohighlight">\(\alpha_i\)</span> son los pesos.</p>
+</div>
+</section>
+<section id="mediana">
+<h3>Mediana<a class="headerlink" href="#mediana" title="Permalink to this headline">#</a></h3>
+<p>La palabra <strong>mediana</strong> es sinónimo de <strong>medio</strong> y la <strong>mediana muestral</strong> es en realidad el valor medio una vez que se ordenan las observaciones de la más pequeña a la más grande.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>media muestral</strong> se obtiene ordenando primero las <span class="math notranslate nohighlight">\(n\)</span> observaciones de la más pequeña a la más grande (con todos los valores, incluidos los  repetidos, de modo que cada observación muestral aparezca en la lista ordenada). De este modo entonces la media será:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+m=\left\{\begin{matrix}
+x_{\left (\frac{n+1}{2}\right )} &amp; \mathrm{Si\: n\: es\:impar} \\ 
+\frac{x_{\left (\frac{n}{2} \right )}+x_{\left (\frac{n}{2}+1\right )}}{2} &amp; \mathrm{Si\: n\: es\:par}
+\end{matrix}\right.
+\end{split}\]</div>
+</div>
+</section>
+<section id="percentil">
+<h3>Percentil<a class="headerlink" href="#percentil" title="Permalink to this headline">#</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Valor tal que el <span class="math notranslate nohighlight">\(P\%\)</span> de los valores toma este valor o un valor inferior y para el <span class="math notranslate nohighlight">\((100 - P)\%\)</span> el porcentaje toma este valor o un valor superior.</p>
+</div>
+</section>
+<section id="moda">
+<h3>Moda<a class="headerlink" href="#moda" title="Permalink to this headline">#</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La moda representa el valor (o valores) que mas se repiten en el conjunto de datos.</p>
+</div>
+</section>
+</section>
+<section id="estimacion-de-dispersion">
+<h2>Estimación de dispersión<a class="headerlink" href="#estimacion-de-dispersion" title="Permalink to this headline">#</a></h2>
+<p>El reporte de una medida de centro da sólo información parcial sobre un conjunto o distribución de datos. Diferentes muestras o poblaciones pueden tener medidas idénticas de centro y aún diferir una de otra en otras importantes maneras, una de las cuales tiene que ver en la forma como se distribuyen los datos. Las medidas principales de variabilidad (dispersión) implican las <strong>desviaciones de la media</strong>.</p>
+<section id="rango">
+<h3>Rango<a class="headerlink" href="#rango" title="Permalink to this headline">#</a></h3>
+<p>Es la diferencia entre los valores mayor y menor de un conjunto de datos.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Supongase que se representan los valores ordenados por <span class="math notranslate nohighlight">\(x_{(1)},x_{(2)},...,x_{(n)}\)</span> donde x_{(1)} es el valor mas pequeño y x_{(n)} es el valor mas grande; la formula para calcular el rango esta dada por</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{rango} = x_{(n)} - x_{(1)}
+\]</div>
+</div>
+</section>
+<section id="desviacion-media-absoluta-mean-absolute-deviation">
+<h3>Desviación media absoluta (Mean absolute deviation)<a class="headerlink" href="#desviacion-media-absoluta-mean-absolute-deviation" title="Permalink to this headline">#</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Las <strong>desviaciones de la media</strong> <span class="math notranslate nohighlight">\(d_{i}\)</span> se obtienen restando la media \bar{x} de cada una de la observaciones muestrales <span class="math notranslate nohighlight">\(x_{1},x_{2},...,x_{n}\)</span>. Es decir:</p>
+<div class="math notranslate nohighlight">
+\[
+d_{i} = x_{(i)} - \bar{x}
+\]</div>
+</div>
+<p>Dependiendo del signo de la desviación, se tienen los siguientes resultados:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d_{i} &gt; 0\)</span>: La observación es mas grande que la media.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_{i} &lt; 0\)</span>:La observación es menor que la media.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_{i} = 0\)</span>:La observación es igual la media.</p></li>
+</ul>
+<p>Si todas las desviaciones son pequeñas en magnitud, entonces todas las <span class="math notranslate nohighlight">\(x_i\)</span> se aproximan a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes en magnitud, entonces algunas <span class="math notranslate nohighlight">\(x_i\)</span> quedan lejos de lo que sugiere una mayor cantidad de variabilidad.</p>
+<p>Una forma simple de combinar las desviaciones en una sola cantidad es promediarlas. Desafortunadamente, esta medida no nos dira mucho pues al combinarsen las desviaciones, las desviaciones positivas compensan a las degativas por lo que la suma de estas se hace cero:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{promedio de desviaciones} = \frac{\sum_{n}^{i=1}d_i}{n} = \frac{\sum_{n}^{i=1}\left (x_i - \bar{x}\right )}{n}=0
+\]</div>
+<p>Para evitar el problema anterior, una posibilidad es trabajar con los <strong>valores absolutos de las desviaciones</strong>.</p>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>desviación absoluta promedio</strong> esta dada por el promedio de los valores absolutos de las desviaciones <span class="math notranslate nohighlight">\(|d_i|\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{desviación absoluta promedio} = \frac{\sum_{n}^{i=1}|d_i|}{n} = \frac{\sum_{n}^{i=1}\left |x_i - \bar{x}\right |}{n}
+\]</div>
+</div>
+<p>Como la operación de valor absoluto conduce a un número de dificultades teóricas se suele definir otras medidas mas apropiadas conocidas como la <strong>varianza</strong> y la <strong>desviación estandar</strong>.</p>
+</section>
+<section id="varianza">
+<h3>Varianza<a class="headerlink" href="#varianza" title="Permalink to this headline">#</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>varianza muestral</strong> (<span class="math notranslate nohighlight">\(s^2\)</span>) es la suma de los cuadrados de las desviaciones de la media al cuadrado dividida por <span class="math notranslate nohighlight">\(n - 1\)</span>, donde <span class="math notranslate nohighlight">\(n\)</span> es el numero de datos:</p>
+<div class="math notranslate nohighlight">
+\[
+s^2 = \frac{\sum_{n}^{i=1}d_i^2}{n-1} = \frac{\sum_{n}^{i=1}\left (x_i - \bar{x}\right )^2}{n-1}=\frac{S_{xx}}{n-1}
+\]</div>
+</div>
+</section>
+<section id="desviacion-estandar">
+<h3>Desviación estandar<a class="headerlink" href="#desviacion-estandar" title="Permalink to this headline">#</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>La <strong>desviación estandar muestral</strong> (<span class="math notranslate nohighlight">\(s\)</span>) es la raiz cuadrada de la varianza:</p>
+<div class="math notranslate nohighlight">
+\[
+s = \sqrt{s^2}
+\]</div>
+</div>
+</section>
+<section id="resumen-de-los-cinco-numeros">
+<h3>Resumen de los cinco números<a class="headerlink" href="#resumen-de-los-cinco-numeros" title="Permalink to this headline">#</a></h3>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>Para un conjunto dado de números <span class="math notranslate nohighlight">\(x_1,x_2,...,x_n\)</span>, se toman las siguiente <strong>cinco metricas</strong>:</p>
+<ul class="simple">
+<li><p><strong>Valor maximo</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+x_{min}=min(x_1,x_2,...,x_n)
+\]</div>
+<ul class="simple">
+<li><p><strong>Cuartil inferior</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+Q1 = P_{25}
+\]</div>
+<ul class="simple">
+<li><p><strong>Mediana</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+m = Q2 = P_{50}
+\]</div>
+<ul class="simple">
+<li><p><strong>Cuartil superior</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+Q3 = P_{75}
+\]</div>
+<ul class="simple">
+<li><p><strong>Valor maximo</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+x_{max}=max(x_1,x_2,...,x_n)
+\]</div>
+<p>En resumen, los <strong>cinco datos</strong> estan dados por la siguiente lista:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Min Q1 Mediana Q3 Max}
+\]</div>
+</div>
+</section>
+</section>
+<section id="rango-intercuantilico-irq">
+<h2>Rango Intercuantilico (IRQ)<a class="headerlink" href="#rango-intercuantilico-irq" title="Permalink to this headline">#</a></h2>
+<div class="admonition-definicion admonition">
+<p class="admonition-title">Definición</p>
+<p>El <strong>rango intercuantilico (IRQ)</strong> esta dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+IRQ = Q3 - Q1
+\]</div>
+</div>
+</section>
+<section id="ejemplos">
+<h2>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">#</a></h2>
+<section id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">#</a></h3>
+<p>Asuma que la altura (en cm) de los estudiantes de una clase es como sigue: 90,102,110,115,85,90,100,110,110. ¿Cual es el promedio de alturas?</p>
+<section id="solucion-usando-codigo-python">
+<h4>Solución usando código Python<a class="headerlink" href="#solucion-usando-codigo-python" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Implementacion de la media</span>
+<span class="k">def</span> <span class="nf">media</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Test</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">]</span>
+<span class="n">mean_height</span> <span class="o">=</span> <span class="n">media</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alturas (cm):&quot;</span><span class="p">,</span> <span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Promedio de las alturas (cm):&quot;</span><span class="p">,</span> <span class="n">mean_height</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alturas (cm): [90, 102, 110, 115, 85, 90, 100, 110, 110]
+Promedio de las alturas (cm): 101.33333333333333
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solucion-usando-numpy">
+<h4>Solución usando numpy<a class="headerlink" href="#solucion-usando-numpy" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solucion numpy</span>
+<span class="n">heights</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alturas (cm):&quot;</span><span class="p">,</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">mean_height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Altura promedio (cm): </span><span class="si">{0:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_height</span><span class="p">))</span>
+<span class="c1">#### Solución usando pandas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alturas (cm): [ 90 102 110 115  85  90 100 110 110]
+Altura promedio (cm): 101.33
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solucion-usando-pandas">
+<h4>Solución usando pandas<a class="headerlink" href="#solucion-usando-pandas" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solucion pandas</span>
+<span class="n">data_heights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;heights&#39;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">])}</span>
+<span class="n">df_heights</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_heights</span><span class="p">)</span>
+<span class="n">mean_height</span> <span class="o">=</span> <span class="n">df_heights</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Altura promedio: </span><span class="si">{0:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_height</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   heights
+0       90
+1      102
+2      110
+3      115
+4       85
+5       90
+6      100
+7      110
+8      110
+Altura promedio: 101.33
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejemplo-2">
+<h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">#</a></h3>
+<p>Dado los los siguientes datos: 22, 25, 29, 11, 14, 18, 13, 13, 17, 11, 8, 8, 7, 12, 15, 6, 8, 7, 9, 12. Calcule la media recortando un 10% de los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se uso la funcion trim_mean de scipy.stats</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="c1">#calculate 10% trimmed mean</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datos:&quot;</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media 10% truncada: &quot;</span><span class="p">,</span><span class="n">trim_mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Datos: [22, 25, 29, 11, 14, 18, 13, 13, 17, 11, 8, 8, 7, 12, 15, 6, 8, 7, 9, 12]
+Media 10% truncada: 12.375
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-3">
+<h3>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">#</a></h3>
+<p>Asuma que la altura (en cm) de los estudiantes de una clase es como sigue: 90,102,110,115,85,90,100,110,110. ¿Cual es la media de alturas?</p>
+<section id="id1">
+<h4>Solución usando numpy<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;heights:&quot;</span><span class="p">,</span><span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;heights ordenadas:&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">heights</span><span class="p">))</span>
+
+<span class="n">median_height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mediana: </span><span class="si">{0:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">median_height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heights: [ 90 102 110 115  85  90 100 110 110]
+heights ordenadas: [ 85  90  90 100 102 110 110 110 115]
+Mediana: 102.00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h4>Solución usando pandas<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solucion pandas</span>
+<span class="n">data_heights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;heights&#39;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">])}</span>
+<span class="n">df_heights</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_heights</span><span class="p">)</span>
+<span class="n">median_height</span> <span class="o">=</span> <span class="n">df_heights</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Altura promedio: </span><span class="si">{0:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">median_height</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   heights
+0       90
+1      102
+2      110
+3      115
+4       85
+5       90
+6      100
+7      110
+8      110
+Altura promedio: 102.00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejemplo-4">
+<h3>Ejemplo 4<a class="headerlink" href="#ejemplo-4" title="Permalink to this headline">#</a></h3>
+<p>Asuma que la altura (en cm) de los estudiantes de una clase es como sigue: 90,102,110,115,85,90,100,110,110. ¿Cual es el rango de las alturas?</p>
+<section id="id3">
+<h4>Solución usando numpy<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solucion numpy</span>
+<span class="n">heights</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;heights:&quot;</span><span class="p">,</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">min_height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">max_height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">range_height</span> <span class="o">=</span> <span class="n">max_height</span> <span class="o">-</span> <span class="n">min_height</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rango [</span><span class="si">{0:d}</span><span class="s2">,</span><span class="si">{1:d}</span><span class="s2">]: </span><span class="si">{2:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_height</span><span class="p">,</span> <span class="n">max_height</span><span class="p">,</span> <span class="n">range_height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heights: [ 90 102 110 115  85  90 100 110 110]
+Rango [85,115]: 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h4>Solución usando pandas<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solucion pandas</span>
+<span class="n">data_heights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;heights&#39;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">110</span><span class="p">])}</span>
+<span class="n">df_heights</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_heights</span><span class="p">)</span>
+<span class="n">min_height</span> <span class="o">=</span> <span class="n">df_heights</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_height</span> <span class="o">=</span> <span class="n">df_heights</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">range_height</span> <span class="o">=</span> <span class="n">max_height</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">min_height</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rango [</span><span class="si">{0:d}</span><span class="s2">,</span><span class="si">{1:d}</span><span class="s2">]: </span><span class="si">{2:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_height</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">max_height</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">range_height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   heights
+0       90
+1      102
+2      110
+3      115
+4       85
+5       90
+6      100
+7      110
+8      110
+Rango [85,115]: 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejemplo-5">
+<h3>Ejemplo 5<a class="headerlink" href="#ejemplo-5" title="Permalink to this headline">#</a></h3>
+<p>El sitio web <a class="reference external" href="http://www.fueleconomy.gov">www.fueleconomy.gov</a> contiene una gran cantidad de información acerca de las características del combustible de varios vehículos. Además de las calificaciones de millaje de la EPA, hay muchos vehículos para los que los usuarios han informado de sus propios valores de eficiencia de combustible (mpg). Considere la siguiente muestra de <span class="math notranslate nohighlight">\(n = 11\)</span> eficiencias para el Ford Focus 2009 equipado con transmisión automática (para este modelo, la EPA informa de una calificación general de 27 mpg-24 mpg en ciudad y 33 mpg en carretera) las cuales se muestran a continuación:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_i\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>27.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.9</p></td>
+</tr>
+<tr class="row-even"><td><p>32.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>35.2</p></td>
+</tr>
+<tr class="row-even"><td><p>44.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>39.9</p></td>
+</tr>
+<tr class="row-even"><td><p>30.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.7</p></td>
+</tr>
+<tr class="row-even"><td><p>28.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>32.0</p></td>
+</tr>
+</tbody>
+</table>
+<p>Obtenga:</p>
+<ol class="simple">
+<li><p>La media.</p></li>
+<li><p>Las desviaciones.</p></li>
+<li><p>Las desviaciones al cuadrado</p></li>
+<li><p>La desviacion estandar</p></li>
+<li><p>La varianza</p></li>
+</ol>
+<section id="id5">
+<h4>Solución usando numpy<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solucion numpy</span>
+<span class="c1"># Calculos empleando funciones de acuerdo a las formulas</span>
+<span class="n">epa_data</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">27.3</span><span class="p">,</span> <span class="mf">27.9</span><span class="p">,</span> <span class="mf">32.9</span><span class="p">,</span> <span class="mf">35.2</span><span class="p">,</span> <span class="mf">44.9</span><span class="p">,</span> <span class="mf">39.9</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">29.7</span><span class="p">,</span> <span class="mf">28.5</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">37.6</span><span class="p">])</span>
+<span class="n">epa_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">epa_data</span><span class="p">)</span>
+<span class="n">epa_desv</span> <span class="o">=</span> <span class="n">epa_data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">epa_data</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="p">[</span><span class="n">epa_mean</span><span class="p">])</span>
+<span class="n">epa_ec</span> <span class="o">=</span> <span class="n">epa_desv</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">epa_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">epa_ec</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">epa_data</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">epa_std</span> <span class="o">=</span> <span class="p">(</span><span class="n">epa_var</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="c1"># Despliegue de valores</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RESUMEN DE LAS MEDIDAS DE DISPERSION&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EPA (mpg): &quot;</span><span class="p">,</span><span class="n">epa_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EPA Media: &quot;</span><span class="p">,</span><span class="n">epa_mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviaciones EPA: &quot;</span><span class="p">,</span><span class="n">epa_desv</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error cuadratico EPA: &quot;</span><span class="p">,</span><span class="n">epa_ec</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza: &quot;</span><span class="p">,</span><span class="n">epa_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviacion estandar EPA: &quot;</span><span class="p">,</span><span class="n">epa_std</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------------------&quot;</span><span class="p">)</span>
+<span class="c1"># Obtencion de la media, la desviacion estandar y la varianza usando las formulas de numpy</span>
+<span class="n">epa_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">epa_data</span><span class="p">)</span>
+<span class="n">epa_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">epa_data</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">epa_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">epa_data</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EPA Media: &quot;</span><span class="p">,</span><span class="n">epa_mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza EPA [np.std]: &quot;</span><span class="p">,</span><span class="n">epa_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviacion estandar [np.var]: &quot;</span><span class="p">,</span><span class="n">epa_std</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RESUMEN DE LAS MEDIDAS DE DISPERSION
+-----------------------------------------------------------
+EPA (mpg):  [27.3 27.9 32.9 35.2 44.9 39.9 30.  29.7 28.5 32.  37.6]
+EPA Media:  33.263636363636365
+Desviaciones EPA:  [-5.96363636 -5.36363636 -0.36363636  1.93636364 11.63636364  6.63636364
+ -3.26363636 -3.56363636 -4.76363636 -1.26363636  4.33636364]
+Error cuadratico EPA:  [3.55649587e+01 2.87685950e+01 1.32231405e-01 3.74950413e+00
+ 1.35404959e+02 4.40413223e+01 1.06513223e+01 1.26995041e+01
+ 2.26922314e+01 1.59677686e+00 1.88040496e+01]
+Varianza:  31.41054545454545
+Desviacion estandar EPA:  5.604511169990247
+-----------------------------------------------------------
+EPA Media:  33.263636363636365
+Varianza EPA [np.std]:  31.41054545454545
+Desviacion estandar [np.var]:  5.604511169990247
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h4>Solución usando pandas<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución pandas</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;epa_data&#39;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">27.3</span><span class="p">,</span> <span class="mf">27.9</span><span class="p">,</span> <span class="mf">32.9</span><span class="p">,</span> <span class="mf">35.2</span><span class="p">,</span> <span class="mf">44.9</span><span class="p">,</span> <span class="mf">39.9</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">29.7</span><span class="p">,</span> <span class="mf">28.5</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">37.6</span><span class="p">])}</span>
+<span class="n">epa_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">epa_mean</span> <span class="o">=</span> <span class="n">epa_data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">epa_desv</span> <span class="o">=</span> <span class="n">epa_data</span> <span class="o">-</span> <span class="n">epa_mean</span>
+<span class="n">epa_desv</span> <span class="o">=</span> <span class="n">epa_desv</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;epa_data&#39;</span><span class="p">:</span><span class="s1">&#39;epa_dist&#39;</span><span class="p">})</span>
+<span class="n">epa_ec</span> <span class="o">=</span> <span class="n">epa_desv</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">epa_ec</span> <span class="o">=</span> <span class="n">epa_ec</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;epa_data&#39;</span><span class="p">:</span><span class="s1">&#39;epa_ec&#39;</span><span class="p">})</span>
+<span class="n">epa_var</span> <span class="o">=</span>  <span class="n">epa_data</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">epa_std</span> <span class="o">=</span> <span class="n">epa_data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">df_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">epa_data</span><span class="p">,</span><span class="n">epa_desv</span><span class="p">,</span><span class="n">epa_ec</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>epa_data</th>
+      <th>epa_dist</th>
+      <th>epa_dist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>27.3</td>
+      <td>-5.963636</td>
+      <td>35.564959</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>27.9</td>
+      <td>-5.363636</td>
+      <td>28.768595</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>32.9</td>
+      <td>-0.363636</td>
+      <td>0.132231</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.2</td>
+      <td>1.936364</td>
+      <td>3.749504</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>44.9</td>
+      <td>11.636364</td>
+      <td>135.404959</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>39.9</td>
+      <td>6.636364</td>
+      <td>44.041322</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>30.0</td>
+      <td>-3.263636</td>
+      <td>10.651322</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>29.7</td>
+      <td>-3.563636</td>
+      <td>12.699504</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>28.5</td>
+      <td>-4.763636</td>
+      <td>22.692231</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>32.0</td>
+      <td>-1.263636</td>
+      <td>1.596777</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>37.6</td>
+      <td>4.336364</td>
+      <td>18.804050</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EPA Media: &quot;</span><span class="p">,</span><span class="n">epa_mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza EPA: &quot;</span><span class="p">,</span><span class="n">epa_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviacion estandar: &quot;</span><span class="p">,</span><span class="n">epa_std</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EPA Media:  epa_data    33.263636
+dtype: float64
+Varianza EPA:  epa_data    31.410545
+dtype: float64
+Desviacion estandar:  epa_data    5.604511
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejemplo-6">
+<h3>Ejemplo 6<a class="headerlink" href="#ejemplo-6" title="Permalink to this headline">#</a></h3>
+<p>Se utilizó ultrasonido para reunir los datos adjuntos de corrosión en el espesor de la placa de piso de un tanque elevado utilizado para almacenar petróleo crudo (“Statistical Analysis of UT Corrosion Data from Floor Plates of a Crude Oil Aboveground Storage Tank”, Materials Eval., 1994: 846–849); cada observación es la profundidad de la picadura más grande en la placa, expresada en milésimas de pulgada: 40, 52, 55, 60, 70, 75, 85, 85, 90, 90, 92, 94, 94, 95, 98, 100, 115, 125, 125.</p>
+<p>Muestre el resumen de los cinco numeros</p>
+<section id="id7">
+<h4>Solución usando numpy<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando numpy</span>
+<span class="n">profundidad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">125</span><span class="p">])</span>
+<span class="n">min_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">profundidad</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="c1"># np.percentile(profundidad,q = 0)</span>
+<span class="n">max_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">profundidad</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1"># np.percentile(profundidad,q = 100)</span>
+<span class="n">Q1_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">profundidad</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span> <span class="c1"># np.percentile(profundidad,q = 25)</span>
+<span class="n">Q3_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">profundidad</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">)</span> <span class="c1"># np.percentile(profundidad,q = 75)</span>
+<span class="n">median_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">profundidad</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># np.median(profundidad)</span>
+<span class="n">rango_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">profundidad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resumen profundidades&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Minimo: &quot;</span><span class="p">,</span> <span class="n">min_prof</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Q1: &quot;</span><span class="p">,</span> <span class="n">Q1_prof</span> <span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Mediana: &quot;</span><span class="p">,</span> <span class="n">median_prof</span> <span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Q3: &quot;</span><span class="p">,</span> <span class="n">Q3_prof</span> <span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Maximo: &quot;</span><span class="p">,</span> <span class="n">max_prof</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- IRQ: &quot;</span><span class="p">,</span> <span class="n">Q3_prof</span> <span class="o">-</span> <span class="n">Q1_prof</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resumen profundidades
+- Minimo: 40.0
+- Q1: 72.5
+- Mediana: 90.0
+- Q3: 96.5
+- Maximo: 125.0
+- IRQ: 24.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h4>Solución usando Pandas<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solucion pandas</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;epa_data&#39;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">27.3</span><span class="p">,</span> <span class="mf">27.9</span><span class="p">,</span> <span class="mf">32.9</span><span class="p">,</span> <span class="mf">35.2</span><span class="p">,</span> <span class="mf">44.9</span><span class="p">,</span> <span class="mf">39.9</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">29.7</span><span class="p">,</span> <span class="mf">28.5</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">37.6</span><span class="p">])}</span>
+<span class="n">epa_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">epa_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>epa_data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>11.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>33.263636</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5.604511</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>27.300000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>29.100000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>32.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>36.400000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>44.900000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenido"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p1_ch2_s1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Experimentos y eventos</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
