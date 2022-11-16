@@ -227,7 +227,7 @@ from scipy.stats import trim_mean
 # Cuando las salidas del espacio muestral $S$ de un experimento son **igualmente probables**, la probabilidad de un evento $E$, denotada por $P(E)$, es la razon entre el numero de resultados asociadas a $E$  y el numero total de resultados del espacio muestral:
 # 
 # $$
-# P(E) = \frac{Numero de salidas de E}{Numero de salidas de S}
+# P(E) = \frac{Numero\; de\; salidas\; de\; E}{Numero\; de\; salidas\; de\; S}
 # $$
 # 
 # ```
