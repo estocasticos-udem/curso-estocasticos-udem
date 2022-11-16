@@ -635,7 +635,7 @@ title="Print to PDF"
 <section id="eventos">
 <h2>Eventos<a class="headerlink" href="#eventos" title="Permalink to this headline">#</a></h2>
 <p>Cuando el resultado consisten en exactamente una sola salida, decimos que el evento es <strong>simple</strong>.</p>
-<p>Usualmente se emplean letras mayusculas (<span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, …) o letras con subindices (<span class="math notranslate nohighlight">\(E_1\)</span>, <span class="math notranslate nohighlight">\(E_2\)</span>, <span class="math notranslate nohighlight">\(E_3\)</span>, …) para representar eventos.</p>
+<p>Usualmente se emplean letras mayusculas <span class="math notranslate nohighlight">\((A, B, C,...)\)</span>  o letras con subindices <span class="math notranslate nohighlight">\((E_1, E_2, E_3,...)\)</span> para representar eventos.</p>
 <section id="ejemplo-2">
 <h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">#</a></h3>
 <p>Teniendo en cuenta el experimento analizado en el ejemplo 1 (adquisión del onda civic). Podemos definir los siguientes eventos:</p>
@@ -648,7 +648,7 @@ title="Print to PDF"
 <p>Se pide:</p>
 <ol>
 <li><p>¿Cual es el espacio muestral teniendo en cuenta esta representación?</p>
-<p><span class="math notranslate nohighlight">\(S = {ME, FE, MG, FG}\)</span></p>
+<p><span class="math notranslate nohighlight">\(S = \left \{ME, FE, MG, FG \right \}\)</span></p>
 </li>
 <li><p>Encuentre los eventos simples de cada caso.</p>
 <ul class="simple">
@@ -658,20 +658,20 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(E_4 = FG\)</span></p></li>
 </ul>
 </li>
-<li><p>Suponiendo que el evento de interes consiste en todas las salidas cuando un auto electrico es elegido tenemos:</p></li>
-</ol>
+<li><p>Suponiendo que el evento de interes consiste en todas las salidas cuando un auto electrico es elegido tenemos:</p>
 <div class="math notranslate nohighlight">
-\[electrico = \{ME, FE\}\]</div>
-<ol class="simple">
-<li><p>Evento en el que el comprador elegido es mujer:</p></li>
-</ol>
+\[electrico = \left \{ME, FE \right \}\]</div>
+</li>
+<li><p>Evento en el que el comprador elegido es mujer:</p>
 <div class="math notranslate nohighlight">
-\[mujer = \{FE, FG\}\]</div>
+\[mujer = \left \{FE, FG \right \}\]</div>
+</li>
+</ol>
 </section>
 <section id="ejemplo-3">
 <h3>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">#</a></h3>
 <p>Un experimento consiste en lanzar una moneda no cargada. ¿Cual es el espacio muestral asociado al experimento?</p>
-<p><img alt="s_moneda" src="contenido/p1_ch2_s1/espacio_muestral_moneda.png_c" /></p>
+<p><img alt="s_moneda" src="../_images/espacio_muestral_moneda.png" /></p>
 <p>Inicialmente definimos los siguientes eventos:</p>
 <ul class="simple">
 <li><p><strong>H</strong>: el resultado de lanzar la moneda es cara.</p></li>
@@ -679,7 +679,7 @@ title="Print to PDF"
 </ul>
 <p>De este modo, el espacio muestral del experimento esta dado por:</p>
 <div class="math notranslate nohighlight">
-\[S = {H, T}\]</div>
+\[S = \left \{H, T \right \}\]</div>
 </section>
 <section id="ejemplo-4">
 <h3>Ejemplo 4<a class="headerlink" href="#ejemplo-4" title="Permalink to this headline">#</a></h3>
@@ -690,22 +690,63 @@ title="Print to PDF"
 <p><img alt="s_par_,monedas" src="../_images/espacio_muestral_par_monedas.png" /></p>
 <p>De este modo, segun lo anterior, el espacio muestral para este experimento es:</p>
 <div class="math notranslate nohighlight">
-\[S = \{HH, HT, TH, TT\}\]</div>
+\[S = \left \{HH, HT, TH, TT \right \}\]</div>
 </li>
 <li><p>Llenar la siguiente tabla:</p>
-<p>|——|——|——|
-|Evento|Descripción|Resultado|
-|<span class="math notranslate nohighlight">\(E_1\)</span> |Que salga al menos un sello||
-|<span class="math notranslate nohighlight">\(E_2\)</span> |Que las salidas sean las mismas||
-|<span class="math notranslate nohighlight">\(E_3\)</span>|Que la primera moneda sea cara||</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Evento</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E_1\)</span></p></td>
+<td><p>Que salga al menos un sello</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(E_2\)</span></p></td>
+<td><p>Que las salidas sean las mismas</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E_3\)</span></p></td>
+<td><p>Que la primera moneda sea cara</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 <p>A continuación se muestra la tabla llena:</p>
-<p>|——|——|——|
-|Evento|Descripción|Resultado|
-|<span class="math notranslate nohighlight">\(E_1\)</span> |Que salga al menos un sello|<span class="math notranslate nohighlight">\(E_1 = \{TH, HT, TT\}\)</span>|
-|<span class="math notranslate nohighlight">\(E_2\)</span> |Que las salidas sean las mismas|<span class="math notranslate nohighlight">\(E_2 = \{HH, TT\}\)</span>|
-|<span class="math notranslate nohighlight">\(E_3\)</span>|Que la primera moneda sea cara|<span class="math notranslate nohighlight">\(E_3 = \{HH, HT\}\)</span>|</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Evento</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E_1\)</span></p></td>
+<td><p>Que salga al menos un sello</p></td>
+<td><p><span class="math notranslate nohighlight">\(E_1 = \left \{TH, HT, TT \right \}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(E_2\)</span></p></td>
+<td><p>Que las salidas sean las mismas</p></td>
+<td><p><span class="math notranslate nohighlight">\(E_2 = \left \{HH, TT \right \}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E_3\)</span></p></td>
+<td><p>Que la primera moneda sea cara</p></td>
+<td><p><span class="math notranslate nohighlight">\(E_3 = \left \{HH, HT \right \}\)</span></p></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
+<p>Es posible crear nuevos eventos a partir de eventos ya especificados tal y como se muestra a continuación:</p>
+<p>Dados dos eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<ul class="simple">
+<li><p><strong>Not <span class="math notranslate nohighlight">\(A\)</span></strong>: Evento que contiene todas las salidas del experimento que no estan en el evento <span class="math notranslate nohighlight">\(A\)</span>. <strong>Not <span class="math notranslate nohighlight">\(A\)</span></strong> es algunas veces llamado <strong>Complemento de <span class="math notranslate nohighlight">\(A\)</span></strong> y usualmente es denotado como: <span class="math notranslate nohighlight">\(A^c\)</span>, <span class="math notranslate nohighlight">\(A'\)</span> o <span class="math notranslate nohighlight">\(\bar{A}\)</span>.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span></strong>: Evento que consiste de todas las salidas del experimento que estan al menos en uno de los dos eventos, esto es, que estan en <span class="math notranslate nohighlight">\(A\)</span>, en <span class="math notranslate nohighlight">\(B\)</span> o en ambos. <strong><span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span></strong> es llamado la unión de los dos eventos y es denotado por <span class="math notranslate nohighlight">\(A \bigcup B\)</span>.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span></strong>: Evento que consiste en todas las salidas que se encuentran en ambos eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>. <strong><span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span></strong> es conocido como la intersección de los dos eventos y se denota por <span class="math notranslate nohighlight">\(A \bigcap B\)</span>.</p></li>
+</ul>
 </section>
 </section>
 <section id="simulacion">

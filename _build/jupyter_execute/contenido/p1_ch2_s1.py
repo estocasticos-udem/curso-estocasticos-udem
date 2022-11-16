@@ -84,7 +84,7 @@ from scipy.stats import trim_mean
 # 
 # Cuando el resultado consisten en exactamente una sola salida, decimos que el evento es **simple**.
 # 
-# Usualmente se emplean letras mayusculas ($A$, $B$, $C$, ...) o letras con subindices ($E_1$, $E_2$, $E_3$, ...) para representar eventos. 
+# Usualmente se emplean letras mayusculas $(A, B, C,...)$  o letras con subindices $(E_1, E_2, E_3,...)$ para representar eventos. 
 # 
 # ### Ejemplo 2
 # 
@@ -97,7 +97,7 @@ from scipy.stats import trim_mean
 # Se pide:
 # 1. ¿Cual es el espacio muestral teniendo en cuenta esta representación?
 # 
-#    $S = {ME, FE, MG, FG}$
+#    $S = \left \{ME, FE, MG, FG \right \}$
 # 
 # 2. Encuentre los eventos simples de cada caso.
 #    *  $E_1 = ME$
@@ -106,18 +106,18 @@ from scipy.stats import trim_mean
 #    *  $E_4 = FG$
 # 
 # 3. Suponiendo que el evento de interes consiste en todas las salidas cuando un auto electrico es elegido tenemos:
-# 
-# $$electrico = \{ME, FE\}$$
+#    
+#    $$electrico = \left \{ME, FE \right \}$$
 # 
 # 4. Evento en el que el comprador elegido es mujer:
-# 
-# $$mujer = \{FE, FG\}$$
+#    
+#    $$mujer = \left \{FE, FG \right \}$$
 # 
 # ### Ejemplo 3
 # 
 # Un experimento consiste en lanzar una moneda no cargada. ¿Cual es el espacio muestral asociado al experimento?
 # 
-# ![s_moneda](./p1_ch2_s1/espacio_muestral_moneda.png_c)
+# ![s_moneda](./p1_ch2_s1/espacio_muestral_moneda.png)
 # 
 # Inicialmente definimos los siguientes eventos:
 # * **H**: el resultado de lanzar la moneda es cara.
@@ -125,7 +125,7 @@ from scipy.stats import trim_mean
 # 
 # De este modo, el espacio muestral del experimento esta dado por:
 # 
-# $$S = {H, T}$$
+# $$S = \left \{H, T \right \}$$
 # 
 # ### Ejemplo 4
 # 
@@ -138,24 +138,35 @@ from scipy.stats import trim_mean
 # 
 #    De este modo, segun lo anterior, el espacio muestral para este experimento es:
 # 
-#    $$S = \{HH, HT, TH, TT\}$$
+#    $$S = \left \{HH, HT, TH, TT \right \}$$
 # 
 # 2. Llenar la siguiente tabla:
-# 
-#    |------|------|------|
+#    
 #    |Evento|Descripción|Resultado|
+#    |------|------|------|
 #    |$E_1$ |Que salga al menos un sello||
 #    |$E_2$ |Que las salidas sean las mismas||
 #    |$E_3$|Que la primera moneda sea cara||
 # 
 #    A continuación se muestra la tabla llena:
-# 
-#    |------|------|------|
+#    
 #    |Evento|Descripción|Resultado|
-#    |$E_1$ |Que salga al menos un sello|$E_1 = \{TH, HT, TT\}$|
-#    |$E_2$ |Que las salidas sean las mismas|$E_2 = \{HH, TT\}$|
-#    |$E_3$|Que la primera moneda sea cara|$E_3 = \{HH, HT\}$|
+#    |------|------|------|
+#    |$E_1$ |Que salga al menos un sello|$E_1 = \left \{TH, HT, TT \right \}$|
+#    |$E_2$ |Que las salidas sean las mismas|$E_2 = \left \{HH, TT \right \}$|
+#    |$E_3$|Que la primera moneda sea cara|$E_3 = \left \{HH, HT \right \}$|
 # 
+# 
+# Es posible crear nuevos eventos a partir de eventos ya especificados tal y como se muestra a continuación:
+# 
+# ```{admonition}
+# sss
+# ```
+# 
+# Dados dos eventos $A$ y $B$:
+# * **Not $A$**: Evento que contiene todas las salidas del experimento que no estan en el evento $A$. **Not $A$** es algunas veces llamado **Complemento de $A$** y usualmente es denotado como: $A^c$, $A'$ o $\bar{A}$.
+# * **$A$ or $B$**: Evento que consiste de todas las salidas del experimento que estan al menos en uno de los dos eventos, esto es, que estan en $A$, en $B$ o en ambos. **$A$ or $B$** es llamado la unión de los dos eventos y es denotado por $A \bigcup B$.
+# * **$A$ and $B$**: Evento que consiste en todas las salidas que se encuentran en ambos eventos $A$ y $B$. **$A$ and $B$** es conocido como la intersección de los dos eventos y se denota por $A \bigcap B$.
 # 
 # 
 # 
