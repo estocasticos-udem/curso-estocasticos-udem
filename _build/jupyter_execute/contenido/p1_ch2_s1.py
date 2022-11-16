@@ -213,9 +213,37 @@ from scipy.stats import trim_mean
 # 
 # ## Simulación
 # 
-# Poner un ejemplo
+# Poner un ejemplo...
 
-# ## Ejemplos
+# # Probabilidades
+# 
+# Un **modelo de probabilidad** es una descripción de un evento aleatorio que consiste de dos partes:
+# * La lista de todas las posibles salidas (espacio muestral).
+# * Un probabilidad para cada salida.
+# 
+# La probabilidad de cualquier resultado es la frecuencia relativa a largo plazo de ese resultado.
+# 
+# ```{admonition} Calculo de la Probabilidad 
+# Cuando las salidas del espacio muestral $S$ de un experimento son **igualmente probables**, la probabilidad de un evento $E$, denotada por $P(E)$, es la razon entre el numero de resultados asociadas a $E$  y el numero total de resultados del espacio muestral:
+# 
+# $$
+# P(E) = \frac{Numero de salidas de E}{Numero de salidas de S}
+# $$
+# 
+# ```
+# Es importante anotar que hay dos tipos de resultados:
+# * **Resultados igualmente probables**: Significa que cada resultado de un experimento ocurre con igual probabilidad.
+# * **Eventos sesgados**: situación en la que los resultados no son igualmente probables.
+# 
+# Por otro lado, en lo que respecta a la probabilidad, esta cumple las siguientes propiedades:
+# 
+# ```{admonition} Algunas propiedades de la probabilidad
+# 1. Para cualquier evento $E$, $0 \leq P(E) \leq 1$
+# 2. Si $S$ es el espacio muestral de un experimento, $P(S) = 1$
+# 3. Si un evento $E$ es imposible, entonces $P(E) = 0 $
+# 4. Si $E$ es un evento seguro, entonces $P(E) = 1 $
+# ```
+# 
 
 # ### Ejemplo 1
 # 
@@ -245,6 +273,9 @@ print("Promedio de las alturas (cm):", mean_height)
 # 5. https://www.randomservices.org/random/index.html
 # 6. https://bolt.mph.ufl.edu/6050-6052/
 # 7. https://discovery.cs.illinois.edu/learn/Simulation-and-Distributions/Law-of-Large-Numbers/
-# 8. 
+# 8. https://discovery.cs.illinois.edu/learn/
+# 9. https://www.randomservices.org/random/index.html
+# 10. https://www.geogebra.org/m/UsoH4eNl
+# 11. https://www.stapplet.com/
 # 
 # 
