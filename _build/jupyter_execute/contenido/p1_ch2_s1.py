@@ -203,7 +203,9 @@ from scipy.stats import trim_mean
 #    
 #    Sea $E$ = Evento en el que solo uno de los carros gira a la derecha o todos los carros giran en la misma dirección.
 # 
-#    $$E = A \bigcup C  = \left \{RLL, LRL, LLR \right \} \bigcup \left \{LLL, RRR \right \} = \left \{RLL, LRL, LLR, LLL, RRR \right \}$$
+#    $$
+#    E = A \bigcup C  = \left \{RLL, LRL, LLR \right \} \bigcup \left \{LLL, RRR \right \} = \left \{RLL, LRL, LLR, LLL, RRR \right \}
+#    $$
 # 
 # 7. ¿Cual es la salida del evento de que a lo sumo (como maximo) un carro gire a la derecha y todos los autos giran en la misma dirección?
 # 
@@ -237,7 +239,7 @@ from scipy.stats import trim_mean
 # 
 # Por otro lado, en lo que respecta a la probabilidad, esta cumple las siguientes propiedades:
 # 
-# ```{admonition} Algunas propiedades de la probabilidad
+# ```{admonition} Propiedades de la probabilidad
 # 1. Para cualquier evento $E$, $0 \leq P(E) \leq 1$
 # 2. Si $S$ es el espacio muestral de un experimento, $P(S) = 1$
 # 3. Si un evento $E$ es imposible, entonces $P(E) = 0 $
@@ -245,9 +247,75 @@ from scipy.stats import trim_mean
 # ```
 # 
 
-# ### Ejemplo 1
+# #### Ejemplo 6
 # 
-# Asuma que la altura (en cm) de los estudiantes de una clase es como sigue: 90,102,110,115,85,90,100,110,110. ¿Cual es el promedio de alturas?
+# Suponga que se lanza varias veces un dado no cargado de seis lados  con los números {1, 2, 3, 4, 5, 6} en sus lados. 
+# 
+# ![dado](p1_ch2_s1/espacio_muestral_dado.png)
+# 
+# Se pide:
+# 1. El espacio muestral del experimento.
+#    
+#    El espacio muestral consiste en cada uno de los valores de la cara que queda boca arriba.
+# 
+#    $$
+#    S = {1,2,3,4,5,6}
+#    $$
+# 
+# 2. La probabilidad de obtener 5 en un lanzamiento.
+#    
+#    Sea **A** = Obtener cinco en el lanzamiento tenemos, tenemos que los resultados para el evento **A** son: ```A = {5}```
+# 
+#    $$
+#    P(A) = \frac{Numero\; de\; salidas\; de\; A}{Numero\; de\; salidas\; de\; S} = \frac{1}{6}
+#    $$
+# 
+# 3. La probabilidad de obtener al menos 5 en el lanzamiento.
+#    
+#    Sea **B** = Obtener al menos cinco en el lanzamiento, tenemos que las salidas para el evento **B** son: ```B = {5,6}```, luego:
+# 
+#    $$
+#    P(A) = \frac{Numero\; de\; salidas\; de\; B}{Numero\; de\; salidas\; de\; S} = \frac{2}{6} = \frac{1}{3} 
+#    $$
+# 
+
+# ## EVENTOS AND, OR y complemento
+# 
+# Aunque se habian hablado de estos, por comodidad vamos a volver a tratarlos:
+# 
+# ```{admonition} OR
+# Dados dos posibles eventos $A$ y $B$. El evento $A or B (A \bigcup B)$ se da cuando el resultado está en $A$, está en $B$ o está tanto en $A$ como en $B$.
+# ```
+# 
+# ```{admonition} AND
+# Dados dos posibles eventos $A$ y $B$. El evento $A and B (A \bigcap B)$ se da cuando el resultado está en $A$ y en $B$ al mismo tiempo.
+# ```
+# 
+# ```{admonition} Complemento
+# El complemento del evento $A$ se denomina $A' (A^C = \bar{A})$ y consiste en todos los resultados que **NO** están en $A$.
+# ```
+# 
+# A partir de lo anterior, tenemos dos propiedades mas:
+# 
+# ```{admonition} Propiedades de la probabilidad
+# 5. Dados dos eventos mutuamente excluyentes (no suceden a la vez) $E$ y $F$, entonces:
+# 
+#    $$
+#    P(E or F) = P(E \bigcup F) = P(E + F) = P(E) + P(F) 
+#    $$
+# 
+# 6. **Regla del complemento**: Para cualquier evento $E$: $P(E) + P(E') = 1$ por lo tanto:
+#    
+#    $$
+#    P(E) = 1 - P(E')   
+#    $$
+# 
+#    $$
+#    P(E') = 1 - P(E)   
+#    $$
+# ```
+# 
+# 
 
 # #### Solución usando código Python
 
