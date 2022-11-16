@@ -34,7 +34,7 @@ from scipy.stats import trim_mean
 # 
 # Antes de definir el concepto de espacio muestral, es conveniente definir el concepto de salida:
 # 
-# ```{admonition} 
+# ```{admonition} Salida (Outcome)
 # Una **salida** (outcome) de un experimento es una de las posibles observaciones de dicho experimento.
 # ```
 # 
@@ -78,7 +78,7 @@ from scipy.stats import trim_mean
 # 
 # ## Eventos
 # 
-# ```{admonition}
+# ```{admonition} Evento
 # Un **evento** es cualquier combinación de resultados del espacio muestral asociado a un experimento aleatorio.
 # ```
 # 
@@ -159,17 +159,57 @@ from scipy.stats import trim_mean
 # 
 # Es posible crear nuevos eventos a partir de eventos ya especificados tal y como se muestra a continuación:
 # 
-# ```{admonition}
-# sss
-# ```
-# 
+# ```{admonition} Operaciones sobre eventos
 # Dados dos eventos $A$ y $B$:
 # * **Not $A$**: Evento que contiene todas las salidas del experimento que no estan en el evento $A$. **Not $A$** es algunas veces llamado **Complemento de $A$** y usualmente es denotado como: $A^c$, $A'$ o $\bar{A}$.
 # * **$A$ or $B$**: Evento que consiste de todas las salidas del experimento que estan al menos en uno de los dos eventos, esto es, que estan en $A$, en $B$ o en ambos. **$A$ or $B$** es llamado la unión de los dos eventos y es denotado por $A \bigcup B$.
 # * **$A$ and $B$**: Evento que consiste en todas las salidas que se encuentran en ambos eventos $A$ y $B$. **$A$ and $B$** es conocido como la intersección de los dos eventos y se denota por $A \bigcap B$.
+# ```
 # 
+# ### Ejemplo 5
 # 
+# Se le ha pedido a una ingeniera de tránsito que considere si una señal de alto en la parte inferior de la rampa de salida de una autopista debe ser reemplazada por un semáforo. Para ayudar en esta decisión, ella planea observar los patrones de tráfico de esta rampa de salida. Para esto, la ingeniera registra la direccion de giro (**L**: Izquierda; **R**: Derecha) de tres vehiculos sucesivos. Para esto se pide lo siguiente:
+# 1. ¿Cual es el espacio muestral del experimento?
+#    
+#    Sea $S$ el espacio muestral del experimento tenemos que:
 # 
+#    $$S = \left \{LLL, RLL, LRL, LLR, RRL, RLR, LRR, RRR \right \}$$
+# 
+# 2. ¿Cual es la salida para el evento de que exactamente solo un carro gire a la derecha?
+#    
+#    Sea $A$ = Evento de que exactamente un carro gire a la derecha, tenemos que:
+# 
+#    $$A = \left \{RLL, LRL, LLR \right \}$$
+# 
+# 3. ¿Cual es la salida del evento de que a lo sumo un carro gire a la derecha?
+#    
+#    Sea $B$ = Evento de que maximo un carro gire a la derecha, tenemos que:
+# 
+#    $$B = \left \{RLL, LRL, LLR, LLL  \right \}$$
+# 
+# 4. ¿Cual es la salida evento en el cual todos los carros giran en la misma dirección?
+# 
+#    Sea $C$ = Evento en el que todos los carros giran en la misma dirección
+# 
+#    $$C = \left \{RRR, LLL \right \}$$
+# 
+# 5. ¿Cual es la salida asociada al evento en el cual todos los carros no giran en la misma dirección?
+# 
+#    Sea $D$ = Evento en el que todos los carros no giran en la misma dirección
+# 
+#    $$D = C^C = \left \{RLL, LRL, LLR, RRL, RLR, LRR\right \}$$
+# 
+# 6. ¿Cual es la salida para el evento en el cual solo uno de los carros gira a la derecha o todos los carros giran en la misma dirección?
+#    
+#    Sea $E$ = Evento en el que solo uno de los carros gira a la derecha o todos los carros giran en la misma dirección.
+# 
+#    $$E = A \bigcup C  = \left \{RLL, LRL, LLR \right \} \bigcup \left \{LLL, RRR \right \} = \left \{RLL, LRL, LLR, LLL, RRR \right \}$$
+# 
+# 7. ¿Cual es la salida del evento de que a lo sumo (como maximo) un carro gire a la derecha y todos los autos giran en la misma dirección?
+# 
+#    Sea $F$ = Evento en el que como maximo un solo carro gira a la derecha y todos los autos giran en la misma dirección
+# 
+#    $$F = B \bigcap C = \left \{RLL, LRL, LLR, LLL \right \} \bigcap \left \{RRR, LLL \right \} = \left \{LLL\right \}$$
 # 
 # ## Simulación
 # 

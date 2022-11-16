@@ -418,6 +418,11 @@ title="Print to PDF"
      Ejemplo 4
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-5">
+     Ejemplo 5
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -503,6 +508,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ejemplo-4">
      Ejemplo 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-5">
+     Ejemplo 5
     </a>
    </li>
   </ul>
@@ -599,6 +609,10 @@ title="Print to PDF"
 <section id="espacio-muestral">
 <h2>Espacio muestral<a class="headerlink" href="#espacio-muestral" title="Permalink to this headline">#</a></h2>
 <p>Antes de definir el concepto de espacio muestral, es conveniente definir el concepto de salida:</p>
+<div class="admonition-salida-outcome admonition">
+<p class="admonition-title">Salida (Outcome)</p>
+<p>Una <strong>salida</strong> (outcome) de un experimento es una de las posibles observaciones de dicho experimento.</p>
+</div>
 <p>Por ejemplo si un experimento consiste en <strong>lanzar un dado no cargado</strong>, la salida consiste en uno de los posibles valores que cae en la cara.</p>
 <div class="admonition-espacio-muestral admonition">
 <p class="admonition-title">Espacio muestral</p>
@@ -634,6 +648,10 @@ title="Print to PDF"
 </section>
 <section id="eventos">
 <h2>Eventos<a class="headerlink" href="#eventos" title="Permalink to this headline">#</a></h2>
+<div class="admonition-evento admonition">
+<p class="admonition-title">Evento</p>
+<p>Un <strong>evento</strong> es cualquier combinación de resultados del espacio muestral asociado a un experimento aleatorio.</p>
+</div>
 <p>Cuando el resultado consisten en exactamente una sola salida, decimos que el evento es <strong>simple</strong>.</p>
 <p>Usualmente se emplean letras mayusculas <span class="math notranslate nohighlight">\((A, B, C,...)\)</span>  o letras con subindices <span class="math notranslate nohighlight">\((E_1, E_2, E_3,...)\)</span> para representar eventos.</p>
 <section id="ejemplo-2">
@@ -741,12 +759,56 @@ title="Print to PDF"
 </li>
 </ol>
 <p>Es posible crear nuevos eventos a partir de eventos ya especificados tal y como se muestra a continuación:</p>
+<div class="admonition-operaciones-sobre-eventos admonition">
+<p class="admonition-title">Operaciones sobre eventos</p>
 <p>Dados dos eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>:</p>
 <ul class="simple">
 <li><p><strong>Not <span class="math notranslate nohighlight">\(A\)</span></strong>: Evento que contiene todas las salidas del experimento que no estan en el evento <span class="math notranslate nohighlight">\(A\)</span>. <strong>Not <span class="math notranslate nohighlight">\(A\)</span></strong> es algunas veces llamado <strong>Complemento de <span class="math notranslate nohighlight">\(A\)</span></strong> y usualmente es denotado como: <span class="math notranslate nohighlight">\(A^c\)</span>, <span class="math notranslate nohighlight">\(A'\)</span> o <span class="math notranslate nohighlight">\(\bar{A}\)</span>.</p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span></strong>: Evento que consiste de todas las salidas del experimento que estan al menos en uno de los dos eventos, esto es, que estan en <span class="math notranslate nohighlight">\(A\)</span>, en <span class="math notranslate nohighlight">\(B\)</span> o en ambos. <strong><span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span></strong> es llamado la unión de los dos eventos y es denotado por <span class="math notranslate nohighlight">\(A \bigcup B\)</span>.</p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span></strong>: Evento que consiste en todas las salidas que se encuentran en ambos eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>. <strong><span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span></strong> es conocido como la intersección de los dos eventos y se denota por <span class="math notranslate nohighlight">\(A \bigcap B\)</span>.</p></li>
 </ul>
+</div>
+</section>
+<section id="ejemplo-5">
+<h3>Ejemplo 5<a class="headerlink" href="#ejemplo-5" title="Permalink to this headline">#</a></h3>
+<p>Se le ha pedido a una ingeniera de tránsito que considere si una señal de alto en la parte inferior de la rampa de salida de una autopista debe ser reemplazada por un semáforo. Para ayudar en esta decisión, ella planea observar los patrones de tráfico de esta rampa de salida. Para esto, la ingeniera registra la direccion de giro (<strong>L</strong>: Izquierda; <strong>R</strong>: Derecha) de tres vehiculos sucesivos. Para esto se pide lo siguiente:</p>
+<ol>
+<li><p>¿Cual es el espacio muestral del experimento?</p>
+<p>Sea <span class="math notranslate nohighlight">\(S\)</span> el espacio muestral del experimento tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[S = \left \{LLL, RLL, LRL, LLR, RRL, RLR, LRR, RRR \right \}\]</div>
+</li>
+<li><p>¿Cual es la salida para el evento de que exactamente solo un carro gire a la derecha?</p>
+<p>Sea <span class="math notranslate nohighlight">\(A\)</span> = Evento de que exactamente un carro gire a la derecha, tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[A = \left \{RLL, LRL, LLR \right \}\]</div>
+</li>
+<li><p>¿Cual es la salida del evento de que a lo sumo un carro gire a la derecha?</p>
+<p>Sea <span class="math notranslate nohighlight">\(B\)</span> = Evento de que maximo un carro gire a la derecha, tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[B = \left \{RLL, LRL, LLR, LLL  \right \}\]</div>
+</li>
+<li><p>¿Cual es la salida evento en el cual todos los carros giran en la misma dirección?</p>
+<p>Sea <span class="math notranslate nohighlight">\(C\)</span> = Evento en el que todos los carros giran en la misma dirección</p>
+<div class="math notranslate nohighlight">
+\[C = \left \{RRR, LLL \right \}\]</div>
+</li>
+<li><p>¿Cual es la salida asociada al evento en el cual todos los carros no giran en la misma dirección?</p>
+<p>Sea <span class="math notranslate nohighlight">\(D\)</span> = Evento en el que todos los carros no giran en la misma dirección</p>
+<div class="math notranslate nohighlight">
+\[D = C^C = \left \{RLL, LRL, LLR, RRL, RLR, LRR\right \}\]</div>
+</li>
+<li><p>¿Cual es la salida para el evento en el cual solo uno de los carros gira a la derecha o todos los carros giran en la misma dirección?</p>
+<p>Sea <span class="math notranslate nohighlight">\(E\)</span> = Evento en el que solo uno de los carros gira a la derecha o todos los carros giran en la misma dirección.</p>
+<div class="math notranslate nohighlight">
+\[E = A \bigcup C  = \left \{RLL, LRL, LLR \right \} \bigcup \left \{LLL, RRR \right \} = \left \{RLL, LRL, LLR, LLL, RRR \right \}\]</div>
+</li>
+<li><p>¿Cual es la salida del evento de que a lo sumo (como maximo) un carro gire a la derecha y todos los autos giran en la misma dirección?</p>
+<p>Sea <span class="math notranslate nohighlight">\(F\)</span> = Evento en el que como maximo un solo carro gira a la derecha y todos los autos giran en la misma dirección</p>
+<div class="math notranslate nohighlight">
+\[F = B \bigcap C = \left \{RLL, LRL, LLR, LLL \right \} \bigcap \left \{RRR, LLL \right \} = \left \{LLL\right \}\]</div>
+</li>
+</ol>
 </section>
 </section>
 <section id="simulacion">
