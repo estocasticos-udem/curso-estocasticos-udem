@@ -314,6 +314,206 @@ from scipy.stats import trim_mean
 #    P(E') = 1 - P(E)   
 #    $$
 # ```
+
+# #### Ejemplo 7
+# 
+# Suponga que se realiza un experimento que consiste en lanzar un par de dados no cargados. 
+# 
+# ![par de dados](p1_ch2_s1/espacio_muestral_par_dados.png)
+# 
+# Hallar:
+# 1. El espacio muestral del experimento.
+#    
+#    Sea S el espacio muestral del experimento, los resultados son:
+# 
+#    ```
+#    S = {
+#          (1,1), (1,2), (1,3), (1,4), (1,5), (1,6),
+#          (2,1), (2,2), (2,3), (2,4), (2,5), (2,6),
+#          (3,1), (3,2), (3,3), (3,4), (3,5), (3,6),
+#          (4,1), (4,2), (4,3), (4,4), (4,5), (4,6),
+#          (5,1), (5,2), (5,3), (5,4), (5,5), (5,6),
+#          (6,1), (6,2), (6,3), (6,4), (6,5), (6,6)
+#        }
+#    ```     
+# 
+# 2. La probabilidad de que la suma de los dados no sea 5.
+# 
+#    Sea **Sum5** = la suma de los dados da 5. Entonces lo que nos piden es $P(not(Sum5))$. Si las salida $Sum5 = {(4,1),(1,4),(3,2),(2,3)}$ tenemos que:
+# 
+#    $$
+#    P(Sum5) = \frac{N(Sum5)}{N} = \frac{4}{36} = \frac{1}{9}
+#    $$
+# 
+#    Luego:
+#    
+#    $$
+#    P(not(Sum5)) = 1 - P(Sum5) = 1 - \frac{1}{9} = \frac{8}{9} 
+#    $$
+# 
+# 3. La probabilidad de que la suma de los dados sea 5 o 6.
+#    
+#    Ya tenemos el caso para el evento **Sum5**, sea el evento **Sum6** = La suam de los dados es 6, tenemos que, las salidas para este son: $Sum6 = {(5,1),(1,5),(4,2),(2,4),(3,3)}$ de este modo:
+# 
+#    $$
+#    P(Sum6) = \frac{N(Sum6)}{N} = \frac{5}{36} 
+#    $$
+# 
+#    Luego si definimos el evento **Sum5-6** = que la suma de los dados sea 5 o 6, tenemos que:
+# 
+#    $$
+#    P(Sum5-6) = P(Sum5 \bigcup Sum6) =  P(Sum5 + Sum6) = P(Sum5) + P(Sum6) = \frac{5}{36} + \frac{4}{36} = \frac{1}{4}
+#    $$
+
+# ## Probabilidad condicional
+# 
+# Existen casos en los que la probabilidad que se asigna a un evento puede cambiar si se sabe que ha ocurrido otro evento. La probabilidad de que suceda un evento dado que ya se sabe que sucedió otro evento se llama **probabilidad condicional**.
+# 
+# ```{admonition} Probabilidad condicional
+# La probabilidad condicional del evento $A$ dado el evento $B$ se escribe $P(A|B)$ y es la probabilidad de que ocurra el evento $A$ dado que el evento $B$ ya ha ocurrido. Esta se calcula mediante la siguiente expresión
+# 
+# $$
+# P(A|B) = \frac{P(A \bigcap B)}{P(B)}
+# $$
+# ```
+# 
+# Una observación importante es que la **parte condicional** reduce el espacio muestral pues el calculo de la probabilidad se hace tomando $A$ a partir del espacio muestral reducido $B$. Para aclarar esto observemos el siguiente ejemplo:
+
+# #### Ejemplo 8
+# Suponga que se lanza un dado imparcial de seis lados. Sean los eventos **A** = el lado es 2 o 3 y **B** = el lado es par. ¿Cual es la probabilidad de sacar 2 o 3 si el lado es par?
+# 
+# ![dado_condicional](p1_ch2_s1/dado_condicional.png)
+# 
+# Inicialmente tenemos las siguientes salidas para el espacio muestral y los eventos iniciales:
+# * $S = {1, 2, 3, 4, 5, 6}$
+# * $A = {2, 3}$
+# * $B = {2, 4, 6}$
+# 
+# Ahora vamos a calcular $P(A|B)$ recordando que primero se recuce el espacio muestral teniendo en cuenta el evento $B$ y luego dentro de este se cuenta la ocurrencia del evento $A$, es decir dentro de $B = {2, 4, 6}$ tenemos que la unica salida que satisface el evento $A$ es ${2}$, de modo que solo hay **una de tres** posibilidades de que las sea **2 o 3** dado que el numero a la salida es **par**, asi:
+# 
+# $$
+# P(A|B) = \frac{1}{3} 
+# $$
+# 
+# Por otro lado si se aplica la formula tenemos inicialmente que $A \bigcap B = {2, 3} \bigcap {2, 4, 6} = {2}$, de modo que:
+# 
+# $$
+# P(A|B) = \frac{P(A \bigcap B)}{P(B)} = \frac{1}{3}
+# $$
+
+# #### Ejemplo 9
+# 
+# El espacio muestral S son todos los pares ordenados de dos números enteros, el primero de uno a tres y el segundo de uno a cuatro (ejemplo: (1, 4)).
+# 1. Cual es el espacio muestral.
+#    
+#    ```
+#    S = {
+#       (1,2), (1,3), (1,4)
+#       (2,2), (2,3), (2,4)
+#       (3,2), (3,3), (3,4)
+#    }
+#    ```
+# 2. Supongamos que se definen los eventos **A** = la suma es par y **B** = el primer número es primo. Teniendo en cuenta esto se pide:
+#    *  $A = ?$
+#   
+#       $$
+#       A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}
+#       $$
+# 
+#    *  $B = ?$
+#   
+#       $$
+#       B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
+#       $$
+# 
+#    *  $P(A) = ?$
+# 
+#       $$
+#       P(A) = \frac{N(A)}{N} = \frac{4}{9} 
+#       $$
+# 
+#    *  $P(B) = ?$
+# 
+#       $$
+#       P(B) = \frac{N(B)}{N} = \frac{6}{9} = \frac{2}{3} 
+#       $$
+# 
+#    *  $A y B = ?$
+#   
+#       $$
+#       A y B = A \bigcap B = \left \{(2,2), (2,4), (3,3)\right \}
+#       $$
+# 
+#    *  $P(A y B) = ?$
+# 
+#       $$
+#       P(A y B) = \frac{N(A \bigcap B)}{N} = \frac{3}{9} = \frac{1}{3} 
+#       $$
+# 
+#    *  $A o B = ?$
+#   
+#       $$
+#       A o B = A \bigcup B = \left \{(1,3), (2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
+#       $$
+# 
+#    *  $P(A o B) = ?$
+# 
+#       $$
+#       P(A o B) = \frac{N(A \bigcup B)}{N} = \frac{7}{9} 
+#       $$
+# 
+#    *  $B' = ?$
+#   
+#       $$
+#       B' = \left \{(1,2), (1,3), (1,4)\right \}
+#       $$
+# 
+#    *  $P(B') = ?$
+# 
+#       $$
+#       P(B') =  \frac{1}{3} 
+#       $$
+# 
+#    *  $P(A) + P(A') = ?$
+#   
+#       $$
+#       P(A') =  1 - P(A) = 1 - \frac{4}{9} = \frac{5}{9}
+#       $$
+# 
+#       Luego:
+# 
+#       $$
+#       P(A) + P(A') = \frac{4}{9} + \frac{5}{9} = \frac{9}{9} = 1
+#       $$
+# 
+#    *  $P(A|B) = ?$
+# 
+#       Tenemos que para $B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}$ solo cumplen la condición de que la suma sea par (evento $A$): $\left \{(2,2), (2,4), (3,3)\right \} de modo que:
+# 
+#       $$
+#       P(A|B) = \frac{3}{6} = \frac{1}{2}
+#       $$
+# 
+#       Si se hubiera usado la formula tedriamos el siguiente resultado:
+#   
+#       $$
+#       P(A|B) = \frac{P(A \bigcap B)}{P(B)} = \frac{\frac{1}{3}}{\frac{2}{3}} = \frac{1}{2}
+#       $$
+# 
+# 
+#    *  $P(B|A) = ?$
+#   
+#       Tenemos que para $A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}$ solo cumplen la condición de que el primer numero de estos sea primo (evento $B$): $\left \{(2,2), (2,4), (3,3)\right \} de modo que:
+# 
+#       $$
+#       P(B|A) = \frac{3}{4} 
+#       $$
+# 
+#       Si se hubiera usado la formula tedriamos el siguiente resultado:
+#   
+#       $$
+#       P(B|A) = \frac{P(A \bigcap B)}{P(A)} = \frac{\frac{1}{3}}{\frac{4}{9}} = \frac{9}{12} = \frac{3}{4}
+#       $$
 # 
 # 
 
