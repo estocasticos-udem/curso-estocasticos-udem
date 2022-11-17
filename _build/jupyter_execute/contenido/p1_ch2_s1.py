@@ -488,7 +488,7 @@ from scipy.stats import trim_mean
 # 
 #    *  $P(A|B) = ?$
 # 
-#       Tenemos que para $B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}$ solo cumplen la condición de que la suma sea par (evento $A$): $\left \{(2,2), (2,4), (3,3)\right \} de modo que:
+#       Tenemos que para $B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}$ solo cumplen la condición de que la suma sea par (evento $A$): $\left \{(2,2), (2,4), (3,3)\right \}$ de modo que:
 # 
 #       $$
 #       P(A|B) = \frac{3}{6} = \frac{1}{2}
@@ -503,7 +503,7 @@ from scipy.stats import trim_mean
 # 
 #    *  $P(B|A) = ?$
 #   
-#       Tenemos que para $A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}$ solo cumplen la condición de que el primer numero de estos sea primo (evento $B$): $\left \{(2,2), (2,4), (3,3)\right \} de modo que:
+#       Tenemos que para $A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}$ solo cumplen la condición de que el primer numero de estos sea primo (evento $B$): $\left \{(2,2), (2,4), (3,3)\right \}$ de modo que:
 # 
 #       $$
 #       P(B|A) = \frac{3}{4} 
@@ -517,20 +517,27 @@ from scipy.stats import trim_mean
 # 
 # 
 
-# #### Solución usando código Python
+# ## Analisis de problemas
+# Para solucionar problemas que implican probabilidades el punto de partida consiste en comprender la terminologia y los simbolos para lo cual, los siguientes pasos pueden ser de utilidad:
+# 1. Lea detenidamente cada problema para reflexionar y comprender los eventos. 
+# 2. Entienda el enunciado (es el primer paso para resolver problemas de probabilidad). Vuelva a leer el problema varias veces si es necesario. 
+# 3. Identifique claramente el evento de interés. 
+# 4. Determine si hay una condición establecida en el enunciado que indique que la probabilidad es condicional.
+# 5. Identifique cuidadosamente la condición, si la hay
+
+# # Uso de python en problemas con probabilidades
 
 # In[2]:
 
 
 # Implementacion de la media
-def media(data):
-    return sum(data)/len(data)
+x_i = 1
+x_f = 3
+y_i = 2
+y_f = 4
 
-# Test
-heights = [90,102,110,115,85,90,100,110,110]
-mean_height = media(heights)
-print("Alturas (cm):", heights)
-print("Promedio de las alturas (cm):", mean_height)
+S = [(i,j) for i in range(x_i, x_f + 1) for j in range(y_i, y_f + 1)]
+S
 
 
 # ## Referencias
@@ -545,5 +552,7 @@ print("Promedio de las alturas (cm):", mean_height)
 # 9. https://www.randomservices.org/random/index.html
 # 10. https://www.geogebra.org/m/UsoH4eNl
 # 11. https://www.stapplet.com/
+# 12. https://probability4datascience.com/index.html
+# 13. https://www.probabilitycourse.com/
 # 
 # 
