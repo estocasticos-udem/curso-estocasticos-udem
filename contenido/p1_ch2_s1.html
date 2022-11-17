@@ -443,10 +443,37 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Ejemplo 1
+    <a class="reference internal nav-link" href="#ejemplo-6">
+     Ejemplo 6
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eventos-and-or-y-complemento">
+     EVENTOS AND, OR y complemento
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-7">
+       Ejemplo 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilidad-condicional">
+     Probabilidad condicional
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-8">
+       Ejemplo 8
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-9">
+       Ejemplo 9
+      </a>
+     </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#solucion-usando-codigo-python">
        Solución usando código Python
@@ -542,10 +569,37 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Ejemplo 1
+    <a class="reference internal nav-link" href="#ejemplo-6">
+     Ejemplo 6
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eventos-and-or-y-complemento">
+     EVENTOS AND, OR y complemento
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-7">
+       Ejemplo 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilidad-condicional">
+     Probabilidad condicional
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-8">
+       Ejemplo 8
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-9">
+       Ejemplo 9
+      </a>
+     </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#solucion-usando-codigo-python">
        Solución usando código Python
@@ -815,7 +869,9 @@ title="Print to PDF"
 <li><p>¿Cual es la salida para el evento en el cual solo uno de los carros gira a la derecha o todos los carros giran en la misma dirección?</p>
 <p>Sea <span class="math notranslate nohighlight">\(E\)</span> = Evento en el que solo uno de los carros gira a la derecha o todos los carros giran en la misma dirección.</p>
 <div class="math notranslate nohighlight">
-\[E = A \bigcup C  = \left \{RLL, LRL, LLR \right \} \bigcup \left \{LLL, RRR \right \} = \left \{RLL, LRL, LLR, LLL, RRR \right \}\]</div>
+\[
+   E = A \bigcup C  = \left \{RLL, LRL, LLR \right \} \bigcup \left \{LLL, RRR \right \} = \left \{RLL, LRL, LLR, LLL, RRR \right \}
+   \]</div>
 </li>
 <li><p>¿Cual es la salida del evento de que a lo sumo (como maximo) un carro gire a la derecha y todos los autos giran en la misma dirección?</p>
 <p>Sea <span class="math notranslate nohighlight">\(F\)</span> = Evento en el que como maximo un solo carro gira a la derecha y todos los autos giran en la misma dirección</p>
@@ -852,8 +908,8 @@ P(E) = \frac{Numero\; de\; salidas\; de\; E}{Numero\; de\; salidas\; de\; S}
 <li><p><strong>Eventos sesgados</strong>: situación en la que los resultados no son igualmente probables.</p></li>
 </ul>
 <p>Por otro lado, en lo que respecta a la probabilidad, esta cumple las siguientes propiedades:</p>
-<div class="admonition-algunas-propiedades-de-la-probabilidad admonition">
-<p class="admonition-title">Algunas propiedades de la probabilidad</p>
+<div class="admonition-propiedades-de-la-probabilidad admonition">
+<p class="admonition-title">Propiedades de la probabilidad</p>
 <ol class="simple">
 <li><p>Para cualquier evento <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(0 \leq P(E) \leq 1\)</span></p></li>
 <li><p>Si <span class="math notranslate nohighlight">\(S\)</span> es el espacio muestral de un experimento, <span class="math notranslate nohighlight">\(P(S) = 1\)</span></p></li>
@@ -861,9 +917,265 @@ P(E) = \frac{Numero\; de\; salidas\; de\; E}{Numero\; de\; salidas\; de\; S}
 <li><p>Si <span class="math notranslate nohighlight">\(E\)</span> es un evento seguro, entonces <span class="math notranslate nohighlight">\(P(E) = 1 \)</span></p></li>
 </ol>
 </div>
-<section id="id1">
-<h2>Ejemplo 1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>Asuma que la altura (en cm) de los estudiantes de una clase es como sigue: 90,102,110,115,85,90,100,110,110. ¿Cual es el promedio de alturas?</p>
+<section id="ejemplo-6">
+<h2>Ejemplo 6<a class="headerlink" href="#ejemplo-6" title="Permalink to this headline">#</a></h2>
+<p>Suponga que se lanza varias veces un dado no cargado de seis lados  con los números {1, 2, 3, 4, 5, 6} en sus lados.</p>
+<p><img alt="dado" src="../_images/espacio_muestral_dado.png" /></p>
+<p>Se pide:</p>
+<ol>
+<li><p>El espacio muestral del experimento.</p>
+<p>El espacio muestral consiste en cada uno de los valores de la cara que queda boca arriba.</p>
+<div class="math notranslate nohighlight">
+\[
+   S = {1,2,3,4,5,6}
+   \]</div>
+</li>
+<li><p>La probabilidad de obtener 5 en un lanzamiento.</p>
+<p>Sea <strong>A</strong> = Obtener cinco en el lanzamiento tenemos, tenemos que los resultados para el evento <strong>A</strong> son: <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">{5}</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+   P(A) = \frac{Numero\; de\; salidas\; de\; A}{Numero\; de\; salidas\; de\; S} = \frac{1}{6}
+   \]</div>
+</li>
+<li><p>La probabilidad de obtener al menos 5 en el lanzamiento.</p>
+<p>Sea <strong>B</strong> = Obtener al menos cinco en el lanzamiento, tenemos que las salidas para el evento <strong>B</strong> son: <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">{5,6}</span></code>, luego:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(A) = \frac{Numero\; de\; salidas\; de\; B}{Numero\; de\; salidas\; de\; S} = \frac{2}{6} = \frac{1}{3} 
+   \]</div>
+</li>
+</ol>
+</section>
+<section id="eventos-and-or-y-complemento">
+<h2>EVENTOS AND, OR y complemento<a class="headerlink" href="#eventos-and-or-y-complemento" title="Permalink to this headline">#</a></h2>
+<p>Aunque se habian hablado de estos, por comodidad vamos a volver a tratarlos:</p>
+<div class="admonition-or admonition">
+<p class="admonition-title">OR</p>
+<p>Dados dos posibles eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>. El evento <span class="math notranslate nohighlight">\(A or B (A \bigcup B)\)</span> se da cuando el resultado está en <span class="math notranslate nohighlight">\(A\)</span>, está en <span class="math notranslate nohighlight">\(B\)</span> o está tanto en <span class="math notranslate nohighlight">\(A\)</span> como en <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+<div class="admonition-and admonition">
+<p class="admonition-title">AND</p>
+<p>Dados dos posibles eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>. El evento <span class="math notranslate nohighlight">\(A and B (A \bigcap B)\)</span> se da cuando el resultado está en <span class="math notranslate nohighlight">\(A\)</span> y en <span class="math notranslate nohighlight">\(B\)</span> al mismo tiempo.</p>
+</div>
+<div class="admonition-complemento admonition">
+<p class="admonition-title">Complemento</p>
+<p>El complemento del evento <span class="math notranslate nohighlight">\(A\)</span> se denomina <span class="math notranslate nohighlight">\(A' (A^C = \bar{A})\)</span> y consiste en todos los resultados que <strong>NO</strong> están en <span class="math notranslate nohighlight">\(A\)</span>.</p>
+</div>
+<p>A partir de lo anterior, tenemos dos propiedades mas:</p>
+<div class="admonition-propiedades-de-la-probabilidad admonition">
+<p class="admonition-title">Propiedades de la probabilidad</p>
+<ol>
+<li><p>Dados dos eventos mutuamente excluyentes (no suceden a la vez) <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(F\)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(E or F) = P(E \bigcup F) = P(E + F) = P(E) + P(F) 
+   \]</div>
+</li>
+<li><p><strong>Regla del complemento</strong>: Para cualquier evento <span class="math notranslate nohighlight">\(E\)</span>: <span class="math notranslate nohighlight">\(P(E) + P(E') = 1\)</span> por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(E) = 1 - P(E')   
+   \]</div>
+<div class="math notranslate nohighlight">
+\[
+   P(E') = 1 - P(E)   
+   \]</div>
+</li>
+</ol>
+</div>
+<section id="ejemplo-7">
+<h3>Ejemplo 7<a class="headerlink" href="#ejemplo-7" title="Permalink to this headline">#</a></h3>
+<p>Suponga que se realiza un experimento que consiste en lanzar un par de dados no cargados.</p>
+<p><img alt="par de dados" src="../_images/espacio_muestral_par_dados.png" /></p>
+<p>Hallar:</p>
+<ol>
+<li><p>El espacio muestral del experimento.</p>
+<p>Sea S el espacio muestral del experimento, los resultados son:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+      <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+      <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+      <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+      <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+      <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>La probabilidad de que la suma de los dados no sea 5.</p>
+<p>Sea <strong>Sum5</strong> = la suma de los dados da 5. Entonces lo que nos piden es <span class="math notranslate nohighlight">\(P(not(Sum5))\)</span>. Si las salida <span class="math notranslate nohighlight">\(Sum5 = {(4,1),(1,4),(3,2),(2,3)}\)</span> tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(Sum5) = \frac{N(Sum5)}{N} = \frac{4}{36} = \frac{1}{9}
+   \]</div>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(not(Sum5)) = 1 - P(Sum5) = 1 - \frac{1}{9} = \frac{8}{9} 
+   \]</div>
+</li>
+<li><p>La probabilidad de que la suma de los dados sea 5 o 6.</p>
+<p>Ya tenemos el caso para el evento <strong>Sum5</strong>, sea el evento <strong>Sum6</strong> = La suam de los dados es 6, tenemos que, las salidas para este son: <span class="math notranslate nohighlight">\(Sum6 = {(5,1),(1,5),(4,2),(2,4),(3,3)}\)</span> de este modo:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(Sum6) = \frac{N(Sum6)}{N} = \frac{5}{36} 
+   \]</div>
+<p>Luego si definimos el evento <strong>Sum5-6</strong> = que la suma de los dados sea 5 o 6, tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(Sum5-6) = P(Sum5 \bigcup Sum6) =  P(Sum5 + Sum6) = P(Sum5) + P(Sum6) = \frac{5}{36} + \frac{4}{36} = \frac{1}{4}
+   \]</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="probabilidad-condicional">
+<h2>Probabilidad condicional<a class="headerlink" href="#probabilidad-condicional" title="Permalink to this headline">#</a></h2>
+<p>Existen casos en los que la probabilidad que se asigna a un evento puede cambiar si se sabe que ha ocurrido otro evento. La probabilidad de que suceda un evento dado que ya se sabe que sucedió otro evento se llama <strong>probabilidad condicional</strong>.</p>
+<div class="admonition-probabilidad-condicional admonition">
+<p class="admonition-title">Probabilidad condicional</p>
+<p>La probabilidad condicional del evento <span class="math notranslate nohighlight">\(A\)</span> dado el evento <span class="math notranslate nohighlight">\(B\)</span> se escribe <span class="math notranslate nohighlight">\(P(A|B)\)</span> y es la probabilidad de que ocurra el evento <span class="math notranslate nohighlight">\(A\)</span> dado que el evento <span class="math notranslate nohighlight">\(B\)</span> ya ha ocurrido. Esta se calcula mediante la siguiente expresión</p>
+<div class="math notranslate nohighlight">
+\[
+P(A|B) = \frac{P(A \bigcap B)}{P(B)}
+\]</div>
+</div>
+<p>Una observación importante es que la <strong>parte condicional</strong> reduce el espacio muestral pues el calculo de la probabilidad se hace tomando <span class="math notranslate nohighlight">\(A\)</span> a partir del espacio muestral reducido <span class="math notranslate nohighlight">\(B\)</span>. Para aclarar esto observemos el siguiente ejemplo:</p>
+<section id="ejemplo-8">
+<h3>Ejemplo 8<a class="headerlink" href="#ejemplo-8" title="Permalink to this headline">#</a></h3>
+<p>Suponga que se lanza un dado imparcial de seis lados. Sean los eventos <strong>A</strong> = el lado es 2 o 3 y <strong>B</strong> = el lado es par. ¿Cual es la probabilidad de sacar 2 o 3 si el lado es par?</p>
+<p><img alt="dado_condicional" src="../_images/dado_condicional.png" /></p>
+<p>Inicialmente tenemos las siguientes salidas para el espacio muestral y los eventos iniciales:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S = {1, 2, 3, 4, 5, 6}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A = {2, 3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B = {2, 4, 6}\)</span></p></li>
+</ul>
+<p>Ahora vamos a calcular <span class="math notranslate nohighlight">\(P(A|B)\)</span> recordando que primero se recuce el espacio muestral teniendo en cuenta el evento <span class="math notranslate nohighlight">\(B\)</span> y luego dentro de este se cuenta la ocurrencia del evento <span class="math notranslate nohighlight">\(A\)</span>, es decir dentro de <span class="math notranslate nohighlight">\(B = {2, 4, 6}\)</span> tenemos que la unica salida que satisface el evento <span class="math notranslate nohighlight">\(A\)</span> es <span class="math notranslate nohighlight">\({2}\)</span>, de modo que solo hay <strong>una de tres</strong> posibilidades de que las sea <strong>2 o 3</strong> dado que el numero a la salida es <strong>par</strong>, asi:</p>
+<div class="math notranslate nohighlight">
+\[
+P(A|B) = \frac{1}{3} 
+\]</div>
+<p>Por otro lado si se aplica la formula tenemos inicialmente que <span class="math notranslate nohighlight">\(A \bigcap B = {2, 3} \bigcap {2, 4, 6} = {2}\)</span>, de modo que:</p>
+<div class="math notranslate nohighlight">
+\[
+P(A|B) = \frac{P(A \bigcap B)}{P(B)} = \frac{1}{3}
+\]</div>
+</section>
+<section id="ejemplo-9">
+<h3>Ejemplo 9<a class="headerlink" href="#ejemplo-9" title="Permalink to this headline">#</a></h3>
+<p>El espacio muestral S son todos los pares ordenados de dos números enteros, el primero de uno a tres y el segundo de uno a cuatro (ejemplo: (1, 4)).</p>
+<ol>
+<li><p>Cual es el espacio muestral.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Supongamos que se definen los eventos <strong>A</strong> = la suma es par y <strong>B</strong> = el primer número es primo. Teniendo en cuenta esto se pide:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(A = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(B = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(A) = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      P(A) = \frac{N(A)}{N} = \frac{4}{9} 
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(B) = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      P(B) = \frac{N(B)}{N} = \frac{6}{9} = \frac{2}{3} 
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(A y B = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      A y B = A \bigcap B = \left \{(2,2), (2,4), (3,3)\right \}
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(A y B) = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      P(A y B) = \frac{N(A \bigcap B)}{N} = \frac{3}{9} = \frac{1}{3} 
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(A o B = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      A o B = A \bigcup B = \left \{(1,3), (2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(A o B) = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      P(A o B) = \frac{N(A \bigcup B)}{N} = \frac{7}{9} 
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(B' = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      B' = \left \{(1,2), (1,3), (1,4)\right \}
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(B') = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      P(B') =  \frac{1}{3} 
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(A) + P(A') = ?\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+      P(A') =  1 - P(A) = 1 - \frac{4}{9} = \frac{5}{9}
+      \]</div>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+      P(A) + P(A') = \frac{4}{9} + \frac{5}{9} = \frac{9}{9} = 1
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(A|B) = ?\)</span></p>
+<p>Tenemos que para <span class="math notranslate nohighlight">\(B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}\)</span> solo cumplen la condición de que la suma sea par (evento <span class="math notranslate nohighlight">\(A\)</span>): $\left {(2,2), (2,4), (3,3)\right } de modo que:</p>
+<div class="math notranslate nohighlight">
+\[
+      P(A|B) = \frac{3}{6} = \frac{1}{2}
+      \]</div>
+<p>Si se hubiera usado la formula tedriamos el siguiente resultado:</p>
+<div class="math notranslate nohighlight">
+\[
+      P(A|B) = \frac{P(A \bigcap B)}{P(B)} = \frac{\frac{1}{3}}{\frac{2}{3}} = \frac{1}{2}
+      \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(B|A) = ?\)</span></p>
+<p>Tenemos que para <span class="math notranslate nohighlight">\(A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}\)</span> solo cumplen la condición de que el primer numero de estos sea primo (evento <span class="math notranslate nohighlight">\(B\)</span>): $\left {(2,2), (2,4), (3,3)\right } de modo que:</p>
+<div class="math notranslate nohighlight">
+\[
+      P(B|A) = \frac{3}{4} 
+      \]</div>
+<p>Si se hubiera usado la formula tedriamos el siguiente resultado:</p>
+<div class="math notranslate nohighlight">
+\[
+      P(B|A) = \frac{P(A \bigcap B)}{P(A)} = \frac{\frac{1}{3}}{\frac{4}{9}} = \frac{9}{12} = \frac{3}{4}
+      \]</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
 <section id="solucion-usando-codigo-python">
 <h3>Solución usando código Python<a class="headerlink" href="#solucion-usando-codigo-python" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
