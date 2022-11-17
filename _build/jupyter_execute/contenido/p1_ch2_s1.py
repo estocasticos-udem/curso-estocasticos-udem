@@ -530,14 +530,78 @@ from scipy.stats import trim_mean
 # In[2]:
 
 
-# Implementacion de la media
+# Funciones
+
+def prob(n_event, n):
+    return n_event/n
+
+
+# primo
+def esPrimo(num):
+    if num == 1:
+        return False
+    result = True
+    mul = 1
+    for i in range(2,num//2):
+        if num%i == 0:
+            mul += 1
+            if (mul > 2):
+                result = False
+                break
+    return result 
+
+
+# Enunciado
 x_i = 1
 x_f = 3
 y_i = 2
 y_f = 4
 
-S = [(i,j) for i in range(x_i, x_f + 1) for j in range(y_i, y_f + 1)]
-S
+
+# Espacio muestral
+S = {(i,j) for i in range(x_i, x_f + 1) for j in range(y_i, y_f + 1)}
+print(S)
+
+
+# A = Suma par
+A = set(filter(lambda x : (x[0]+x[1])%2 == 0,S))
+print(A)
+
+# B = Primer numero primo
+B = set(filter(lambda x : esPrimo(x[0]) == True,S))
+print(B)
+
+N_A = len(A)
+N_B = len(B)
+N = len(S)
+
+# P(A)
+P_A = prob(N_A,N)
+print(P_A)
+
+# P(B)
+P_B = prob(N_B,N)
+print(P_B)
+
+# A and B
+A_and_B = A.intersection(B)
+print(A_and_B)
+
+# P(A and B)
+N__A_and_B = len(A_and_B)
+P__A_and_B = prob(N__A_and_B,N)
+print(P__A_and_B)
+
+# A or B
+A_or_B = A.union(B)
+print(A_or_B)
+
+# P(A or B)
+N__A_or_B = len(A_or_B)
+P__A_or_B = prob(N__A_or_B,N)
+print(P__A_or_B)
+
+# Continuara...
 
 
 # ## Referencias
