@@ -401,6 +401,24 @@ from scipy.stats import trim_mean
 # P(A|B) = \frac{P(A \bigcap B)}{P(B)} = \frac{1}{3}
 # $$
 
+# ## Analisis de problemas
+# Para solucionar problemas que implican probabilidades el punto de partida consiste en comprender la terminologia y los simbolos para lo cual, los siguientes pasos pueden ser de utilidad:
+# 1. Lea detenidamente cada problema para reflexionar y comprender los eventos. 
+# 2. Entienda el enunciado (es el primer paso para resolver problemas de probabilidad). Vuelva a leer el problema varias veces si es necesario. 
+# 3. Identifique claramente el evento de interés. 
+# 4. Determine si hay una condición establecida en el enunciado que indique que la probabilidad es condicional.
+# 5. Identifique cuidadosamente la condición, si la hay
+
+# # Uso de python en problemas con probabilidades
+
+# In[2]:
+
+
+# importar de bibliotecas necesarias
+import numpy as np
+import pandas as pd
+
+
 # #### Ejemplo 9
 # 
 # El espacio muestral S son todos los pares ordenados de dos números enteros, el primero de uno a tres y el segundo de uno a cuatro (ejemplo: (1, 4)).
@@ -413,6 +431,14 @@ from scipy.stats import trim_mean
 #       (3,2), (3,3), (3,4)
 #    }
 #    ```
+# 
+# ```{code-cell}
+# ---
+# tags: [raises-exception]
+# ---
+# print(thisvariabledoesntexist)
+# ```
+# 
 # 2. Supongamos que se definen los eventos **A** = la suma es par y **B** = el primer número es primo. Teniendo en cuenta esto se pide:
 #    *  $A = ?$
 #   
@@ -517,17 +543,7 @@ from scipy.stats import trim_mean
 # 
 # 
 
-# ## Analisis de problemas
-# Para solucionar problemas que implican probabilidades el punto de partida consiste en comprender la terminologia y los simbolos para lo cual, los siguientes pasos pueden ser de utilidad:
-# 1. Lea detenidamente cada problema para reflexionar y comprender los eventos. 
-# 2. Entienda el enunciado (es el primer paso para resolver problemas de probabilidad). Vuelva a leer el problema varias veces si es necesario. 
-# 3. Identifique claramente el evento de interés. 
-# 4. Determine si hay una condición establecida en el enunciado que indique que la probabilidad es condicional.
-# 5. Identifique cuidadosamente la condición, si la hay
-
-# # Uso de python en problemas con probabilidades
-
-# In[2]:
+# In[3]:
 
 
 # Funciones
