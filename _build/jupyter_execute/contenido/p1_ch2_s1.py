@@ -761,8 +761,8 @@ print("Forma 2: P(B|A) = ", P__B_dado_A2, sep="")
 # |$P(A \bigcap B)$|${glue:}`P__A_and_B`|
 # |$A \bigcup B$|${glue:}`A_or_B`|
 # |$P(A \bigcup B)$|${glue:}`P__A_or_B`|
-# |$(A|B)$|${glue:}`P__A_dado_B`|
-# |$(B|A)$|${glue:}`P__B_dado_A`|
+# |$P(A \vert B)$ | ${glue:}`P__A_dado_B`|
+# |$P(B \vert A)$ | ${glue:}`P__B_dado_A`|
 
 # ## Referencias
 # 1. Statistics Openstax (https://openstax.org/details/books/statistics)
