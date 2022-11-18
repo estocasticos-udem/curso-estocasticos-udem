@@ -748,21 +748,21 @@ print("Forma 2: P(B|A) = ", P__B_dado_A2, sep="")
 # 
 # |Variable|Resultado|
 # |---|---|
-# |$S$|${glue:}`S`|
-# |$A$|${glue:}`A`|
-# |$P(A)$|${glue:}`P_A`|
-# |$B$|${glue:}`B`|
-# |$P(B)$|${glue:}`P_B`|
-# |$A'$|${glue:}`not_A`|
-# |$P(A')$|${glue:}`P__not_A`|
-# |$B'$|${glue:}`not_B`|
-# |$P(B')$|${glue:}`P__not_B`|
-# |$A \bigcap B$|${glue:}`A_and_B`|
-# |$P(A \bigcap B)$|${glue:}`P__A_and_B`|
-# |$A \bigcup B$|${glue:}`A_or_B`|
-# |$P(A \bigcup B)$|${glue:}`P__A_or_B`|
-# |$P(A \vert B)$ | ${glue:}`P__A_dado_B`|
-# |$P(B \vert A)$ | ${glue:}`P__B_dado_A`|
+# |$S$|{glue:}`S`|
+# |$A$|{glue:}`A`|
+# |$P(A)$|{glue:}`P_A`|
+# |$B$|{glue:}`B`|
+# |$P(B)$|{glue:}`P_B`|
+# |$A'$|{glue:}`not_A`|
+# |$P(A')$|{glue:}`P__not_A`|
+# |$B'$|{glue:}`not_B`|
+# |$P(B')$|{glue:}`P__not_B`|
+# |$A \bigcap B$|{glue:}`A_and_B`|
+# |$P(A \bigcap B)$|{glue:}`P__A_and_B`|
+# |$A \bigcup B$|{glue:}`A_or_B`|
+# |$P(A \bigcup B)$|{glue:}`P__A_or_B`|
+# |$P(A \vert B)$|{glue:}`P__A_dado_B`|
+# |$P(B \vert A)$|{glue:}`P__B_dado_A`|
 
 # ## Referencias
 # 1. Statistics Openstax (https://openstax.org/details/books/statistics)
