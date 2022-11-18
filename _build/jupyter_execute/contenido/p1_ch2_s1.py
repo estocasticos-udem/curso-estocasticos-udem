@@ -417,7 +417,196 @@ from scipy.stats import trim_mean
 # importar de bibliotecas necesarias
 import numpy as np
 import pandas as pd
+from myst_nb import glue
+# Funcion para calcular la probabilidad de un evento
+def prob(n_event, n):
+    return n_event/n
 
+
+# #### Ejemplo 9
+# 
+# El espacio muestral S son todos los pares ordenados de dos números enteros, el primero de uno a tres y el segundo de uno a cuatro (ejemplo: (1, 4)).
+
+# **P1**. Cual es el espacio muestral.
+#    
+# ```
+# S = {
+#       (1,2), (1,3), (1,4)
+#       (2,2), (2,3), (2,4)
+#       (3,2), (3,3), (3,4)
+#     }
+# ```
+# 
+# A continuación se muestra el codigo en python para generar el espacio muestral S
+
+# In[3]:
+
+
+# Espacio muestral
+
+# Enunciado
+x_i = 1; x_f = 3 # coordenada x: Entero entre 1 y 3
+y_i = 2; y_f = 4 # coordenada y: Entero entre 2 y 4
+
+# Generación del espacio muestral
+S = {(i,j) for i in range(x_i, x_f + 1) for j in range(y_i, y_f + 1)}
+glue("S",S)
+
+
+# Finalmente el **Espacio muestal** $S = ${glue:}`S`
+
+# **P2**. Supongamos que se definen los eventos **A** = la suma es par y **B** = el primer número es primo. Teniendo en cuenta esto se pide:
+
+# * **$A = ?$**
+#   
+#   $$
+#   A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}
+#   $$
+
+# De este modo $A = ${glue:}`A`
+
+# In[4]:
+
+
+# Generación de las salidas para el evento A (La suma es par)
+A = set(filter(lambda x : (x[0]+x[1])%2 == 0,S))
+glue("A",A)
+
+
+# * **$B = ?$**
+#   
+#   $$
+#   B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
+#   $$
+
+# In[5]:
+
+
+# Generación de las salidas para el evento B (La primera coordenada es un primo)
+
+# Funcion que determina si un numero es primo
+def esPrimo(num):
+    if num == 1:
+        return False
+    result = True
+    mul = 1
+    for i in range(2,num//2):
+        if num%i == 0:
+            mul += 1
+            if (mul > 2):
+                result = False
+                break
+    return result 
+
+# Generación de las salidas del evento B
+B = set(filter(lambda x : esPrimo(x[0]) == True,S))
+glue("B",B)
+
+
+# Luego $B = ${glue:}`B`
+
+# * **$P(A) = ?$**
+#   
+#   $$
+#   P(A) = \frac{N(A)}{N} = \frac{4}{9} 
+#   $$
+
+# In[6]:
+
+
+N_A = len(A)
+N = len(S)
+
+# Calculo de P(A)
+P_A = prob(N_A,N)
+glue("P_A",P_A)
+
+
+# De modo que $P(A) = ${glue:}`P_A`
+
+# *  **$P(B) = ?$**
+#    
+#    $$
+#    P(B) = \frac{N(B)}{N} = \frac{6}{9} = \frac{2}{3} 
+#    $$
+
+# In[7]:
+
+
+N_B = len(B)
+N = len(S)
+
+# Calculo de P(A)
+P_B = prob(N_B,N)
+glue("P_B",P_B)
+
+
+# De modo que $P(B) = ${glue:}`P_B`
+
+# * **$A y B = ?$**
+#   
+#   $$
+#   A y B = A \bigcap B = \left \{(2,2), (2,4), (3,3)\right \}
+#   $$
+
+# In[8]:
+
+
+# A and B
+A_and_B = A.intersection(B)
+glue("A_and_B",A_and_B)
+
+
+# Vemos que la salida $A \bigcap B = ${glue:}`A_and_B`
+
+# * **$P(A y B) = ?$**
+#   
+#   $$
+#   P(A y B) = \frac{N(A \bigcap B)}{N} = \frac{3}{9} = \frac{1}{3} 
+#   $$
+
+# In[9]:
+
+
+# P(A and B)
+N__A_and_B = len(A_and_B)
+P__A_and_B = prob(N__A_and_B,N)
+glue("P__A_and_B",P__A_and_B)
+
+
+# Asi $P(A \bigcap B) = ${glue:}`P__A_and_B`
+
+# * **$A o B = ?$**
+#   $$
+#   A o B = A \bigcup B = \left \{(1,3), (2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
+#   $$
+
+# In[10]:
+
+
+# A or B
+A_or_B = A.union(B)
+glue("A_or_B",A_or_B)
+
+
+# El resultado para el evento $A \bigcup B = ${glue:}`A_or_B`
+
+# * **$P(A o B) = ?$**
+#   
+#   $$
+#   P(A o B) = \frac{N(A \bigcup B)}{N} = \frac{7}{9} 
+#   $$
+
+# In[11]:
+
+
+# P(A or B)
+N__A_or_B = len(A_or_B)
+P__A_or_B = prob(N__A_or_B,N)
+glue("P__A_or_B",P__A_or_B)
+
+
+# De modo $P(A \bigcup B) = ${glue:}`P__A_or_B`
 
 # #### Ejemplo 9
 # 
@@ -431,13 +620,6 @@ import pandas as pd
 #       (3,2), (3,3), (3,4)
 #    }
 #    ```
-# 
-# ```{code-cell}
-# ---
-# tags: [raises-exception]
-# ---
-# print(thisvariabledoesntexist)
-# ```
 # 
 # 2. Supongamos que se definen los eventos **A** = la suma es par y **B** = el primer número es primo. Teniendo en cuenta esto se pide:
 #    *  $A = ?$
@@ -542,83 +724,6 @@ import pandas as pd
 #       $$
 # 
 # 
-
-# In[3]:
-
-
-# Funciones
-
-def prob(n_event, n):
-    return n_event/n
-
-
-# primo
-def esPrimo(num):
-    if num == 1:
-        return False
-    result = True
-    mul = 1
-    for i in range(2,num//2):
-        if num%i == 0:
-            mul += 1
-            if (mul > 2):
-                result = False
-                break
-    return result 
-
-
-# Enunciado
-x_i = 1
-x_f = 3
-y_i = 2
-y_f = 4
-
-
-# Espacio muestral
-S = {(i,j) for i in range(x_i, x_f + 1) for j in range(y_i, y_f + 1)}
-print(S)
-
-
-# A = Suma par
-A = set(filter(lambda x : (x[0]+x[1])%2 == 0,S))
-print(A)
-
-# B = Primer numero primo
-B = set(filter(lambda x : esPrimo(x[0]) == True,S))
-print(B)
-
-N_A = len(A)
-N_B = len(B)
-N = len(S)
-
-# P(A)
-P_A = prob(N_A,N)
-print(P_A)
-
-# P(B)
-P_B = prob(N_B,N)
-print(P_B)
-
-# A and B
-A_and_B = A.intersection(B)
-print(A_and_B)
-
-# P(A and B)
-N__A_and_B = len(A_and_B)
-P__A_and_B = prob(N__A_and_B,N)
-print(P__A_and_B)
-
-# A or B
-A_or_B = A.union(B)
-print(A_or_B)
-
-# P(A or B)
-N__A_or_B = len(A_or_B)
-P__A_or_B = prob(N__A_or_B,N)
-print(P__A_or_B)
-
-# Continuara...
-
 
 # ## Referencias
 # 1. Statistics Openstax (https://openstax.org/details/books/statistics)
