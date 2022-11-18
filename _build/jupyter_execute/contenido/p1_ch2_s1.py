@@ -608,122 +608,161 @@ glue("P__A_or_B",P__A_or_B)
 
 # De modo $P(A \bigcup B) = ${glue:}`P__A_or_B`
 
-# #### Ejemplo 9
+# * **$B' = ?$**
+#   
+#   $$
+#   B' = \left \{(1,2), (1,3), (1,4)\right \}
+#   $$
+
+# In[12]:
+
+
+# B'
+not_B = S - B
+glue("not_B",not_B)
+
+
+# La salida para el evento $B' = ${glue:}`not_B`
+
+# * **$P(B') = ?$**
+#   
+#   $$
+#   P(B') =  \frac{1}{3} 
+#   $$
+
+# In[13]:
+
+
+# P(B')
+N__not_B = len(not_B)
+P__not_B = prob(N__not_B,N)
+glue("P__not_B",P__not_B)
+
+
+# Asi, $P(B') = ${glue:}`P__not_B`
+
+# *  **$P(A) + P(A') = ?$**
 # 
-# El espacio muestral S son todos los pares ordenados de dos números enteros, el primero de uno a tres y el segundo de uno a cuatro (ejemplo: (1, 4)).
-# 1. Cual es el espacio muestral.
+#    $$
+#    P(A') =  1 - P(A) = 1 - \frac{4}{9} = \frac{5}{9}
+#    $$
 #    
-#    ```
-#    S = {
-#       (1,2), (1,3), (1,4)
-#       (2,2), (2,3), (2,4)
-#       (3,2), (3,3), (3,4)
-#    }
-#    ```
+#    Luego:
+#    
+#    $$
+#    P(A) + P(A') = \frac{4}{9} + \frac{5}{9} = \frac{9}{9} = 1
+#    $$
+
+# In[14]:
+
+
+# A'
+not_A = S - A
+glue("not_A", not_A)
+
+# P(A')
+N__not_A = len(not_A)
+P__not_A = prob(N__not_A,N)
+glue("P__not_A", P__not_A)
+
+# P(A) + P(A') = 1
+sum_probs = P_A + P__not_A
+print("P(A) + P(A') = ", P_A, " + ", P__not_A, " = ", sum_probs, sep ="")
+
+
+# * **$P(A|B) = ?$**
 # 
-# 2. Supongamos que se definen los eventos **A** = la suma es par y **B** = el primer número es primo. Teniendo en cuenta esto se pide:
-#    *  $A = ?$
+#   Aplicando la definición de **Probabilidad condicional** tenemos que para $B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}$ solo cumplen la condición de que la suma sea par (evento $A$): $\left \{(2,2), (2,4), (3,3)\right \}$ de modo que:
 #   
-#       $$
-#       A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}
-#       $$
+#   $$
+#   P(A|B) = \frac{3}{6} = \frac{1}{2}
+#   $$
 # 
-#    *  $B = ?$
+#   Por otro lado, si se hubiera usado la **formula de probabilidad condicional** tedriamos el siguiente resultado:
 #   
-#       $$
-#       B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
-#       $$
+#   $$
+#   P(A|B) = \frac{P(A \bigcap B)}{P(B)} = \frac{\frac{1}{3}}{\frac{2}{3}} = \frac{1}{2}
+#   $$
 # 
-#    *  $P(A) = ?$
-# 
-#       $$
-#       P(A) = \frac{N(A)}{N} = \frac{4}{9} 
-#       $$
-# 
-#    *  $P(B) = ?$
-# 
-#       $$
-#       P(B) = \frac{N(B)}{N} = \frac{6}{9} = \frac{2}{3} 
-#       $$
-# 
-#    *  $A y B = ?$
+
+# In[15]:
+
+
+# Forma 1
+# Generación de las salidas del evento B
+A_in_B = set(filter(lambda x : (x[0]+x[1])%2 == 0,B))
+glue("B",B)
+glue("A_in_B",A_in_B)
+P__A_dado_B1 = len(A_in_B)/len(B)
+print("Forma 1: P(A|B) = ", P__A_dado_B1, sep="")
+
+
+# In[16]:
+
+
+# Forma 2
+# Aplicacion de la formula de probabilidad condicional
+P__A_dado_B2 = P__A_and_B/P_B
+glue("P__A_dado_B",P__A_dado_B2)
+print("Forma 2: P(A|B) = ", P__A_dado_B2, sep="")
+
+
+# * **$P(B|A) = ?$**
 #   
-#       $$
-#       A y B = A \bigcap B = \left \{(2,2), (2,4), (3,3)\right \}
-#       $$
+#   Tenemos que para $A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}$ solo cumplen la condición de que el primer numero de estos sea primo (evento $B$): $\left \{(2,2), (2,4), (3,3)\right \}$ de modo que:
 # 
-#    *  $P(A y B) = ?$
+#   $$
+#   P(B|A) = \frac{3}{4} 
+#   $$
 # 
-#       $$
-#       P(A y B) = \frac{N(A \bigcap B)}{N} = \frac{3}{9} = \frac{1}{3} 
-#       $$
-# 
-#    *  $A o B = ?$
+#   Si se hubiera usado la formula tedriamos el siguiente resultado:
 #   
-#       $$
-#       A o B = A \bigcup B = \left \{(1,3), (2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
-#       $$
+#   $$
+#   P(B|A) = \frac{P(A \bigcap B)}{P(A)} = \frac{\frac{1}{3}}{\frac{4}{9}} = \frac{9}{12} = \frac{3}{4}
+#   $$
 # 
-#    *  $P(A o B) = ?$
+
+# In[17]:
+
+
+# Forma 1
+# Generación de las salidas del evento B
+B_in_A = set(filter(lambda x : esPrimo(x[0]) == True,A))
+glue("B",A)
+glue("B_in_A",B_in_A)
+P__B_dado_A1 = len(B_in_A)/len(A)
+print("Forma 1: P(B|A) = ", P__B_dado_A1, sep="")
+
+
+# In[18]:
+
+
+# Forma 2
+# Aplicacion de la formula de probabilidad condicional
+P__B_dado_A2 = P__A_and_B/P_A
+glue("P__B_dado_A",P__B_dado_A2)
+print("Forma 2: P(B|A) = ", P__B_dado_A2, sep="")
+
+
+# La siguiente tabla resume todos los resultados del ejercicio anterior:
 # 
-#       $$
-#       P(A o B) = \frac{N(A \bigcup B)}{N} = \frac{7}{9} 
-#       $$
-# 
-#    *  $B' = ?$
-#   
-#       $$
-#       B' = \left \{(1,2), (1,3), (1,4)\right \}
-#       $$
-# 
-#    *  $P(B') = ?$
-# 
-#       $$
-#       P(B') =  \frac{1}{3} 
-#       $$
-# 
-#    *  $P(A) + P(A') = ?$
-#   
-#       $$
-#       P(A') =  1 - P(A) = 1 - \frac{4}{9} = \frac{5}{9}
-#       $$
-# 
-#       Luego:
-# 
-#       $$
-#       P(A) + P(A') = \frac{4}{9} + \frac{5}{9} = \frac{9}{9} = 1
-#       $$
-# 
-#    *  $P(A|B) = ?$
-# 
-#       Tenemos que para $B = \left \{(2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}$ solo cumplen la condición de que la suma sea par (evento $A$): $\left \{(2,2), (2,4), (3,3)\right \}$ de modo que:
-# 
-#       $$
-#       P(A|B) = \frac{3}{6} = \frac{1}{2}
-#       $$
-# 
-#       Si se hubiera usado la formula tedriamos el siguiente resultado:
-#   
-#       $$
-#       P(A|B) = \frac{P(A \bigcap B)}{P(B)} = \frac{\frac{1}{3}}{\frac{2}{3}} = \frac{1}{2}
-#       $$
-# 
-# 
-#    *  $P(B|A) = ?$
-#   
-#       Tenemos que para $A = \left \{(1,3), (2,2), (2,4), (3,3)\right \}$ solo cumplen la condición de que el primer numero de estos sea primo (evento $B$): $\left \{(2,2), (2,4), (3,3)\right \}$ de modo que:
-# 
-#       $$
-#       P(B|A) = \frac{3}{4} 
-#       $$
-# 
-#       Si se hubiera usado la formula tedriamos el siguiente resultado:
-#   
-#       $$
-#       P(B|A) = \frac{P(A \bigcap B)}{P(A)} = \frac{\frac{1}{3}}{\frac{4}{9}} = \frac{9}{12} = \frac{3}{4}
-#       $$
-# 
-# 
+# |Variable|Resultado|
+# |---|---|
+# |$S$|${glue:}`S`|
+# |$A$|${glue:}`A`|
+# |$P(A)$|${glue:}`P_A`|
+# |$B$|${glue:}`B`|
+# |$P(B)$|${glue:}`P_B`|
+# |$A'$|${glue:}`not_A`|
+# |$P(A')$|${glue:}`P__not_A`|
+# |$B'$|${glue:}`not_B`|
+# |$P(B')$|${glue:}`P__not_B`|
+# |$A \bigcap B$|${glue:}`A_and_B`|
+# |$P(A \bigcap B)$|${glue:}`P__A_and_B`|
+# |$A \bigcup B$|${glue:}`A_or_B`|
+# |$P(A \bigcup B)$|${glue:}`P__A_or_B`|
+# |$(A|B)$|${glue:}`P__A_dado_B`|
+# |$(B|A)$|${glue:}`P__B_dado_A`|
 
 # ## Referencias
 # 1. Statistics Openstax (https://openstax.org/details/books/statistics)

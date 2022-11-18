@@ -1,58 +1,82 @@
 {
   "contenido\\p1_ch2_s1": {
-    "S": {
+    "B": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "S",
+          "name": "B",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "{(1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (3, 4)}"
+        "text/plain": "{(1, 3), (2, 2), (2, 4), (3, 3)}"
       }
     },
-    "A_or_B": {
+    "P__not_A": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "A_or_B",
+          "name": "P__not_A",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "{(1, 3), (2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (3, 4)}"
+        "text/plain": "0.5555555555555556"
       }
     },
-    "P__A_and_B": {
+    "P__B_dado_A": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "P__A_and_B",
+          "name": "P__B_dado_A",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "0.3333333333333333"
+        "text/plain": "0.75"
       }
     },
-    "P_B": {
+    "P_A": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "P_B",
+          "name": "P_A",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "0.6666666666666666"
+        "text/plain": "0.4444444444444444"
       }
     },
-    "A_and_B": {
+    "A": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "A_and_B",
+          "name": "A",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "{(1, 3), (2, 2), (2, 4), (3, 3)}"
+      }
+    },
+    "not_B": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "not_B",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "{(1, 2), (1, 3), (1, 4)}"
+      }
+    },
+    "B_in_A": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "B_in_A",
           "mime_prefix": ""
         }
       },
@@ -60,16 +84,52 @@
         "text/plain": "{(2, 2), (2, 4), (3, 3)}"
       }
     },
-    "P__A_or_B": {
+    "not_A": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "P__A_or_B",
+          "name": "not_A",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "0.7777777777777778"
+        "text/plain": "{(1, 2), (1, 4), (2, 3), (3, 2), (3, 4)}"
+      }
+    },
+    "A_in_B": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "A_in_B",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "{(2, 2), (2, 4), (3, 3)}"
+      }
+    },
+    "P__not_B": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "P__not_B",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "0.3333333333333333"
+      }
+    },
+    "P__A_dado_B": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "P__A_dado_B",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "0.5"
       }
     }
   }
