@@ -6,7 +6,7 @@
 
 import numpy as np
 import pandas as pd
-from scipy.stats import trim_mean
+from myst_nb import glue
 
 
 # # Experimentos y eventos
@@ -86,7 +86,7 @@ from scipy.stats import trim_mean
 # 
 # Usualmente se emplean letras mayusculas $(A, B, C,...)$  o letras con subindices $(E_1, E_2, E_3,...)$ para representar eventos. 
 # 
-# ### Ejemplo 2
+# ### Ejemplo 1
 # 
 # Teniendo en cuenta el experimento analizado en el ejemplo 1 (adquisión del onda civic). Podemos definir los siguientes eventos:
 # * **M**: El auto fue adquirido por un hombre.
@@ -113,7 +113,7 @@ from scipy.stats import trim_mean
 #    
 #    $$mujer = \left \{FE, FG \right \}$$
 # 
-# ### Ejemplo 3
+# ### Ejemplo 2
 # 
 # Un experimento consiste en lanzar una moneda no cargada. ¿Cual es el espacio muestral asociado al experimento?
 # 
@@ -127,7 +127,7 @@ from scipy.stats import trim_mean
 # 
 # $$S = \left \{H, T \right \}$$
 # 
-# ### Ejemplo 4
+# ### Ejemplo 3
 # 
 # Suponga que se lleva a cabo un experimento que consiste en lanzar dos veces una moneda imparcial. Si **H**, es el evento en el cual el resultado es cara y **T** es el evento cuyo resultado es sello.
 # 1. ¿Cual es el espacio muestral?
@@ -166,7 +166,7 @@ from scipy.stats import trim_mean
 # * **$A$ and $B$**: Evento que consiste en todas las salidas que se encuentran en ambos eventos $A$ y $B$. **$A$ and $B$** es conocido como la intersección de los dos eventos y se denota por $A \bigcap B$.
 # ```
 # 
-# ### Ejemplo 5
+# ### Ejemplo 4
 # 
 # Se le ha pedido a una ingeniera de tránsito que considere si una señal de alto en la parte inferior de la rampa de salida de una autopista debe ser reemplazada por un semáforo. Para ayudar en esta decisión, ella planea observar los patrones de tráfico de esta rampa de salida. Para esto, la ingeniera registra la direccion de giro (**L**: Izquierda; **R**: Derecha) de tres vehiculos sucesivos. Para esto se pide lo siguiente:
 # 1. ¿Cual es el espacio muestral del experimento?
@@ -269,10 +269,6 @@ from scipy.stats import trim_mean
 # ```{Tip}
 # A mayor numero de repeticiones de un experimento, los resultados son mas concluyentes.
 # ```
-# 
-# Continuara:... Poner: http://bcs.whfreeman.com/webpub/statistics/ips9e/9781319013387/statisticalapplets/statisticalapplets.html 
-# 
-# 
 
 # # Probabilidades
 # 
@@ -284,14 +280,14 @@ from scipy.stats import trim_mean
 # 
 # ![ley_grandes_numeros](p1_ch2_s1/ley_grandes_numeros.png)
 # 
+# ```{admonition} Probabilidad
+# La probabilidad de cualquier resultado de un proceso aleatorio es un número entre 0 y 1 que describe la proporción de veces que ocurriría el resultado en una serie muy larga de repeticiones.
+# ```
+# 
 # ```{tip}
 # Para comprender mejor este concepto, pruebe y analice las siguientes simulaciones:
 # * **Probability** ([link](http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html))
 # * **The Law of Large Numbers** ([link](http://digitalfirst.bfwpub.com/stats_applet/stats_applet_11_largenums.html))
-# ```
-# 
-# ```{admonition} Probabilidad
-# La probabilidad de cualquier resultado de un proceso aleatorio es un número entre 0 y 1 que describe la proporción de veces que ocurriría el resultado en una serie muy larga de repeticiones.
 # ```
 # 
 # La idea de probabilidad parece sencilla. Sin embargo, hay varios mitos sobre el comportamiento aleatorio que merecen ser abordados.
@@ -328,7 +324,7 @@ from scipy.stats import trim_mean
 # ```
 # 
 
-# #### Ejemplo 6
+# #### Ejemplo 1
 # 
 # Suponga que se lanza varias veces un dado no cargado de seis lados  con los números {1, 2, 3, 4, 5, 6} en sus lados. 
 # 
@@ -382,7 +378,7 @@ from scipy.stats import trim_mean
 # 5. Dados dos eventos mutuamente excluyentes (no suceden a la vez) $E$ y $F$, entonces:
 # 
 #    $$
-#    P(E or F) = P(E \bigcup F) = P(E + F) = P(E) + P(F) 
+#    P(E\; or\; F) = P(E \bigcup F) = P(E + F) = P(E) + P(F) 
 #    $$
 # 
 # 6. **Regla del complemento**: Para cualquier evento $E$: $P(E) + P(E') = 1$ por lo tanto:
@@ -396,7 +392,7 @@ from scipy.stats import trim_mean
 #    $$
 # ```
 
-# #### Ejemplo 7
+# #### Ejemplo 2
 # 
 # Suponga que se realiza un experimento que consiste en lanzar un par de dados no cargados. 
 # 
@@ -460,7 +456,7 @@ from scipy.stats import trim_mean
 # 
 # Una observación importante es que la **parte condicional** reduce el espacio muestral pues el calculo de la probabilidad se hace tomando $A$ a partir del espacio muestral reducido $B$. Para aclarar esto observemos el siguiente ejemplo:
 
-# #### Ejemplo 8
+# #### Ejemplo 3
 # Suponga que se lanza un dado imparcial de seis lados. Sean los eventos **A** = el lado es 2 o 3 y **B** = el lado es par. ¿Cual es la probabilidad de sacar 2 o 3 si el lado es par?
 # 
 # ![dado_condicional](p1_ch2_s1/dado_condicional.png)
@@ -495,17 +491,12 @@ from scipy.stats import trim_mean
 # In[2]:
 
 
-# importar de bibliotecas necesarias
-import numpy as np
-import pandas as pd
-from myst_nb import glue
 # Funcion para calcular la probabilidad de un evento
 def prob(n_event, n):
     return n_event/n
 
 
-# #### Ejemplo 9
-# 
+# #### Ejemplo 1
 # El espacio muestral S son todos los pares ordenados de dos números enteros, el primero de uno a tres y el segundo de uno a cuatro (ejemplo: (1, 4)).
 
 # **P1**. Cual es el espacio muestral.
@@ -624,10 +615,10 @@ glue("P_B",P_B)
 
 # De modo que $P(B) = ${glue:}`P_B`
 
-# * **$A y B = ?$**
+# * **$A\; y\; B = ?$**
 #   
 #   $$
-#   A y B = A \bigcap B = \left \{(2,2), (2,4), (3,3)\right \}
+#   A\; y\; B = A \bigcap B = \left \{(2,2), (2,4), (3,3)\right \}
 #   $$
 
 # In[8]:
@@ -640,10 +631,10 @@ glue("A_and_B",A_and_B)
 
 # Vemos que la salida $A \bigcap B = ${glue:}`A_and_B`
 
-# * **$P(A y B) = ?$**
+# * **$P(A\; y\; B) = ?$**
 #   
 #   $$
-#   P(A y B) = \frac{N(A \bigcap B)}{N} = \frac{3}{9} = \frac{1}{3} 
+#   P(A\; y\; B) = \frac{N(A \bigcap B)}{N} = \frac{3}{9} = \frac{1}{3} 
 #   $$
 
 # In[9]:
@@ -657,9 +648,10 @@ glue("P__A_and_B",P__A_and_B)
 
 # Asi $P(A \bigcap B) = ${glue:}`P__A_and_B`
 
-# * **$A o B = ?$**
+# * **$A\; o\; B = ?$**
+#   
 #   $$
-#   A o B = A \bigcup B = \left \{(1,3), (2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
+#   A\; o\; B = A \bigcup B = \left \{(1,3), (2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\right \}
 #   $$
 
 # In[10]:
@@ -672,10 +664,10 @@ glue("A_or_B",A_or_B)
 
 # El resultado para el evento $A \bigcup B = ${glue:}`A_or_B`
 
-# * **$P(A o B) = ?$**
+# * **$P(A\;o\;B) = ?$**
 #   
 #   $$
-#   P(A o B) = \frac{N(A \bigcup B)}{N} = \frac{7}{9} 
+#   P(A\;o\;B) = \frac{N(A \bigcup B)}{N} = \frac{7}{9} 
 #   $$
 
 # In[11]:
@@ -844,6 +836,110 @@ print("Forma 2: P(B|A) = ", P__B_dado_A2, sep="")
 # |$P(A \bigcup B)$|{glue:}`P__A_or_B`|
 # |$P(A \vert B)$|{glue:}`P__A_dado_B`|
 # |$P(B \vert A)$|{glue:}`P__B_dado_A`|
+
+# #### Ejemplo 2
+# Realizar la implentación en python de la función para calcular la probabilidad.
+
+# In[19]:
+
+
+from fractions import Fraction
+
+# Calculo de la probabilidad
+def P(event, space): 
+    "The probability of an event, given a sample space."
+    return Fraction(cases(favorable(event, space)), 
+                    cases(space))
+
+favorable = set.intersection # Outcomes that are in the event and in the sample space
+cases     = len              # The number of cases is the length, or size, of a set
+
+
+# Si se lanza un dado justo, responder las siguientes preguntas.
+# 
+# **P1**. ¿Cuál es la probabilidad de sacar un número par con un solo dado justo (no cargado) de seis caras? 
+# 
+# Sea el evento $even =$ obtener un numero par en el lanzamiento y $S$ el espacio muestral del dado. Tenemos:
+# 
+# $$S = \left \{1,2,3,4,5,6 \right \}$$
+# 
+# $$ even = \left \{2,4,6\right \} $$
+# 
+# Entonces, la probabilidad de obtener un numero par estara dada por:
+# 
+# $$P(even)=\frac{N(even)}{N}=\frac{3}{6}=\frac{1}{2}$$
+# 
+# 
+
+# In[20]:
+
+
+S     = {1, 2, 3, 4, 5, 6} # a sample space
+even  = {   2,    4,    6} # an event
+
+# Calculo de P(even)
+P_even = P(even, S)
+
+glue("P_even",P_even)
+
+
+# **P2**. ¿Cuál es la probabilidad de sacar un número primo en el dado? 
+# 
+# Sea el evento $prime =$ obtener un numero primo en el lanzamiento. Tenemos:
+# 
+# $$S = \left \{ 1,2,3,4,5,6\right\}$$
+# 
+# $$prime = \left \{2,3,5\right \}$$
+# 
+# Entonces, la probabilidad de obtener un numero primo en el dado estara dada por:
+# 
+# $$P(prime)=\frac{N(prime)}{N}=\frac{3}{6}=\frac{1}{2}$$
+
+# In[21]:
+
+
+S     = {1, 2, 3, 4, 5, 6} # a sample space
+prime  = {   2, 3,    5, } # an event prime
+
+# Calculo de P(prime)
+P_prime = P(prime, S)
+
+glue("P_prime",P_prime)
+
+
+# **P3** ¿Cuál es la probabilidad de sacar un primo si el lado es par?
+# 
+# Teniendo en cuenta la definición previa de eventos:
+# * $even =$ obtener un numero par en el lanzamiento: $even = \left \{2,4,6 \right \}$
+# * $prime =$ obtener un numero primo en el lanzamiento: $prime = \left \{2,3,5 \right \}$
+# 
+# En este caso, lo que nos preguntan es $$P(prime|even)$$ asi que al seleccionar la cantidad de primos que aparecen dentro del conjunto de pares tenemos que:
+# 
+# $$prime|even=\left \{ 2\right \} $$
+# 
+# Luego tenemos que:
+# 
+# $$P(prime|even)=\frac{N(prime|even)}{N(B)} = \frac{1}{3}$$
+# 
+# Por otro lado, si lo que se hubiera hecho para hallar lo que se pide hubiera sido aplicar la formula teniamos:
+# 
+# $$prime \bigcap even = {2} \rightarrow P(prime \bigcap even) = \frac{N(prime \bigcap even)}{N}=\frac{1}{6}$$
+# 
+# Luego:
+# 
+# 
+# $$P(prime|even)=\frac{P(prime \bigcap even)}{P(even)} = \frac{\frac{1}{6}}{\frac{1}{2}}=\frac{1}{3}$$
+
+# In[22]:
+
+
+# Calculo de P(even & prime)
+P_even_and_prime= P(even & prime,S)
+
+# Calculo de P(prime|even)
+P_prime_in_even = Fraction(P_even_and_prime,P_even)
+glue("P_prime_in_even",P_prime_in_even)
+
 
 # ## Referencias
 # 1. Statistics Openstax (https://openstax.org/details/books/statistics)
