@@ -276,6 +276,30 @@ from scipy.stats import trim_mean
 
 # # Probabilidades
 # 
+# ### Conceptualización
+# 
+# El comportamiento del azar es impredecible a corto plazo, pero tiene un patrón regular y predecible a largo plazo.
+# 
+# La **ley de los grandes números** dice que si observamos más y más repeticiones de cualquier proceso aleatorio, la proporción de veces que ocurre un resultado específico se aproxima a un solo valor. En la siguiente figura se puede observar este hecho:
+# 
+# ![ley_grandes_numeros](p1_ch2_s1/ley_grandes_numeros.png)
+# 
+# ```{tip}
+# Para comprender mejor este concepto, pruebe y analice las siguientes simulaciones:
+# * **Probability** ([link](http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html))
+# * **The Law of Large Numbers** ([link](http://digitalfirst.bfwpub.com/stats_applet/stats_applet_11_largenums.html))
+# ```
+# 
+# ```{admonition} Probabilidad
+# La probabilidad de cualquier resultado de un proceso aleatorio es un número entre 0 y 1 que describe la proporción de veces que ocurriría el resultado en una serie muy larga de repeticiones.
+# ```
+# 
+# La idea de probabilidad parece sencilla. Sin embargo, hay varios mitos sobre el comportamiento aleatorio que merecen ser abordados.
+# 1. **El mito de la regularidad a corto plazo (short-run regularity)**: La idea de probabilidad es que la aleatoriedad *es predecible a largo plazo*. Nuestra intuición trata de decirnos que los fenómenos aleatorios también deberían ser predecibles a corto plazo. Sin embargo, la probabilidad *no nos permite hacer predicciones a corto plazo*.
+# 2. **El mito de la "ley de los promedios" (law of averages)**: La probabilidad nos dice que el comportamiento aleatorio *se equilibra a largo plazo*. Los resultados futuros no se ven afectados por el comportamiento pasado. Es decir, los resultados pasados no influyen en la probabilidad de que ocurran resultados individuales en el futuro.
+# 
+# ### Modelo de probabilidad
+# 
 # Un **modelo de probabilidad** es una descripción de un evento aleatorio que consiste de dos partes:
 # * La lista de todas las posibles salidas (espacio muestral).
 # * Un probabilidad para cada salida.
@@ -836,5 +860,6 @@ print("Forma 2: P(B|A) = ", P__B_dado_A2, sep="")
 # 12. https://probability4datascience.com/index.html
 # 13. https://www.probabilitycourse.com/
 # 14. https://codefellows.github.io/sea-python-401d2/lectures/stats_day2.html
+# 15. http://bcs.whfreeman.com/webpub/statistics/ips9e/9781319013387/statisticalapplets/statisticalapplets.html
 # 
 # 
