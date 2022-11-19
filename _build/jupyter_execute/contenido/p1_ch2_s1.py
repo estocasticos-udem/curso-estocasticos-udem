@@ -266,11 +266,11 @@ from scipy.stats import trim_mean
 # 
 # 4. **Concluir**: En 100 ensayos, se obtenía una cara el 56 % de las veces y una cruz el 44 %. De modo que los resultados parecen demostras que la moneda **esta cargada**. 
 # 
-# ```{note}
+# ```{Tip}
 # A mayor numero de repeticiones de un experimento, los resultados son mas concluyentes.
 # ```
 # 
-# 
+# Continuara:... Poner: http://bcs.whfreeman.com/webpub/statistics/ips9e/9781319013387/statisticalapplets/statisticalapplets.html 
 # 
 # 
 
