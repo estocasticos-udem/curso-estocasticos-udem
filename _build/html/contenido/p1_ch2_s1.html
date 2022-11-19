@@ -434,6 +434,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#simulacion">
      Simulación
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Ejemplo 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Ejemplo 2
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -567,6 +579,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#simulacion">
      Simulación
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Ejemplo 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Ejemplo 2
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -897,7 +921,99 @@ title="Print to PDF"
 </section>
 <section id="simulacion">
 <h2>Simulación<a class="headerlink" href="#simulacion" title="Permalink to this headline">#</a></h2>
-<p>Poner un ejemplo…</p>
+<div class="admonition-simulacion admonition">
+<p class="admonition-title">Simulación</p>
+<p>La <strong>simulación</strong> consiste en el procedimiento de imitar un comportamiento al azar (aleatorio) basado en un modelo que refleja con presición la situación.</p>
+</div>
+<p>Para realizar una simulación se una estrategia la cual se describe mediante los siguientes cuatro pasos:</p>
+<ol class="simple">
+<li><p><strong>Enunciar</strong>: ¿Cuál es la pregunta de interés sobre el proceso de azar?</p></li>
+<li><p><strong>Planear</strong>: Describe cómo usar un dispositivo de azar (dispositivos fisicos, numeros aleatorios y aplicaciones entre otros) para imitar una repetición del proceso. Explique claramente cómo identificar los resultados del proceso de azar y qué variable medir.</p></li>
+<li><p><strong>Hacer</strong>: Realizar muchas repeticiones de la simulación.</p></li>
+<li><p><strong>Concluir</strong>: use los resultados de su simulación para responder la pregunta de interés.</p></li>
+</ol>
+<p>Para aterrizar un poco el concepto, observemos los siguientes escenarios.</p>
+<section id="id1">
+<h3>Ejemplo 1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p><strong>Posible caso de discriminación laboral</strong>: Una aerolínea acaba de terminar de capacitar a 25 pilotos, 15 hombres y 10 mujeres, para convertirse en capitanes. Desafortunadamente, solo ocho posiciones de capitán están disponibles en ese momento. Los gerentes de las aerolíneas anuncian que usarán una lotería para determinar qué pilotos ocuparán los puestos disponibles. Los nombres de los 25 pilotos se escribirán en tiras de papel idénticas, que se colocarán en un sombrero, se mezclarán bien y se extraerán de uno en uno hasta que se hayan identificado los ocho capitanes.</p>
+<p>Un día después, los gerentes anuncian los resultados de la lotería. De los 8 capitanes elegidos, 5 son mujeres y 3 son hombres. Algunos de los pilotos masculinos que no fueron seleccionados sospechan que la lotería no se llevó a cabo de manera justa. Uno de estos pilotos le pide consejo a los estudiantes de su curso de estadística sobre si debe presentar una queja ante el sindicato de pilotos.</p>
+<p>La pregunta clave en este posible caso de discriminación parece ser: <em>¿es posible que estos resultados hayan ocurrido por casualidad?</em></p>
+</div></blockquote>
+<p>Para responder a la pregunta planteada, es necesario realizar un procedimiento en el cual se simule el proceso de elección de los pilotos imitando el escenario planteado.</p>
+<p>A continuación, se plantea la estrategia de simulación llevando a cabo los 4 procedimientos:</p>
+<ol>
+<li><p><strong>Enunciar</strong>: ¿Qué probabilidad hay de que una lotería justa resulte en la selección de 5 pilotos mujeres y 3 hombres de un grupo inicial de 15 pilotos hombres y 10 mujeres?</p></li>
+<li><p><strong>Planear</strong>: Hacer una baraja especial empleando las cartas de un poker (dispositivo fisico) para imitar la situación. Para ello use cartas rojas para simular cada una de las pilotos y cartas negras para simular los pilotos, asi:</p>
+<ul class="simple">
+<li><p><strong>Mujeres</strong>: 13 cartas de corazon + 2 cartas de diamante (para completar las 15)</p></li>
+<li><p><strong>Hombres</strong>: 10 cartas de espada. <br><br>
+Luego, baraje y elija ocho cartas y cuente el numero de pilotos mujeres seleccionados.</p></li>
+</ul>
+</li>
+<li><p><strong>Hacer</strong>: Cada estudiante de la clase debera realizar esto 5 veces llevando un registro de cada caso en la siguiente tabla:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Intento</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>N° de mujeres</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><strong>Concluir</strong>: Supongamos que el resultado despues de analizar 100 repeticiones 18 produjeron 5 o mas mujeres piloto lo cual implica que el 18% de las veces, una loteria justa elegiria al menos 5 mujeres piloto para convertirse en capitanas de modo que es posible concluir que la compañia ha realizado un <strong>sorteo justo</strong>.</p></li>
+</ol>
+</section>
+<section id="id2">
+<h3>Ejemplo 2<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p><strong>Moneda cargada</strong>: Se sospecha que una moneda de $500 esta cargada de modo que le piden a su grupo del curso de estadistica que verifique si esto es cierto.</p>
+</div></blockquote>
+<p>Aplicando los cuatro pasos tenemos:</p>
+<ol>
+<li><p><strong>Enunciar</strong>: ¿Cual es la probabilidad obtenida al lanzar la moneda de tal manera que la mitad de los lanzamientos sean cara y la otra mitad sean sello, es decir que no sea cargada?</p></li>
+<li><p><strong>Planear</strong>: Sea toma una moneda y se lanza varias veces anotando su resultado: <strong>H</strong> = cara; <strong>T</strong>: sello.</p></li>
+<li><p><strong>Hacer</strong>: El profesor pide que cada uno de sus estudiantes de Estadística lance cinco vecer la moneda de $500 y anoten el resultado en la siguiente tabla.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Intento</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Salida (H/T)</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><strong>Concluir</strong>: En 100 ensayos, se obtenía una cara el 56 % de las veces y una cruz el 44 %. De modo que los resultados parecen demostras que la moneda <strong>esta cargada</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A mayor numero de repeticiones de un experimento, los resultados son mas concluyentes.</p>
+</div>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="probabilidades">
@@ -1619,6 +1735,7 @@ A o B = A \bigcup B = \left \{(1,3), (2,2), (2,3), (2,4), (3,2), (3,3), (3,4)\ri
 <li><p><a class="reference external" href="https://www.stapplet.com/">https://www.stapplet.com/</a></p></li>
 <li><p><a class="reference external" href="https://probability4datascience.com/index.html">https://probability4datascience.com/index.html</a></p></li>
 <li><p><a class="reference external" href="https://www.probabilitycourse.com/">https://www.probabilitycourse.com/</a></p></li>
+<li><p><a class="reference external" href="https://codefellows.github.io/sea-python-401d2/lectures/stats_day2.html">https://codefellows.github.io/sea-python-401d2/lectures/stats_day2.html</a></p></li>
 </ol>
 </section>
 </section>

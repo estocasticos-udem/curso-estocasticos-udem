@@ -212,10 +212,67 @@ from scipy.stats import trim_mean
 #    Sea $F$ = Evento en el que como maximo un solo carro gira a la derecha y todos los autos giran en la misma dirección
 # 
 #    $$F = B \bigcap C = \left \{RLL, LRL, LLR, LLL \right \} \bigcap \left \{RRR, LLL \right \} = \left \{LLL\right \}$$
-# 
+
 # ## Simulación
 # 
-# Poner un ejemplo...
+# ```{admonition} Simulación
+# La **simulación** consiste en el procedimiento de imitar un comportamiento al azar (aleatorio) basado en un modelo que refleja con presición la situación. 
+# ```
+# 
+# Para realizar una simulación se una estrategia la cual se describe mediante los siguientes cuatro pasos:
+# 1. **Enunciar**: ¿Cuál es la pregunta de interés sobre el proceso de azar?
+# 2. **Planear**: Describe cómo usar un dispositivo de azar (dispositivos fisicos, numeros aleatorios y aplicaciones entre otros) para imitar una repetición del proceso. Explique claramente cómo identificar los resultados del proceso de azar y qué variable medir.
+# 3. **Hacer**: Realizar muchas repeticiones de la simulación.
+# 4. **Concluir**: use los resultados de su simulación para responder la pregunta de interés.
+# 
+# Para aterrizar un poco el concepto, observemos los siguientes escenarios.
+# 
+# ### Ejemplo 1
+# 
+# > **Posible caso de discriminación laboral**: Una aerolínea acaba de terminar de capacitar a 25 pilotos, 15 hombres y 10 mujeres, para convertirse en capitanes. Desafortunadamente, solo ocho posiciones de capitán están disponibles en ese momento. Los gerentes de las aerolíneas anuncian que usarán una lotería para determinar qué pilotos ocuparán los puestos disponibles. Los nombres de los 25 pilotos se escribirán en tiras de papel idénticas, que se colocarán en un sombrero, se mezclarán bien y se extraerán de uno en uno hasta que se hayan identificado los ocho capitanes. 
+# > 
+# > Un día después, los gerentes anuncian los resultados de la lotería. De los 8 capitanes elegidos, 5 son mujeres y 3 son hombres. Algunos de los pilotos masculinos que no fueron seleccionados sospechan que la lotería no se llevó a cabo de manera justa. Uno de estos pilotos le pide consejo a los estudiantes de su curso de estadística sobre si debe presentar una queja ante el sindicato de pilotos.
+# > 
+# > La pregunta clave en este posible caso de discriminación parece ser: *¿es posible que estos resultados hayan ocurrido por casualidad?* 
+# 
+# Para responder a la pregunta planteada, es necesario realizar un procedimiento en el cual se simule el proceso de elección de los pilotos imitando el escenario planteado. 
+# 
+# A continuación, se plantea la estrategia de simulación llevando a cabo los 4 procedimientos:
+# 1. **Enunciar**: ¿Qué probabilidad hay de que una lotería justa resulte en la selección de 5 pilotos mujeres y 3 hombres de un grupo inicial de 15 pilotos hombres y 10 mujeres?
+# 2. **Planear**: Hacer una baraja especial empleando las cartas de un poker (dispositivo fisico) para imitar la situación. Para ello use cartas rojas para simular cada una de las pilotos y cartas negras para simular los pilotos, asi:
+#    * **Mujeres**: 13 cartas de corazon + 2 cartas de diamante (para completar las 15)
+#    * **Hombres**: 10 cartas de espada. <br><br>
+# Luego, baraje y elija ocho cartas y cuente el numero de pilotos mujeres seleccionados.
+# 3. **Hacer**: Cada estudiante de la clase debera realizar esto 5 veces llevando un registro de cada caso en la siguiente tabla:
+#    
+#    |Intento|1|2|3|4|5|
+#    |---|---|---|---|---|---|
+#    |**N° de mujeres**||||||
+#    
+# 4. **Concluir**: Supongamos que el resultado despues de analizar 100 repeticiones 18 produjeron 5 o mas mujeres piloto lo cual implica que el 18% de las veces, una loteria justa elegiria al menos 5 mujeres piloto para convertirse en capitanas de modo que es posible concluir que la compañia ha realizado un **sorteo justo**. 
+# 
+# ### Ejemplo 2
+# 
+# > **Moneda cargada**: Se sospecha que una moneda de $500 esta cargada de modo que le piden a su grupo del curso de estadistica que verifique si esto es cierto.
+# 
+# Aplicando los cuatro pasos tenemos:
+# 1. **Enunciar**: ¿Cual es la probabilidad obtenida al lanzar la moneda de tal manera que la mitad de los lanzamientos sean cara y la otra mitad sean sello, es decir que no sea cargada?
+# 2. **Planear**: Sea toma una moneda y se lanza varias veces anotando su resultado: **H** = cara; **T**: sello. 
+# 3. **Hacer**: El profesor pide que cada uno de sus estudiantes de Estadística lance cinco vecer la moneda de $500 y anoten el resultado en la siguiente tabla.
+#    
+#    |Intento|1|2|3|4|5|
+#    |---|---|---|---|---|---|
+#    |**Salida (H/T)**||||||
+# 
+# 4. **Concluir**: En 100 ensayos, se obtenía una cara el 56 % de las veces y una cruz el 44 %. De modo que los resultados parecen demostras que la moneda **esta cargada**. 
+# 
+# ```{note}
+# A mayor numero de repeticiones de un experimento, los resultados son mas concluyentes.
+# ```
+# 
+# 
+# 
+# 
 
 # # Probabilidades
 # 
@@ -778,5 +835,6 @@ print("Forma 2: P(B|A) = ", P__B_dado_A2, sep="")
 # 11. https://www.stapplet.com/
 # 12. https://probability4datascience.com/index.html
 # 13. https://www.probabilitycourse.com/
+# 14. https://codefellows.github.io/sea-python-401d2/lectures/stats_day2.html
 # 
 # 
