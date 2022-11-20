@@ -1,17 +1,5 @@
 {
   "contenido\\p1_ch2_s1": {
-    "A_and_B": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "A_and_B",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "{(2, 2), (2, 4), (3, 3)}"
-      }
-    },
     "S": {
       "output_type": "display_data",
       "metadata": {
@@ -24,16 +12,16 @@
         "text/plain": "{(1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (3, 4)}"
       }
     },
-    "P_B": {
+    "A_and_B": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "P_B",
+          "name": "A_and_B",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "0.6666666666666666"
+        "text/plain": "{(2, 2), (2, 4), (3, 3)}"
       }
     },
     "A_or_B": {
@@ -46,6 +34,18 @@
       },
       "data": {
         "text/plain": "{(1, 3), (2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (3, 4)}"
+      }
+    },
+    "P_B": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "P_B",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "0.6666666666666666"
       }
     },
     "P__A_and_B": {
