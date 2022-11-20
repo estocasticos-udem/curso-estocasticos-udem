@@ -402,6 +402,11 @@ title="Print to PDF"
      Eventos independientes
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo">
+     Ejemplo
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -443,6 +448,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#eventos-independientes">
      Eventos independientes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo">
+     Ejemplo
     </a>
    </li>
   </ul>
@@ -509,13 +519,17 @@ title="Print to PDF"
 </ul>
 <p>Calcular:</p>
 <ol>
-<li><p>La probabilidad de que un paciente hospitalizado reciba una desfibrilación de manera oportuna (en dos minutos o menos).</p>
-<p>A partir de la tabla realizamos el calculo:</p>
-<p><span class="math notranslate nohighlight">\(P(D)=\frac{4689}{6716} = 0.698\)</span></p>
-</li>
-<li><p>Si se selecciona un paciente que se encuentra dentro de un hospital pequeño, que tan probable es que dicho paciente reciba una desfibrilación en dos minutos o menos.</p>
-<p>Tenemos que: <span class="math notranslate nohighlight">\(P(D|S)=\frac{P(D \bigcap S)}{P(S)}\)</span></p>
-<p>Primero se calcula la probabilidad de que el paciente hospitalizado en un hospital pequeño sufre el paro cardiaco y recibe la desfibrilación de manera oportuna:</p>
+<li><p>La probabilidad de que un paciente hospitalizado reciba una desfibrilación de manera oportuna (en dos minutos o menos).
+<br>
+A partir de la tabla realizamos el calculo:
+<br>
+<span class="math notranslate nohighlight">\(P(D)=\frac{4689}{6716} = 0.698\)</span>
+<br></p></li>
+<li><p>Si se selecciona un paciente que se encuentra dentro de un hospital pequeño, que tan probable es que dicho paciente reciba una desfibrilación en dos minutos o menos.
+<br>
+Tenemos que: <span class="math notranslate nohighlight">\(P(D|S)=\frac{P(D \bigcap S)}{P(S)}\)</span>
+<br>
+Primero se calcula la probabilidad de que el paciente hospitalizado en un hospital pequeño sufre el paro cardiaco y recibe la desfibrilación de manera oportuna:</p>
 <p><span class="math notranslate nohighlight">\(P(D \bigcap S) = \frac{1124}{6716} = 0.167\)</span></p>
 <p>Luego, la probabilidad de que el paciente que sufre el paro cardiado se encuentra hospitalizado en un hospital pequeño:</p>
 <p><span class="math notranslate nohighlight">\(P(S) = \frac{1700}{6716}= 0.253\)</span></p>
@@ -549,6 +563,9 @@ title="Print to PDF"
 \[P(A \bigcap B) = P(A)P(B)\]</div>
 </div>
 <p>Para demostrar que dos eventos son independientes, basta con demostrar <strong>solo una</strong> de las condiciones anteriormente mostradas.</p>
+</section>
+<section id="ejemplo">
+<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando numpy</span>

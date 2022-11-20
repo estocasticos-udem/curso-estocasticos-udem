@@ -54,15 +54,15 @@ cases     = len              # The number of cases is the length, or size, of a 
 # 
 # Calcular:
 # 1. La probabilidad de que un paciente hospitalizado reciba una desfibrilación de manera oportuna (en dos minutos o menos).
-#    
+#    <br>
 #    A partir de la tabla realizamos el calculo:
-# 
+#    <br>
 #    $P(D)=\frac{4689}{6716} = 0.698$
-#   
+#    <br>
 # 2. Si se selecciona un paciente que se encuentra dentro de un hospital pequeño, que tan probable es que dicho paciente reciba una desfibrilación en dos minutos o menos.
-# 
+#    <br>
 #    Tenemos que: $P(D|S)=\frac{P(D \bigcap S)}{P(S)}$
-# 
+#    <br>
 #    Primero se calcula la probabilidad de que el paciente hospitalizado en un hospital pequeño sufre el paro cardiaco y recibe la desfibrilación de manera oportuna:
 # 
 #    $P(D \bigcap S) = \frac{1124}{6716} = 0.167$
@@ -104,6 +104,9 @@ cases     = len              # The number of cases is the length, or size, of a 
 # ```
 # 
 # Para demostrar que dos eventos son independientes, basta con demostrar **solo una** de las condiciones anteriormente mostradas.
+# 
+# ### Ejemplo
+# 
 
 # In[3]:
 
