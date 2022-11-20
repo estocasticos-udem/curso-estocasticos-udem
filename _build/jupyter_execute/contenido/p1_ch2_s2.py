@@ -9,6 +9,36 @@ import pandas as pd
 from scipy.stats import trim_mean
 
 
+# In[2]:
+
+
+from fractions import Fraction
+
+# Calculo de la probabilidad
+def P(event, space): 
+    "The probability of an event, given a sample space."
+    return Fraction(cases(favorable(event, space)), 
+                    cases(space))
+
+favorable = set.intersection # Outcomes that are in the event and in the sample space
+cases     = len              # The number of cases is the length, or size, of a set
+
+
+# # Eventos independientes y Mutuamente excluyentes
+
+# ## Probabilidad condicional
+# 
+# ```{admonition} Calculo de probabilidades condicionales
+# Para encontrar la $P(A|B)$ se usa la expresión:
+# 
+# $$P(A|B) = \frac{P(A \bigcap B)}{P(B)}$$
+# 
+# Por otro lado, la probabilidad condicional $P(B|A)$ esta dada por:
+# 
+# $$P(B|A) = \frac{P(B \bigcap A)}{P(A)}$$
+# ```
+# 
+
 # ### Ejemplo de repaso
 # 
 # Las pautas médicas recomiendan que un paciente hospitalizado que sufre un paro cardíaco debe recibir una desfibrilación (descarga eléctrica en el corazón) dentro de los 2 minutos. El paper **"Delayed Time to Defibrillation After In-Hospital Cardiac Arrest" (The New England Journal of Medicine [2008]: 9–17)** ([link](https://www.nejm.org/doi/pdf/10.1056/NEJMoa0706467#:~:text=N%20Engl%20J%20Med%202008%3B358%3A9%2D17.&text=Expert%20guidelines%20advocate%20defibrillation%20within,effect%20on%20survival%20are%20limited)) describe un estudio del tiempo de desfibrilación para pacientes hospitalizados en hospitales de diferentes tamaños.
@@ -60,7 +90,21 @@ from scipy.stats import trim_mean
 
 # ## Tipos de eventos
 
-# In[2]:
+# ### Eventos independientes
+# 
+# Dos eventos **$A$** y **$B$** son independientes si el conocimiento de que uno ha ocurrido no afecta la posibilidad de que ocurra el otro.
+# 
+# ```{admonition}
+# Si $A$ y $B$ son dos eventos independientes se cumple que: 
+# 1. $P(A|B) = P(A)$
+# 2. $P(B|A) = P(B)$
+# 3. $P(A \bigcap B) = P(A)P(B)$
+# ```
+# 
+# Para demostrar que dos eventos son independientes, basta con demostrar **solo una** de las condiciones anteriormente mostradas.
+# 
+
+# In[3]:
 
 
 # Usando numpy
