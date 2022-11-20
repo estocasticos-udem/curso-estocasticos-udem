@@ -941,7 +941,8 @@ P_prime_in_even = Fraction(P_even_and_prime,P_even)
 glue("P_prime_in_even",P_prime_in_even)
 
 
-# ## Referencias
+# # Referencias
+# 
 # 1. Statistics Openstax (https://openstax.org/details/books/statistics)
 # 2. Introduction to Statistics and Data Analisys (Roxy Peck, Chris Olsen, Jay L. Devore)
 # 3. The practice of Statistics (Starnes, Yates, Moore)

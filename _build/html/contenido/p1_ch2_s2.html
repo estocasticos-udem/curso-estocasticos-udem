@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Eventos independientes y Mutuamente excluyentes &#8212; My sample book</title>
+    <title>Ejemplo de repaso &#8212; My sample book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Eventos independientes y Mutuamente excluyentes
+     Ejemplo de repaso
     </a>
    </li>
   </ul>
@@ -380,34 +380,15 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probabilidad-condicional">
-   Probabilidad condicional
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Ejemplo de repaso
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo-de-repaso">
-     Ejemplo de repaso
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tipos-de-eventos">
    Tipos de eventos
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#eventos-independientes">
-     Eventos independientes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo">
-     Ejemplo
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -418,7 +399,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Eventos independientes y Mutuamente excluyentes</h1>
+                <h1>Ejemplo de repaso</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -428,34 +409,15 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probabilidad-condicional">
-   Probabilidad condicional
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Ejemplo de repaso
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo-de-repaso">
-     Ejemplo de repaso
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tipos-de-eventos">
    Tipos de eventos
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#eventos-independientes">
-     Eventos independientes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo">
-     Ejemplo
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -476,37 +438,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
-
-<span class="c1"># Calculo de la probabilidad</span>
-<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span> 
-    <span class="s2">&quot;The probability of an event, given a sample space.&quot;</span>
-    <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">cases</span><span class="p">(</span><span class="n">favorable</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">space</span><span class="p">)),</span> 
-                    <span class="n">cases</span><span class="p">(</span><span class="n">space</span><span class="p">))</span>
-
-<span class="n">favorable</span> <span class="o">=</span> <span class="nb">set</span><span class="o">.</span><span class="n">intersection</span> <span class="c1"># Outcomes that are in the event and in the sample space</span>
-<span class="n">cases</span>     <span class="o">=</span> <span class="nb">len</span>              <span class="c1"># The number of cases is the length, or size, of a set</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="eventos-independientes-y-mutuamente-excluyentes">
-<h1>Eventos independientes y Mutuamente excluyentes<a class="headerlink" href="#eventos-independientes-y-mutuamente-excluyentes" title="Permalink to this headline">#</a></h1>
-<section id="probabilidad-condicional">
-<h2>Probabilidad condicional<a class="headerlink" href="#probabilidad-condicional" title="Permalink to this headline">#</a></h2>
-<div class="admonition-calculo-de-probabilidades-condicionales admonition">
-<p class="admonition-title">Calculo de probabilidades condicionales</p>
-<p>Para encontrar la <span class="math notranslate nohighlight">\(P(A|B)\)</span> se usa la expresión:</p>
-<div class="math notranslate nohighlight">
-\[P(A|B) = \frac{P(A \bigcap B)}{P(B)}\]</div>
-<p>Por otro lado, la probabilidad condicional <span class="math notranslate nohighlight">\(P(B|A)\)</span> esta dada por:</p>
-<div class="math notranslate nohighlight">
-\[P(B|A) = \frac{P(B \bigcap A)}{P(A)}\]</div>
-</div>
 <section id="ejemplo-de-repaso">
-<h3>Ejemplo de repaso<a class="headerlink" href="#ejemplo-de-repaso" title="Permalink to this headline">#</a></h3>
+<h1>Ejemplo de repaso<a class="headerlink" href="#ejemplo-de-repaso" title="Permalink to this headline">#</a></h1>
 <p>Las pautas médicas recomiendan que un paciente hospitalizado que sufre un paro cardíaco debe recibir una desfibrilación (descarga eléctrica en el corazón) dentro de los 2 minutos. El paper <strong>“Delayed Time to Defibrillation After In-Hospital Cardiac Arrest” (The New England Journal of Medicine [2008]: 9–17)</strong> (<a class="reference external" href="https://www.nejm.org/doi/pdf/10.1056/NEJMoa0706467#:~:text=N%20Engl%20J%20Med%202008%3B358%3A9%2D17.&amp;text=Expert%20guidelines%20advocate%20defibrillation%20within,effect%20on%20survival%20are%20limited">link</a>) describe un estudio del tiempo de desfibrilación para pacientes hospitalizados en hospitales de diferentes tamaños.</p>
 <p>Los autores examinaron los registros médicos de 6716 pacientes que sufrieron un paro cardíaco mientras estaban hospitalizados, registraron el tamaño del hospital y si la desfibrilación se produjo en 2 minutos o menos. Los datos de este estudio se resumen en la siguiente tabla:</p>
 <p><img alt="tabla_infartos" src="../_images/ejemplo_prob_condicional.png" /></p>
@@ -519,17 +452,13 @@ title="Print to PDF"
 </ul>
 <p>Calcular:</p>
 <ol>
-<li><p>La probabilidad de que un paciente hospitalizado reciba una desfibrilación de manera oportuna (en dos minutos o menos).
-<br>
-A partir de la tabla realizamos el calculo:
-<br>
-<span class="math notranslate nohighlight">\(P(D)=\frac{4689}{6716} = 0.698\)</span>
-<br></p></li>
-<li><p>Si se selecciona un paciente que se encuentra dentro de un hospital pequeño, que tan probable es que dicho paciente reciba una desfibrilación en dos minutos o menos.
-<br>
-Tenemos que: <span class="math notranslate nohighlight">\(P(D|S)=\frac{P(D \bigcap S)}{P(S)}\)</span>
-<br>
-Primero se calcula la probabilidad de que el paciente hospitalizado en un hospital pequeño sufre el paro cardiaco y recibe la desfibrilación de manera oportuna:</p>
+<li><p>La probabilidad de que un paciente hospitalizado reciba una desfibrilación de manera oportuna (en dos minutos o menos).</p>
+<p>A partir de la tabla realizamos el calculo:</p>
+<p><span class="math notranslate nohighlight">\(P(D)=\frac{4689}{6716} = 0.698\)</span></p>
+</li>
+<li><p>Si se selecciona un paciente que se encuentra dentro de un hospital pequeño, que tan probable es que dicho paciente reciba una desfibrilación en dos minutos o menos.</p>
+<p>Tenemos que: <span class="math notranslate nohighlight">\(P(D|S)=\frac{P(D \bigcap S)}{P(S)}\)</span></p>
+<p>Primero se calcula la probabilidad de que el paciente hospitalizado en un hospital pequeño sufre el paro cardiaco y recibe la desfibrilación de manera oportuna:</p>
 <p><span class="math notranslate nohighlight">\(P(D \bigcap S) = \frac{1124}{6716} = 0.167\)</span></p>
 <p>Luego, la probabilidad de que el paciente que sufre el paro cardiado se encuentra hospitalizado en un hospital pequeño:</p>
 <p><span class="math notranslate nohighlight">\(P(S) = \frac{1700}{6716}= 0.253\)</span></p>
@@ -546,26 +475,8 @@ Primero se calcula la probabilidad de que el paciente hospitalizado en un hospit
 </li>
 </ol>
 </section>
-</section>
 <section id="tipos-de-eventos">
-<h2>Tipos de eventos<a class="headerlink" href="#tipos-de-eventos" title="Permalink to this headline">#</a></h2>
-<section id="eventos-independientes">
-<h3>Eventos independientes<a class="headerlink" href="#eventos-independientes" title="Permalink to this headline">#</a></h3>
-<p>Dos eventos <strong><span class="math notranslate nohighlight">\(A\)</span></strong> y <strong><span class="math notranslate nohighlight">\(B\)</span></strong> son independientes si el conocimiento de que uno ha ocurrido no afecta la posibilidad de que ocurra el otro.</p>
-<div class="admonition-eventos-independientes admonition">
-<p class="admonition-title">Eventos independientes</p>
-<p>Si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son dos eventos independientes se cumple que:</p>
-<div class="math notranslate nohighlight">
-\[P(A|B) = P(A)\]</div>
-<div class="math notranslate nohighlight">
-\[P(B|A) = P(B)\]</div>
-<div class="math notranslate nohighlight">
-\[P(A \bigcap B) = P(A)P(B)\]</div>
-</div>
-<p>Para demostrar que dos eventos son independientes, basta con demostrar <strong>solo una</strong> de las condiciones anteriormente mostradas.</p>
-</section>
-<section id="ejemplo">
-<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">#</a></h3>
+<h1>Tipos de eventos<a class="headerlink" href="#tipos-de-eventos" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando numpy</span>
@@ -624,8 +535,6 @@ Primero se calcula la probabilidad de que el paciente hospitalizado en un hospit
 <li><p><a class="reference external" href="https://risk-engineering.org/notebook/coins-dice.html">https://risk-engineering.org/notebook/coins-dice.html</a></p></li>
 <li><p><a class="reference external" href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1192/handouts/pythonForProbability.html">https://web.stanford.edu/class/archive/cs/cs109/cs109.1192/handouts/pythonForProbability.html</a></p></li>
 </ul>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">

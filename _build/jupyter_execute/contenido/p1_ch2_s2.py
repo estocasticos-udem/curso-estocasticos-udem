@@ -9,35 +9,6 @@ import pandas as pd
 from scipy.stats import trim_mean
 
 
-# In[2]:
-
-
-from fractions import Fraction
-
-# Calculo de la probabilidad
-def P(event, space): 
-    "The probability of an event, given a sample space."
-    return Fraction(cases(favorable(event, space)), 
-                    cases(space))
-
-favorable = set.intersection # Outcomes that are in the event and in the sample space
-cases     = len              # The number of cases is the length, or size, of a set
-
-
-# # Eventos independientes y Mutuamente excluyentes
-
-# ## Probabilidad condicional
-# 
-# ```{admonition} Calculo de probabilidades condicionales
-# Para encontrar la $P(A|B)$ se usa la expresión:
-# 
-# $$P(A|B) = \frac{P(A \bigcap B)}{P(B)}$$
-# 
-# Por otro lado, la probabilidad condicional $P(B|A)$ esta dada por:
-# 
-# $$P(B|A) = \frac{P(B \bigcap A)}{P(A)}$$
-# ```
-
 # ### Ejemplo de repaso
 # 
 # Las pautas médicas recomiendan que un paciente hospitalizado que sufre un paro cardíaco debe recibir una desfibrilación (descarga eléctrica en el corazón) dentro de los 2 minutos. El paper **"Delayed Time to Defibrillation After In-Hospital Cardiac Arrest" (The New England Journal of Medicine [2008]: 9–17)** ([link](https://www.nejm.org/doi/pdf/10.1056/NEJMoa0706467#:~:text=N%20Engl%20J%20Med%202008%3B358%3A9%2D17.&text=Expert%20guidelines%20advocate%20defibrillation%20within,effect%20on%20survival%20are%20limited)) describe un estudio del tiempo de desfibrilación para pacientes hospitalizados en hospitales de diferentes tamaños.
@@ -54,15 +25,15 @@ cases     = len              # The number of cases is the length, or size, of a 
 # 
 # Calcular:
 # 1. La probabilidad de que un paciente hospitalizado reciba una desfibrilación de manera oportuna (en dos minutos o menos).
-#    <br>
+#  
 #    A partir de la tabla realizamos el calculo:
-#    <br>
+# 
 #    $P(D)=\frac{4689}{6716} = 0.698$
-#    <br>
+# 
 # 2. Si se selecciona un paciente que se encuentra dentro de un hospital pequeño, que tan probable es que dicho paciente reciba una desfibrilación en dos minutos o menos.
-#    <br>
+# 
 #    Tenemos que: $P(D|S)=\frac{P(D \bigcap S)}{P(S)}$
-#    <br>
+# 
 #    Primero se calcula la probabilidad de que el paciente hospitalizado en un hospital pequeño sufre el paro cardiaco y recibe la desfibrilación de manera oportuna:
 # 
 #    $P(D \bigcap S) = \frac{1124}{6716} = 0.167$
@@ -89,26 +60,7 @@ cases     = len              # The number of cases is the length, or size, of a 
 
 # ## Tipos de eventos
 
-# ### Eventos independientes
-# 
-# Dos eventos **$A$** y **$B$** son independientes si el conocimiento de que uno ha ocurrido no afecta la posibilidad de que ocurra el otro.
-# 
-# ```{admonition} Eventos independientes
-# Si $A$ y $B$ son dos eventos independientes se cumple que:
-# 
-# $$P(A|B) = P(A)$$
-# 
-# $$P(B|A) = P(B)$$
-# 
-# $$P(A \bigcap B) = P(A)P(B)$$
-# ```
-# 
-# Para demostrar que dos eventos son independientes, basta con demostrar **solo una** de las condiciones anteriormente mostradas.
-# 
-# ### Ejemplo
-# 
-
-# In[3]:
+# In[2]:
 
 
 # Usando numpy
