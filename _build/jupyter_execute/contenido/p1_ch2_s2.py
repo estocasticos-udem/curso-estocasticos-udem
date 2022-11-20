@@ -94,7 +94,7 @@ cases     = len              # The number of cases is the length, or size, of a 
 # 
 # Dos eventos **$A$** y **$B$** son independientes si el conocimiento de que uno ha ocurrido no afecta la posibilidad de que ocurra el otro.
 # 
-# ```{admonition}
+# ```{admonition} Eventos independientes
 # Si $A$ y $B$ son dos eventos independientes se cumple que: 
 # 1. $P(A|B) = P(A)$
 # 2. $P(B|A) = P(B)$
@@ -103,6 +103,32 @@ cases     = len              # The number of cases is the length, or size, of a 
 # 
 # Para demostrar que dos eventos son independientes, basta con demostrar **solo una** de las condiciones anteriormente mostradas.
 # 
+# #### Ejemplo
+# Los resultados de lanzar dos veces un dado imparcial son eventos independientes. El resultado de la primera lanzada no cambia la probabilidad del resultado de la segunda. 
+
+# ### Eventos dependientes
+# 
+# Si dos eventos **No** son independientes, decimos que **son dependientes**. En estos, el conocimiento de que un evento ha ocurrido cambia la probabilidad de que otro ocurra. 
+# 
+# #### Ejemplo
+# 
+# Un ejemplo puede ser el caso de una población en la que el 0.1% de todos los individuos tiene determinada enfermedad. La presencia de la enfermedad no se puede discernir de apariencias externas, pero hay una prueba de diagnóstico disponible. Desafortunadamente, la prueba es no infalible: el 80% de los que tienen resultados positivos en la prueba en realidad tienen la enfermedad; la otro 20% que muestran resultados positivos en las pruebas son falsos positivos. 
+# 
+# 
+
+# ## Muestreo
+
+# ### Muestreo con reemplazo
+# 
+# ```{admonition} Muestreo con reemplazo
+# Cuando se hace un muestreo con reemplazo, el individuo u objeto seleccionado seleccionado (**muestra**), se vuelve a colocar en la población antes de la siguiente selección.
+# ```
+
+# ### Muestreo sin reemplazo
+# 
+# ```{admonition} Muestreo sin reemplazo
+# En el muestreo sin reemplazo, el individuo u objeto seleccionado seleccionado (**muestra**), no se vuelve a colocar en la población antes de la siguiente selección.
+# ```
 
 # In[3]:
 

@@ -401,6 +401,42 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#eventos-independientes">
      Eventos independientes
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo">
+       Ejemplo
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eventos-dependientes">
+     Eventos dependientes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Ejemplo
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#muestreo">
+   Muestreo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#muestreo-con-reemplazo">
+     Muestreo con reemplazo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#muestreo-sin-reemplazo">
+     Muestreo sin reemplazo
+    </a>
    </li>
   </ul>
  </li>
@@ -443,6 +479,42 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#eventos-independientes">
      Eventos independientes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo">
+       Ejemplo
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eventos-dependientes">
+     Eventos dependientes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Ejemplo
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#muestreo">
+   Muestreo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#muestreo-con-reemplazo">
+     Muestreo con reemplazo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#muestreo-sin-reemplazo">
+     Muestreo sin reemplazo
     </a>
    </li>
   </ul>
@@ -538,7 +610,45 @@ title="Print to PDF"
 <section id="eventos-independientes">
 <h3>Eventos independientes<a class="headerlink" href="#eventos-independientes" title="Permalink to this headline">#</a></h3>
 <p>Dos eventos <strong><span class="math notranslate nohighlight">\(A\)</span></strong> y <strong><span class="math notranslate nohighlight">\(B\)</span></strong> son independientes si el conocimiento de que uno ha ocurrido no afecta la posibilidad de que ocurra el otro.</p>
+<div class="admonition-eventos-independientes admonition">
+<p class="admonition-title">Eventos independientes</p>
+<p>Si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son dos eventos independientes se cumple que:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A|B) = P(A)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B|A) = P(B)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A \bigcap B) = P(A)P(B)\)</span></p></li>
+</ol>
+</div>
 <p>Para demostrar que dos eventos son independientes, basta con demostrar <strong>solo una</strong> de las condiciones anteriormente mostradas.</p>
+<section id="ejemplo">
+<h4>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">#</a></h4>
+<p>Los resultados de lanzar dos veces un dado imparcial son eventos independientes. El resultado de la primera lanzada no cambia la probabilidad del resultado de la segunda.</p>
+</section>
+</section>
+<section id="eventos-dependientes">
+<h3>Eventos dependientes<a class="headerlink" href="#eventos-dependientes" title="Permalink to this headline">#</a></h3>
+<p>Si dos eventos <strong>No</strong> son independientes, decimos que <strong>son dependientes</strong>. En estos, el conocimiento de que un evento ha ocurrido cambia la probabilidad de que otro ocurra.</p>
+<section id="id1">
+<h4>Ejemplo<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<p>Un ejemplo puede ser el caso de una población en la que el 0.1% de todos los individuos tiene determinada enfermedad. La presencia de la enfermedad no se puede discernir de apariencias externas, pero hay una prueba de diagnóstico disponible. Desafortunadamente, la prueba es no infalible: el 80% de los que tienen resultados positivos en la prueba en realidad tienen la enfermedad; la otro 20% que muestran resultados positivos en las pruebas son falsos positivos.</p>
+</section>
+</section>
+</section>
+<section id="muestreo">
+<h2>Muestreo<a class="headerlink" href="#muestreo" title="Permalink to this headline">#</a></h2>
+<section id="muestreo-con-reemplazo">
+<h3>Muestreo con reemplazo<a class="headerlink" href="#muestreo-con-reemplazo" title="Permalink to this headline">#</a></h3>
+<div class="admonition-muestreo-con-reemplazo admonition">
+<p class="admonition-title">Muestreo con reemplazo</p>
+<p>Cuando se hace un muestreo con reemplazo, el individuo u objeto seleccionado seleccionado (<strong>muestra</strong>), se vuelve a colocar en la población antes de la siguiente selección.</p>
+</div>
+</section>
+<section id="muestreo-sin-reemplazo">
+<h3>Muestreo sin reemplazo<a class="headerlink" href="#muestreo-sin-reemplazo" title="Permalink to this headline">#</a></h3>
+<div class="admonition-muestreo-sin-reemplazo admonition">
+<p class="admonition-title">Muestreo sin reemplazo</p>
+<p>En el muestreo sin reemplazo, el individuo u objeto seleccionado seleccionado (<strong>muestra</strong>), no se vuelve a colocar en la población antes de la siguiente selección.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando numpy</span>
