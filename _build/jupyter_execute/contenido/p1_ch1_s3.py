@@ -481,7 +481,9 @@ central_measures(df)
 
 # ## Grafico de Tortas
 # 
-# En el grafico de tortas, la porción (pedazo de la torta) es proporsional a la frecuencia relativa del dato categorico analizado.
+# ```{admonition} Definición
+# Un **grafico de tortas** es una representación gráfica de una distribución de frecuencias de un conjunto de datos categoricos. Cada categoria es representada por pedazo de la torta de tal manera que el area del pedazo es proporcional a la frecuencia correspondiente o frecuencia relativa.
+# ```
 
 # ### Ejemplo 1
 # 
@@ -552,7 +554,9 @@ plt.show()
 
 # ## Grafico de barras
 # 
-# En este tipo de graficas, la longitud las barras es proporsional a la frecuencia relativa de cada categoria.
+# ```{admonition} Definición
+# El **grafico de barras** permite graficar la distribución de frecuencias para un conjunto de datos categoricos. En este, cada categoria es representada por una barra cuya areas es proporcional a la frecuencia o frecuencia relativa de la categoria a la que se asocia.
+# ```
 
 # ### Ejemplo 2
 # 
@@ -626,3 +630,5 @@ ax = sns.barplot(x="days", y="ordered", data=df)
 # 8. https://github.com/WalePhenomenon/MathsForML
 # 9. https://github.com/pabloinsente/math-app-ml
 # 10. https://github.com/iamzehan/A-little-bit-of-Math
+# 11. https://github.com/vanderbilt-data-science/into-data-science
+# 12. 

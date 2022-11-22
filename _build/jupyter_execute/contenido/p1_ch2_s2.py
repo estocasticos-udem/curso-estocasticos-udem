@@ -116,19 +116,153 @@ cases     = len              # The number of cases is the length, or size, of a 
 # 
 # 
 
+# ### Eventos mutuamente excluyentes
+# 
+# Dos eventos **A** y **B** son **eventos mutuamente excluyentes** si no pueden ocurrir al mismo tiempo.
+# 
+# ```{admonition} Eventos mutuamente excluyentes
+# Si $A$ y $B$ son **eventos **mutuamente excluyentes** esto siguifica que $A$ y $B$ no comparten ningún resultado y por lo tanto: 
+# 
+# $$
+# P(A \bigcap B) = P(A)P(B)
+# $$
+# ```
+# 
+# #### Ejemplo 
+# 
+# Supongamos que el espacio muestral ```S = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}```. Supongamos que ```A = {1, 2, 3, 4, 5}```, ```B = {4, 5, 6, 7, 8}```, y ```C = {7, 9}```. Veamos los siguientes eventos:
+# * **Caso donde los eventos no son mutuamente excluyentes**: Para el caso ```A and B = {4, 5}``` por lo que ```P(A and B) = 2/10``` y no es igual a cero. Por lo tanto, ```A``` y ```B``` no son mutuamente excluyentes. 
+# * **Caso donde los eventos son mutuamente excluyentes**: ```A``` y ```C``` no tienen ningún número en común por lo que ```P(A and C) = 0```. Por lo tanto, ```A``` y ```C``` son mutuamente excluyentes.
+# 
+# 
+# ```{tip}
+# A continuación se enuncian unos tips importantes:
+# * Si no se sabe si $A$ y $B$ son independientes o dependientes, suponga que son dependientes hasta que pueda demostrar lo contrario.
+# * Si no se sabe si $A$ y $B$ son mutuamente excluyentes, suponga que no lo son hasta que pueda demostrar lo contrario. 
+# ```
+
+# ### Ejemplos
+# 
+# #### Ejemplo 1
+# Se tiene un experimento en el que se elige a un adulto al azar y para el cual se definen los siguientes dos eventos:
+# * A = la persona tiene un nivel de colesterol de 240 miligramos por decilitro de sangre (mg/dl) o superior (colesterol alto).
+# * B = la persona tiene un nivel de colesterol de 200 a 239 mg/dl (colesterol alto en el límite).
+# 
+# De acuerdo con la Asociación America del corazon, $P(A) = 0.16$ y $P(B) = 0.29$
+# 
+# 1. Explique por que los eventos $A$ y $B$ son mutuamente excluyentes.
+#    
+#    Los eventos A y B no se pueden dar al mismo tiempo pues una persona no pude tener a la vez el colesterol por debajo encima de 240 mg/dl y dentro del intervalo [200,239] a la vez. Por lo tanto para este caso:
+# 
+#    $$
+#    P(A\;and\;B) = 0
+#    $$
+# 
+# 2. Diga en palabras lo que significa el evento $A\;or\;B$. ¿Cual es la probabilidad $P(A\;or\;B)$ ? 
+#   
+#    $$
+#    P(A\;or\;B) = P(A) + P(B) = 0.16 + 0.29 = 0.45
+#    $$
+# 
+# 3. Si $C$ es el evento de que la persona elegida tenga un colesterol normal (por debajo de 200 mg/dl), ¿cuál es $P(C)$?
+#    
+#    Para el caso tenemos que: $P(C) = 1 - P(not\;C)$, luego sabemos que $P(not\;C) = P(A\;or\;B) = 0.45$ De modo que:
+# 
+#    $$
+#    P(C) = 1 - P(not\;C) = 1 - P(A\;or\;B) = 1 - 0.45 = 0.55
+#    $$
+# 
+# 
+# 
+# 
+# 
+
+# #### Ejemplo 2
+# 
+# Toda la sangre humana se puede clasificar en cuatro tipos distintos (O, A, B o AB); sin embargo, la distribución de los tipos varía un poco según la raza. La siguiente tabla muestra la distribución del tipo de sangre de un estadounidense negro elegido al azar:
+# 
+# |Tipo de Sangre|O|A|B|AB|
+# |---|---|---|---|---|
+# |Probabilidad|0.49|0.27|0.20|?|
+# 
+# 1. ¿Cual es la probabilidad de que el tipo de sangre sea AB?
+#    
+#    $$
+#    P(AB) = 1 - P(not\;AB) = 1 - P(O\;or\;A\;or\;B)
+#    $$
+# 
+#    Como una persona no puede tener varios tipos de sangre distinta a la vez: $P(O\;and\;A\;and\;B) = 0$ y por lo tanto:
+# 
+#    $$
+#    P(O\;or\;A\;or\;B) = P(O) + P(A) + P(B) = 0.49 + 0.27 + 0.20 = 0.96
+#    $$
+# 
+#    Finalmente:
+# 
+#    $$
+#    P(AB) = 1 - P(not\;AB) = 1 - P(O\;or\;A\;or\;B) = 1 - 0.96 = 0.04
+#    $$
+# 
+# 2. ¿Cual es la probabilidad de que una persona seleccionada no tenga sangre tipo AB?
+# 
+#    $$
+#    P(not\;AB) = 1 - P(AB) = 1 - 0.04 = 1 - 0.04 = 0.96
+#    $$
+#    
+# 3. María tiene sangre tipo B. Ella puede recibir con seguridad transfusiones de sangre de personas con tipo de sangre O y B. ¿Cuál es la probabilidad de que un elegido al azar americano negro puede donar sangre a María?
+# 
+# El donande afroamericano que puede donar sangre a Maria debe tener sangre tipo O o tipo B de modo que:
+# 
+# $$
+# P(O\;or\;B) = P(O) + P(B) = 0.49 + 0.20 = 0.69
+# $$
+# 
+
 # ## Muestreo
+# 
+# El muestreo hace alusión a la técnica para la selección de una muestra a partir de una población.
+# 
+# ![tipos_de_muestreo](p1_ch2_s2/tipos_muestreo.png)
+# 
+# De acuerdo a lo que se haga con la muestra, el muestreo se puede hacer con **reemplazo** o **sin reemplazo**.
 
 # ### Muestreo con reemplazo
 # 
 # ```{admonition} Muestreo con reemplazo
 # Cuando se hace un muestreo con reemplazo, el individuo u objeto seleccionado seleccionado (**muestra**), se vuelve a colocar en la población antes de la siguiente selección.
 # ```
+# 
+# En el muestreo con reemplazo, como cada miembro de una población es reemplazado después de ser elegido, entonces ese miembro tiene la posibilidad de ser elegido más de una vez.
+# 
+# Debido a lo anteriot, los eventos se consideran **independientes**, lo que significa que el resultado de la primera elección no cambiará las probabilidades de la segunda.
+# 
+# #### Ejemplo - Mazo de cartas con reemplazo
+# 
+# Suponga que se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas. Consta de cuatro palos. Los palos son tréboles, diamantes, corazones y picas. Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina), K (rey) de ese palo.
+# 
+# ![mazo_cartas](p1_ch2_s2/mazo_cartas.png)
+# 
+# **Muestreo con reemplazo**: Supongamos que elige **tres cartas con reemplazo**. La primera carta que elige de las 52 cartas es la **Q de picas**. Despues de elegida, se vuelve a poner esta carta en el mazo, se baraja las cartas y saca una segunda carta del mazo de 52 la cual el el **diez de tréboles**. Luego se repite el procedimiento anterior y se saca del mazo de 52 cartas una tercera carta la corresponde nuevamente a la **Q de picas**. Sus elecciones son **{Q de picas, diez de tréboles, Q de picas}**. 
+# 
+# Notese que en este caso es posible escoger la misma carta mas de una vez (repeticamente) siendo el caso del ejemplo, la elección de la Q de picas dos veces. 
 
 # ### Muestreo sin reemplazo
 # 
 # ```{admonition} Muestreo sin reemplazo
 # En el muestreo sin reemplazo, el individuo u objeto seleccionado seleccionado (**muestra**), no se vuelve a colocar en la población antes de la siguiente selección.
 # ```
+# 
+# Como en este tipo de muestreo cada miembro de una población solo lo pueden seleccionar una vez. las probabilidades de la segunda elección se ven afectadas por el resultado de la primera, lo cual hace que los eventos sean considerados como **dependientes**.
+# 
+# #### Ejemplo - Mazo de cartas sin reemplazo
+# 
+# Suponga que se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas. Consta de cuatro palos. Los palos son tréboles, diamantes, corazones y picas. Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina), K (rey) de ese palo.
+# 
+# ![mazo_cartas](p1_ch2_s2/mazo_cartas.png)
+# 
+# **Muestreo sin reemplazo**: Supongamos que elige **tres cartas sin reemplazo**. La primera carta que saca de las 52 cartas es la **K de corazones**. Luego, se pone esta carta a un lado y saca la segunda carta de las 51 que quedan en el mazo la cual es el **tres de diamantes**. Finalmente, se pone esta carta a un lado y saca la tercera carta de las 50 restantes del mazo la cual corresponde a la **J de picas**. En resumen, sus elecciones son **{K de corazones, tres de diamantes, J de picas}**. 
+# 
+# Como ha escogido las cartas sin reemplazo, (a diferencia del caso anterior) no puede escoger la misma carta dos veces, lo cual hace que el evento actual de elección de cada carta sea dependientes de los eventos previos.
 
 # In[3]:
 
