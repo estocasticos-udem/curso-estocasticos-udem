@@ -448,6 +448,11 @@ title="Print to PDF"
        Ejemplo 2
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-3">
+       Ejemplo 3
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -568,6 +573,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#ejemplo-2">
        Ejemplo 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-3">
+       Ejemplo 3
       </a>
      </li>
     </ul>
@@ -831,6 +841,79 @@ P(A \bigcap B) = P(A)P(B)
 \[
 P(O\;or\;B) = P(O) + P(B) = 0.49 + 0.20 = 0.69
 \]</div>
+</section>
+<section id="ejemplo-3">
+<h4>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">#</a></h4>
+<p>Los estudiantes de la Universidad de New Harmony recibieron 10000 calificaciones en cursos el semestre pasado. La siguiente tabla desglosa estos grados según la escuela de la universidad que impartió el curso. Las escuelas son Artes, Ingeniería, Ciencias Sociales:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Escuela</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Menor que B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Artes</p></td>
+<td><p>2142</p></td>
+<td><p>1890</p></td>
+<td><p>2268</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ingeniería</p></td>
+<td><p>368</p></td>
+<td><p>432</p></td>
+<td><p>800</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciencias Sociales</p></td>
+<td><p>882</p></td>
+<td><p>630</p></td>
+<td><p>588</p></td>
+</tr>
+</tbody>
+</table>
+<p>Las calificaciones universitarias tienden a ser más bajas en ingeniería (E) que en artes y ciencias sociales (que incluyen Salud y Servicios Humanos). Considere los siguientes dos eventos:</p>
+<ul class="simple">
+<li><p><strong>E</strong>: la calificación proviene de un curso de ingenieria.</p></li>
+<li><p><strong>L</strong>: la calificación es inferior a una B.</p></li>
+</ul>
+<ol>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(L)\)</span> e interprete esta probabilidad dentro del contexto.</p>
+<p>Para el caso:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N(L) = 2268 + 800 + 588 = 3656\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N = 10000\)</span></p></li>
+</ul>
+<p>De este modo:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(L) = \frac{N(L)}{N} = \frac{3656}{10000} = 0.3656
+   \]</div>
+<p>En palabras esto significa que, el 36.56% de los estudiantes tienen una calificación por debajo de B.</p>
+</li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(E|L)\)</span> y  <span class="math notranslate nohighlight">\(P(L|E)\)</span>, ¿Cuál de estas probabilidades condicionales te dice si los estudiantes de Ingenieria de esta universidad tienden a obtener calificaciones más bajas que los estudiantes de artes y ciencias sociales? Explique.</p>
+<p>Para hallar <span class="math notranslate nohighlight">\(P(E|L)\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N(E \bigcap L) = 800\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N(L) = 3656\)</span></p></li>
+</ul>
+<p>Luego, al emplear la formula para <span class="math notranslate nohighlight">\(P(E|L)\)</span> tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(E|L) = \frac{N(E \bigcap L)}{N(L)} = \frac{800}{3656} = 0.2188
+   \]</div>
+<p>Para calcular <span class="math notranslate nohighlight">\(P(L|E)\)</span> tenemos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N(L \bigcap E) = 800\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N(E) = 368 + 432 + 800= 1600\)</span></p></li>
+</ul>
+<p>Finalmente, <span class="math notranslate nohighlight">\(P(L|E)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(L|E) = \frac{N(E \bigcap L)}{N(E)} = \frac{800}{1600} = 0.5
+   \]</div>
+<p>Por otro lado, la probabilidad que tiene a responder a la pregunta es <span class="math notranslate nohighlight">\(P(L|E)\)</span> pues esta, corresponde a la probabilidad de obtener una nota por debajo de B si el estudiante es de ingenieria.</p>
+</li>
+</ol>
 </section>
 </section>
 </section>

@@ -218,6 +218,60 @@ cases     = len              # The number of cases is the length, or size, of a 
 # $$
 # 
 
+# #### Ejemplo 3
+# 
+# Los estudiantes de la Universidad de New Harmony recibieron 10000 calificaciones en cursos el semestre pasado. La siguiente tabla desglosa estos grados según la escuela de la universidad que impartió el curso. Las escuelas son Artes, Ingeniería, Ciencias Sociales:
+# 
+# |Escuela|A|B|Menor que B|
+# |---|---|---|---|
+# |Artes|2142|1890|2268|
+# |Ingeniería|368|432|800|
+# |Ciencias Sociales|882|630|588|
+# 
+# Las calificaciones universitarias tienden a ser más bajas en ingeniería (E) que en artes y ciencias sociales (que incluyen Salud y Servicios Humanos). Considere los siguientes dos eventos: 
+# * **E**: la calificación proviene de un curso de ingenieria.
+# * **L**: la calificación es inferior a una B.
+# 
+# 1. Encuentre $P(L)$ e interprete esta probabilidad dentro del contexto.
+#    
+#    Para el caso: 
+#    * $N(L) = 2268 + 800 + 588 = 3656$
+#    * $N = 10000$
+# 
+#    De este modo:
+# 
+#    $$
+#    P(L) = \frac{N(L)}{N} = \frac{3656}{10000} = 0.3656
+#    $$
+# 
+#    En palabras esto significa que, el 36.56% de los estudiantes tienen una calificación por debajo de B.
+# 
+# 2. Encuentre $P(E|L)$ y  $P(L|E)$, ¿Cuál de estas probabilidades condicionales te dice si los estudiantes de Ingenieria de esta universidad tienden a obtener calificaciones más bajas que los estudiantes de artes y ciencias sociales? Explique.
+#    
+#    Para hallar $P(E|L)$:
+#    * $N(E \bigcap L) = 800$
+#    * $N(L) = 3656$
+#    
+#    Luego, al emplear la formula para $P(E|L)$ tenemos: 
+# 
+#    $$
+#    P(E|L) = \frac{N(E \bigcap L)}{N(L)} = \frac{800}{3656} = 0.2188
+#    $$
+# 
+#    Para calcular $P(L|E)$ tenemos:
+#    * $N(L \bigcap E) = 800$
+#    * $N(E) = 368 + 432 + 800= 1600$
+#    
+#    Finalmente, $P(L|E)$: 
+# 
+#    $$
+#    P(L|E) = \frac{N(E \bigcap L)}{N(E)} = \frac{800}{1600} = 0.5
+#    $$
+# 
+#    Por otro lado, la probabilidad que tiene a responder a la pregunta es $P(L|E)$ pues esta, corresponde a la probabilidad de obtener una nota por debajo de B si el estudiante es de ingenieria.
+# 
+# 
+
 # ## Muestreo
 # 
 # El muestreo hace alusión a la técnica para la selección de una muestra a partir de una población.
