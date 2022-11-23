@@ -318,25 +318,74 @@ cases     = len              # The number of cases is the length, or size, of a 
 # 
 # Como ha escogido las cartas sin reemplazo, (a diferencia del caso anterior) no puede escoger la misma carta dos veces, lo cual hace que el evento actual de elección de cada carta sea dependientes de los eventos previos.
 
+# # Ejemplos usando python
+
+# ## Ejemplo 1
+# Se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas el cual consta de cuatro palos. Los palos son tréboles (T), diamantes (D), corazones (C) y picas (P). Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina) y K (rey) de ese palo. 
+# 
+# Si se saque dos cartas de un mazo estándar de 52 cartas con reemplazo. Calcule la probabilidad de obtener una carta negra como mínimo.
+# 
+# **Definamos los eventos**:
+# * $N$: El evento de sacar una carta negra.
+# * $R$: El evento de sacar una carta roja.
+# * $N_i$: El evento de sacar una carta negra en el intento $i-esimo$
+# * $R_i$: El evento de sacar una carta roja en el intento $i-esimo$
+# 
+# Lo que nos piden es:
+# 
+# $$
+# P((N_1 \bigcap R_2) \bigcup (R_1 \bigcap N_2) \bigcup (N_1 \bigcap N_2)) = P(N_1R_2 + R_1N_2 + N_1N_2)
+# $$ 
+# 
+# Asi: 
+# 
+# $$P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2)$$
+# 
+# Como los eventos $N_1$ y $N_2$ son idenpendientes tenemos que: 
+# 
+# $$P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2) = P(N_1)P(R_2) + P(R_1)P(N_2) + P(N_1)P(N_2)$$
+# 
+# Donde:
+# 
+# $$P(N) = \frac{N(N)}{N} = \frac{N(T \bigcup P)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}$$
+# 
+# $$P(R) = \frac{N(R)}{N} = \frac{N(H \bigcup D)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}$$
+# 
+# Ademas: $P(N) = P(N) = P(N_i) = P(R_i) = \frac{1}{2}$
+# 
+# $$
+# P(N_1R_2 + R_1N_2 + N_1N_2) =  
+#                                 \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
+#                                 \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
+#                                 \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) 
+# $$
+# 
+# $$
+# P(N_1R_2 + R_1N_2 + N_1N_2) =  \frac{3}{4} 
+# $$
+# 
+# 
+# Esto tambien se pudierda haber hecho así:
+# 
+# $$
+# P(al\;menos\;una\;negra) = 1 - (ninguna\;negra) = 1 - P(ambas\;rojas) = 
+# $$
+# 
+# $$
+# P(N_1R_2 + R_1N_2 + N_1N_2) = 1 - P(R_1R_2) = 1 - P(R_1)P(R_2) = 1 - \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) = 1 - \frac{1}{4} = \frac{3}{4}
+# $$
+# 
+# 
+
 # In[3]:
 
 
 # Usando numpy
-profundidad = np.array([40, 52, 55, 60, 70, 75, 85, 85, 90, 90, 92, 94, 94, 95, 98, 100, 115, 125, 125])
-min_prof = np.quantile(profundidad,q = 0.0) # np.percentile(profundidad,q = 0)
-max_prof = np.quantile(profundidad,q = 1.0) # np.percentile(profundidad,q = 100)
-Q1_prof = np.quantile(profundidad,q = 0.25) # np.percentile(profundidad,q = 25)
-Q3_prof = np.quantile(profundidad,q = 0.75) # np.percentile(profundidad,q = 75)
-median_prof = np.quantile(profundidad,q = 0.5) # np.median(profundidad)
-rango_prof = np.ptp(profundidad)
-print("Resumen profundidades")
-print("- Minimo: ", min_prof, sep="")
-print("- Q1: ", Q1_prof , sep="")
-print("- Mediana: ", median_prof , sep="")
-print("- Q3: ", Q3_prof , sep="")
-print("- Maximo: ", max_prof, sep="")
-print("- IRQ: ", Q3_prof - Q1_prof, sep="")
 
+
+# ## Ejemplo 2
+
+# # Referencias
 
 # * https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/5-probability.ipynb
 # * https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/6-statistics.ipynb
