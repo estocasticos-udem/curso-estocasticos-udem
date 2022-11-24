@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Eventos independientes y Mutuamente excluyentes &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Eventos independientes y Mutuamente excluyentes" href="p1_ch2_s3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos de teoria Probabilidad
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="p1_ch1.html">
+   Introducción a la estadistica descriptiva
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s1.html">
+     Introducción al Análisis Exploratorio de Datos (EDA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s2.html">
+     Medidas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s3.html">
+     Diagramas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch1_s4.html">
+     Seccion de prueba
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p1_ch2.html">
+   Otro capitulo mas
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch2_s1.html">
+     Experimentos y eventos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch2_s2.html">
+     Eventos independientes y Mutuamente excluyentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p1_ch2_s3.html">
+     Eventos independientes y Mutuamente excluyentes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Eventos independientes y Mutuamente excluyentes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/contenido/p1_ch2_s4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontenido/p1_ch2_s4.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/contenido/p1_ch2_s4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Eventos independientes y Mutuamente excluyentes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilidad-condicional">
+     Probabilidad condicional
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-de-repaso">
+       Ejemplo de repaso
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-eventos">
+     Tipos de eventos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eventos-independientes">
+       Eventos independientes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo">
+         Ejemplo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eventos-dependientes">
+       Eventos dependientes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Ejemplo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eventos-mutuamente-excluyentes">
+       Eventos mutuamente excluyentes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Ejemplo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplos">
+       Ejemplos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-1">
+         Ejemplo 1
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-2">
+         Ejemplo 2
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-3">
+         Ejemplo 3
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#muestreo">
+     Muestreo
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#muestreo-con-reemplazo">
+       Muestreo con reemplazo
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-mazo-de-cartas-con-reemplazo">
+         Ejemplo - Mazo de cartas con reemplazo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#muestreo-sin-reemplazo">
+       Muestreo sin reemplazo
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-mazo-de-cartas-sin-reemplazo">
+         Ejemplo - Mazo de cartas sin reemplazo
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estrategias-para-calcular-la-probabilidad-de-un-evento">
+     Estrategias para calcular la probabilidad de un evento
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos-usando-python">
+   Ejemplos usando python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Ejemplo 1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Ejemplo 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Eventos independientes y Mutuamente excluyentes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Eventos independientes y Mutuamente excluyentes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilidad-condicional">
+     Probabilidad condicional
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-de-repaso">
+       Ejemplo de repaso
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-eventos">
+     Tipos de eventos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eventos-independientes">
+       Eventos independientes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo">
+         Ejemplo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eventos-dependientes">
+       Eventos dependientes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Ejemplo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eventos-mutuamente-excluyentes">
+       Eventos mutuamente excluyentes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Ejemplo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplos">
+       Ejemplos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-1">
+         Ejemplo 1
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-2">
+         Ejemplo 2
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-3">
+         Ejemplo 3
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#muestreo">
+     Muestreo
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#muestreo-con-reemplazo">
+       Muestreo con reemplazo
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-mazo-de-cartas-con-reemplazo">
+         Ejemplo - Mazo de cartas con reemplazo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#muestreo-sin-reemplazo">
+       Muestreo sin reemplazo
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-mazo-de-cartas-sin-reemplazo">
+         Ejemplo - Mazo de cartas sin reemplazo
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estrategias-para-calcular-la-probabilidad-de-un-evento">
+     Estrategias para calcular la probabilidad de un evento
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos-usando-python">
+   Ejemplos usando python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Ejemplo 1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Ejemplo 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">trim_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="eventos-independientes-y-mutuamente-excluyentes">
+<h1>Eventos independientes y Mutuamente excluyentes<a class="headerlink" href="#eventos-independientes-y-mutuamente-excluyentes" title="Permalink to this headline">#</a></h1>
+<section id="probabilidad-condicional">
+<h2>Probabilidad condicional<a class="headerlink" href="#probabilidad-condicional" title="Permalink to this headline">#</a></h2>
+<div class="admonition-calculo-de-probabilidades-condicionales admonition">
+<p class="admonition-title">Calculo de probabilidades condicionales</p>
+<p>Para encontrar la <span class="math notranslate nohighlight">\(P(A|B)\)</span> se usa la expresión:</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{P(A \bigcap B)}{P(B)}\]</div>
+<p>Por otro lado, la probabilidad condicional <span class="math notranslate nohighlight">\(P(B|A)\)</span> esta dada por:</p>
+<div class="math notranslate nohighlight">
+\[P(B|A) = \frac{P(B \bigcap A)}{P(A)}\]</div>
+</div>
+<section id="ejemplo-de-repaso">
+<h3>Ejemplo de repaso<a class="headerlink" href="#ejemplo-de-repaso" title="Permalink to this headline">#</a></h3>
+<p>Las pautas médicas recomiendan que un paciente hospitalizado que sufre un paro cardíaco debe recibir una desfibrilación (descarga eléctrica en el corazón) dentro de los 2 minutos. El paper <strong>“Delayed Time to Defibrillation After In-Hospital Cardiac Arrest” (The New England Journal of Medicine [2008]: 9–17)</strong> (<a class="reference external" href="https://www.nejm.org/doi/pdf/10.1056/NEJMoa0706467#:~:text=N%20Engl%20J%20Med%202008%3B358%3A9%2D17.&amp;text=Expert%20guidelines%20advocate%20defibrillation%20within,effect%20on%20survival%20are%20limited">link</a>) describe un estudio del tiempo de desfibrilación para pacientes hospitalizados en hospitales de diferentes tamaños.</p>
+<p>Los autores examinaron los registros médicos de 6716 pacientes que sufrieron un paro cardíaco mientras estaban hospitalizados, registraron el tamaño del hospital y si la desfibrilación se produjo en 2 minutos o menos. Los datos de este estudio se resumen en la siguiente tabla:</p>
+<p><img alt="tabla_infartos" src="../_images/ejemplo_prob_condicional.png" /></p>
+<p>Suponiendo que estos datos son representativos del grupo más grande de todos los pacientes hospitalizados que sufren un paro cardíaco. Suponga que se selecciona al azar un paciente hospitalizado que sufrió un paro cardíaco. Si los siguientes eventos son de interés:</p>
+<ul class="simple">
+<li><p>S = evento de que el paciente seleccionado se encuentre en un hospital pequeño.</p></li>
+<li><p>M = evento de que el paciente seleccionado se encuentre en un hospital de tamaño medio.</p></li>
+<li><p>L = evento de que el paciente seleccionado se encuentre en un hospital grande.</p></li>
+<li><p>D = evento de que el paciente seleccionado reciba desfibrilación en dos minutos o menos.</p></li>
+</ul>
+<p>Calcular:</p>
+<ol>
+<li><p>La probabilidad de que un paciente hospitalizado reciba una desfibrilación de manera oportuna (en dos minutos o menos).</p>
+<p>A partir de la tabla realizamos el calculo:</p>
+<p><span class="math notranslate nohighlight">\(P(D)=\frac{4689}{6716} = 0.698\)</span></p>
+</li>
+<li><p>Si se selecciona un paciente que se encuentra dentro de un hospital pequeño, que tan probable es que dicho paciente reciba una desfibrilación en dos minutos o menos.</p>
+<p>Tenemos que: <span class="math notranslate nohighlight">\(P(D|S)=\frac{P(D \bigcap S)}{P(S)}\)</span></p>
+<p>Primero se calcula la probabilidad de que el paciente hospitalizado en un hospital pequeño sufre el paro cardiaco y recibe la desfibrilación de manera oportuna:</p>
+<p><span class="math notranslate nohighlight">\(P(D \bigcap S) = \frac{1124}{6716} = 0.167\)</span></p>
+<p>Luego, la probabilidad de que el paciente que sufre el paro cardiado se encuentra hospitalizado en un hospital pequeño:</p>
+<p><span class="math notranslate nohighlight">\(P(S) = \frac{1700}{6716}= 0.253\)</span></p>
+<p>Finalmente, usando estas dos expresiones calculamos la probabilidad condicional que se pide:</p>
+<p><span class="math notranslate nohighlight">\(P(D|S)=\frac{P(D \bigcap S)}{P(S)}=\frac{0.167}{0.253} = 0.660\)</span></p>
+</li>
+<li><p>Cual es la probabilidad de recibir la desfibrilación dentro del tiempo adecuado para el caso en el cual el paciente es elegido den un hospital mediano.</p>
+<p>Nos piden: <span class="math notranslate nohighlight">\(P(D|M)\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(D|M)=\frac{P(D \bigcap M)}{P(M)}=\frac{\frac{2178}{6716}}{\frac{3064}{6716}} = \frac{2178}{3064} = 0.711\)</span></p>
+</li>
+<li><p>Cuando se selecciona el paciente de un hospital grande, ¿Cual es la probabilidad de que el paciente elegido reciba la desfibrilacion dentro del tiempo prudencial?</p>
+<p>En este caso se pide: <span class="math notranslate nohighlight">\(P(D|L)\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(D|L)=\frac{P(D \bigcap L)}{P(L)}=\frac{\frac{1387}{6716}}{\frac{1952}{6716}} = \frac{1387}{1952} = 0.711\)</span></p>
+</li>
+</ol>
+</section>
+</section>
+<section id="tipos-de-eventos">
+<h2>Tipos de eventos<a class="headerlink" href="#tipos-de-eventos" title="Permalink to this headline">#</a></h2>
+<section id="eventos-independientes">
+<h3>Eventos independientes<a class="headerlink" href="#eventos-independientes" title="Permalink to this headline">#</a></h3>
+<p>Dos eventos <strong><span class="math notranslate nohighlight">\(A\)</span></strong> y <strong><span class="math notranslate nohighlight">\(B\)</span></strong> son independientes si el conocimiento de que uno ha ocurrido no afecta la posibilidad de que ocurra el otro.</p>
+<div class="admonition-eventos-independientes admonition">
+<p class="admonition-title">Eventos independientes</p>
+<p>Si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son dos eventos independientes se cumple que:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A|B) = P(A)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B|A) = P(B)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A \bigcap B) = P(A)P(B)\)</span></p></li>
+</ol>
+</div>
+<p>Para demostrar que dos eventos son independientes, basta con demostrar <strong>solo una</strong> de las condiciones anteriormente mostradas.</p>
+<section id="ejemplo">
+<h4>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">#</a></h4>
+<p>Los resultados de lanzar dos veces un dado imparcial son eventos independientes. El resultado de la primera lanzada no cambia la probabilidad del resultado de la segunda.</p>
+</section>
+</section>
+<section id="eventos-dependientes">
+<h3>Eventos dependientes<a class="headerlink" href="#eventos-dependientes" title="Permalink to this headline">#</a></h3>
+<p>Si dos eventos <strong>No</strong> son independientes, decimos que <strong>son dependientes</strong>. En estos, el conocimiento de que un evento ha ocurrido cambia la probabilidad de que otro ocurra.</p>
+<section id="id1">
+<h4>Ejemplo<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<p>Un ejemplo puede ser el caso de una población en la que el 0.1% de todos los individuos tiene determinada enfermedad. La presencia de la enfermedad no se puede discernir de apariencias externas, pero hay una prueba de diagnóstico disponible. Desafortunadamente, la prueba es no infalible: el 80% de los que tienen resultados positivos en la prueba en realidad tienen la enfermedad; la otro 20% que muestran resultados positivos en las pruebas son falsos positivos.</p>
+</section>
+</section>
+<section id="eventos-mutuamente-excluyentes">
+<h3>Eventos mutuamente excluyentes<a class="headerlink" href="#eventos-mutuamente-excluyentes" title="Permalink to this headline">#</a></h3>
+<p>Dos eventos <strong>A</strong> y <strong>B</strong> son <strong>eventos mutuamente excluyentes</strong> si no pueden ocurrir al mismo tiempo.</p>
+<div class="admonition-eventos-mutuamente-excluyentes admonition">
+<p class="admonition-title">Eventos mutuamente excluyentes</p>
+<p>Si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son **eventos <strong>mutuamente excluyentes</strong> esto siguifica que <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> no comparten ningún resultado y por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+P(A \bigcap B) = P(A)P(B)
+\]</div>
+</div>
+<section id="id2">
+<h4>Ejemplo<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<p>Supongamos que el espacio muestral <code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">=</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10}</span></code>. Supongamos que <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5}</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">{4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8}</span></code>, y <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">{7,</span> <span class="pre">9}</span></code>. Veamos los siguientes eventos:</p>
+<ul class="simple">
+<li><p><strong>Caso donde los eventos no son mutuamente excluyentes</strong>: Para el caso <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">B</span> <span class="pre">=</span> <span class="pre">{4,</span> <span class="pre">5}</span></code> por lo que <code class="docutils literal notranslate"><span class="pre">P(A</span> <span class="pre">and</span> <span class="pre">B)</span> <span class="pre">=</span> <span class="pre">2/10</span></code> y no es igual a cero. Por lo tanto, <code class="docutils literal notranslate"><span class="pre">A</span></code> y <code class="docutils literal notranslate"><span class="pre">B</span></code> no son mutuamente excluyentes.</p></li>
+<li><p><strong>Caso donde los eventos son mutuamente excluyentes</strong>: <code class="docutils literal notranslate"><span class="pre">A</span></code> y <code class="docutils literal notranslate"><span class="pre">C</span></code> no tienen ningún número en común por lo que <code class="docutils literal notranslate"><span class="pre">P(A</span> <span class="pre">and</span> <span class="pre">C)</span> <span class="pre">=</span> <span class="pre">0</span></code>. Por lo tanto, <code class="docutils literal notranslate"><span class="pre">A</span></code> y <code class="docutils literal notranslate"><span class="pre">C</span></code> son mutuamente excluyentes.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A continuación se enuncian unos tips importantes:</p>
+<ul class="simple">
+<li><p>Si no se sabe si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son independientes o dependientes, suponga que son dependientes hasta que pueda demostrar lo contrario.</p></li>
+<li><p>Si no se sabe si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son mutuamente excluyentes, suponga que no lo son hasta que pueda demostrar lo contrario.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="ejemplos">
+<h3>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">#</a></h3>
+<section id="ejemplo-1">
+<h4>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">#</a></h4>
+<p>Se tiene un experimento en el que se elige a un adulto al azar y para el cual se definen los siguientes dos eventos:</p>
+<ul class="simple">
+<li><p>A = la persona tiene un nivel de colesterol de 240 miligramos por decilitro de sangre (mg/dl) o superior (colesterol alto).</p></li>
+<li><p>B = la persona tiene un nivel de colesterol de 200 a 239 mg/dl (colesterol alto en el límite).</p></li>
+</ul>
+<p>De acuerdo con la Asociación America del corazon, <span class="math notranslate nohighlight">\(P(A) = 0.16\)</span> y <span class="math notranslate nohighlight">\(P(B) = 0.29\)</span></p>
+<ol>
+<li><p>Explique por que los eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son mutuamente excluyentes.</p>
+<p>Los eventos A y B no se pueden dar al mismo tiempo pues una persona no pude tener a la vez el colesterol por debajo encima de 240 mg/dl y dentro del intervalo [200,239] a la vez. Por lo tanto para este caso:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(A\;and\;B) = 0
+   \]</div>
+</li>
+<li><p>Diga en palabras lo que significa el evento <span class="math notranslate nohighlight">\(A\;or\;B\)</span>. ¿Cual es la probabilidad <span class="math notranslate nohighlight">\(P(A\;or\;B)\)</span> ?</p>
+<div class="math notranslate nohighlight">
+\[
+   P(A\;or\;B) = P(A) + P(B) = 0.16 + 0.29 = 0.45
+   \]</div>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\(C\)</span> es el evento de que la persona elegida tenga un colesterol normal (por debajo de 200 mg/dl), ¿cuál es <span class="math notranslate nohighlight">\(P(C)\)</span>?</p>
+<p>Para el caso tenemos que: <span class="math notranslate nohighlight">\(P(C) = 1 - P(not\;C)\)</span>, luego sabemos que <span class="math notranslate nohighlight">\(P(not\;C) = P(A\;or\;B) = 0.45\)</span> De modo que:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(C) = 1 - P(not\;C) = 1 - P(A\;or\;B) = 1 - 0.45 = 0.55
+   \]</div>
+</li>
+</ol>
+</section>
+<section id="ejemplo-2">
+<h4>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">#</a></h4>
+<p>Toda la sangre humana se puede clasificar en cuatro tipos distintos (O, A, B o AB); sin embargo, la distribución de los tipos varía un poco según la raza. La siguiente tabla muestra la distribución del tipo de sangre de un estadounidense negro elegido al azar:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo de Sangre</p></th>
+<th class="head"><p>O</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>AB</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Probabilidad</p></td>
+<td><p>0.49</p></td>
+<td><p>0.27</p></td>
+<td><p>0.20</p></td>
+<td><p>?</p></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>¿Cual es la probabilidad de que el tipo de sangre sea AB?</p>
+<div class="math notranslate nohighlight">
+\[
+   P(AB) = 1 - P(not\;AB) = 1 - P(O\;or\;A\;or\;B)
+   \]</div>
+<p>Como una persona no puede tener varios tipos de sangre distinta a la vez: <span class="math notranslate nohighlight">\(P(O\;and\;A\;and\;B) = 0\)</span> y por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(O\;or\;A\;or\;B) = P(O) + P(A) + P(B) = 0.49 + 0.27 + 0.20 = 0.96
+   \]</div>
+<p>Finalmente:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(AB) = 1 - P(not\;AB) = 1 - P(O\;or\;A\;or\;B) = 1 - 0.96 = 0.04
+   \]</div>
+</li>
+<li><p>¿Cual es la probabilidad de que una persona seleccionada no tenga sangre tipo AB?</p>
+<div class="math notranslate nohighlight">
+\[
+   P(not\;AB) = 1 - P(AB) = 1 - 0.04 = 1 - 0.04 = 0.96
+   \]</div>
+</li>
+<li><p>María tiene sangre tipo B. Ella puede recibir con seguridad transfusiones de sangre de personas con tipo de sangre O y B. ¿Cuál es la probabilidad de que un elegido al azar americano negro puede donar sangre a María?</p></li>
+</ol>
+<p>El donande afroamericano que puede donar sangre a Maria debe tener sangre tipo O o tipo B de modo que:</p>
+<div class="math notranslate nohighlight">
+\[
+P(O\;or\;B) = P(O) + P(B) = 0.49 + 0.20 = 0.69
+\]</div>
+</section>
+<section id="ejemplo-3">
+<h4>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">#</a></h4>
+<p>Los estudiantes de la Universidad de New Harmony recibieron 10000 calificaciones en cursos el semestre pasado. La siguiente tabla desglosa estos grados según la escuela de la universidad que impartió el curso. Las escuelas son Artes, Ingeniería, Ciencias Sociales:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Escuela</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Menor que B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Artes</p></td>
+<td><p>2142</p></td>
+<td><p>1890</p></td>
+<td><p>2268</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ingeniería</p></td>
+<td><p>368</p></td>
+<td><p>432</p></td>
+<td><p>800</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciencias Sociales</p></td>
+<td><p>882</p></td>
+<td><p>630</p></td>
+<td><p>588</p></td>
+</tr>
+</tbody>
+</table>
+<p>Las calificaciones universitarias tienden a ser más bajas en ingeniería (E) que en artes y ciencias sociales (que incluyen Salud y Servicios Humanos). Considere los siguientes dos eventos:</p>
+<ul class="simple">
+<li><p><strong>E</strong>: la calificación proviene de un curso de ingenieria.</p></li>
+<li><p><strong>L</strong>: la calificación es inferior a una B.</p></li>
+</ul>
+<ol>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(L)\)</span> e interprete esta probabilidad dentro del contexto.</p>
+<p>Para el caso:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N(L) = 2268 + 800 + 588 = 3656\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N = 10000\)</span></p></li>
+</ul>
+<p>De este modo:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(L) = \frac{N(L)}{N} = \frac{3656}{10000} = 0.3656
+   \]</div>
+<p>En palabras esto significa que, el 36.56% de los estudiantes tienen una calificación por debajo de B.</p>
+</li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(E|L)\)</span> y  <span class="math notranslate nohighlight">\(P(L|E)\)</span>, ¿Cuál de estas probabilidades condicionales te dice si los estudiantes de Ingenieria de esta universidad tienden a obtener calificaciones más bajas que los estudiantes de artes y ciencias sociales? Explique.</p>
+<p>Para hallar <span class="math notranslate nohighlight">\(P(E|L)\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N(E \bigcap L) = 800\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N(L) = 3656\)</span></p></li>
+</ul>
+<p>Luego, al emplear la formula para <span class="math notranslate nohighlight">\(P(E|L)\)</span> tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(E|L) = \frac{N(E \bigcap L)}{N(L)} = \frac{800}{3656} = 0.2188
+   \]</div>
+<p>Para calcular <span class="math notranslate nohighlight">\(P(L|E)\)</span> tenemos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N(L \bigcap E) = 800\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N(E) = 368 + 432 + 800= 1600\)</span></p></li>
+</ul>
+<p>Finalmente, <span class="math notranslate nohighlight">\(P(L|E)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(L|E) = \frac{N(E \bigcap L)}{N(E)} = \frac{800}{1600} = 0.5
+   \]</div>
+<p>Por otro lado, la probabilidad que tiene a responder a la pregunta es <span class="math notranslate nohighlight">\(P(L|E)\)</span> pues esta, corresponde a la probabilidad de obtener una nota por debajo de B si el estudiante es de ingenieria.</p>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="muestreo">
+<h2>Muestreo<a class="headerlink" href="#muestreo" title="Permalink to this headline">#</a></h2>
+<p>El muestreo hace alusión a la técnica para la selección de una muestra a partir de una población.</p>
+<p><img alt="tipos_de_muestreo" src="../_images/tipos_muestreo.png" /></p>
+<p>De acuerdo a lo que se haga con la muestra, el muestreo se puede hacer con <strong>reemplazo</strong> o <strong>sin reemplazo</strong>.</p>
+<section id="muestreo-con-reemplazo">
+<h3>Muestreo con reemplazo<a class="headerlink" href="#muestreo-con-reemplazo" title="Permalink to this headline">#</a></h3>
+<div class="admonition-muestreo-con-reemplazo admonition">
+<p class="admonition-title">Muestreo con reemplazo</p>
+<p>Cuando se hace un muestreo con reemplazo, el individuo u objeto seleccionado seleccionado (<strong>muestra</strong>), se vuelve a colocar en la población antes de la siguiente selección.</p>
+</div>
+<p>En el muestreo con reemplazo, como cada miembro de una población es reemplazado después de ser elegido, entonces ese miembro tiene la posibilidad de ser elegido más de una vez.</p>
+<p>Debido a lo anteriot, los eventos se consideran <strong>independientes</strong>, lo que significa que el resultado de la primera elección no cambiará las probabilidades de la segunda.</p>
+<section id="ejemplo-mazo-de-cartas-con-reemplazo">
+<h4>Ejemplo - Mazo de cartas con reemplazo<a class="headerlink" href="#ejemplo-mazo-de-cartas-con-reemplazo" title="Permalink to this headline">#</a></h4>
+<p>Suponga que se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas. Consta de cuatro palos. Los palos son tréboles, diamantes, corazones y picas. Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina), K (rey) de ese palo.</p>
+<p><img alt="mazo_cartas" src="../_images/mazo_cartas.png" /></p>
+<p><strong>Muestreo con reemplazo</strong>: Supongamos que elige <strong>tres cartas con reemplazo</strong>. La primera carta que elige de las 52 cartas es la <strong>Q de picas</strong>. Despues de elegida, se vuelve a poner esta carta en el mazo, se baraja las cartas y saca una segunda carta del mazo de 52 la cual el el <strong>diez de tréboles</strong>. Luego se repite el procedimiento anterior y se saca del mazo de 52 cartas una tercera carta la corresponde nuevamente a la <strong>Q de picas</strong>. Sus elecciones son <strong>{Q de picas, diez de tréboles, Q de picas}</strong>.</p>
+<p>Notese que en este caso es posible escoger la misma carta mas de una vez (repeticamente) siendo el caso del ejemplo, la elección de la Q de picas dos veces.</p>
+</section>
+</section>
+<section id="muestreo-sin-reemplazo">
+<h3>Muestreo sin reemplazo<a class="headerlink" href="#muestreo-sin-reemplazo" title="Permalink to this headline">#</a></h3>
+<div class="admonition-muestreo-sin-reemplazo admonition">
+<p class="admonition-title">Muestreo sin reemplazo</p>
+<p>En el muestreo sin reemplazo, el individuo u objeto seleccionado seleccionado (<strong>muestra</strong>), no se vuelve a colocar en la población antes de la siguiente selección.</p>
+</div>
+<p>Como en este tipo de muestreo cada miembro de una población solo lo pueden seleccionar una vez. las probabilidades de la segunda elección se ven afectadas por el resultado de la primera, lo cual hace que los eventos sean considerados como <strong>dependientes</strong>.</p>
+<section id="ejemplo-mazo-de-cartas-sin-reemplazo">
+<h4>Ejemplo - Mazo de cartas sin reemplazo<a class="headerlink" href="#ejemplo-mazo-de-cartas-sin-reemplazo" title="Permalink to this headline">#</a></h4>
+<p>Suponga que se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas. Consta de cuatro palos. Los palos son tréboles, diamantes, corazones y picas. Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina), K (rey) de ese palo.</p>
+<p><img alt="mazo_cartas" src="../_images/mazo_cartas.png" /></p>
+<p><strong>Muestreo sin reemplazo</strong>: Supongamos que elige <strong>tres cartas sin reemplazo</strong>. La primera carta que saca de las 52 cartas es la <strong>K de corazones</strong>. Luego, se pone esta carta a un lado y saca la segunda carta de las 51 que quedan en el mazo la cual es el <strong>tres de diamantes</strong>. Finalmente, se pone esta carta a un lado y saca la tercera carta de las 50 restantes del mazo la cual corresponde a la <strong>J de picas</strong>. En resumen, sus elecciones son <strong>{K de corazones, tres de diamantes, J de picas}</strong>.</p>
+<p>Como ha escogido las cartas sin reemplazo, (a diferencia del caso anterior) no puede escoger la misma carta dos veces, lo cual hace que el evento actual de elección de cada carta sea dependientes de los eventos previos.</p>
+</section>
+</section>
+</section>
+<section id="estrategias-para-calcular-la-probabilidad-de-un-evento">
+<h2>Estrategias para calcular la probabilidad de un evento<a class="headerlink" href="#estrategias-para-calcular-la-probabilidad-de-un-evento" title="Permalink to this headline">#</a></h2>
+<p>A continuación se resumen un conjunto de pasos cuando se va a abordar un problema que implica calcular probabilidades.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol class="simple">
+<li><p>Haga una lista de todos los eventos sencillos del espacio muestral.</p></li>
+<li><p>Asigne una probabilidad apropiada a cada evento simple.</p></li>
+<li><p>Determine cuáles eventos sencillos resultan en el evento de interés.</p></li>
+<li><p>Sume las probabilidades de los eventos sencillos que resulten en el evento de interés.</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ejemplos-usando-python">
+<h1>Ejemplos usando python<a class="headerlink" href="#ejemplos-usando-python" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
+
+<span class="c1"># Calculo de la probabilidad</span>
+<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span> 
+    <span class="s2">&quot;The probability of an event, given a sample space.&quot;</span>
+    <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">cases</span><span class="p">(</span><span class="n">favorable</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">space</span><span class="p">)),</span> 
+                    <span class="n">cases</span><span class="p">(</span><span class="n">space</span><span class="p">))</span>
+
+<span class="n">favorable</span> <span class="o">=</span> <span class="nb">set</span><span class="o">.</span><span class="n">intersection</span> <span class="c1"># Outcomes that are in the event and in the sample space</span>
+<span class="n">cases</span>     <span class="o">=</span> <span class="nb">len</span>              <span class="c1"># The number of cases is the length, or size, of a set</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h2>Ejemplo 1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>Se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas el cual consta de cuatro palos. Los palos son tréboles (T), diamantes (D), corazones (C) y picas (P). Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina) y K (rey) de ese palo.</p>
+<p>Si se saque dos cartas de un mazo estándar de 52 cartas con reemplazo. Calcule la probabilidad de obtener una carta negra como mínimo.</p>
+<p><strong>Definamos los eventos</strong>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N\)</span>: El evento de sacar una carta negra.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span>: El evento de sacar una carta roja.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_i\)</span>: El evento de sacar una carta negra en el intento <span class="math notranslate nohighlight">\(i-esimo\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_i\)</span>: El evento de sacar una carta roja en el intento <span class="math notranslate nohighlight">\(i-esimo\)</span></p></li>
+</ul>
+<p>Lo que nos piden es:</p>
+<div class="math notranslate nohighlight">
+\[
+P((N_1 \bigcap R_2) \bigcup (R_1 \bigcap N_2) \bigcup (N_1 \bigcap N_2)) = P(N_1R_2 + R_1N_2 + N_1N_2)
+\]</div>
+<p>Asi:</p>
+<div class="math notranslate nohighlight">
+\[P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2)\]</div>
+<p>Como los eventos <span class="math notranslate nohighlight">\(N_1\)</span> y <span class="math notranslate nohighlight">\(N_2\)</span> son idenpendientes tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2) = P(N_1)P(R_2) + P(R_1)P(N_2) + P(N_1)P(N_2)\]</div>
+<p>Donde:</p>
+<div class="math notranslate nohighlight">
+\[P(N) = \frac{N(N)}{N} = \frac{N(T \bigcup P)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[P(R) = \frac{N(R)}{N} = \frac{N(H \bigcup D)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}\]</div>
+<p>Ademas: <span class="math notranslate nohighlight">\(P(N) = P(N) = P(N_i) = P(R_i) = \frac{1}{2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+P(N_1R_2 + R_1N_2 + N_1N_2) =  
+                                \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
+                                \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
+                                \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(N_1R_2 + R_1N_2 + N_1N_2) =  \frac{3}{4} 
+\]</div>
+<p>Esto tambien se pudierda haber hecho así:</p>
+<div class="math notranslate nohighlight">
+\[
+P(al\;menos\;una\;negra) = 1 - (ninguna\;negra) = 1 - P(ambas\;rojas) = 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(N_1R_2 + R_1N_2 + N_1N_2) = 1 - P(R_1R_2) = 1 - P(R_1)P(R_2) = 1 - \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) = 1 - \frac{1}{4} = \frac{3}{4}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Espacio muestral</span>
+<span class="n">palos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;♥♠♦♣&#39;</span><span class="p">)</span>
+<span class="n">rangos</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;K,Q,J,10,9,8,7,6,5,4,3,2,1&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">mazo</span>  <span class="o">=</span> <span class="p">{</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rangos</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">palos</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Mazo de cartas (Espacio muestral) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S = &quot;</span><span class="p">,</span> <span class="n">mazo</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mazo</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Mazo de cartas (Espacio muestral) ---
+S = {&#39;7♦&#39;, &#39;2♠&#39;, &#39;Q♥&#39;, &#39;4♥&#39;, &#39;4♠&#39;, &#39;7♣&#39;, &#39;5♠&#39;, &#39;1♥&#39;, &#39;9♣&#39;, &#39;8♠&#39;, &#39;5♣&#39;, &#39;2♥&#39;, &#39;1♦&#39;, &#39;6♠&#39;, &#39;9♠&#39;, &#39;6♦&#39;, &#39;10♣&#39;, &#39;9♥&#39;, &#39;K♥&#39;, &#39;Q♦&#39;, &#39;3♣&#39;, &#39;3♠&#39;, &#39;Q♣&#39;, &#39;J♠&#39;, &#39;J♣&#39;, &#39;8♦&#39;, &#39;6♣&#39;, &#39;5♦&#39;, &#39;Q♠&#39;, &#39;J♥&#39;, &#39;2♣&#39;, &#39;10♦&#39;, &#39;8♥&#39;, &#39;3♥&#39;, &#39;4♣&#39;, &#39;K♣&#39;, &#39;7♥&#39;, &#39;6♥&#39;, &#39;4♦&#39;, &#39;3♦&#39;, &#39;K♦&#39;, &#39;10♠&#39;, &#39;9♦&#39;, &#39;2♦&#39;, &#39;10♥&#39;, &#39;7♠&#39;, &#39;5♥&#39;, &#39;8♣&#39;, &#39;1♣&#39;, &#39;J♦&#39;, &#39;K♠&#39;, &#39;1♠&#39;}
+N = 52
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Palos agrupados por color</span>
+<span class="n">p_negra</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;♠♣&#39;</span><span class="p">)</span>
+<span class="n">p_rojos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;♥♠&#39;</span><span class="p">)</span>
+
+<span class="c1"># Funcion que determina si una carta es negra</span>
+<span class="n">is_negra</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">carta</span><span class="p">:</span> <span class="n">carta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">p_negra</span>
+
+<span class="c1"># Funcion que retorna un conjuto de cartas negras del mazo</span>
+<span class="n">cartas_negras</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_negra</span><span class="p">,</span> <span class="n">mazo</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Cartas negras ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N = &quot;</span><span class="p">,</span> <span class="n">cartas_negras</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N(N) = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cartas_negras</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">P_N</span> <span class="o">=</span> <span class="n">P</span><span class="p">(</span><span class="n">cartas_negras</span><span class="p">,</span> <span class="n">mazo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(N) = &quot;</span><span class="p">,</span><span class="n">P_N</span> <span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Cartas rojas ---&quot;</span><span class="p">)</span>
+<span class="n">cartas_rojas</span> <span class="o">=</span> <span class="n">mazo</span> <span class="o">-</span> <span class="n">cartas_negras</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R = &quot;</span><span class="p">,</span> <span class="n">cartas_rojas</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N(N) = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cartas_rojas</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">P_R</span> <span class="o">=</span> <span class="n">P</span><span class="p">(</span><span class="n">cartas_rojas</span><span class="p">,</span> <span class="n">mazo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(R) = &quot;</span><span class="p">,</span> <span class="n">P_R</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Probabilidad de sacar al menos una carta negra cuando se sacan dos cartas del mazo (con reemplazo)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculo de la probabilidad de sacar al menos una carta negra de dos cartas seleccionas con reemplazo&quot;</span><span class="p">)</span>
+
+<span class="c1"># Forma 1</span>
+<span class="n">P_min1_negra_f1</span> <span class="o">=</span> <span class="n">P_N</span><span class="o">*</span><span class="n">P_R</span> <span class="o">+</span> <span class="n">P_R</span><span class="o">*</span><span class="n">P_N</span> <span class="o">+</span> <span class="n">P_N</span><span class="o">*</span><span class="n">P_N</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Forma 1: P(al menos una negra) = &quot;</span><span class="p">,</span> <span class="n">P_min1_negra_f1</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Forma 2</span>
+<span class="n">P_min1_negra_f2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">P_R</span><span class="o">*</span><span class="n">P_R</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Forma 2: P(al menos una negra) = &quot;</span><span class="p">,</span> <span class="n">P_min1_negra_f2</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Cartas negras ---
+N = {&#39;2♠&#39;, &#39;4♠&#39;, &#39;7♣&#39;, &#39;5♠&#39;, &#39;9♣&#39;, &#39;8♠&#39;, &#39;5♣&#39;, &#39;6♠&#39;, &#39;9♠&#39;, &#39;10♣&#39;, &#39;3♣&#39;, &#39;3♠&#39;, &#39;Q♣&#39;, &#39;J♠&#39;, &#39;J♣&#39;, &#39;6♣&#39;, &#39;Q♠&#39;, &#39;2♣&#39;, &#39;4♣&#39;, &#39;K♣&#39;, &#39;10♠&#39;, &#39;7♠&#39;, &#39;8♣&#39;, &#39;1♣&#39;, &#39;K♠&#39;, &#39;1♠&#39;}
+N(N) = 26
+P(N) = 1/2
+--- Cartas rojas ---
+R = {&#39;7♦&#39;, &#39;Q♥&#39;, &#39;4♥&#39;, &#39;1♥&#39;, &#39;2♥&#39;, &#39;1♦&#39;, &#39;6♦&#39;, &#39;9♥&#39;, &#39;K♥&#39;, &#39;Q♦&#39;, &#39;5♦&#39;, &#39;J♥&#39;, &#39;10♦&#39;, &#39;8♥&#39;, &#39;3♥&#39;, &#39;6♥&#39;, &#39;7♥&#39;, &#39;4♦&#39;, &#39;J♦&#39;, &#39;3♦&#39;, &#39;K♦&#39;, &#39;9♦&#39;, &#39;2♦&#39;, &#39;10♥&#39;, &#39;5♥&#39;, &#39;8♦&#39;}
+N(N) = 26
+P(R) = 1/2
+Calculo de la probabilidad de sacar al menos una carta negra de dos cartas seleccionas con reemplazo
+Forma 1: P(al menos una negra) = 3/4
+Forma 2: P(al menos una negra) = 3/4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Ejemplo 2<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>Un lote de 10000 chips de computadora utilizados en calculadoras gráficas consta de 2500 fabricados por una empresa y 7500 fabricados por una segunda empresa, todos mezclados. Si se seleccionan tres chips al azar sin reemplazo y se definen los siguintes eventos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_1\)</span>: Evento de que el primer chip sea fabricado por la empresa 1.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_2\)</span>: Evento de que el segundo chip sea fabricado por la empresa 1.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_3\)</span>: Evento de que el tercer chip sea fabricado por la empresa 1.</p></li>
+</ul>
+<p><strong>Preguntas</strong>:</p>
+<ol>
+<li><p>¿Si en el proceso de selección de chips, las dos primeras elecciones correspondieron a chips de la empresa 1, ¿Cual es la probabilidad de que el tercer elegido chip pertenezca a la empresa 1?</p>
+<p>Para este caso nos piden: <span class="math notranslate nohighlight">\(P(E_3|E_2\;and\;E_1)\)</span>. Para resolver esto, observemos la siguiente tabla en la cual se muestra el proceso de selección: <span class="math notranslate nohighlight">\( \left \{ E_1, E_2, E_3 \right \} = \left \{chip\;empresa\;1, chip\;empresa\;1,chip\;empresa\;1\right \}\)</span>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Selección</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Chip elegido</p></td>
+<td><p>Empresa 1</p></td>
+<td><p>Empresa 1</p></td>
+<td><p>Empresa 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total chips</p></td>
+<td><p>10000</p></td>
+<td><p>9999</p></td>
+<td><p>9998</p></td>
+</tr>
+<tr class="row-even"><td><p>Total chips empresa 1</p></td>
+<td><p>2500</p></td>
+<td><p>2499</p></td>
+<td><p>2498</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total chips empresa 2</p></td>
+<td><p>7500</p></td>
+<td><p>7500</p></td>
+<td><p>7500</p></td>
+</tr>
+</tbody>
+</table>
+<p>De este modo tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(E_3|E_2\;and\;E_1)) = \frac{N(E_3 | E_2\;and\;E_1)}{N} = \frac{2498}{9998} = 0.24985
+   \]</div>
+</li>
+<li><p>¿Si las dos primeras elecciones correspondieron a chips de la empresa 2, ¿Cual es la probabilidad de que el tercer elegido chip pertenezca a la empresa 1?</p>
+<p>Lo que se nos pide en este caso es: <span class="math notranslate nohighlight">\(P(E_3|not\;E_2\;and\;not\;E_1) = P(E_3|E_2'\;and\;E_1')\)</span></p>
+<p>El proceso de selección dá la siguiente secuencia: <span class="math notranslate nohighlight">\(\left \{ E_1, E_2, E_3 \right \} = \left \{chip\;empresa\;2, chip\;empresa\;2,chip\;empresa\;1\right \}\)</span> la cual se detalla en la siguiente tabla:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Selección</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Chip elegido</p></td>
+<td><p>Empresa 2</p></td>
+<td><p>Empresa 2</p></td>
+<td><p>Empresa 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total chips</p></td>
+<td><p>10000</p></td>
+<td><p>9999</p></td>
+<td><p>9998</p></td>
+</tr>
+<tr class="row-even"><td><p>Total chips empresa 1</p></td>
+<td><p>2500</p></td>
+<td><p>2500</p></td>
+<td><p>2500</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total chips empresa 2</p></td>
+<td><p>7500</p></td>
+<td><p>7499</p></td>
+<td><p>7498</p></td>
+</tr>
+</tbody>
+</table>
+<p>De este modo tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(E_3|E_2'\;and\;E_1')) = \frac{N(E_3 | E_2'\;and\;E_1')}{N} = \frac{2500}{9998}= 0.25005
+   \]</div>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución python</span>
+
+<span class="n">chips</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">init_inventario</span><span class="p">():</span>
+    <span class="n">chips</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">chips</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2500</span><span class="p">,</span><span class="mi">7500</span>
+
+<span class="c1"># Actualiza el invetario dependiendo del chip elegido (Empresa 1 o 2)</span>
+<span class="k">def</span> <span class="nf">elegir_chip</span><span class="p">(</span><span class="n">empresa</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">empresa</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span>        
+    <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solo exiten las empresas 1 y 2&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">chips</span><span class="p">[</span><span class="n">empresa</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">seleccionar_chips</span><span class="p">(</span><span class="n">l_sel</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">l_sel</span><span class="p">:</span>        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> -&gt; Chip empresa </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sel</span><span class="p">))</span>
+        <span class="n">elegir_chip</span><span class="p">(</span><span class="n">sel</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+     
+<span class="c1"># Punto 1: seleccion = {chip empresa 1, chip empresa 1, chip empresa 1}</span>
+<span class="n">init_inventario</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario antes de la selección 1:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
+<span class="n">sacadas_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># El utlimo caso de seleccion </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Secuencia seleccionada: &quot;</span><span class="p">)</span>
+<span class="n">seleccionar_chips</span><span class="p">(</span><span class="n">sacadas_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario despues de la selección 1:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
+<span class="n">Prob_sel1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">chips</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nb">sum</span><span class="p">(</span><span class="n">chips</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(E3 | E2 and E1) = </span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Prob_sel1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="c1"># Punto 2: seleccion = {chip empresa 2, chip empresa 2, chip empresa 1}</span>
+<span class="n">init_inventario</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario antes de la selección 2:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chips</span><span class="p">)</span>
+<span class="n">sacadas_2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Secuencia seleccionada: &quot;</span><span class="p">)</span>
+<span class="n">seleccionar_chips</span><span class="p">(</span><span class="n">sacadas_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario despues de la selección 2:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
+<span class="n">Prob_sel2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">chips</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nb">sum</span><span class="p">(</span><span class="n">chips</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(E3 | E2&#39; and E1&#39;) = </span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Prob_sel2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inventario antes de la selección 1: [2500, 7500]
+Secuencia seleccionada: 
+1 -&gt; Chip empresa 1
+2 -&gt; Chip empresa 1
+Inventario despues de la selección 1: [2498, 7500]
+P(E3 | E2 and E1) = 0.24985
+
+Inventario antes de la selección 2: [2500, 7500]
+[2500, 7500]
+Secuencia seleccionada: 
+1 -&gt; Chip empresa 2
+2 -&gt; Chip empresa 2
+Inventario despues de la selección 2: [2500, 7498]
+P(E3 | E2&#39; and E1&#39;) = 0.25005
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/5-probability.ipynb">https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/5-probability.ipynb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/6-statistics.ipynb">https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/6-statistics.ipynb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jonkrohn/ML-foundations">https://github.com/jonkrohn/ML-foundations</a></p></li>
+<li><p><a class="reference external" href="https://github.com/unpingco/Python-for-Probability-Statistics-and-Machine-Learning">https://github.com/unpingco/Python-for-Probability-Statistics-and-Machine-Learning</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Quantreo/UDEMY-STATISTIC-AND-PROBABILITY-for-quantitative-finance">https://github.com/Quantreo/UDEMY-STATISTIC-AND-PROBABILITY-for-quantitative-finance</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ArmanBehnam/Courses">https://github.com/ArmanBehnam/Courses</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ElizaLo/Data-Science">https://github.com/ElizaLo/Data-Science</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Probability-Statistics-Jupyter-Notebook">https://github.com/Probability-Statistics-Jupyter-Notebook</a></p></li>
+<li><p><a class="reference external" href="https://ipython-books.github.io/154-computing-exact-probabilities-and-manipulating-random-variables/">https://ipython-books.github.io/154-computing-exact-probabilities-and-manipulating-random-variables/</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/python-itertools/">https://realpython.com/python-itertools/</a></p></li>
+</ul>
+<p>Otros</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.cs.rpi.edu/~zaki/DMML/slides/pdf/ychap18.pdf">https://www.cs.rpi.edu/~zaki/DMML/slides/pdf/ychap18.pdf</a></p></li>
+<li><p><a class="reference external" href="https://rpubs.com/jreigarcia/irisdataset">https://rpubs.com/jreigarcia/irisdataset</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/analytics-vidhya/first-step-to-statistics-with-iris-data-3d29c0820c5d">https://medium.com/analytics-vidhya/first-step-to-statistics-with-iris-data-3d29c0820c5d</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/code/neha99/statistical-analysis-on-iris-dataset">https://www.kaggle.com/code/neha99/statistical-analysis-on-iris-dataset</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/code/hassanamin/probability-and-statistics-with-python">https://www.kaggle.com/code/hassanamin/probability-and-statistics-with-python</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/">https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/</a></p></li>
+<li><p><a class="reference external" href="http://www.lac.inpe.br/~rafael.santos/Docs/CAP394/WholeStory-Iris.html">http://www.lac.inpe.br/~rafael.santos/Docs/CAP394/WholeStory-Iris.html</a></p></li>
+<li><p><a class="reference external" href="https://courses.cs.ut.ee/MTAT.03.183/2017_spring/uploads/Main/example_submission.html">https://courses.cs.ut.ee/MTAT.03.183/2017_spring/uploads/Main/example_submission.html</a></p></li>
+<li><p><a class="reference external" href="https://www.humanitiesdataanalysis.org/index.html">https://www.humanitiesdataanalysis.org/index.html</a></p></li>
+<li><p><a class="reference external" href="https://www.cs.bu.edu/fac/snyder/cs237/tutorials/LearningPython.html">https://www.cs.bu.edu/fac/snyder/cs237/tutorials/LearningPython.html</a></p></li>
+<li><p><a class="reference external" href="https://risk-engineering.org/notebook/coins-dice.html">https://risk-engineering.org/notebook/coins-dice.html</a></p></li>
+<li><p><a class="reference external" href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1192/handouts/pythonForProbability.html">https://web.stanford.edu/class/archive/cs/cs109/cs109.1192/handouts/pythonForProbability.html</a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenido"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p1_ch2_s3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Eventos independientes y Mutuamente excluyentes</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
