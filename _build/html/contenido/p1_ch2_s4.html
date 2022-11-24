@@ -396,31 +396,47 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#probabilidad-condicional">
-     Probabilidad condicional
+    <a class="reference internal nav-link" href="#regla-de-la-multiplicacion-y-la-adicion">
+     Regla de la multiplicación y la adición
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplos">
+       Ejemplos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-1">
+         Ejemplo 1
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-2">
+         Ejemplo 2
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estrategias-para-calcular-la-probabilidad-de-un-evento">
-   Estrategias para calcular la probabilidad de un evento
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplos-usando-python">
-   Ejemplos usando python
-  </a>
-  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo-1">
-     Ejemplo 1
+    <a class="reference internal nav-link" href="#generalizacion-de-la-probabilidad-total">
+     Generalización de la probabilidad total
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo-2">
-     Ejemplo 2
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Ejemplos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Ejemplo 1
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -454,31 +470,47 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#probabilidad-condicional">
-     Probabilidad condicional
+    <a class="reference internal nav-link" href="#regla-de-la-multiplicacion-y-la-adicion">
+     Regla de la multiplicación y la adición
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplos">
+       Ejemplos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-1">
+         Ejemplo 1
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-2">
+         Ejemplo 2
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estrategias-para-calcular-la-probabilidad-de-un-evento">
-   Estrategias para calcular la probabilidad de un evento
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplos-usando-python">
-   Ejemplos usando python
-  </a>
-  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo-1">
-     Ejemplo 1
+    <a class="reference internal nav-link" href="#generalizacion-de-la-probabilidad-total">
+     Generalización de la probabilidad total
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplo-2">
-     Ejemplo 2
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Ejemplos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Ejemplo 1
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -508,333 +540,179 @@ title="Print to PDF"
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="reglas-basicas-de-probabilidad">
 <h1>Reglas basicas de probabilidad<a class="headerlink" href="#reglas-basicas-de-probabilidad" title="Permalink to this headline">#</a></h1>
-<section id="probabilidad-condicional">
-<h2>Probabilidad condicional<a class="headerlink" href="#probabilidad-condicional" title="Permalink to this headline">#</a></h2>
-<div class="admonition-calculo-de-probabilidades-condicionales admonition">
-<p class="admonition-title">Calculo de probabilidades condicionales</p>
-<p>Para encontrar la <span class="math notranslate nohighlight">\(P(A|B)\)</span> se usa la expresión:</p>
-<div class="math notranslate nohighlight">
-\[P(A|B) = \frac{P(A \bigcap B)}{P(B)}\]</div>
-<p>Por otro lado, la probabilidad condicional <span class="math notranslate nohighlight">\(P(B|A)\)</span> esta dada por:</p>
-<div class="math notranslate nohighlight">
-\[P(B|A) = \frac{P(B \bigcap A)}{P(A)}\]</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="estrategias-para-calcular-la-probabilidad-de-un-evento">
-<h1>Estrategias para calcular la probabilidad de un evento<a class="headerlink" href="#estrategias-para-calcular-la-probabilidad-de-un-evento" title="Permalink to this headline">#</a></h1>
-<p>A continuación se resumen un conjunto de pasos cuando se va a abordar un problema que implica calcular probabilidades.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ol class="simple">
-<li><p>Haga una lista de todos los eventos sencillos del espacio muestral.</p></li>
-<li><p>Asigne una probabilidad apropiada a cada evento simple.</p></li>
-<li><p>Determine cuáles eventos sencillos resultan en el evento de interés.</p></li>
-<li><p>Sume las probabilidades de los eventos sencillos que resulten en el evento de interés.</p></li>
-</ol>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="ejemplos-usando-python">
-<h1>Ejemplos usando python<a class="headerlink" href="#ejemplos-usando-python" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
-
-<span class="c1"># Calculo de la probabilidad</span>
-<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span> 
-    <span class="s2">&quot;The probability of an event, given a sample space.&quot;</span>
-    <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">cases</span><span class="p">(</span><span class="n">favorable</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">space</span><span class="p">)),</span> 
-                    <span class="n">cases</span><span class="p">(</span><span class="n">space</span><span class="p">))</span>
-
-<span class="n">favorable</span> <span class="o">=</span> <span class="nb">set</span><span class="o">.</span><span class="n">intersection</span> <span class="c1"># Outcomes that are in the event and in the sample space</span>
-<span class="n">cases</span>     <span class="o">=</span> <span class="nb">len</span>              <span class="c1"># The number of cases is the length, or size, of a set</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="ejemplo-1">
-<h2>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">#</a></h2>
-<p>Se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas el cual consta de cuatro palos. Los palos son tréboles (T), diamantes (D), corazones (C) y picas (P). Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina) y K (rey) de ese palo.</p>
-<p>Si se saque dos cartas de un mazo estándar de 52 cartas con reemplazo. Calcule la probabilidad de obtener una carta negra como mínimo.</p>
-<p><strong>Definamos los eventos</strong>:</p>
+<p>Al calcular la probabilidad, hay que tener en cuenta dos reglas para determinar si dos eventos son independientes o dependientes y si son mutuamente excluyentes o no:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(N\)</span>: El evento de sacar una carta negra.</p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span>: El evento de sacar una carta roja.</p></li>
-<li><p><span class="math notranslate nohighlight">\(N_i\)</span>: El evento de sacar una carta negra en el intento <span class="math notranslate nohighlight">\(i-esimo\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(R_i\)</span>: El evento de sacar una carta roja en el intento <span class="math notranslate nohighlight">\(i-esimo\)</span></p></li>
+<li><p>La regla de multiplicación.</p></li>
+<li><p>La regla de adición</p></li>
 </ul>
-<p>Lo que nos piden es:</p>
+<section id="regla-de-la-multiplicacion-y-la-adicion">
+<h2>Regla de la multiplicación y la adición<a class="headerlink" href="#regla-de-la-multiplicacion-y-la-adicion" title="Permalink to this headline">#</a></h2>
+<p>La regla de la multiplicación establece que:</p>
+<div class="admonition-regla-de-la-multiplicacion-para-dos-eventos admonition">
+<p class="admonition-title">Regla de la multiplicación para dos eventos</p>
+<p>Si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son dos eventos definidos en un espacio muestral, entonces:</p>
 <div class="math notranslate nohighlight">
 \[
-P((N_1 \bigcap R_2) \bigcup (R_1 \bigcap N_2) \bigcup (N_1 \bigcap N_2)) = P(N_1R_2 + R_1N_2 + N_1N_2)
+P(A \bigcap B)  = P(A|B)P(B)
 \]</div>
-<p>Asi:</p>
-<div class="math notranslate nohighlight">
-\[P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2)\]</div>
-<p>Como los eventos <span class="math notranslate nohighlight">\(N_1\)</span> y <span class="math notranslate nohighlight">\(N_2\)</span> son idenpendientes tenemos que:</p>
-<div class="math notranslate nohighlight">
-\[P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2) = P(N_1)P(R_2) + P(R_1)P(N_2) + P(N_1)P(N_2)\]</div>
-<p>Donde:</p>
-<div class="math notranslate nohighlight">
-\[P(N) = \frac{N(N)}{N} = \frac{N(T \bigcup P)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}\]</div>
-<div class="math notranslate nohighlight">
-\[P(R) = \frac{N(R)}{N} = \frac{N(H \bigcup D)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}\]</div>
-<p>Ademas: <span class="math notranslate nohighlight">\(P(N) = P(N) = P(N_i) = P(R_i) = \frac{1}{2}\)</span></p>
+<p>Para el caso en el que los eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son <strong>independientes</strong>, entonces <span class="math notranslate nohighlight">\(P(A|B) = P(A)\)</span> de modo que la expresión queda como:</p>
 <div class="math notranslate nohighlight">
 \[
-P(N_1R_2 + R_1N_2 + N_1N_2) =  
-                                \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
-                                \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
-                                \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) 
+P(A \bigcap B)  = P(A)P(B)
 \]</div>
+</div>
+<p>Por otro lado la ley de la adición dice:</p>
+<div class="admonition-regla-de-la-adicion-para-dos-eventos admonition">
+<p class="admonition-title">Regla de la adición para dos eventos</p>
+<p>Si <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son dos eventos definidos en un espacio muestral, entonces:</p>
 <div class="math notranslate nohighlight">
 \[
-P(N_1R_2 + R_1N_2 + N_1N_2) =  \frac{3}{4} 
+P(A \bigcup B)  = P(A) + P(B) - P(A \bigcap B)
 \]</div>
-<p>Esto tambien se pudierda haber hecho así:</p>
+<p>Cuando los eventos <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son <strong>mutuamente excluyentes</strong>, entonces <span class="math notranslate nohighlight">\(P(A \bigcap B) = 0\)</span> de modo que la expresión queda como:</p>
 <div class="math notranslate nohighlight">
 \[
-P(al\;menos\;una\;negra) = 1 - (ninguna\;negra) = 1 - P(ambas\;rojas) = 
+P(A \bigcup B)  = P(A) + P(B)
 \]</div>
+</div>
+<section id="ejemplos">
+<h3>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">#</a></h3>
+<section id="ejemplo-1">
+<h4>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">#</a></h4>
+<p>Suponga que el 60% de todos los clientes de un operador de telecomunicaciones se suscribe al servicio de Internet, el 40% se suscribe al servicio telefónico y el 25% tiene ambos tipos de servicios y realice lo que se pide a continuación</p>
+<ol>
+<li><p>Defina los eventos de acuerdo a la información suministrada.</p>
+<p>De acuerdo al enunciado podemos sacar los siguientes eventos de interes de acuerdo al enunciado:</p>
+<ul class="simple">
+<li><p><strong>E</strong>: evento de que el cliente seleccionado tenga servicio de internet.</p></li>
+<li><p><strong>F</strong>: evento de que el cliente seleccionado tenga servicio telefonico.</p></li>
+</ul>
+<p>Ahora describimos en terminos de los eventos, la información que se nos da del problema:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(E) = 0.6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(F) = 0.4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(E\;and\;F) = 0.25\)</span></p></li>
+</ul>
+</li>
+<li><p>Si se selecciona un cliente al azar, ¿cuál es la probabilidad de que tenga al menos uno de estos dos tipos de servicio?</p>
+<p>Se pide <span class="math notranslate nohighlight">\(P(E\;or\;F)\)</span> la cual se calcula la ley de la adición tenemos:</p>
 <div class="math notranslate nohighlight">
 \[
-P(N_1R_2 + R_1N_2 + N_1N_2) = 1 - P(R_1R_2) = 1 - P(R_1)P(R_2) = 1 - \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) = 1 - \frac{1}{4} = \frac{3}{4}
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Espacio muestral</span>
-<span class="n">palos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;♥♠♦♣&#39;</span><span class="p">)</span>
-<span class="n">rangos</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;K,Q,J,10,9,8,7,6,5,4,3,2,1&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<span class="n">mazo</span>  <span class="o">=</span> <span class="p">{</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rangos</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">palos</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Mazo de cartas (Espacio muestral) ---&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S = &quot;</span><span class="p">,</span> <span class="n">mazo</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mazo</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Mazo de cartas (Espacio muestral) ---
-S = {&#39;5♣&#39;, &#39;Q♠&#39;, &#39;8♣&#39;, &#39;1♦&#39;, &#39;9♣&#39;, &#39;5♦&#39;, &#39;Q♥&#39;, &#39;5♠&#39;, &#39;7♠&#39;, &#39;J♣&#39;, &#39;6♦&#39;, &#39;4♥&#39;, &#39;2♥&#39;, &#39;4♣&#39;, &#39;9♦&#39;, &#39;K♦&#39;, &#39;3♥&#39;, &#39;10♣&#39;, &#39;7♥&#39;, &#39;8♦&#39;, &#39;K♣&#39;, &#39;4♦&#39;, &#39;3♦&#39;, &#39;9♠&#39;, &#39;K♠&#39;, &#39;9♥&#39;, &#39;10♠&#39;, &#39;3♣&#39;, &#39;2♣&#39;, &#39;Q♦&#39;, &#39;1♠&#39;, &#39;6♣&#39;, &#39;1♥&#39;, &#39;10♥&#39;, &#39;3♠&#39;, &#39;J♥&#39;, &#39;7♦&#39;, &#39;J♠&#39;, &#39;10♦&#39;, &#39;6♥&#39;, &#39;1♣&#39;, &#39;4♠&#39;, &#39;J♦&#39;, &#39;2♦&#39;, &#39;7♣&#39;, &#39;5♥&#39;, &#39;6♠&#39;, &#39;K♥&#39;, &#39;2♠&#39;, &#39;Q♣&#39;, &#39;8♥&#39;, &#39;8♠&#39;}
-N = 52
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Palos agrupados por color</span>
-<span class="n">p_negra</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;♠♣&#39;</span><span class="p">)</span>
-<span class="n">p_rojos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;♥♠&#39;</span><span class="p">)</span>
-
-<span class="c1"># Funcion que determina si una carta es negra</span>
-<span class="n">is_negra</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">carta</span><span class="p">:</span> <span class="n">carta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">p_negra</span>
-
-<span class="c1"># Funcion que retorna un conjuto de cartas negras del mazo</span>
-<span class="n">cartas_negras</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_negra</span><span class="p">,</span> <span class="n">mazo</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Cartas negras ---&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N = &quot;</span><span class="p">,</span> <span class="n">cartas_negras</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N(N) = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cartas_negras</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="n">P_N</span> <span class="o">=</span> <span class="n">P</span><span class="p">(</span><span class="n">cartas_negras</span><span class="p">,</span> <span class="n">mazo</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(N) = &quot;</span><span class="p">,</span><span class="n">P_N</span> <span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Cartas rojas ---&quot;</span><span class="p">)</span>
-<span class="n">cartas_rojas</span> <span class="o">=</span> <span class="n">mazo</span> <span class="o">-</span> <span class="n">cartas_negras</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R = &quot;</span><span class="p">,</span> <span class="n">cartas_rojas</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N(N) = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cartas_rojas</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="n">P_R</span> <span class="o">=</span> <span class="n">P</span><span class="p">(</span><span class="n">cartas_rojas</span><span class="p">,</span> <span class="n">mazo</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(R) = &quot;</span><span class="p">,</span> <span class="n">P_R</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Probabilidad de sacar al menos una carta negra cuando se sacan dos cartas del mazo (con reemplazo)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculo de la probabilidad de sacar al menos una carta negra de dos cartas seleccionas con reemplazo&quot;</span><span class="p">)</span>
-
-<span class="c1"># Forma 1</span>
-<span class="n">P_min1_negra_f1</span> <span class="o">=</span> <span class="n">P_N</span><span class="o">*</span><span class="n">P_R</span> <span class="o">+</span> <span class="n">P_R</span><span class="o">*</span><span class="n">P_N</span> <span class="o">+</span> <span class="n">P_N</span><span class="o">*</span><span class="n">P_N</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Forma 1: P(al menos una negra) = &quot;</span><span class="p">,</span> <span class="n">P_min1_negra_f1</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-
-<span class="c1"># Forma 2</span>
-<span class="n">P_min1_negra_f2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">P_R</span><span class="o">*</span><span class="n">P_R</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Forma 2: P(al menos una negra) = &quot;</span><span class="p">,</span> <span class="n">P_min1_negra_f2</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Cartas negras ---
-N = {&#39;5♣&#39;, &#39;Q♠&#39;, &#39;8♣&#39;, &#39;9♣&#39;, &#39;5♠&#39;, &#39;7♠&#39;, &#39;J♣&#39;, &#39;4♣&#39;, &#39;10♣&#39;, &#39;K♣&#39;, &#39;9♠&#39;, &#39;K♠&#39;, &#39;3♣&#39;, &#39;10♠&#39;, &#39;2♣&#39;, &#39;1♠&#39;, &#39;6♣&#39;, &#39;3♠&#39;, &#39;J♠&#39;, &#39;1♣&#39;, &#39;4♠&#39;, &#39;7♣&#39;, &#39;6♠&#39;, &#39;2♠&#39;, &#39;Q♣&#39;, &#39;8♠&#39;}
-N(N) = 26
-P(N) = 1/2
---- Cartas rojas ---
-R = {&#39;1♦&#39;, &#39;5♦&#39;, &#39;Q♥&#39;, &#39;6♦&#39;, &#39;4♥&#39;, &#39;2♥&#39;, &#39;9♦&#39;, &#39;K♦&#39;, &#39;3♥&#39;, &#39;7♥&#39;, &#39;8♦&#39;, &#39;4♦&#39;, &#39;3♦&#39;, &#39;9♥&#39;, &#39;Q♦&#39;, &#39;1♥&#39;, &#39;10♥&#39;, &#39;7♦&#39;, &#39;J♥&#39;, &#39;10♦&#39;, &#39;6♥&#39;, &#39;2♦&#39;, &#39;J♦&#39;, &#39;5♥&#39;, &#39;K♥&#39;, &#39;8♥&#39;}
-N(N) = 26
-P(R) = 1/2
-Calculo de la probabilidad de sacar al menos una carta negra de dos cartas seleccionas con reemplazo
-Forma 1: P(al menos una negra) = 3/4
-Forma 2: P(al menos una negra) = 3/4
-</pre></div>
-</div>
-</div>
-</div>
+   P(E\;or\;F) = P(E) + P(F) + P(E\;and\;F) = 0.6 + 0.4 - 0.25 = 0.75
+   \]</div>
+</li>
+<li><p>Si se selecciona un cliente al azar, ¿cuál es la probabilidad no este inscrito en ningun servicio?</p>
+<p>Se pide <span class="math notranslate nohighlight">\(P(not (E\;or\;F))\)</span> la cual podemos calcular como se muestra a continuación:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(not (E\;or\;F)) = 1- P(E\;or\;F) = 1 - 0.75 = 0.25
+   \]</div>
+</li>
+<li><p>Si se selecciona un cliente al azar, ¿cuál es la probabilidad este inscrito en exactamente un servicio?</p>
+<p>En terminos matematicos esto es:</p>
+<div class="math notranslate nohighlight">
+\[P(exactamente\;uno) = P(minimo\;uno) - P(ninguno) = P(E\;or\;F) - P(E\;and\;F)\]</div>
+<div class="math notranslate nohighlight">
+\[P(exactamente\;uno) = 0.75 - 0.25 = 0.5\]</div>
+</li>
+</ol>
 </section>
 <section id="ejemplo-2">
-<h2>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">#</a></h2>
-<p>Un lote de 10000 chips de computadora utilizados en calculadoras gráficas consta de 2500 fabricados por una empresa y 7500 fabricados por una segunda empresa, todos mezclados. Si se seleccionan tres chips al azar sin reemplazo y se definen los siguintes eventos:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E_1\)</span>: Evento de que el primer chip sea fabricado por la empresa 1.</p></li>
-<li><p><span class="math notranslate nohighlight">\(E_2\)</span>: Evento de que el segundo chip sea fabricado por la empresa 1.</p></li>
-<li><p><span class="math notranslate nohighlight">\(E_3\)</span>: Evento de que el tercer chip sea fabricado por la empresa 1.</p></li>
-</ul>
-<p><strong>Preguntas</strong>:</p>
-<ol>
-<li><p>¿Si en el proceso de selección de chips, las dos primeras elecciones correspondieron a chips de la empresa 1, ¿Cual es la probabilidad de que el tercer elegido chip pertenezca a la empresa 1?</p>
-<p>Para este caso nos piden: <span class="math notranslate nohighlight">\(P(E_3|E_2\;and\;E_1)\)</span>. Para resolver esto, observemos la siguiente tabla en la cual se muestra el proceso de selección: <span class="math notranslate nohighlight">\( \left \{ E_1, E_2, E_3 \right \} = \left \{chip\;empresa\;1, chip\;empresa\;1,chip\;empresa\;1\right \}\)</span>:</p>
+<h4>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">#</a></h4>
+<p>En una encuesta telefónica hecha a mil adultos, a los que respondieron se les preguntó acerca del gasto de una educación universitaria y la relativa necesidad de alguna forma de ayuda financiera. Quienes respondieron fueron clasificados de acuerdo a si actualmente tenían un hijo en la universidad y si pensaban que el interes de un préstamo para casi todos los estudiantes universitarios es demasiado alta, la cantidad correcta o es muy poco. Las proporciones de quienes contestaron se muestran en la tabla de probabilidad dada a continuación:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Selección</p></th>
-<th class="head"><p>1</p></th>
-<th class="head"><p>2</p></th>
-<th class="head"><p>3</p></th>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Demasiado alta (A)</p></th>
+<th class="head"><p>Correcta (B)</p></th>
+<th class="head"><p>Muy poco (C)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Chip elegido</p></td>
-<td><p>Empresa 1</p></td>
-<td><p>Empresa 1</p></td>
-<td><p>Empresa 1</p></td>
+<tr class="row-even"><td><p>Con hijo en universidad</p></td>
+<td><p>.35</p></td>
+<td><p>.08</p></td>
+<td><p>0.01</p></td>
 </tr>
-<tr class="row-odd"><td><p>Total chips</p></td>
-<td><p>10000</p></td>
-<td><p>9999</p></td>
-<td><p>9998</p></td>
-</tr>
-<tr class="row-even"><td><p>Total chips empresa 1</p></td>
-<td><p>2500</p></td>
-<td><p>2499</p></td>
-<td><p>2498</p></td>
-</tr>
-<tr class="row-odd"><td><p>Total chips empresa 2</p></td>
-<td><p>7500</p></td>
-<td><p>7500</p></td>
-<td><p>7500</p></td>
+<tr class="row-odd"><td><p>Sin hijo en la universidad</p></td>
+<td><p>.25</p></td>
+<td><p>.20</p></td>
+<td><p>.11</p></td>
 </tr>
 </tbody>
 </table>
-<p>De este modo tenemos que:</p>
+<p>Si se definen los siguientes eventos:</p>
+<ul class="simple">
+<li><p>A: El entrevistado piensa que el interes de un préstamo es demasiado alto</p></li>
+<li><p>B: El entrevistado piensa que el interes de un préstamo tiene un valor adecuado.</p></li>
+<li><p>C: El entrevistado piensa que el interes de un préstamo es muy poco.</p></li>
+<li><p>D: El entrevistado tiene un hijo en la universidad.</p></li>
+</ul>
+<p>Suponga que un entrevistado se escoge al azar de entre este grupo:</p>
+<ol>
+<li><p>¿Cuál es la probabilidad de que el entrevistado tenga un hijo en la universidad?</p>
+<p>De acuerdo a la información, tener un hijo en la universidad no depende de lo que responda de modo que:</p>
 <div class="math notranslate nohighlight">
 \[
-   P(E_3|E_2\;and\;E_1)) = \frac{N(E_3 | E_2\;and\;E_1)}{N} = \frac{2498}{9998} = 0.24985
+   P(D) = P(D\;and\;A) + P(D\;and\;B) + P(D\;and\;C) = .35 + .08 + 0.01 = 0.44
    \]</div>
 </li>
-<li><p>¿Si las dos primeras elecciones correspondieron a chips de la empresa 2, ¿Cual es la probabilidad de que el tercer elegido chip pertenezca a la empresa 1?</p>
-<p>Lo que se nos pide en este caso es: <span class="math notranslate nohighlight">\(P(E_3|not\;E_2\;and\;not\;E_1) = P(E_3|E_2'\;and\;E_1')\)</span></p>
-<p>El proceso de selección dá la siguiente secuencia: <span class="math notranslate nohighlight">\(\left \{ E_1, E_2, E_3 \right \} = \left \{chip\;empresa\;2, chip\;empresa\;2,chip\;empresa\;1\right \}\)</span> la cual se detalla en la siguiente tabla:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Selección</p></th>
-<th class="head"><p>1</p></th>
-<th class="head"><p>2</p></th>
-<th class="head"><p>3</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Chip elegido</p></td>
-<td><p>Empresa 2</p></td>
-<td><p>Empresa 2</p></td>
-<td><p>Empresa 1</p></td>
-</tr>
-<tr class="row-odd"><td><p>Total chips</p></td>
-<td><p>10000</p></td>
-<td><p>9999</p></td>
-<td><p>9998</p></td>
-</tr>
-<tr class="row-even"><td><p>Total chips empresa 1</p></td>
-<td><p>2500</p></td>
-<td><p>2500</p></td>
-<td><p>2500</p></td>
-</tr>
-<tr class="row-odd"><td><p>Total chips empresa 2</p></td>
-<td><p>7500</p></td>
-<td><p>7499</p></td>
-<td><p>7498</p></td>
-</tr>
-</tbody>
-</table>
-<p>De este modo tenemos que:</p>
+<li><p>¿Cuál es la probabilidad de que el entrevistado no tenga un hijo en la universidad?</p>
+<p>Para el caso se pide: <span class="math notranslate nohighlight">\(P(not\;D) = P(D')\)</span> de modo que:</p>
 <div class="math notranslate nohighlight">
 \[
-   P(E_3|E_2'\;and\;E_1')) = \frac{N(E_3 | E_2'\;and\;E_1')}{N} = \frac{2500}{9998}= 0.25005
+   P(not\;D) = P(D) = 1 - P(D) = 1 - 0.44 = 0.56
    \]</div>
+</li>
+<li><p>¿Cuál es la probabilidad de que el entrevistado tenga un hijo en la universidad o piense que la carga de un préstamo es demasiado alta?</p>
+<p>En este caso nos piden: <span class="math notranslate nohighlight">\(P(D\;or\;A)\)</span>, inicialmente calculamos <span class="math notranslate nohighlight">\(P(A)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(A) = P(D\;and\;A) + P(D'\;or\;A) = .35 + .25 = 0.6
+   \]</div>
+<p>Luego, al aplicar la ley de la adición tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+   P(D\;or\;A) = P(D) + P(A) - P(D\;and\;A) = 0.56 + 0.44 - .35 = .69
+   \]</div>
+</li>
+<li><p>¿Los eventos D y A son independientes?</p>
+<p>Los eventos son independientes si se cumple que: <span class="math notranslate nohighlight">\(P(D\;and\;A) = P(D)P(A)\)</span>, para el caso tenemos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(D\;and\;A) = .69\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(D)P(A) = (.44)(.6) = .264\)</span></p></li>
+</ul>
+<p>Como <span class="math notranslate nohighlight">\(P(D\;and\;A) \neq P(D)P(A)\)</span>, entonces los eventos <strong>no son independientes</strong></p>
 </li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución python</span>
-
-<span class="n">chips</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">init_inventario</span><span class="p">():</span>
-    <span class="n">chips</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">chips</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2500</span><span class="p">,</span><span class="mi">7500</span>
-
-<span class="c1"># Actualiza el invetario dependiendo del chip elegido (Empresa 1 o 2)</span>
-<span class="k">def</span> <span class="nf">elegir_chip</span><span class="p">(</span><span class="n">empresa</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">empresa</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="ne">IndexError</span>        
-    <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solo exiten las empresas 1 y 2&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">chips</span><span class="p">[</span><span class="n">empresa</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
-
-<span class="k">def</span> <span class="nf">seleccionar_chips</span><span class="p">(</span><span class="n">l_sel</span><span class="p">):</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">l_sel</span><span class="p">:</span>        
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> -&gt; Chip empresa </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sel</span><span class="p">))</span>
-        <span class="n">elegir_chip</span><span class="p">(</span><span class="n">sel</span><span class="p">)</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-     
-<span class="c1"># Punto 1: seleccion = {chip empresa 1, chip empresa 1, chip empresa 1}</span>
-<span class="n">init_inventario</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario antes de la selección 1:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
-<span class="n">sacadas_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># El utlimo caso de seleccion </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Secuencia seleccionada: &quot;</span><span class="p">)</span>
-<span class="n">seleccionar_chips</span><span class="p">(</span><span class="n">sacadas_1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario despues de la selección 1:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
-<span class="n">Prob_sel1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">chips</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nb">sum</span><span class="p">(</span><span class="n">chips</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(E3 | E2 and E1) = </span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Prob_sel1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="c1"># Punto 2: seleccion = {chip empresa 2, chip empresa 2, chip empresa 1}</span>
-<span class="n">init_inventario</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario antes de la selección 2:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">chips</span><span class="p">)</span>
-<span class="n">sacadas_2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Secuencia seleccionada: &quot;</span><span class="p">)</span>
-<span class="n">seleccionar_chips</span><span class="p">(</span><span class="n">sacadas_2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventario despues de la selección 2:&quot;</span><span class="p">,</span><span class="n">chips</span><span class="p">)</span>
-<span class="n">Prob_sel2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">chips</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nb">sum</span><span class="p">(</span><span class="n">chips</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;P(E3 | E2&#39; and E1&#39;) = </span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Prob_sel2</span><span class="p">))</span>
-</pre></div>
+</section>
+</section>
+</section>
+<section id="generalizacion-de-la-probabilidad-total">
+<h2>Generalización de la probabilidad total<a class="headerlink" href="#generalizacion-de-la-probabilidad-total" title="Permalink to this headline">#</a></h2>
+<div class="admonition-ley-de-la-probabilidad-total admonition">
+<p class="admonition-title">Ley de la probabilidad total</p>
+<p>Dados los eventos <span class="math notranslate nohighlight">\(B_1,\;,B_2,\;,B_3,\;,...,B_k\)</span> los cuales son mutuamente exclusivos con <span class="math notranslate nohighlight">\(P(B_1)+P(B_2)+P(B_3)+...+P(B_k) = 1\)</span>, entonces para cualquier evento <span class="math notranslate nohighlight">\(E\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P(E)  = P(E \bigcap B_1) + P(E \bigcap B_2) + ... + P(E \bigcap B_k)
+P(E)  = P(E1|B_1)P(B_1) + P(E|B_2)P(B_2) + ... + P(E|B_k)P(B_k)
+\]</div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inventario antes de la selección 1: [2500, 7500]
-Secuencia seleccionada: 
-1 -&gt; Chip empresa 1
-2 -&gt; Chip empresa 1
-Inventario despues de la selección 1: [2498, 7500]
-P(E3 | E2 and E1) = 0.24985
-
-Inventario antes de la selección 2: [2500, 7500]
-[2500, 7500]
-Secuencia seleccionada: 
-1 -&gt; Chip empresa 2
-2 -&gt; Chip empresa 2
-Inventario despues de la selección 2: [2500, 7498]
-P(E3 | E2&#39; and E1&#39;) = 0.25005
-</pre></div>
-</div>
-</div>
-</div>
+<section id="id1">
+<h3>Ejemplos<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h4>Ejemplo 1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<p>Un niño tiene tres bolsas que contienen 100 canicas cada una:</p>
+<ul class="simple">
+<li><p>La bolsa 1 tiene 75 canicas rojas y 25 azules;</p></li>
+<li><p>la bolsa 2 tiene 60 canicas rojas y 40 azules;</p></li>
+<li><p>La bolsa 3 tiene 45 canicas rojas y 55 azules.</p></li>
+</ul>
+<p>Si el niño elije una de las bolsas al azar y luego escoje una canica de la bolsa elegida, también al azar. ¿Cuál es la probabilidad de que la canica elegida sea roja?</p>
+<p>Solución en: <a class="reference external" href="https://www.probabilitycourse.com/chapter1/1_4_2_total_probability.php">https://www.probabilitycourse.com/chapter1/1_4_2_total_probability.php</a></p>
+</section>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="referencias">

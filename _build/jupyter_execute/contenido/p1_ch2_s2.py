@@ -303,7 +303,7 @@ from scipy.stats import trim_mean
 # 
 # Como ha escogido las cartas sin reemplazo, (a diferencia del caso anterior) no puede escoger la misma carta dos veces, lo cual hace que el evento actual de elección de cada carta sea dependientes de los eventos previos.
 
-# ## Estrategias para calcular la probabilidad de un evento
+# # Estrategias para calcular la probabilidad de un evento
 # 
 # A continuación se resumen un conjunto de pasos cuando se va a abordar un problema que implica calcular probabilidades.
 # 

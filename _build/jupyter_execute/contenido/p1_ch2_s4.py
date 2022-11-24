@@ -11,248 +11,163 @@ from scipy.stats import trim_mean
 
 # # Reglas basicas de probabilidad
 
-# ## Probabilidad condicional
+# Al calcular la probabilidad, hay que tener en cuenta dos reglas para determinar si dos eventos son independientes o dependientes y si son mutuamente excluyentes o no:
+# * La regla de multiplicación.
+# * La regla de adición
+
+# ## Regla de la multiplicación y la adición
 # 
-# ```{admonition} Calculo de probabilidades condicionales
-# Para encontrar la $P(A|B)$ se usa la expresión:
+# La regla de la multiplicación establece que:
 # 
-# $$P(A|B) = \frac{P(A \bigcap B)}{P(B)}$$
+# ```{admonition} Regla de la multiplicación para dos eventos
+# Si $A$ y $B$ son dos eventos definidos en un espacio muestral, entonces:
 # 
-# Por otro lado, la probabilidad condicional $P(B|A)$ esta dada por:
+# $$
+# P(A \bigcap B)  = P(A|B)P(B)
+# $$
 # 
-# $$P(B|A) = \frac{P(B \bigcap A)}{P(A)}$$
+# Para el caso en el que los eventos $A$ y $B$ son **independientes**, entonces $P(A|B) = P(A)$ de modo que la expresión queda como:
+# 
+# $$
+# P(A \bigcap B)  = P(A)P(B)
+# $$
 # ```
 # 
-
-# # Estrategias para calcular la probabilidad de un evento
+# Por otro lado la ley de la adición dice:
 # 
-# A continuación se resumen un conjunto de pasos cuando se va a abordar un problema que implica calcular probabilidades.
+# ```{admonition} Regla de la adición para dos eventos
+# Si $A$ y $B$ son dos eventos definidos en un espacio muestral, entonces:
 # 
-# ```{tip}
-# 1. Haga una lista de todos los eventos sencillos del espacio muestral.
-# 2. Asigne una probabilidad apropiada a cada evento simple.
-# 3. Determine cuáles eventos sencillos resultan en el evento de interés.
-# 4. Sume las probabilidades de los eventos sencillos que resulten en el evento de interés.
+# $$
+# P(A \bigcup B)  = P(A) + P(B) - P(A \bigcap B)
+# $$
+# 
+# Cuando los eventos $A$ y $B$ son **mutuamente excluyentes**, entonces $P(A \bigcap B) = 0$ de modo que la expresión queda como:
+# 
+# $$
+# P(A \bigcup B)  = P(A) + P(B)
+# $$
 # ```
 
-# # Ejemplos usando python
-
-# In[2]:
-
-
-from fractions import Fraction
-
-# Calculo de la probabilidad
-def P(event, space): 
-    "The probability of an event, given a sample space."
-    return Fraction(cases(favorable(event, space)), 
-                    cases(space))
-
-favorable = set.intersection # Outcomes that are in the event and in the sample space
-cases     = len              # The number of cases is the length, or size, of a set
-
-
-# ## Ejemplo 1
-# Se tiene un mazo de cartas imparcial y bien mezclado de 52 cartas el cual consta de cuatro palos. Los palos son tréboles (T), diamantes (D), corazones (C) y picas (P). Hay 13 cartas en cada palo que consisten en 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J (sota), Q (reina) y K (rey) de ese palo. 
-# 
-# Si se saque dos cartas de un mazo estándar de 52 cartas con reemplazo. Calcule la probabilidad de obtener una carta negra como mínimo.
-# 
-# **Definamos los eventos**:
-# * $N$: El evento de sacar una carta negra.
-# * $R$: El evento de sacar una carta roja.
-# * $N_i$: El evento de sacar una carta negra en el intento $i-esimo$
-# * $R_i$: El evento de sacar una carta roja en el intento $i-esimo$
-# 
-# Lo que nos piden es:
-# 
-# $$
-# P((N_1 \bigcap R_2) \bigcup (R_1 \bigcap N_2) \bigcup (N_1 \bigcap N_2)) = P(N_1R_2 + R_1N_2 + N_1N_2)
-# $$ 
-# 
-# Asi: 
-# 
-# $$P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2)$$
-# 
-# Como los eventos $N_1$ y $N_2$ son idenpendientes tenemos que: 
-# 
-# $$P(N_1R_2 + R_1N_2 + N_1N_2) = P(N_1R_2) + P(R_1N_2) + P(N_1N_2) = P(N_1)P(R_2) + P(R_1)P(N_2) + P(N_1)P(N_2)$$
-# 
-# Donde:
-# 
-# $$P(N) = \frac{N(N)}{N} = \frac{N(T \bigcup P)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}$$
-# 
-# $$P(R) = \frac{N(R)}{N} = \frac{N(H \bigcup D)}{N} = \frac{13 + 13}{52} = \frac{26}{52} = \frac{1}{2}$$
-# 
-# Ademas: $P(N) = P(N) = P(N_i) = P(R_i) = \frac{1}{2}$
-# 
-# $$
-# P(N_1R_2 + R_1N_2 + N_1N_2) =  
-#                                 \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
-#                                 \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) + 
-#                                 \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) 
-# $$
-# 
-# $$
-# P(N_1R_2 + R_1N_2 + N_1N_2) =  \frac{3}{4} 
-# $$
+# ### Ejemplos
 # 
 # 
-# Esto tambien se pudierda haber hecho así:
+# #### Ejemplo 1
 # 
-# $$
-# P(al\;menos\;una\;negra) = 1 - (ninguna\;negra) = 1 - P(ambas\;rojas) = 
-# $$
-# 
-# $$
-# P(N_1R_2 + R_1N_2 + N_1N_2) = 1 - P(R_1R_2) = 1 - P(R_1)P(R_2) = 1 - \left ( \frac{1}{2} \right )\left ( \frac{1}{2} \right ) = 1 - \frac{1}{4} = \frac{3}{4}
-# $$
-# 
-# 
-
-# In[3]:
-
-
-# Espacio muestral
-palos = set(u'♥♠♦♣')
-rangos = u'K,Q,J,10,9,8,7,6,5,4,3,2,1'.split(sep = ',')
-mazo  = {r + s for r in rangos for s in palos}
-print("--- Mazo de cartas (Espacio muestral) ---")
-print("S = ", mazo, sep = "")
-print("N = ", len(mazo), sep = "")
-
-
-# In[4]:
-
-
-# Palos agrupados por color
-p_negra = set(u'♠♣')
-p_rojos = set(u'♥♠')
-
-# Funcion que determina si una carta es negra
-is_negra = lambda carta: carta[-1] in p_negra
-
-# Funcion que retorna un conjuto de cartas negras del mazo
-cartas_negras = set(filter(is_negra, mazo))
-
-print("--- Cartas negras ---")
-print("N = ", cartas_negras, sep = "")
-print("N(N) = ", len(cartas_negras), sep = "")
-P_N = P(cartas_negras, mazo)
-print("P(N) = ",P_N , sep = "")
-
-print("--- Cartas rojas ---")
-cartas_rojas = mazo - cartas_negras
-print("R = ", cartas_rojas, sep = "")
-print("N(N) = ", len(cartas_rojas), sep = "")
-P_R = P(cartas_rojas, mazo)
-print("P(R) = ", P_R, sep = "")
-
-"""
-Probabilidad de sacar al menos una carta negra cuando se sacan dos cartas del mazo (con reemplazo)
-"""
-print("Calculo de la probabilidad de sacar al menos una carta negra de dos cartas seleccionas con reemplazo")
-
-# Forma 1
-P_min1_negra_f1 = P_N*P_R + P_R*P_N + P_N*P_N
-print("Forma 1: P(al menos una negra) = ", P_min1_negra_f1, sep = "")
-
-# Forma 2
-P_min1_negra_f2 = 1 - P_R*P_R
-print("Forma 2: P(al menos una negra) = ", P_min1_negra_f2, sep = "")
-
-
-# ## Ejemplo 2
-# 
-# Un lote de 10000 chips de computadora utilizados en calculadoras gráficas consta de 2500 fabricados por una empresa y 7500 fabricados por una segunda empresa, todos mezclados. Si se seleccionan tres chips al azar sin reemplazo y se definen los siguintes eventos:
-# * $E_1$: Evento de que el primer chip sea fabricado por la empresa 1.
-# * $E_2$: Evento de que el segundo chip sea fabricado por la empresa 1.
-# * $E_3$: Evento de que el tercer chip sea fabricado por la empresa 1.
-# 
-# **Preguntas**:
-# 1. ¿Si en el proceso de selección de chips, las dos primeras elecciones correspondieron a chips de la empresa 1, ¿Cual es la probabilidad de que el tercer elegido chip pertenezca a la empresa 1?
+# Suponga que el 60% de todos los clientes de un operador de telecomunicaciones se suscribe al servicio de Internet, el 40% se suscribe al servicio telefónico y el 25% tiene ambos tipos de servicios y realice lo que se pide a continuación
+# 1. Defina los eventos de acuerdo a la información suministrada.
 #    
-#    Para este caso nos piden: $P(E_3|E_2\;and\;E_1)$. Para resolver esto, observemos la siguiente tabla en la cual se muestra el proceso de selección: $ \left \{ E_1, E_2, E_3 \right \} = \left \{chip\;empresa\;1, chip\;empresa\;1,chip\;empresa\;1\right \}$:
+#    De acuerdo al enunciado podemos sacar los siguientes eventos de interes de acuerdo al enunciado:
+#    * **E**: evento de que el cliente seleccionado tenga servicio de internet.
+#    * **F**: evento de que el cliente seleccionado tenga servicio telefonico.
+# 
+#    Ahora describimos en terminos de los eventos, la información que se nos da del problema:
+#    *  $P(E) = 0.6$
+#    *  $P(F) = 0.4$
+#    *  $P(E\;and\;F) = 0.25$
+# 
+# 2. Si se selecciona un cliente al azar, ¿cuál es la probabilidad de que tenga al menos uno de estos dos tipos de servicio?
 #    
-#    |Selección|1|2|3|
-#    |--|--|--|---|
-#    |Chip elegido|Empresa 1|Empresa 1| Empresa 1|
-#    |Total chips|10000|9999|9998|
-#    |Total chips empresa 1|2500|2499|2498|
-#    |Total chips empresa 2|7500|7500|7500|
+#    Se pide $P(E\;or\;F)$ la cual se calcula la ley de la adición tenemos:
+#    
+#    $$
+#    P(E\;or\;F) = P(E) + P(F) + P(E\;and\;F) = 0.6 + 0.4 - 0.25 = 0.75
+#    $$
+#    
+# 3. Si se selecciona un cliente al azar, ¿cuál es la probabilidad no este inscrito en ningun servicio?
 # 
-#    De este modo tenemos que:
+#    Se pide $P(not (E\;or\;F))$ la cual podemos calcular como se muestra a continuación:
+#    
+#    $$
+#    P(not (E\;or\;F)) = 1- P(E\;or\;F) = 1 - 0.75 = 0.25
+#    $$
+# 
+# 4. Si se selecciona un cliente al azar, ¿cuál es la probabilidad este inscrito en exactamente un servicio?
+#    
+#    En terminos matematicos esto es: 
+#    
+#    $$P(exactamente\;uno) = P(minimo\;uno) - P(ninguno) = P(E\;or\;F) - P(E\;and\;F)$$
+# 
+#    $$P(exactamente\;uno) = 0.75 - 0.25 = 0.5$$
+# 
+
+# #### Ejemplo 2
+# 
+# En una encuesta telefónica hecha a mil adultos, a los que respondieron se les preguntó acerca del gasto de una educación universitaria y la relativa necesidad de alguna forma de ayuda financiera. Quienes respondieron fueron clasificados de acuerdo a si actualmente tenían un hijo en la universidad y si pensaban que el interes de un préstamo para casi todos los estudiantes universitarios es demasiado alta, la cantidad correcta o es muy poco. Las proporciones de quienes contestaron se muestran en la tabla de probabilidad dada a continuación:
+# 
+# ||Demasiado alta (A)|Correcta (B)|Muy poco (C)|
+# |---|---|---|---|
+# |Con hijo en universidad|.35|.08|0.01|
+# |Sin hijo en la universidad|.25|.20|.11|
+# 
+# Si se definen los siguientes eventos:
+# * A: El entrevistado piensa que el interes de un préstamo es demasiado alto
+# * B: El entrevistado piensa que el interes de un préstamo tiene un valor adecuado.
+# * C: El entrevistado piensa que el interes de un préstamo es muy poco.
+# * D: El entrevistado tiene un hijo en la universidad.
+# 
+# Suponga que un entrevistado se escoge al azar de entre este grupo:
+# 1. ¿Cuál es la probabilidad de que el entrevistado tenga un hijo en la universidad?
+#    
+#    De acuerdo a la información, tener un hijo en la universidad no depende de lo que responda de modo que:
 # 
 #    $$
-#    P(E_3|E_2\;and\;E_1)) = \frac{N(E_3 | E_2\;and\;E_1)}{N} = \frac{2498}{9998} = 0.24985
-#    $$
+#    P(D) = P(D\;and\;A) + P(D\;and\;B) + P(D\;and\;C) = .35 + .08 + 0.01 = 0.44
+#    $$ 
 # 
-# 2. ¿Si las dos primeras elecciones correspondieron a chips de la empresa 2, ¿Cual es la probabilidad de que el tercer elegido chip pertenezca a la empresa 1?
-# 
-#    Lo que se nos pide en este caso es: $P(E_3|not\;E_2\;and\;not\;E_1) = P(E_3|E_2'\;and\;E_1')$
-# 
-#    El proceso de selección dá la siguiente secuencia: $\left \{ E_1, E_2, E_3 \right \} = \left \{chip\;empresa\;2, chip\;empresa\;2,chip\;empresa\;1\right \}$ la cual se detalla en la siguiente tabla: 
-# 
-#    |Selección|1|2|3|
-#    |--|--|--|---|
-#    |Chip elegido|Empresa 2|Empresa 2| Empresa 1|
-#    |Total chips|10000|9999|9998|
-#    |Total chips empresa 1|2500|2500|2500|
-#    |Total chips empresa 2|7500|7499|7498|
-# 
-#    De este modo tenemos que:
+# 2. ¿Cuál es la probabilidad de que el entrevistado no tenga un hijo en la universidad?
+#    
+#    Para el caso se pide: $P(not\;D) = P(D')$ de modo que:
 # 
 #    $$
-#    P(E_3|E_2'\;and\;E_1')) = \frac{N(E_3 | E_2'\;and\;E_1')}{N} = \frac{2500}{9998}= 0.25005
+#    P(not\;D) = P(D) = 1 - P(D) = 1 - 0.44 = 0.56
 #    $$
+# 
+# 3. ¿Cuál es la probabilidad de que el entrevistado tenga un hijo en la universidad o piense que la carga de un préstamo es demasiado alta?
+#    
+#    En este caso nos piden: $P(D\;or\;A)$, inicialmente calculamos $P(A)$:
+#    
+#    $$
+#    P(A) = P(D\;and\;A) + P(D'\;or\;A) = .35 + .25 = 0.6
+#    $$
+#    
+#    Luego, al aplicar la ley de la adición tenemos:
+# 
+#    $$
+#    P(D\;or\;A) = P(D) + P(A) - P(D\;and\;A) = 0.56 + 0.44 - .35 = .69
+#    $$
+# 
+# 4. ¿Los eventos D y A son independientes?
+#    
+#    Los eventos son independientes si se cumple que: $P(D\;and\;A) = P(D)P(A)$, para el caso tenemos:
+#    * $P(D\;and\;A) = .69$
+#    * $P(D)P(A) = (.44)(.6) = .264$
+# 
+#    Como $P(D\;and\;A) \neq P(D)P(A)$, entonces los eventos **no son independientes**
 
-# In[5]:
+# ## Generalización de la probabilidad total
+# 
+# ```{admonition} Ley de la probabilidad total
+# Dados los eventos $B_1,\;,B_2,\;,B_3,\;,...,B_k$ los cuales son mutuamente exclusivos con $P(B_1)+P(B_2)+P(B_3)+...+P(B_k) = 1$, entonces para cualquier evento $E$:
+# 
+# $$
+# P(E)  = P(E \bigcap B_1) + P(E \bigcap B_2) + ... + P(E \bigcap B_k)
+# P(E)  = P(E1|B_1)P(B_1) + P(E|B_2)P(B_2) + ... + P(E|B_k)P(B_k)
+# $$
+# ```
 
+# ### Ejemplos
 
-# Solución python
-
-chips = [0,0]
-
-def init_inventario():
-    chips[0],chips[1] = 2500,7500
-
-# Actualiza el invetario dependiendo del chip elegido (Empresa 1 o 2)
-def elegir_chip(empresa):
-    try:
-        if empresa not in [1,2]:
-            raise IndexError        
-    except IndexError as error:
-        print("Solo exiten las empresas 1 y 2")
-    else:
-        chips[empresa - 1] -= 1
-
-def seleccionar_chips(l_sel):
-    i = 1
-    for sel in l_sel:        
-        print("{} -> Chip empresa {}".format(i,sel))
-        elegir_chip(sel)
-        i += 1
-     
-# Punto 1: seleccion = {chip empresa 1, chip empresa 1, chip empresa 1}
-init_inventario()
-print("Inventario antes de la selección 1:",chips)
-sacadas_1 = (1,1) # El utlimo caso de seleccion 
-print("Secuencia seleccionada: ")
-seleccionar_chips(sacadas_1)
-print("Inventario despues de la selección 1:",chips)
-Prob_sel1 = float(Fraction(chips[0],sum(chips)))
-print("P(E3 | E2 and E1) = {:.5f}".format(Prob_sel1))
-print()
-# Punto 2: seleccion = {chip empresa 2, chip empresa 2, chip empresa 1}
-init_inventario()
-print("Inventario antes de la selección 2:",chips)
-print(chips)
-sacadas_2 = (2,2)
-print("Secuencia seleccionada: ")
-seleccionar_chips(sacadas_2)
-print("Inventario despues de la selección 2:",chips)
-Prob_sel2 = float(Fraction(chips[0],sum(chips)))
-print("P(E3 | E2' and E1') = {:.5f}".format(Prob_sel2))
-
+# #### Ejemplo 1
+# 
+# Un niño tiene tres bolsas que contienen 100 canicas cada una:
+# * La bolsa 1 tiene 75 canicas rojas y 25 azules;
+# * la bolsa 2 tiene 60 canicas rojas y 40 azules;
+# * La bolsa 3 tiene 45 canicas rojas y 55 azules.
+# 
+# Si el niño elije una de las bolsas al azar y luego escoje una canica de la bolsa elegida, también al azar. ¿Cuál es la probabilidad de que la canica elegida sea roja?
+# 
+# Solución en: https://www.probabilitycourse.com/chapter1/1_4_2_total_probability.php
 
 # # Referencias
 
