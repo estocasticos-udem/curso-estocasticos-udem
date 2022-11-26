@@ -167,7 +167,99 @@ from scipy.stats import trim_mean
 # 
 # Si el niño elije una de las bolsas al azar y luego escoje una canica de la bolsa elegida, también al azar. ¿Cuál es la probabilidad de que la canica elegida sea roja?
 # 
-# Solución en: https://www.probabilitycourse.com/chapter1/1_4_2_total_probability.php
+# Lo primero que se debe hacer es definir los eventos asociados al problema:
+# * $R$: Evento de que la bola elegida al azar sea roja.
+# * $A$: Evento de que la bola elegida al azar sea azul.
+# * $B_i$: Evento de que la bola elegida provenga de la bolsa $i$, siendo $i = 1,2,3$
+# 
+# Para el caso lo que preguntan es cual es la probabilidad de que la bola elegida sea roja, es decir $P(R)$. Si aplicamos la ley de la probabilidad total en este caso, entonces tenemos:
+# 
+# $$
+# P(R)= P(R\;and\;B_1) + P(R\;and\;B_2) + P(R\;and\;B_3) 
+# $$
+# 
+# Calculando cada una de las probabilidades enteriores y teniendo en cuenta la dependencia del evento en el que se saca la bola con la bolsa de la que proviene tenemos:
+# 
+# $$
+# P(R\;and\;B_1) = P(R|B_1)P(B_1) = \left ( \frac{75}{100} \right) \left ( \frac{100}{300} \right) = 0.25 
+# $$
+# 
+# $$
+# P(R\;and\;B_2) = P(R|B_2)P(B_2) = \left ( \frac{60}{100} \right) \left ( \frac{100}{300} \right) = 0.2 
+# $$
+# 
+# $$
+# P(R\;and\;B_3) = P(R|B_3)P(B_3) = \left ( \frac{45}{100} \right) \left ( \frac{100}{300} \right) = 0.15 
+# $$
+# 
+# Finalmente, la probabilidad que se pide será:
+# 
+# $$
+# P(R)= P(R\;and\;B_1) + P(R\;and\;B_2) + P(R\;and\;B_3) = 0.25 + 0.2 + 0.15 = 0.6 
+# $$
+
+# #### Ejemplo 2
+# El 20% de los microprocesadores fabricados en cierto proceso son defectuosos. Si se eligen cinco microprocesadores al azar. Si se supone que funcionan de forma independiente. 
+# * ¿Cuál es la probabilidad de que todos funcionen?
+#   
+#   Lo primero que se debe hacer es definir los eventos. De este modo si suponemos que $A$ es el evento de que un microprocesador funcione y $D$ el evento de que este defectuoso, entonces para el problema tenemos:
+#   * $A_i$: Evento de que el i-esimo microprocesador elegido funcione.
+#   * $D_i$: Evento de que el i-esimo microprocesador elegido no funcione (este defectuoso).
+#   
+#   Ahora lo que nos pregunta es $P(all\;5\;work)$, lo cual es:
+# 
+#   $$
+#   P(all\;5\;work) = P(A_1\;and\;A_2;and\;A_3;and\;A_4;and\;A_5)
+#   $$
+# 
+#   Ahora, como el funcionamiento de un microprocador elegido no afecta el de cualquier otro, decimos que los eventos son independientes de modo que:
+# 
+#   $$
+#   P(A_1\;and\;A_2;and\;A_3;and\;A_4;and\;A_5) = P(A_1)P(A_2)P(A_3)P(A_4)P(A_5)
+#   $$
+# 
+#   Del enunciado, como el 20% de los microprocesadores son defectuosos, entonces $P(D) = P(not\;A) = 0.2$ de modo que:
+# 
+#   $$
+#   P(A) = 1- P(not\;A) = 1- P(D) = 1 - 0.2 = 0.8
+#   $$
+#   
+#   Luego $P(A_1) = P(A_2) = P(A_3) = P(A_4) = P(A_5) = 0.8$
+# 
+#   Finalmente tenemos que:
+# 
+#   $$
+#   P(A_1\;and\;A_2;and\;A_3;and\;A_4;and\;A_5) = (0.8)(0.8)(0.8)(0.8)(0.8) = 0.8^5 = 0.328
+#   $$
+# 
+# 
+# * Cual es la probabilidad de que al menos uno de los microprocesadores trabaje.
+#   
+#   Para solucionar este problema, podemos buscar una forma equivalente del enunciado que permita acomodar los eventos de modo que el calculo sea mas facil. En el caso, decir "que al menos uno de los microprocesadores funcione" es lo contrario de decir que "todos sean defectuosos" de modo que el punto de partida se puede expresar como se muestra a continuación:
+# 
+#   $$
+#   P(at\;least\;one\;works) = 1 − P(all\;are\;defective)
+#   $$
+# 
+#   Del enunciado sabems que $P(D_1) = P(D_2) = P(D_3) = P(D_4) = P(D_5) = 0.2$ y que los eventos son independientes:
+# 
+#   $$
+#   P(all\;are\;defective) = P(D_1\;and\;D_2and\;D_3and\;D_4and\;D_5) = P(D_1)P(D_2)P(D_3)P(D_4)P(D_5)
+#   $$
+# 
+#   $$
+#   P(all\;are\;defective) = (0.2)(0.2)(0.2)(0.2)(0.2) = 0.2^5 = 0.0003
+#   $$
+# 
+#   Finalmente: 
+# 
+#   $$
+#   P(at\;least\;one\;works) = 1 − 0.0003 = 0.9997
+#   $$
+# 
+#   
+# 
+# 
 
 # # Referencias
 
@@ -181,6 +273,7 @@ from scipy.stats import trim_mean
 # * https://github.com/Probability-Statistics-Jupyter-Notebook
 # * https://ipython-books.github.io/154-computing-exact-probabilities-and-manipulating-random-variables/
 # * https://realpython.com/python-itertools/
+# * https://github.com/honi/uba-probabilidad-y-estadistica
 # 
 # Otros
 # 

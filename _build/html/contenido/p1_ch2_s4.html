@@ -434,6 +434,11 @@ title="Print to PDF"
          Ejemplo 1
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Ejemplo 2
+        </a>
+       </li>
       </ul>
      </li>
     </ul>
@@ -506,6 +511,11 @@ title="Print to PDF"
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#id2">
          Ejemplo 1
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Ejemplo 2
         </a>
        </li>
       </ul>
@@ -710,7 +720,90 @@ P(E)  = P(E1|B_1)P(B_1) + P(E|B_2)P(B_2) + ... + P(E|B_k)P(B_k)
 <li><p>La bolsa 3 tiene 45 canicas rojas y 55 azules.</p></li>
 </ul>
 <p>Si el niño elije una de las bolsas al azar y luego escoje una canica de la bolsa elegida, también al azar. ¿Cuál es la probabilidad de que la canica elegida sea roja?</p>
-<p>Solución en: <a class="reference external" href="https://www.probabilitycourse.com/chapter1/1_4_2_total_probability.php">https://www.probabilitycourse.com/chapter1/1_4_2_total_probability.php</a></p>
+<p>Lo primero que se debe hacer es definir los eventos asociados al problema:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R\)</span>: Evento de que la bola elegida al azar sea roja.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span>: Evento de que la bola elegida al azar sea azul.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_i\)</span>: Evento de que la bola elegida provenga de la bolsa <span class="math notranslate nohighlight">\(i\)</span>, siendo <span class="math notranslate nohighlight">\(i = 1,2,3\)</span></p></li>
+</ul>
+<p>Para el caso lo que preguntan es cual es la probabilidad de que la bola elegida sea roja, es decir <span class="math notranslate nohighlight">\(P(R)\)</span>. Si aplicamos la ley de la probabilidad total en este caso, entonces tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+P(R)= P(R\;and\;B_1) + P(R\;and\;B_2) + P(R\;and\;B_3) 
+\]</div>
+<p>Calculando cada una de las probabilidades enteriores y teniendo en cuenta la dependencia del evento en el que se saca la bola con la bolsa de la que proviene tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+P(R\;and\;B_1) = P(R|B_1)P(B_1) = \left ( \frac{75}{100} \right) \left ( \frac{100}{300} \right) = 0.25 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(R\;and\;B_2) = P(R|B_2)P(B_2) = \left ( \frac{60}{100} \right) \left ( \frac{100}{300} \right) = 0.2 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(R\;and\;B_3) = P(R|B_3)P(B_3) = \left ( \frac{45}{100} \right) \left ( \frac{100}{300} \right) = 0.15 
+\]</div>
+<p>Finalmente, la probabilidad que se pide será:</p>
+<div class="math notranslate nohighlight">
+\[
+P(R)= P(R\;and\;B_1) + P(R\;and\;B_2) + P(R\;and\;B_3) = 0.25 + 0.2 + 0.15 = 0.6 
+\]</div>
+</section>
+<section id="id3">
+<h4>Ejemplo 2<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<p>El 20% de los microprocesadores fabricados en cierto proceso son defectuosos. Si se eligen cinco microprocesadores al azar. Si se supone que funcionan de forma independiente.</p>
+<ul>
+<li><p>¿Cuál es la probabilidad de que todos funcionen?</p>
+<p>Lo primero que se debe hacer es definir los eventos. De este modo si suponemos que <span class="math notranslate nohighlight">\(A\)</span> es el evento de que un microprocesador funcione y <span class="math notranslate nohighlight">\(D\)</span> el evento de que este defectuoso, entonces para el problema tenemos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_i\)</span>: Evento de que el i-esimo microprocesador elegido funcione.</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_i\)</span>: Evento de que el i-esimo microprocesador elegido no funcione (este defectuoso).</p></li>
+</ul>
+<p>Ahora lo que nos pregunta es <span class="math notranslate nohighlight">\(P(all\;5\;work)\)</span>, lo cual es:</p>
+<div class="math notranslate nohighlight">
+\[
+  P(all\;5\;work) = P(A_1\;and\;A_2;and\;A_3;and\;A_4;and\;A_5)
+  \]</div>
+<p>Ahora, como el funcionamiento de un microprocador elegido no afecta el de cualquier otro, decimos que los eventos son independientes de modo que:</p>
+<div class="math notranslate nohighlight">
+\[
+  P(A_1\;and\;A_2;and\;A_3;and\;A_4;and\;A_5) = P(A_1)P(A_2)P(A_3)P(A_4)P(A_5)
+  \]</div>
+<p>Del enunciado, como el 20% de los microprocesadores son defectuosos, entonces <span class="math notranslate nohighlight">\(P(D) = P(not\;A) = 0.2\)</span> de modo que:</p>
+<div class="math notranslate nohighlight">
+\[
+  P(A) = 1- P(not\;A) = 1- P(D) = 1 - 0.2 = 0.8
+  \]</div>
+<p>Luego <span class="math notranslate nohighlight">\(P(A_1) = P(A_2) = P(A_3) = P(A_4) = P(A_5) = 0.8\)</span></p>
+<p>Finalmente tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[
+  P(A_1\;and\;A_2;and\;A_3;and\;A_4;and\;A_5) = (0.8)(0.8)(0.8)(0.8)(0.8) = 0.8^5 = 0.328
+  \]</div>
+</li>
+<li><p>Cual es la probabilidad de que al menos uno de los microprocesadores trabaje.</p>
+<p>Para solucionar este problema, podemos buscar una forma equivalente del enunciado que permita acomodar los eventos de modo que el calculo sea mas facil. En el caso, decir “que al menos uno de los microprocesadores funcione” es lo contrario de decir que “todos sean defectuosos” de modo que el punto de partida se puede expresar como se muestra a continuación:</p>
+<div class="math notranslate nohighlight">
+\[
+  P(at\;least\;one\;works) = 1 − P(all\;are\;defective)
+  \]</div>
+<p>Del enunciado sabems que <span class="math notranslate nohighlight">\(P(D_1) = P(D_2) = P(D_3) = P(D_4) = P(D_5) = 0.2\)</span> y que los eventos son independientes:</p>
+<div class="math notranslate nohighlight">
+\[
+  P(all\;are\;defective) = P(D_1\;and\;D_2and\;D_3and\;D_4and\;D_5) = P(D_1)P(D_2)P(D_3)P(D_4)P(D_5)
+  \]</div>
+<div class="math notranslate nohighlight">
+\[
+  P(all\;are\;defective) = (0.2)(0.2)(0.2)(0.2)(0.2) = 0.2^5 = 0.0003
+  \]</div>
+<p>Finalmente:</p>
+<div class="math notranslate nohighlight">
+\[
+  P(at\;least\;one\;works) = 1 − 0.0003 = 0.9997
+  \]</div>
+</li>
+</ul>
 </section>
 </section>
 </section>
@@ -728,6 +821,7 @@ P(E)  = P(E1|B_1)P(B_1) + P(E|B_2)P(B_2) + ... + P(E|B_k)P(B_k)
 <li><p><a class="reference external" href="https://github.com/Probability-Statistics-Jupyter-Notebook">https://github.com/Probability-Statistics-Jupyter-Notebook</a></p></li>
 <li><p><a class="reference external" href="https://ipython-books.github.io/154-computing-exact-probabilities-and-manipulating-random-variables/">https://ipython-books.github.io/154-computing-exact-probabilities-and-manipulating-random-variables/</a></p></li>
 <li><p><a class="reference external" href="https://realpython.com/python-itertools/">https://realpython.com/python-itertools/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/honi/uba-probabilidad-y-estadistica">https://github.com/honi/uba-probabilidad-y-estadistica</a></p></li>
 </ul>
 <p>Otros</p>
 <ul class="simple">
