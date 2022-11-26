@@ -439,6 +439,11 @@ title="Print to PDF"
          Ejemplo 2
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-3">
+         Ejemplo 3
+        </a>
+       </li>
       </ul>
      </li>
     </ul>
@@ -516,6 +521,11 @@ title="Print to PDF"
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#id3">
          Ejemplo 2
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-3">
+         Ejemplo 3
         </a>
        </li>
       </ul>
@@ -804,6 +814,49 @@ P(R)= P(R\;and\;B_1) + P(R\;and\;B_2) + P(R\;and\;B_3) = 0.25 + 0.2 + 0.15 = 0.6
   \]</div>
 </li>
 </ul>
+</section>
+<section id="ejemplo-3">
+<h4>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">#</a></h4>
+<p>Los clientes que compran una determinada marca de automóvil pueden solicitar un motor en cualquiera de tres tamaños disponibles. De todos los autos vendidos, el 45% tiene el motor más pequeño, el 35% tiene el mediano y el 20% tiene el más grande. De los automóviles con el motor más pequeño, el 10 % no pasa la prueba de emisiones dentro de los dos años posteriores a la compra, mientras que el 12 % de los de tamaño mediano y el 15 % de los que tienen el motor más grande fallan. ¿Cuál es la probabilidad de que un automóvil elegido al azar no pase una prueba de emisiones dentro de dos años?</p>
+<p>Inicialmente, debemos determinar los eventos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B\)</span>: El evento de que el carro falle en la prueba de emisiones dentro de los dos años posteriores a la compra.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_1\)</span>: Evento de que el carro tenga un motor pequeño.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_2\)</span>: Evento de que el carro tenga un motor mediano.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_3\)</span>: Evento de que el carro tenga un motor grande.</p></li>
+</ul>
+<p>Posteriormente, determinamos los datos que conocemos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A_1) = 0.45\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A_2) = 0.35\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A_3) = 0.20\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B|A_1) = 0.10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B|A_2) = 0.12\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B|A_3) = 0.15\)</span></p></li>
+</ul>
+<p>Finalmente, empleando la regla de la probabilidad total, calculamos la cantidad que se nos pide, la cual es <span class="math notranslate nohighlight">\(P(B)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P(B)= P(B\;and\;A_1) + P(B\;and\;A_2) + P(B\;and\;A_3) 
+\]</div>
+<p>Si calculamos cada una de las probabidlidades individuales usando los datos tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+P(B\;and\;A_1) = P(B|A_1)P(A_1) = (0.10)(0.45) = 0.045 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(B\;and\;A_2) = P(B|A_2)P(A_2) = (0.12)(0.35)= 0.042 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(B\;and\;A_3) = P(B|A_3)P(A_3) = (0.15)(0.20) = 0.03 
+\]</div>
+<p>Finalmente tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+P(B) = 0.045 + 0.042 + 0.03 = 0.117 
+\]</div>
 </section>
 </section>
 </section>

@@ -261,6 +261,50 @@ from scipy.stats import trim_mean
 # 
 # 
 
+# #### Ejemplo 3
+# Los clientes que compran una determinada marca de automóvil pueden solicitar un motor en cualquiera de tres tamaños disponibles. De todos los autos vendidos, el 45% tiene el motor más pequeño, el 35% tiene el mediano y el 20% tiene el más grande. De los automóviles con el motor más pequeño, el 10 % no pasa la prueba de emisiones dentro de los dos años posteriores a la compra, mientras que el 12 % de los de tamaño mediano y el 15 % de los que tienen el motor más grande fallan. ¿Cuál es la probabilidad de que un automóvil elegido al azar no pase una prueba de emisiones dentro de dos años?
+# 
+# Inicialmente, debemos determinar los eventos:
+# * $B$: El evento de que el carro falle en la prueba de emisiones dentro de los dos años posteriores a la compra.
+# * $A_1$: Evento de que el carro tenga un motor pequeño.
+# * $A_2$: Evento de que el carro tenga un motor mediano.
+# * $A_3$: Evento de que el carro tenga un motor grande.
+# 
+# Posteriormente, determinamos los datos que conocemos:
+# * $P(A_1) = 0.45$
+# * $P(A_2) = 0.35$
+# * $P(A_3) = 0.20$
+# * $P(B|A_1) = 0.10$
+# * $P(B|A_2) = 0.12$
+# * $P(B|A_3) = 0.15$
+# 
+# Finalmente, empleando la regla de la probabilidad total, calculamos la cantidad que se nos pide, la cual es $P(B)$:
+# 
+# $$
+# P(B)= P(B\;and\;A_1) + P(B\;and\;A_2) + P(B\;and\;A_3) 
+# $$
+# 
+# Si calculamos cada una de las probabidlidades individuales usando los datos tenemos:
+# 
+# $$
+# P(B\;and\;A_1) = P(B|A_1)P(A_1) = (0.10)(0.45) = 0.045 
+# $$
+# 
+# $$
+# P(B\;and\;A_2) = P(B|A_2)P(A_2) = (0.12)(0.35)= 0.042 
+# $$
+# 
+# $$
+# P(B\;and\;A_3) = P(B|A_3)P(A_3) = (0.15)(0.20) = 0.03 
+# $$
+# 
+# Finalmente tenemos:
+# 
+# $$
+# P(B) = 0.045 + 0.042 + 0.03 = 0.117 
+# $$
+# 
+
 # # Referencias
 
 # * https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/5-probability.ipynb
