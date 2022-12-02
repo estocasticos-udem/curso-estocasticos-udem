@@ -48,11 +48,98 @@ def prob(num_events, total):
 # 3. Encuentre la probabilidad de que la persona elegida sea una mujer que desayune regularmente.
 # 4. Encuentre la probabilidad de que la persona elegida sea una mujer o cualquiera que desayune regularmente.
 # 5. Encuentre $P(B \bigcup M)$ y explique lo que significa.
-# 6. Encuentre $P(B^C \bigcup M^C)$ y explique lo que significa.
+# 6. Encuentre $P(B^C \bigcap M^C)$ y explique lo que significa.
 # 7. Encuentre $P(B|M)$ y explique lo que significa.
 # 8. Encuentre $P(M|B)$ y explique lo que significa.
 # 9. ¿Todos los eventos $B$ y $M$ son mutuamente excluyentes?
 # 10. ¿Todos los eventos $B$ y $M$ son independientes?
+# 
+# **Solución**
+# 
+# Como ya se tienen definidos los eventos básicos vamos a proceder a realizar los calculos solicitados.
+# 1. $P(M') = ?$
+#    
+#    Tenemos que: $P(M') = 1 - P(M)$
+# 
+#    $$P(M) = \frac{N(M)}{N} = \frac{320}{595}$$
+# 
+#    Luego:
+# 
+#    $$P(M') = 1 - P(M) = 1 - \frac{N(M)}{N} = 1 - \frac{320}{595} = \frac{275}{595} = 0.4622$$
+# 
+# 2. $P(B) = ?$
+# 
+#    Tenemos que: 
+# 
+#    $$P(B) = \frac{N(B)}{N} = \frac{300}{595} = 0.5942$$
+# 
+# 3. $P(M'\;and\;B) = ?$
+#    
+#    Aplicando la definición tenemos: 
+# 
+#    $$P(M'\;and\;B) = \frac{N(M'\;and\;B)}{N} = \frac{110}{595} = 0.1849$$
+# 
+# 4. $P(M'\;or\;B) = ?$
+#    
+#    Tenemos que:
+# 
+#    $$P(M'\;or\;B) = \frac{N(M'\;or\;B)}{N}$$
+# 
+#    Para hallar $N(M'\;or\;B)$ es necesario tener en cuenta lo que implica la expresión "Que sea mujer o cualquier persona que desayune regularmente" es **lo contrario de decir** "Que sea hombre y no desayune regularmente" (Aplicación de ley de Morgan $(A \bigcup B)' = A' \bigcup B'$) y por lo tanto tenemos:
+# 
+#    $$P(M'\;or\;B) = 1 - P((M'\;or\;B)') = 1 - P(M\;and\;B')$$
+# 
+#    Calcular $P(M\;and\;B')$ resulta mas sencillo por lo que vamos a proceder a esto:
+# 
+#    $P(M\;and\;B') = \frac{N(M\;and\;B')}{N} = \frac{130}{595}$
+# 
+#    Luego:
+# 
+#    $$P(M'\;or\;B) = 1 - P(M\;and\;B') = 1 - \frac{130}{595} = \frac{465}{595} = 0.7815$$
+# 
+# 5. $P(B\;or\;M) = ?$
+#    
+#    La probabilidad $P(B\;or\;M)$ esta asociada al evento "Que sea hombre o cualquier persona que desayune regularmente". Este evento, se puede descomponer en tres eventos simples:
+#    * Que sea hombre y desayune normalmente $(M\;and\;B)$.
+#    * Que sea mujer y desayune normalmente $(M'\;and\;B)$.
+#    * Que sea hombre y no desayune normalmente $(M\;or\;B')$.
+#   
+#    De este modo tenemos que:
+# 
+#    $$P(B\;or\;M) = \frac{N(B\;or\;M)}{N}$$
+# 
+#    El calculo de $N(B\;or\;M)$ se hace teniendo en cuenta los tres eventos sencillos enunciados previamente:
+# 
+#    $N(B\;or\;M) = N(M\;and\;B) + N(M'\;and\;B) + N(M\;and\;B') = 190 + 110 + 130 = 430$
+# 
+#    $N = 595$
+# 
+#    Luego:
+# 
+#    $$P(B\;or\;M) = \frac{N(B\;or\;M)}{N} = \frac{430}{595} = 0.7227$$
+# 
+# 6. $P(B'\;and\;M') = ?$
+#    
+#    La expresión $B'\;and\;M'$ significa "Que no desayune regularmente y que sea mujer":
+# 
+#    $$P(B'\;and\;M') = \frac{165}{595} = 0.2773$$
+# 
+# 7. $P(B|M) = ?$
+#    
+#    De la definición de probabilidad condicional tenemos:
+# 
+#    $$P(B|M) = \frac{N(B\;and\;M)}{N(M)} = \frac{190}{320} = 0.5938$$
+# 
+# 8. $P(M|B) = ?$
+#    
+#    De la definición de probabilidad condicional tenemos:
+# 
+#    $$P(M|B) = \frac{N(M\;and\;B)}{N(B)} = \frac{190}{300} = 0.6333$$
+# 
+# 9. No lo son, pues pueden darse de manera simultanea.
+# 10. No lo son, pues hay dependencia.
+
+# **Solución en python**
 
 # In[3]:
 
@@ -142,7 +229,7 @@ print(f"P(B or M) = {P_B_dado_M:.4f}")
 # In[11]:
 
 
-# 6 (165/595)
+# 6 
 print("Punto 6 ->")
 #N_break_and_woman =  tabla.iloc[0]['woman']
 #N_breakfast = total_breakfast[0]
@@ -203,7 +290,7 @@ print("Punto 4 -> Se verifica por formula")
 # 4. Encuentre $P(Gran\;probabilidad)$
 # 5. Los eventos "Gran probabilidad" y "Mujer" son eventos independientes
 # 
-# * **Solución**
+# **Solución**
 # 
 # Primero definimos los eventos asociados al problema:
 # * $M$: La persona seleccionada es Mujer.
@@ -350,7 +437,7 @@ print(f"P(R4) = {P_R4:0.4f}")
 # 7. ¿Los eventos obeso y alto son independientes?
 # 
 
-# pendiente...
+# pendiente... Hacerlo obteniendo una segunda tabla producto de la división
 
 # # Referencias
 
