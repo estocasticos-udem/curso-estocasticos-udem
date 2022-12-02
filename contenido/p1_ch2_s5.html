@@ -573,12 +573,82 @@ title="Print to PDF"
 <li><p>Encuentre la probabilidad de que la persona elegida sea una mujer que desayune regularmente.</p></li>
 <li><p>Encuentre la probabilidad de que la persona elegida sea una mujer o cualquiera que desayune regularmente.</p></li>
 <li><p>Encuentre <span class="math notranslate nohighlight">\(P(B \bigcup M)\)</span> y explique lo que significa.</p></li>
-<li><p>Encuentre <span class="math notranslate nohighlight">\(P(B^C \bigcup M^C)\)</span> y explique lo que significa.</p></li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(B^C \bigcap M^C)\)</span> y explique lo que significa.</p></li>
 <li><p>Encuentre <span class="math notranslate nohighlight">\(P(B|M)\)</span> y explique lo que significa.</p></li>
 <li><p>Encuentre <span class="math notranslate nohighlight">\(P(M|B)\)</span> y explique lo que significa.</p></li>
 <li><p>¿Todos los eventos <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(M\)</span> son mutuamente excluyentes?</p></li>
 <li><p>¿Todos los eventos <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(M\)</span> son independientes?</p></li>
 </ol>
+<p><strong>Solución</strong></p>
+<p>Como ya se tienen definidos los eventos básicos vamos a proceder a realizar los calculos solicitados.</p>
+<ol>
+<li><p><span class="math notranslate nohighlight">\(P(M') = ?\)</span></p>
+<p>Tenemos que: <span class="math notranslate nohighlight">\(P(M') = 1 - P(M)\)</span></p>
+<div class="math notranslate nohighlight">
+\[P(M) = \frac{N(M)}{N} = \frac{320}{595}\]</div>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[P(M') = 1 - P(M) = 1 - \frac{N(M)}{N} = 1 - \frac{320}{595} = \frac{275}{595} = 0.4622\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(B) = ?\)</span></p>
+<p>Tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[P(B) = \frac{N(B)}{N} = \frac{300}{595} = 0.5942\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(M'\;and\;B) = ?\)</span></p>
+<p>Aplicando la definición tenemos:</p>
+<div class="math notranslate nohighlight">
+\[P(M'\;and\;B) = \frac{N(M'\;and\;B)}{N} = \frac{110}{595} = 0.1849\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(M'\;or\;B) = ?\)</span></p>
+<p>Tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[P(M'\;or\;B) = \frac{N(M'\;or\;B)}{N}\]</div>
+<p>Para hallar <span class="math notranslate nohighlight">\(N(M'\;or\;B)\)</span> es necesario tener en cuenta lo que implica la expresión “Que sea mujer o cualquier persona que desayune regularmente” es <strong>lo contrario de decir</strong> “Que sea hombre y no desayune regularmente” (Aplicación de ley de Morgan <span class="math notranslate nohighlight">\((A \bigcup B)' = A' \bigcup B'\)</span>) y por lo tanto tenemos:</p>
+<div class="math notranslate nohighlight">
+\[P(M'\;or\;B) = 1 - P((M'\;or\;B)') = 1 - P(M\;and\;B')\]</div>
+<p>Calcular <span class="math notranslate nohighlight">\(P(M\;and\;B')\)</span> resulta mas sencillo por lo que vamos a proceder a esto:</p>
+<p><span class="math notranslate nohighlight">\(P(M\;and\;B') = \frac{N(M\;and\;B')}{N} = \frac{130}{595}\)</span></p>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[P(M'\;or\;B) = 1 - P(M\;and\;B') = 1 - \frac{130}{595} = \frac{465}{595} = 0.7815\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(B\;or\;M) = ?\)</span></p>
+<p>La probabilidad <span class="math notranslate nohighlight">\(P(B\;or\;M)\)</span> esta asociada al evento “Que sea hombre o cualquier persona que desayune regularmente”. Este evento, se puede descomponer en tres eventos simples:</p>
+<ul class="simple">
+<li><p>Que sea hombre y desayune normalmente <span class="math notranslate nohighlight">\((M\;and\;B)\)</span>.</p></li>
+<li><p>Que sea mujer y desayune normalmente <span class="math notranslate nohighlight">\((M'\;and\;B)\)</span>.</p></li>
+<li><p>Que sea hombre y no desayune normalmente <span class="math notranslate nohighlight">\((M\;or\;B')\)</span>.</p></li>
+</ul>
+<p>De este modo tenemos que:</p>
+<div class="math notranslate nohighlight">
+\[P(B\;or\;M) = \frac{N(B\;or\;M)}{N}\]</div>
+<p>El calculo de <span class="math notranslate nohighlight">\(N(B\;or\;M)\)</span> se hace teniendo en cuenta los tres eventos sencillos enunciados previamente:</p>
+<p><span class="math notranslate nohighlight">\(N(B\;or\;M) = N(M\;and\;B) + N(M'\;and\;B) + N(M\;and\;B') = 190 + 110 + 130 = 430\)</span></p>
+<p><span class="math notranslate nohighlight">\(N = 595\)</span></p>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[P(B\;or\;M) = \frac{N(B\;or\;M)}{N} = \frac{430}{595} = 0.7227\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(B'\;and\;M') = ?\)</span></p>
+<p>La expresión <span class="math notranslate nohighlight">\(B'\;and\;M'\)</span> significa “Que no desayune regularmente y que sea mujer”:</p>
+<div class="math notranslate nohighlight">
+\[P(B'\;and\;M') = \frac{165}{595} = 0.2773\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(B|M) = ?\)</span></p>
+<p>De la definición de probabilidad condicional tenemos:</p>
+<div class="math notranslate nohighlight">
+\[P(B|M) = \frac{N(B\;and\;M)}{N(M)} = \frac{190}{320} = 0.5938\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P(M|B) = ?\)</span></p>
+<p>De la definición de probabilidad condicional tenemos:</p>
+<div class="math notranslate nohighlight">
+\[P(M|B) = \frac{N(M\;and\;B)}{N(B)} = \frac{190}{300} = 0.6333\]</div>
+</li>
+<li><p>No lo son, pues pueden darse de manera simultanea.</p></li>
+<li><p>No lo son, pues hay dependencia.</p></li>
+</ol>
+<p><strong>Solución en python</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -764,7 +834,7 @@ P(B or M) = 0.7227
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6 (165/595)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6 </span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 6 -&gt;&quot;</span><span class="p">)</span>
 <span class="c1">#N_break_and_woman =  tabla.iloc[0][&#39;woman&#39;]</span>
 <span class="c1">#N_breakfast = total_breakfast[0]</span>
@@ -883,9 +953,7 @@ Punto 4 -&gt; Se verifica por formula
 <li><p>Encuentre <span class="math notranslate nohighlight">\(P(Gran\;probabilidad)\)</span></p></li>
 <li><p>Los eventos “Gran probabilidad” y “Mujer” son eventos independientes</p></li>
 </ol>
-<ul class="simple">
-<li><p><strong>Solución</strong></p></li>
-</ul>
+<p><strong>Solución</strong></p>
 <p>Primero definimos los eventos asociados al problema:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(M\)</span>: La persona seleccionada es Mujer.</p></li>
@@ -1094,7 +1162,7 @@ dtype: int64
 <li><p>Calcule la probabilidad de que una persona elegida al azar de este grupo sea alta y de bajo peso.</p></li>
 <li><p>¿Los eventos obeso y alto son independientes?</p></li>
 </ol>
-<p>pendiente…</p>
+<p>pendiente… Hacerlo obteniendo una segunda tabla producto de la división</p>
 </section>
 </section>
 </section>
