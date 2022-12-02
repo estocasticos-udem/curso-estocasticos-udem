@@ -420,19 +420,12 @@ title="Print to PDF"
          Ejemplo 2
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-3">
+         Ejemplo 3
+        </a>
+       </li>
       </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generalizacion-de-la-probabilidad-total">
-     Generalización de la probabilidad total
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Ejemplos
-      </a>
      </li>
     </ul>
    </li>
@@ -487,19 +480,12 @@ title="Print to PDF"
          Ejemplo 2
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-3">
+         Ejemplo 3
+        </a>
+       </li>
       </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generalizacion-de-la-probabilidad-total">
-     Generalización de la probabilidad total
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Ejemplos
-      </a>
      </li>
     </ul>
    </li>
@@ -582,6 +568,12 @@ title="Print to PDF"
 </ul>
 <p>Se pide:</p>
 <ol class="simple">
+<li><p>Encuentre la probabilidad de que se elija una mujer.</p></li>
+<li><p>Encuentre la probabilidad de que la persona elegida desayune regularmente.</p></li>
+<li><p>Encuentre la probabilidad de que la persona elegida sea una mujer que desayune regularmente.</p></li>
+<li><p>Encuentre la probabilidad de que la persona elegida sea una mujer o cualquiera que desayune regularmente.</p></li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(B \bigcup M)\)</span> y explique lo que significa.</p></li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(B^C \bigcup M^C)\)</span> y explique lo que significa.</p></li>
 <li><p>Encuentre <span class="math notranslate nohighlight">\(P(B|M)\)</span> y explique lo que significa.</p></li>
 <li><p>Encuentre <span class="math notranslate nohighlight">\(P(M|B)\)</span> y explique lo que significa.</p></li>
 <li><p>¿Todos los eventos <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(M\)</span> son mutuamente excluyentes?</p></li>
@@ -589,52 +581,251 @@ title="Print to PDF"
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regular_breakdast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
-<span class="n">man</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">190</span><span class="p">,</span> <span class="mi">110</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
-<span class="n">woman</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">110</span><span class="p">,</span> <span class="mi">165</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;regular_breakdast&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
-  <span class="s2">&quot;man&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">190</span><span class="p">,</span> <span class="mi">110</span><span class="p">]),</span>
-  <span class="s2">&quot;woman&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">130</span><span class="p">,</span> <span class="mi">165</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;regular_breakdast&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;si&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">),</span>
+  <span class="s2">&quot;man&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">190</span><span class="p">,</span> <span class="mi">130</span><span class="p">]),</span>
+  <span class="s2">&quot;woman&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">110</span><span class="p">,</span> <span class="mi">165</span><span class="p">])</span>
 <span class="p">}</span>
 
-<span class="n">cont_tab</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cont_tab</span><span class="p">)</span>
-
-<span class="n">total_sex</span> <span class="o">=</span> <span class="n">cont_tab</span><span class="p">[[</span><span class="s1">&#39;man&#39;</span><span class="p">,</span><span class="s1">&#39;woman&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Suma columnas</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">total_sex</span><span class="p">)</span>
-<span class="n">total_breakfast</span> <span class="o">=</span> <span class="n">cont_tab</span><span class="p">[[</span><span class="s1">&#39;man&#39;</span><span class="p">,</span><span class="s1">&#39;woman&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Suma Filas</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">total_breakfast</span><span class="p">)</span>
-<span class="c1"># 1</span>
-<span class="n">total_break</span> <span class="o">=</span>  <span class="n">total_breakfast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">num_break_and_woman</span> <span class="o">=</span> <span class="n">cont_tab</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;woman&#39;</span><span class="p">]</span>
-<span class="n">P_B_dado_M</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">num_break_and_woman</span><span class="p">,</span><span class="n">total_break</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">P_B_dado_M</span><span class="p">)</span>
-
-<span class="c1"># 2</span>
-<span class="n">num_break_and_woman</span> <span class="o">=</span>  <span class="n">cont_tab</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;woman&#39;</span><span class="p">]</span>
-<span class="n">total_woman</span> <span class="o">=</span> <span class="n">total_sex</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">P_M_dado_B</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">num_break_and_woman</span><span class="p">,</span><span class="n">total_woman</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">P_M_dado_B</span><span class="p">)</span>
-
-<span class="c1"># 3. Yes</span>
-<span class="c1"># 4. Verificacion por formula</span>
+<span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">tabla</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   regular_breakdast  man  woman
-0                  1  190    130
-1                  0  110    165
-man      300
-woman    295
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regular_breakdast</th>
+      <th>man</th>
+      <th>woman</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>si</td>
+      <td>190</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>no</td>
+      <td>130</td>
+      <td>165</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Cantidad total de </span><span class="se">\&quot;</span><span class="s2">hombres</span><span class="se">\&quot;</span><span class="s2"> y </span><span class="se">\&quot;</span><span class="s2">mujeres</span><span class="se">\&quot;</span><span class="s2"> --- &quot;</span><span class="p">)</span>
+<span class="n">total_sex</span> <span class="o">=</span> <span class="n">tabla</span><span class="p">[[</span><span class="s1">&#39;man&#39;</span><span class="p">,</span><span class="s1">&#39;woman&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Suma columnas</span>
+<span class="n">total_sex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Cantidad total de &quot;hombres&quot; y &quot;mujeres&quot; --- 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>man      320
+woman    275
 dtype: int64
-0    320
-1    275
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Cantidad total de personas que </span><span class="se">\&quot;</span><span class="s2">no desayuna</span><span class="se">\&quot;</span><span class="s2"> y </span><span class="se">\&quot;</span><span class="s2">desayuna</span><span class="se">\&quot;</span><span class="s2"> regularmente --- &quot;</span><span class="p">)</span>
+<span class="n">total_breakfast</span> <span class="o">=</span> <span class="n">tabla</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Suma Filas</span>
+<span class="n">total_breakfast</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Cantidad total de personas que &quot;no desayuna&quot; y &quot;desayuna&quot; regularmente --- 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    300
+1    295
 dtype: int64
-0.40625
-0.4406779661016949
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 1 -&gt;&quot;</span><span class="p">)</span>
+<span class="n">N_woman</span> <span class="o">=</span>  <span class="n">total_sex</span><span class="p">[</span><span class="s1">&#39;woman&#39;</span><span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">total_sex</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+<span class="n">P_notM</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_woman</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(M&#39;) = </span><span class="si">{</span><span class="n">P_notM</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 1 -&gt;
+P(M&#39;) = 0.4622
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 2 -&gt;&quot;</span><span class="p">)</span>
+<span class="n">N_break</span> <span class="o">=</span>  <span class="n">total_breakfast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">total_breakfast</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">P_B</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_break</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(B) = </span><span class="si">{</span><span class="n">P_B</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 2 -&gt;
+P(B) = 0.5042
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3 </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 3 -&gt;&quot;</span><span class="p">)</span>
+<span class="n">N_woman_and_break</span> <span class="o">=</span>  <span class="n">tabla</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;woman&#39;</span><span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">total_breakfast</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">P_notM_and_break</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_woman_and_break</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(M&#39; and B) = </span><span class="si">{</span><span class="n">P_notM_and_break</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 3 -&gt;
+P(M&#39; and B) = 0.1849
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4 (Malo: Debe dar: 465/595)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 4 -&gt;&quot;</span><span class="p">)</span>
+<span class="n">N_woman_or_break</span> <span class="o">=</span>  <span class="n">total_sex</span><span class="p">[</span><span class="s1">&#39;woman&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">total_breakfast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">tabla</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;woman&#39;</span><span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">total_breakfast</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">P_notM_or_break</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_woman_or_break</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(M&#39; or B) = </span><span class="si">{</span><span class="n">P_notM_or_break</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 4 -&gt;
+P(M&#39; or B) = 0.7815
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 5 -&gt;&quot;</span><span class="p">)</span>
+<span class="n">N_break_or_man</span> <span class="o">=</span>  <span class="n">total_sex</span><span class="p">[</span><span class="s1">&#39;man&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">total_breakfast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">tabla</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;man&#39;</span><span class="p">]</span> <span class="c1"># Mirar si se puede hacer de otra forma</span>
+                                                                               <span class="c1"># Definicion</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">total_sex</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">P_B_dado_M</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_break_or_man</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(B or M) = </span><span class="si">{</span><span class="n">P_B_dado_M</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 5 -&gt;
+P(B or M) = 0.7227
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6 (165/595)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 6 -&gt;&quot;</span><span class="p">)</span>
+<span class="c1">#N_break_and_woman =  tabla.iloc[0][&#39;woman&#39;]</span>
+<span class="c1">#N_breakfast = total_breakfast[0]</span>
+<span class="c1">#P_M_dado_B = prob(N_break_and_woman,N_breakfast)</span>
+<span class="c1">#print(f&quot;P(M|B) = {P_M_dado_B:.4f}&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 6 -&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 7 -&gt;&quot;</span><span class="p">)</span>
+<span class="c1">#N_break_and_woman =  tabla.iloc[0][&#39;woman&#39;]</span>
+<span class="c1">#N_breakfast = total_breakfast[0]</span>
+<span class="c1">#P_M_dado_B = prob(N_break_and_woman,N_breakfast)</span>
+<span class="c1">#print(f&quot;P(M|B) = {P_M_dado_B:.4f}&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 7 -&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 8</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 8 -&gt;&quot;</span><span class="p">)</span>
+<span class="c1">#N_break_and_woman =  tabla.iloc[0][&#39;woman&#39;]</span>
+<span class="c1">#N_breakfast = total_breakfast[0]</span>
+<span class="c1">#P_M_dado_B = prob(N_break_and_woman,N_breakfast)</span>
+<span class="c1">#print(f&quot;P(M|B) = {P_M_dado_B:.4f}&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 8 -&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 9. Yes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 3 -&gt; Si&quot;</span><span class="p">)</span>
+
+<span class="c1"># 10. Verificacion por formula</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punto 4 -&gt; Se verifica por formula&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Punto 3 -&gt; Si
+Punto 4 -&gt; Se verifica por formula
 </pre></div>
 </div>
 </div>
@@ -688,8 +879,8 @@ dtype: int64
 <ol class="simple">
 <li><p>Si la persona seleccionada es un hombre, cual es la probabilidad de que esta responda “Practicamente segura”</p></li>
 <li><p>Si la persona seleccionada responde “Alguna posibilidad pero probablemente no” cual es la probabilidad de que la persona sea mujer</p></li>
-<li><p>Encuentre <span class="math notranslate nohighlight">\(P(&quot;Gran probabilidad&quot; | Mujer)\)</span></p></li>
-<li><p>Encuentre <span class="math notranslate nohighlight">\(P(&quot;Gran probabilidad&quot;)\)</span></p></li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(Gran\;probabilidad | Mujer)\)</span></p></li>
+<li><p>Encuentre <span class="math notranslate nohighlight">\(P(Gran\;probabilidad)\)</span></p></li>
 <li><p>Los eventos “Gran probabilidad” y “Mujer” son eventos independientes</p></li>
 </ol>
 <ul class="simple">
@@ -718,10 +909,10 @@ dtype: int64
 <div class="math notranslate nohighlight">
 \[P(R_5|H) = \frac{P(R_5\;and\;H)}{P(H)} = \frac{\frac{597}{4826}}{\frac{2459}{4826}}\]</div>
 <div class="math notranslate nohighlight">
-\[P(R_5|H) = \frac{597}{2459} = 0.2459\]</div>
+\[P(R_5|H) = \frac{597}{2459} = 0.2428\]</div>
 <p>Otra forma de hallar lo anterior seria aplicando la definición de probabilidad condicional:</p>
 <div class="math notranslate nohighlight">
-\[P(R_5|H) = \frac{N(R_5\;and\;H)}{N(H)} = \frac{597}{2459} = 0.2459\]</div>
+\[P(R_5|H) = \frac{N(R_5\;and\;H)}{N(H)} = \frac{597}{2459} = 0.2428\]</div>
 <p>Como se puede ver en el procedimiento anterior, los resultados coinciden.</p>
 </li>
 <li><p><span class="math notranslate nohighlight">\(P(M|R_2) = ?\)</span></p>
@@ -734,24 +925,177 @@ dtype: int64
 <div class="math notranslate nohighlight">
 \[P(R_4|M) = \frac{N(R_4\;and\;M)}{N(M)} = \frac{663}{2367} = 0.2801\]</div>
 </li>
-<li><p>¿Los eventos D y A son independientes?</p></li>
-</ol>
-</section>
-</section>
-</section>
-<section id="generalizacion-de-la-probabilidad-total">
-<h2>Generalización de la probabilidad total<a class="headerlink" href="#generalizacion-de-la-probabilidad-total" title="Permalink to this headline">#</a></h2>
-<div class="admonition-ley-de-la-probabilidad-total admonition">
-<p class="admonition-title">Ley de la probabilidad total</p>
-<p>Dados los eventos <span class="math notranslate nohighlight">\(B_1,\;,B_2,\;,B_3,\;,...,B_k\)</span> los cuales son mutuamente exclusivos con <span class="math notranslate nohighlight">\(P(B_1)+P(B_2)+P(B_3)+...+P(B_k) = 1\)</span>, entonces para cualquier evento <span class="math notranslate nohighlight">\(E\)</span>:</p>
+<li><p><span class="math notranslate nohighlight">\(P(R_4) = ?\)</span></p>
+<p>En este caso tenemos:</p>
 <div class="math notranslate nohighlight">
-\[
-P(E)  = P(E \bigcap B_1) + P(E \bigcap B_2) + ... + P(E \bigcap B_k)
-P(E)  = P(E1|B_1)P(B_1) + P(E|B_2)P(B_2) + ... + P(E|B_k)P(B_k)
-\]</div>
+\[P(R_4) = \frac{N(R_4)}{N} = \frac{1421}{4826} = 0.2944\]</div>
+</li>
+<li><p>Para responder si <span class="math notranslate nohighlight">\(R_4\)</span> y <span class="math notranslate nohighlight">\(M\)</span> son eventos independientes se debe cumplir que <span class="math notranslate nohighlight">\(P(R_4|M) = P(R_4)\)</span> sin embargo, al analizar las respuestas de los puntos 3 y 4 vemos que <span class="math notranslate nohighlight">\(P(R_4|M) \ne P(R_4)\)</span> por lo que estos eventos <strong>No son independientes</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;respuestas&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;str&#39;</span><span class="p">),</span>
+  <span class="s2">&quot;mujeres&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">96</span><span class="p">,</span> <span class="mi">426</span><span class="p">,</span> <span class="mi">696</span><span class="p">,</span> <span class="mi">663</span><span class="p">,</span> <span class="mi">486</span><span class="p">]),</span>
+  <span class="s2">&quot;hombres&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">98</span><span class="p">,</span> <span class="mi">286</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="mi">758</span><span class="p">,</span> <span class="mi">597</span><span class="p">])</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Tabla --- &quot;</span><span class="p">)</span>
+<span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabla</span><span class="p">)</span>
+</pre></div>
 </div>
-<section id="id1">
-<h3>Ejemplos<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Tabla --- 
+  respuestas  mujeres  hombres
+0          1       96       98
+1          2      426      286
+2          3      696      720
+3          4      663      758
+4          5      486      597
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Totales</span>
+<span class="n">total_sexo</span> <span class="o">=</span> <span class="n">tabla</span><span class="p">[</span><span class="n">tabla</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">total_sexo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mujeres    2367
+hombres    2459
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Totales</span>
+<span class="n">total_respuestas</span> <span class="o">=</span> <span class="n">tabla</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="s2">&quot;columns&quot;</span><span class="p">,</span> <span class="n">numeric_only</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">total_respuestas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     194
+1     712
+2    1416
+3    1421
+4    1083
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_R5_and_H</span> <span class="o">=</span> <span class="n">tabla</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;hombres&#39;</span><span class="p">]</span>
+<span class="n">N_H</span> <span class="o">=</span> <span class="n">total_sexo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">P_R5_dado_H</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_R5_and_H</span><span class="p">,</span> <span class="n">N_H</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(R5|H) = </span><span class="si">{</span><span class="n">P_R5_dado_H</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(R5|H) = 0.2428
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_M_and_R2</span> <span class="o">=</span> <span class="n">tabla</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;mujeres&#39;</span><span class="p">]</span>
+<span class="n">N_R2</span> <span class="o">=</span> <span class="n">total_respuestas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">P_M_dado_R2</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_M_and_R2</span><span class="p">,</span> <span class="n">N_R2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(M|R2) = </span><span class="si">{</span><span class="n">P_M_dado_R2</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(M|R2) = 0.5983
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_R4_and_M</span> <span class="o">=</span> <span class="n">tabla</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;mujeres&#39;</span><span class="p">]</span>
+<span class="n">N_M</span> <span class="o">=</span> <span class="n">total_sexo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">P_R4_dado_M</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_R4_and_M</span><span class="p">,</span> <span class="n">N_M</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(R4|M) = </span><span class="si">{</span><span class="n">P_R4_dado_M</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(R4|M) = 0.2801
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_R4</span> <span class="o">=</span> <span class="n">total_respuestas</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">total_sexo</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">P_R4</span> <span class="o">=</span> <span class="n">prob</span><span class="p">(</span><span class="n">N_R4</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(R4) = </span><span class="si">{</span><span class="n">P_R4</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(R4) = 0.2944
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-3">
+<h4>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">#</a></h4>
+<p>La siguiente tabla relaciona los pesos y las alturas de un grupo de personas que participan en un estudio de observación.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Peso</p></th>
+<th class="head"><p>Alto</p></th>
+<th class="head"><p>Medio</p></th>
+<th class="head"><p>Bajo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Obeso</p></td>
+<td><p>18</p></td>
+<td><p>24</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>20</p></td>
+<td><p>51</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>Bajo peso</p></td>
+<td><p>12</p></td>
+<td><p>25</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<p>Se pide:</p>
+<ol class="simple">
+<li><p>Calcule el total de cada fila y columna</p></li>
+<li><p>Calcule la probabilidad de que una persona elegida al azar de este grupo sea alta.</p></li>
+<li><p>Calcule la probabilidad de que una persona elegida al azar de este grupo sea obesa y alta.</p></li>
+<li><p>Calcule la probabilidad de que una persona elegida al azar de este grupo sea alta dado que es obesa</p></li>
+<li><p>Calcule la probabilidad de que una persona elegida al azar de este grupo sea obesa, dado que es alta.</p></li>
+<li><p>Calcule la probabilidad de que una persona elegida al azar de este grupo sea alta y de bajo peso.</p></li>
+<li><p>¿Los eventos obeso y alto son independientes?</p></li>
+</ol>
+<p>pendiente…</p>
+</section>
 </section>
 </section>
 </section>
