@@ -305,6 +305,17 @@ from scipy.stats import trim_mean
 # $$
 # 
 
+# # Representaciones
+# 
+# A veces, cuando los problemas de probabilidad son complejos, puede ser útil hacer un gráfico de la situación o emplear una representación tabular. El uso de estas herramientas de representación facilita la solución de problemas que impliquen el uso de probabilidades. 
+# 
+# Algunas representaciones empleadas para tratar problemas de probabilidad complejos son:
+# * Tablas
+# * Diagramas de arbol
+# * Diagramas de Venn
+#   
+# En las proximas secciones serán tratadas cada una de estas con mas detalle.
+
 # # Referencias
 
 # * https://github.com/jonkrohn/ML-foundations/blob/master/notebooks/5-probability.ipynb

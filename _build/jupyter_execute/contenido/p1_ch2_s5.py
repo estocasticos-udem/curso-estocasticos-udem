@@ -16,19 +16,15 @@ def prob(num_events, total):
     return num_events/total
 
 
-# # Representaciones
-
-# A veces, cuando los problemas de probabilidad son complejos, puede ser útil hacer un gráfico de la situación o emplear una representación tabular. El uso de estas herramientas de representación facilita la solución de problemas que impliquen el uso de probabilidades. 
-
-# ## Tablas de contingencia
+# # Tablas de contingencia
 # 
 # Una **tabla de contingencia** proporciona una forma tabular de representar los datos para facilitar el cálculo de probabilidades pues facilita la determinación de condicionales con bastante facilidad. 
 # 
 # En esta tabla se muestra los valores de la muestra en relación con dos variables diferentes que pueden ser dependientes entre sí. 
 
-# ### Ejemplos
+# ## Ejemplos
 
-# #### Ejemplo 1
+# ### Ejemplo 1
 # 
 # La siguiente tabla de contingencia describe los 595 estudiantes que respondieron a una encuesta escolar sobre desayunar. 
 # 
@@ -54,7 +50,7 @@ def prob(num_events, total):
 # 9. ¿Todos los eventos $B$ y $M$ son mutuamente excluyentes?
 # 10. ¿Todos los eventos $B$ y $M$ son independientes?
 # 
-# **Solución**
+# #### Solución a mano
 # 
 # Como ya se tienen definidos los eventos básicos vamos a proceder a realizar los calculos solicitados.
 # 1. $P(M') = ?$
@@ -139,11 +135,12 @@ def prob(num_events, total):
 # 9. No lo son, pues pueden darse de manera simultanea.
 # 10. No lo son, pues hay dependencia.
 
-# **Solución en python**
+# #### Solución empleando python
 
 # In[3]:
 
 
+# Representación de la tablac de datos del problema
 data = {
   "regular_breakdast": np.array(["si", "no"], dtype="str"),
   "man": np.array([190, 130]),
@@ -173,7 +170,7 @@ total_breakfast
 # In[6]:
 
 
-# 1
+# Punto 1
 print("Punto 1 ->")
 N_woman =  total_sex['woman']
 N = total_sex.sum() 
@@ -184,7 +181,7 @@ print(f"P(M') = {P_notM:.4f}")
 # In[7]:
 
 
-# 2
+# Punto 2
 print("Punto 2 ->")
 N_break =  total_breakfast[0]
 N = total_breakfast.sum()
@@ -195,7 +192,7 @@ print(f"P(B) = {P_B:.4f}")
 # In[8]:
 
 
-# 3 
+# Punto 3 
 print("Punto 3 ->")
 N_woman_and_break =  tabla.iloc[0]['woman']
 N = total_breakfast.sum()
@@ -206,7 +203,7 @@ print(f"P(M' and B) = {P_notM_and_break:.4f}")
 # In[9]:
 
 
-# 4 (Malo: Debe dar: 465/595)
+# Punto 4
 print("Punto 4 ->")
 N_woman_or_break =  total_sex['woman'] + total_breakfast[0] - tabla.iloc[0]['woman']
 N = total_breakfast.sum()
@@ -217,7 +214,7 @@ print(f"P(M' or B) = {P_notM_or_break:.4f}")
 # In[10]:
 
 
-# 5
+# Punto 5
 print("Punto 5 ->")
 N_break_or_man =  total_sex['man'] + total_breakfast[0] - tabla.iloc[0]['man'] # Mirar si se puede hacer de otra forma
                                                                                # Definicion
@@ -229,47 +226,37 @@ print(f"P(B or M) = {P_B_dado_M:.4f}")
 # In[11]:
 
 
-# 6 
+# Punto 6 
 print("Punto 6 ->")
-#N_break_and_woman =  tabla.iloc[0]['woman']
-#N_breakfast = total_breakfast[0]
-#P_M_dado_B = prob(N_break_and_woman,N_breakfast)
-#print(f"P(M|B) = {P_M_dado_B:.4f}")
+N_notBreak_and_woman =  tabla.iloc[1]['woman']
+N = total_breakfast.sum()
+P_notM_dado_notB = prob(N_notBreak_and_woman,N)
+print(f"P(M' and B') = {P_notM_dado_notB:.4f}")
 
 
 # In[12]:
 
 
-# 7
+# Punto 7
 print("Punto 7 ->")
-#N_break_and_woman =  tabla.iloc[0]['woman']
-#N_breakfast = total_breakfast[0]
-#P_M_dado_B = prob(N_break_and_woman,N_breakfast)
-#print(f"P(M|B) = {P_M_dado_B:.4f}")
+N_break_and_man =  tabla.iloc[0]['man']
+N_man = total_sex['man']
+P_M_dado_B = prob(N_break_and_man,N_man)
+print(f"P(B|M) = {P_M_dado_B:.4f}")
 
 
 # In[13]:
 
 
-# 8
+# Punto 8
 print("Punto 8 ->")
-#N_break_and_woman =  tabla.iloc[0]['woman']
-#N_breakfast = total_breakfast[0]
-#P_M_dado_B = prob(N_break_and_woman,N_breakfast)
-#print(f"P(M|B) = {P_M_dado_B:.4f}")
+N_break_and_man =  tabla.iloc[0]['man']
+N_breakfast = total_breakfast[0]
+P_M_dado_B = prob(N_break_and_man,N_breakfast)
+print(f"P(M|B) = {P_M_dado_B:.4f}")
 
 
-# In[14]:
-
-
-# 9. Yes
-print("Punto 3 -> Si")
-
-# 10. Verificacion por formula
-print("Punto 4 -> Se verifica por formula")
-
-
-# #### Ejemplo 2
+# ### Ejemplo 2
 # 
 # Una encuesta de 4826 adultos jóvenes (de 19 a 25 años) seleccionados al azar preguntó: "¿Cuáles crees que son las posibilidades de que tengas mucho más que un ingreso de clase media a los 30 años?" La siguiente tabla muestra las respuestas. 
 # 
@@ -290,7 +277,7 @@ print("Punto 4 -> Se verifica por formula")
 # 4. Encuentre $P(Gran\;probabilidad)$
 # 5. Los eventos "Gran probabilidad" y "Mujer" son eventos independientes
 # 
-# **Solución**
+# #### Solución a mano
 # 
 # Primero definimos los eventos asociados al problema:
 # * $M$: La persona seleccionada es Mujer.
@@ -350,7 +337,9 @@ print("Punto 4 -> Se verifica por formula")
 #    
 #    
 
-# In[15]:
+# #### Solución usando python
+
+# In[14]:
 
 
 # Datos
@@ -359,13 +348,11 @@ data = {
   "mujeres": np.array([96, 426, 696, 663, 486]),
   "hombres": np.array([98, 286, 720, 758, 597])
 }
-
-print("--- Tabla --- ")
 tabla = pd.DataFrame(data)
-print(tabla)
+tabla
 
 
-# In[16]:
+# In[15]:
 
 
 # Totales
@@ -373,7 +360,7 @@ total_sexo = tabla[tabla.columns[1:3]].sum()
 total_sexo
 
 
-# In[17]:
+# In[16]:
 
 
 # Totales
@@ -381,49 +368,54 @@ total_respuestas = tabla.sum(axis = "columns", numeric_only = True)
 total_respuestas
 
 
-# In[18]:
+# In[17]:
 
 
+# Punto 1
+print("Punto 1 -> ")
 N_R5_and_H = tabla.iloc[4]['hombres']
 N_H = total_sexo[1]
 P_R5_dado_H = prob(N_R5_and_H, N_H)
 print(f"P(R5|H) = {P_R5_dado_H:0.4f}")
 
 
-# In[19]:
+# In[18]:
 
 
+print("Punto 2 -> ")
 N_M_and_R2 = tabla.iloc[1]['mujeres']
 N_R2 = total_respuestas[1]
 P_M_dado_R2 = prob(N_M_and_R2, N_R2)
 print(f"P(M|R2) = {P_M_dado_R2:0.4f}")
 
 
-# In[20]:
+# In[19]:
 
 
+print("Punto 3 -> ")
 N_R4_and_M = tabla.iloc[3]['mujeres']
 N_M = total_sexo[0]
 P_R4_dado_M = prob(N_R4_and_M, N_M)
 print(f"P(R4|M) = {P_R4_dado_M:0.4f}")
 
 
-# In[21]:
+# In[20]:
 
 
+print("Punto 4 -> ")
 N_R4 = total_respuestas[3]
 N = total_sexo.sum()
 P_R4 = prob(N_R4, N)
 print(f"P(R4) = {P_R4:0.4f}")
 
 
-# #### Ejemplo 3
+# ### Ejemplo 3
 # 
 # La siguiente tabla relaciona los pesos y las alturas de un grupo de personas que participan en un estudio de observación.
 # 
 # |Peso|Alto|Medio|Bajo|
 # |---|---|---|---|
-# |Obeso|18|24|14|
+# |Obeso|18|28|14|
 # |Normal|20|51|28|
 # |Bajo peso|12|25|9|
 # 
@@ -437,7 +429,185 @@ print(f"P(R4) = {P_R4:0.4f}")
 # 7. ¿Los eventos obeso y alto son independientes?
 # 
 
-# pendiente... Hacerlo obteniendo una segunda tabla producto de la división
+# #### Solución a mano
+# 
+# Inicialmente definamos los diferentes eventos simples asociados al problema:
+# * $o$: Evento de que la persona elegida sea obesa.
+# * $mw$: Evento de que la persona elegida tenga peso normal.
+# * $lw$: Evento de que la persona elegida tenga bajo peso.
+# * $hh$: Evento de que la persona elegida sea alta.
+# * $mh$: Evento de que la persona elegida sea mediana.
+# * $lh$: Evento de que la persona elegida sea bajita.
+# 
+# Ahora vamos a proceder a realizar cada uno de los calculos que se solicitan:
+# 
+# 1. Total de cada fila:
+#    * **Total pesos**:
+#      * **Obeso**: $N(o) = 18 + 28 + 14 = 60$ 
+#      * **Normal**: $N(mw) = 20 + 51 + 28 = 99$ 
+#      * **Bajo peso**: $N(lw) = 12 + 25 + 9 = 46 $ 
+#    * **Total alturas**: 
+#      * **Alto**: $N(hh) = 18 + 20 + 12 = 50$ 
+#      * **Medio**: $N(mh) = 28 + 51+ 25 = 104$ 
+#      * **Bajo**: $N(lh) = 14 + 28 + 9 = 51$ 
+#    * **Total participantes**: $N = N(o) + N(mw) + N(lw) = 60 + 99 + 46 = 205$
+# 
+# 2. $P(hh) = ?$
+#    
+#    Empleando los calculos previamente realizados tenemos:
+# 
+#    $$P(hh) = \frac{N(hh)}{N} = \frac{50}{205} = 0.2439$$
+# 
+# 3. $P(o\;and\;hh) = ?$
+# 
+#    Usando la tabla y los calculos realizados en el punto 1 tenemos:
+#    
+#    $$P(o\;and\;hh) = \frac{N(o\;and\;hh)}{N} = \frac{18}{205} = 0.0878$$
+# 
+# 4. $P(hh|o) = ?$
+#    
+#    Sabemos que $P(hh|o) = \frac{P(hh\;and\;o)}{P(o)}$
+# 
+#    $P(hh\;and\;o) = \frac{N(hh\;and\;o)}{N} = \frac{18}{205}$
+# 
+#    $P(o) = \frac{N(o)}{N} = \frac{60}{205}$
+# 
+#    Luego:
+# 
+#    $$ 
+#    P(hh|o) = \frac{P(hh\;and\;o)}{P(o)} = \frac{\frac{18}{205}}{\frac{60}{205}} = \frac{18}{60} = 0.3
+#    $$
+# 
+# 5. $P(o|hh) = ?$
+#    
+#    Se procede de manera muy similar al punto anterior:
+# 
+#    $P(o\;and\;hh) = \frac{N(o\;and\;hh)}{N} = \frac{18}{205}$
+# 
+#    $P(hh) = \frac{N(hh)}{N} = \frac{50}{205}$
+# 
+#    Luego:
+# 
+#    $$
+#    P(o|hh) = \frac{P(o\;and\;hh)}{P(hh)} = \frac{\frac{18}{205}}{\frac{50}{205}} = \frac{18}{50} = 0.36
+#    $$
+#    
+# 
+# 6. $P(hh\;and\;lw) = ?$
+#    
+#    De la tabla tenemos que:
+# 
+#    $$
+#    P(hh\;and\;lw) = \frac{N(hh\;and\;lw)}{N} = \frac{12}{205} =  0.0585
+#    $$
+#    
+# 7. Si comparamos $P(hh|o) = 0.3$ con $P(hh) = 0.2439$ vemos que los resultados son diferentes y por lo tanto, estos eventos no son independientes.
+
+# #### Solución usando Python
+
+# In[21]:
+
+
+tabla = pd.DataFrame({
+  "peso": np.array(["obeso", "normal", "bajo_peso"], dtype='str'),
+  "alto": np.array([18, 20, 12], dtype='int'),
+  "medio": np.array([28, 51, 25], dtype='int'),
+  "bajo": np.array([14, 28, 9], dtype='int')
+})
+tabla
+
+
+# In[22]:
+
+
+# Punto 1 - Total en cada columna
+print("Punto 1 -> Suma de las columnas")
+alturas = tabla.sum(axis="rows", numeric_only=True)
+alturas
+
+
+# In[23]:
+
+
+# Punto 1 - Total en cada fila
+print("Punto 1 -> Suma de las filas (0: Obeso - 1: Normal - 2: Peso bajo)")
+pesos = tabla.sum(axis="columns", numeric_only=True)
+pesos
+
+
+# In[24]:
+
+
+# Punto 1 - Total personas
+print("Punto 1 -> Total personas encuestadas ")
+total = alturas.sum()
+total
+
+
+# In[25]:
+
+
+# Obtención de la tabla de frecuencias (para facilitar los calculos)
+freq_tabla = pd.concat([tabla[['peso']],tabla[['alto','medio','bajo']]/total],axis=1)
+freq_tabla
+
+
+# In[26]:
+
+
+# Verificación de que la suma de todas las frecuencias de uno
+sum_probs = freq_tabla[['alto','medio','bajo']].values.sum()
+print(f"{sum_probs:.2f}")
+
+
+# In[27]:
+
+
+# Punto 2
+print("Punto 2 -> ")
+P_alta = freq_tabla[['alto']].sum()
+print(f"P(hh) = {P_alta[0]:.4f}")
+
+
+# In[28]:
+
+
+# Punto 3
+print("Punto 3 -> ")
+P_obesa_and_alta = freq_tabla.iloc[0]['alto']
+print(f"P(o and hh) = {P_obesa_and_alta:.4f}")
+
+
+# In[29]:
+
+
+# Punto 4
+print("Punto 4 -> ")
+P_alta_and_obesa = freq_tabla.iloc[0]['alto']
+P_obesa = freq_tabla.iloc[0][1:].sum()
+P_alta_dado_obesa = P_alta_and_obesa/P_obesa
+print(f"P(hh|o) = {P_alta_dado_obesa:.4f}")
+
+
+# In[30]:
+
+
+# Punto 5
+print("Punto 5 -> ")
+P_obesa_and_alta = freq_tabla.iloc[0]['alto']
+P_alta = freq_tabla[['alto']].sum()
+P_obesa_dado_alta = P_obesa_and_alta/P_alta
+print(f"P(o|hh) = {P_obesa_dado_alta[0]:.4f}")
+
+
+# In[31]:
+
+
+# Punto 6
+print("Punto 6 -> ")
+P_bajoPeso_and_alta = freq_tabla.iloc[2]['alto']
+print(f"P(lw and hh) = {P_bajoPeso_and_alta:.4f}")
+
 
 # # Referencias
 
@@ -452,9 +622,6 @@ print(f"P(R4) = {P_R4:0.4f}")
 # * https://ipython-books.github.io/154-computing-exact-probabilities-and-manipulating-random-variables/
 # * https://realpython.com/python-itertools/
 # * https://github.com/honi/uba-probabilidad-y-estadistica
-# 
-# Otros
-# 
 # * https://www.cs.rpi.edu/~zaki/DMML/slides/pdf/ychap18.pdf
 # * https://rpubs.com/jreigarcia/irisdataset
 # * https://medium.com/analytics-vidhya/first-step-to-statistics-with-iris-data-3d29c0820c5d
