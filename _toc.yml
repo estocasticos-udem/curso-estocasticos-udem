@@ -20,6 +20,7 @@ parts:
         - file: contenido/p1_ch2_s3
         - file: contenido/p1_ch2_s4
         - file: contenido/p1_ch2_s5
+        - file: contenido/p1_ch2_s6
 #  - caption: Procesos Aleatorios 
 #    chapters:
 #    - file: path/to/part2/chapter1
